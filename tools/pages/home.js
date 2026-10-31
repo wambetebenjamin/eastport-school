@@ -44,7 +44,7 @@ ${stats()}
 	<section class="ep-finder">
 		<div class="container">
 			<div class="section-title text-white">
-				<span class="ep-uppercase" style="color:#ffb3c1">Quick programme finder · January 2027 cohort</span>
+				<span class="ep-uppercase" style="color:#f2cb86">Quick programme finder · January 2027 cohort</span>
 				<h2>Find your ideal career qualification</h2>
 				<p>Search by career specialisation, faculty, or minimum KCSE grade.</p>
 			</div>
@@ -134,6 +134,56 @@ ${stats()}
 	</section>
 	<!-- about end -->
 
+	<!-- labs -->
+	<section class="spad ep-section-mist" style="padding-top:0">
+		<div class="container" style="padding-top:70px">
+			<div class="section-title">
+				<span class="ep-uppercase">World-class training environment</span>
+				<h2>Experience practical learning at Eastport</h2>
+				<p>70% of curriculum time is dedicated to clinical simulation, practical computer labs and engineering workshops.</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="ep-lab-card">
+						<div class="ep-lab-thumb set-bg" style="background-image:url(img/categories/1.jpg)">
+							<span>School of Health Sciences</span>
+						</div>
+						<div class="ep-lab-body">
+							<h5>Clinical Simulation &amp; Phlebotomy Labs</h5>
+							<p>Equipped with diagnostic centrifuges, sterile draw stations and simulation mannequins for hands-on nursing and phlebotomy practice.</p>
+							<a href="courses.html?faculty=health">View Health Courses</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="ep-lab-card">
+						<div class="ep-lab-thumb set-bg" style="background-image:url(img/courses/3.jpg)">
+							<span>School of ICT &amp; Computing</span>
+						</div>
+						<div class="ep-lab-body">
+							<h5>Advanced ICT &amp; Software Development Labs</h5>
+							<p>High-speed fibre connectivity, programming environments and cybersecurity testbeds for software engineering and networking students.</p>
+							<a href="courses.html?faculty=ict">View ICT Programmes</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="ep-lab-card">
+						<div class="ep-lab-thumb set-bg" style="background-image:url(img/courses/6.jpg)">
+							<span>Hospitality &amp; Tourism</span>
+						</div>
+						<div class="ep-lab-body">
+							<h5>Commercial Kitchen &amp; Food Production Hub</h5>
+							<p>Professional stainless-steel kitchens, pastry ovens and front-office simulation stations for hotel and catering professionals.</p>
+							<a href="courses.html?faculty=hospitality">View Hospitality Courses</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- labs end -->
+
 	<!-- featured programmes -->
 	<section class="course-section spad ep-section-mist">
 		<div class="container">
@@ -162,7 +212,7 @@ ${stats()}
 				<div class="col-lg-6">
 					<div class="signup-warp">
 						<div class="section-title text-white text-left">
-							<span class="ep-uppercase" style="color:#ffb3c1">Careers at Eastport</span>
+							<span class="ep-uppercase" style="color:#f2cb86">Careers at Eastport</span>
 							<h2>Sign up to become a trainer</h2>
 							<p>We are always looking for TVET trainers and technicians with real industry experience. Register your interest and our academic office will invite you for a demonstration lesson.</p>
 						</div>

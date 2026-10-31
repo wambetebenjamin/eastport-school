@@ -34,6 +34,7 @@ function head({ title, description, bodyClass = '', extraStyles = [] }) {
 	<meta property="og:title" content="${title}">
 	<meta property="og:description" content="${description}">
 	<meta property="og:type" content="website">
+	<meta name="theme-color" content="#24246a">
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -159,10 +160,10 @@ function footer() {
 </html>`;
 }
 
-function layout({ title, description, active, body, bodyClass = '' }) {
+function layout({ title, description, active, body, bodyClass = '', noHeader = false, extraStyles = [] }) {
 	return [
-		head({ title, description, bodyClass }),
-		header(active),
+		head({ title, description, bodyClass, extraStyles }),
+		noHeader ? '' : header(active),
 		body,
 		footer()
 	].join('\n');

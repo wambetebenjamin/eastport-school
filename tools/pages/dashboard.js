@@ -158,7 +158,7 @@ module.exports = function dashboard() {
 									<li><span>Term 3 invoice</span><strong>KSh 24,500</strong></li>
 									<li><span>Deposit paid (40%)</span><strong>KSh 9,800</strong></li>
 									<li><span>Instalment 1</span><strong>KSh 1,950</strong></li>
-									<li><span>Balance due 15 Nov</span><strong style="color:#d82a4e">KSh 12,750</strong></li>
+									<li><span>Balance due 15 Nov</span><strong style="color:#24246a">KSh 12,750</strong></li>
 								</ul>
 								<p style="font-size:12.5px;line-height:1.9;margin:18px 0 0">Pay via M-PESA paybill and upload the slip to have your balance updated within 24 hours.</p>
 							</div>

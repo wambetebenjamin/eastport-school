@@ -161,6 +161,22 @@
 		box.innerHTML = list.map(facultyCard).join('');
 	}
 
+	function facultyTile(item) {
+		return '' +
+			'<a class="lg-faculty" href="courses.html?faculty=' + item.slug + '">' +
+				'<i class="fa ' + item.icon + '"></i>' +
+				'<h5>' + esc(item.short) + '</h5>' +
+				'<p>' + esc(item.blurb) + '</p>' +
+				'<span>' + item.count + ' programmes</span>' +
+			'</a>';
+	}
+
+	function renderFacultyTiles(selector) {
+		var box = $(selector);
+		if (!box) return;
+		box.innerHTML = EP.faculties.map(facultyTile).join('');
+	}
+
 	function renderProgrammes(selector, list) {
 		var box = $(selector);
 		if (!box) return;
@@ -671,6 +687,7 @@
 
 		renderFaculties('#faculty-grid', 6);
 		renderFaculties('#faculty-grid-all');
+		renderFacultyTiles('#login-faculty-grid');
 		renderProgrammes('#featured-grid', EP.programmes.slice(0, 8));
 		renderProgrammes('#programme-grid');
 		renderNews('#news-grid', 3);
