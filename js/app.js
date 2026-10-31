@@ -26,6 +26,20 @@
 		return { short: 'Programme', name: 'Programme', slug: slug };
 	}
 
+	var FACILITY = {
+		health: 'clinical simulation and phlebotomy laboratories',
+		ict: 'computer suites and networking sandbox',
+		business: 'business enterprise and accounts laboratory',
+		professional: 'examination preparation classrooms and revision clinics',
+		media: 'radio studio and digital edit suites',
+		languages: 'language laboratory',
+		technical: 'engineering workshops',
+		hospitality: 'commercial kitchen and restaurant simulation',
+		beauty: 'student salon',
+		office: 'office simulation suite',
+		international: 'digital learning suite'
+	};
+
 	function programmeBySlug(slug) {
 		for (var i = 0; i < EP.programmes.length; i++) {
 			if (EP.programmes[i].slug === slug) return EP.programmes[i];
@@ -309,6 +323,19 @@
 		$('#programme-body').textContent = p.body;
 		$('#programme-code').textContent = p.code;
 		$('#programme-summary').textContent = p.summary;
+
+		var overviewTwo = $('#programme-overview-2');
+		if (overviewTwo) {
+			overviewTwo.textContent = 'Delivery combines classroom theory with supervised practice in our ' +
+				(FACILITY[p.faculty] || 'training facilities') + ', and assessment follows the ' + p.body +
+				' competency framework — continuous internal practical evaluations plus the final examining body assessment.';
+		}
+
+		var careerText = $('#programme-career-text');
+		if (careerText) {
+			careerText.textContent = 'Graduates progress into employment, self-employment or further study. Eastport alumni from the ' +
+				fac.short + ' faculty are working across Kericho County and the wider South Rift, and our attachment office supports every learner through their three-month placement.';
+		}
 		$('#programme-students').textContent = p.students + ' enrolled';
 		$('#programme-trainer').textContent = p.trainer;
 		$('#programme-trainer-role').textContent = p.role;

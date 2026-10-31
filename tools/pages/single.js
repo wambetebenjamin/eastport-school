@@ -55,7 +55,7 @@ module.exports = function single() {
 					<div class="cl-item">
 						<h4>Programme overview</h4>
 						<p id="programme-summary">Master commercial kitchen production, front office service and beverage sales inside our working restaurant and pastry hub.</p>
-						<p style="margin-top:20px">This programme combines classroom theory with supervised production shifts, so you graduate with a portfolio of real service and kitchen work. Assessment follows the national competency framework, with both internal practical evaluations and the final examining body assessment.</p>
+						<p style="margin-top:20px" id="programme-overview-2">This programme combines classroom theory with supervised practical sessions, so you graduate with a portfolio of real work. Assessment follows the national competency framework, with both internal practical evaluations and the final examining body assessment.</p>
 					</div>
 					<div class="cl-item">
 						<h4>Units of study</h4>
@@ -74,7 +74,7 @@ module.exports = function single() {
 					</div>
 					<div class="cl-item">
 						<h4>Career pathways</h4>
-						<p style="margin-bottom:24px">Graduates progress into employment, self-employment or further study. Recent Eastport alumni from this faculty have opened catering units in Kericho CBD and joined tea estate resorts across the South Rift.</p>
+						<p style="margin-bottom:24px" id="programme-career-text">Graduates progress into employment, self-employment or further study. Eastport alumni from this faculty are working across Kericho County and the wider South Rift.</p>
 						<ul class="ep-check-list" id="programme-careers"></ul>
 					</div>
 					<div class="cl-item" id="fees">
