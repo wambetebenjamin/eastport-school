@@ -171,20 +171,23 @@ function footer() {
 			</div>
 		</div>
 	</footer>
-	<!-- footer section end -->
+	<!-- footer section end -->`;
+}
 
-	<!--====== Javascripts & Jquery ======-->
+function scripts() {
+	return `	<!--====== Javascripts & Jquery ======-->
 ${scriptTags()}
 </body>
 </html>`;
 }
 
-function layout({ title, description, active, body, bodyClass = '', noHeader = false, extraStyles = [] }) {
+function layout({ title, description, active, body, bodyClass = '', noHeader = false, noFooter = false, extraStyles = [] }) {
 	return [
 		head({ title, description, bodyClass, extraStyles }),
 		noHeader ? '' : header(active),
 		body,
-		footer()
+		noFooter ? '' : footer(),
+		scripts()
 	].join('\n');
 }
 

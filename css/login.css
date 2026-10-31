@@ -1335,3 +1335,331 @@
 		height: 40px;
 	}
 }
+
+/* =================================
+   Template fidelity pass
+   WebUni is a flat, square, high-contrast design: no rounded corners,
+   no drop shadows, no gradients on panels. The split card keeps the
+   photo panel from the approved reference but speaks the template's
+   form language.
+ ====================================*/
+
+.lg-shell {
+	border-radius: 0;
+	box-shadow: 0 30px 70px rgba(6, 6, 26, .55);
+}
+
+.lg-visual:before {
+	background: linear-gradient(180deg, rgba(17, 17, 56, .93) 0%, rgba(23, 23, 80, .88) 55%, rgba(15, 15, 45, .94) 100%);
+}
+
+.lg-eyebrow {
+	background: transparent;
+	border: 0;
+	border-left: 3px solid var(--ep-gold);
+	border-radius: 0;
+	color: var(--ep-gold-soft);
+	padding: 2px 0 2px 12px;
+	font-size: 11px;
+	letter-spacing: 2.4px;
+	margin-bottom: 22px;
+}
+
+.lg-visual-body h1 {
+	font-weight: 700;
+	letter-spacing: -.3px;
+}
+
+.lg-visual-body h1 span {
+	color: var(--ep-gold);
+}
+
+.lg-hero-actions a {
+	border-radius: 0;
+}
+
+.lg-mark {
+	border-radius: 0;
+	width: 46px;
+	height: 46px;
+	background: var(--ep-gold);
+	color: #1d1d3f;
+	font-size: 18px;
+}
+
+.lg-form-head h2 {
+	font-weight: 700;
+	letter-spacing: -.2px;
+}
+
+.lg-tabs {
+	border-radius: 0;
+	padding: 0;
+	background: transparent;
+	border: 1px solid #e2e7f2;
+}
+
+.lg-tabs button {
+	border-radius: 0;
+	padding: 12px 6px;
+	border-right: 1px solid #e2e7f2;
+}
+
+.lg-tabs button:last-child {
+	border-right: 0;
+}
+
+.lg-tabs button.active {
+	background: var(--ep-navy);
+	box-shadow: none;
+}
+
+/* Template form fields: filled, square, hairline border */
+.lg-input {
+	height: 52px;
+	background: var(--ep-mist);
+	border: 1px solid #e3e8f2;
+	padding: 0 40px 0 16px;
+	font-size: 14.5px;
+	font-weight: 600;
+}
+
+.lg-input:focus {
+	background: #fff;
+	border-color: var(--ep-navy);
+}
+
+.lg-input.is-invalid {
+	background: #fdf0ec;
+	border-color: #c0392b;
+}
+
+.lg-input-wrap > i.lg-icon {
+	right: 16px;
+}
+
+.lg-input-action {
+	right: 6px;
+	color: #8f97ab;
+}
+
+.lg-submit {
+	border-radius: 0;
+	box-shadow: none;
+	padding: 16px 20px;
+	letter-spacing: 1.4px;
+}
+
+.lg-submit:hover {
+	box-shadow: none;
+	transform: none;
+	background: var(--ep-navy-dark);
+}
+
+.lg-alt-btn {
+	border-radius: 0;
+	border-width: 1px;
+	padding: 14px 18px;
+}
+
+.lg-alt-btn:hover {
+	background: var(--ep-gold-tint);
+}
+
+.lg-alt-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+.lg-alt-grid .lg-alt-btn {
+	margin-bottom: 0;
+}
+
+.lg-demo {
+	border-radius: 0;
+	border-left: 3px solid var(--ep-gold);
+}
+
+.lg-demo code {
+	border-radius: 0;
+}
+
+.lg-form-inner .ep-alert {
+	border-radius: 0;
+}
+
+.lg-row .ep-checkbox .box {
+	border-radius: 0;
+}
+
+@media (max-width: 575px) {
+	.lg-shell {
+		min-height: 0;
+	}
+
+	.lg-alt-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ---------------- Slim brand footer ---------------- */
+
+.lg-footer {
+	background: #14143c;
+	border-top: 3px solid var(--ep-gold);
+	padding: 40px 0 0;
+}
+
+.lg-footer .lg-brand img {
+	height: 44px;
+}
+
+.lg-footer-main {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 34px;
+	flex-wrap: wrap;
+	padding-bottom: 30px;
+}
+
+.lg-footer-facts {
+	list-style: none;
+	font-size: 12.5px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, .72);
+	flex: 1 1 320px;
+}
+
+.lg-footer-facts li {
+	padding: 6px 0;
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	overflow-wrap: anywhere;
+}
+
+.lg-footer-facts i {
+	color: var(--ep-gold);
+	width: 14px;
+	margin-top: 4px;
+}
+
+.lg-footer-facts a {
+	color: rgba(255, 255, 255, .72);
+}
+
+.lg-footer-facts a:hover {
+	color: var(--ep-gold);
+}
+
+.lg-footer-side {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 16px;
+}
+
+.lg-footer-apply {
+	display: inline-block;
+	background: var(--ep-gold);
+	color: #1d1d3f;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 13px 24px;
+}
+
+.lg-footer-apply:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+.lg-footer-bar {
+	border-top: 1px solid rgba(255, 255, 255, .12);
+	padding: 16px 0 18px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+	font-size: 11.5px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 767px) {
+	.lg-footer-main {
+		gap: 22px;
+	}
+
+	.lg-footer-side {
+		align-items: flex-start;
+	}
+}
+
+/* Mobile refinement: the brand panel becomes a compact masthead so the
+   form is visible without excessive scrolling. */
+@media (max-width: 575px) {
+	.lg-eyebrow {
+		font-size: 9.5px;
+		letter-spacing: 1.8px;
+		white-space: nowrap;
+	}
+
+	.lg-visual-body {
+		padding: 20px 0 16px;
+	}
+
+	.lg-visual-body h1 {
+		font-size: 24px;
+		margin-bottom: 14px;
+	}
+
+	.lg-visual-body p {
+		font-size: 12.5px;
+		line-height: 1.85;
+	}
+
+	.lg-stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+		margin-top: 20px;
+	}
+
+	.lg-stat strong {
+		font-size: 20px;
+	}
+
+	.lg-stat span {
+		font-size: 9px;
+		letter-spacing: .8px;
+	}
+
+	.lg-hero-actions {
+		margin-top: 20px;
+		gap: 8px;
+	}
+
+	.lg-hero-actions a {
+		font-size: 12px;
+		padding: 12px 18px;
+	}
+
+	.lg-visual-foot {
+		margin-top: 16px;
+	}
+
+	.lg-legal {
+		font-size: 10px;
+	}
+
+	.lg-form-panel {
+		padding: 26px 20px 30px;
+	}
+
+	.lg-field label {
+		font-size: 10.5px;
+		letter-spacing: 1px;
+	}
+}
