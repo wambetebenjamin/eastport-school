@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="58" viewBox="0 0 256 58" role="img" aria-label="Eastport International Training College">
+  <rect x="0" y="6" width="46" height="46" rx="4" fill="#d82a4e"/>
+  <path d="M13 20h20v5H19v3.5h12v5H19V42h14v5H13z" fill="#fff"/>
+  <text x="58" y="31" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0.4" fill="#1f1f1f">east<tspan fill="#d82a4e">port</tspan></text>
+  <text x="59" y="45" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="8.2" font-weight="600" letter-spacing="1.9" fill="#878787">INTERNATIONAL TRAINING COLLEGE</text>
+</svg>

@@ -1,0 +1,112 @@
+'use strict';
+
+const { head } = require('../layout');
+
+module.exports = function login() {
+	return `${head({
+		title: 'Student Portal Login | Eastport International Training College',
+		description: 'Sign in to the Eastport International Training College student portal to view results, fee statements, timetables and attachment letters.',
+		bodyClass: 'login-body'
+	})}
+
+	<div class="login-page">
+
+		<!-- Brand / editorial panel -->
+		<aside class="login-aside">
+			<a href="index.html" class="login-brand" aria-label="Eastport International Training College home">
+				<img src="img/logo-white.svg" alt="Eastport International Training College">
+			</a>
+
+			<div class="login-aside-body">
+				<span class="ep-uppercase">Student &amp; staff portal</span>
+				<h2>Your campus,<br>in your pocket.</h2>
+				<p>One sign-in for results, fee statements, class timetables, examination slips and attachment letters — built for the January 2027 cohort.</p>
+				<ul class="login-benefits">
+					<li><i class="fa fa-check-circle"></i>Check continuous assessment and termly results</li>
+					<li><i class="fa fa-check-circle"></i>Print your KNEC / CDACC examination slip</li>
+					<li><i class="fa fa-check-circle"></i>Track fee balance and download statements</li>
+					<li><i class="fa fa-check-circle"></i>Receive attachment and bursary notices first</li>
+				</ul>
+			</div>
+
+			<div class="login-aside-foot">
+				<span><i class="fa fa-map-marker"></i> Chai Plaza 2nd Floor, Kericho CBD</span>
+				<span><i class="fa fa-phone"></i> <a href="tel:0757478077">0757 478 077</a></span>
+			</div>
+		</aside>
+
+		<!-- Login panel -->
+		<main class="login-main">
+			<div class="login-topbar">
+				<a class="login-back" href="index.html"><i class="fa fa-angle-left"></i>Back to website</a>
+				<a class="login-help" href="tel:0757478077">Need help?</a>
+			</div>
+
+			<div class="login-card">
+				<span class="login-eyebrow">Secure portal access</span>
+				<h1>Welcome back.</h1>
+				<p class="login-sub">Sign in with your admission number to view results, fees, timetable and attachment letters.</p>
+
+				<div class="login-tabs" role="tablist">
+					<button type="button" class="active" data-role="student" role="tab" aria-selected="true"><i class="fa fa-graduation-cap"></i>Student</button>
+					<button type="button" data-role="staff" role="tab" aria-selected="false"><i class="fa fa-briefcase"></i>Staff</button>
+					<button type="button" data-role="guardian" role="tab" aria-selected="false"><i class="fa fa-users"></i>Guardian</button>
+				</div>
+
+				<div class="ep-alert" id="login-alert" role="alert" aria-live="polite"></div>
+
+				<form id="login-form" novalidate>
+					<div class="ep-field">
+						<label for="identifier" id="identifier-label">Admission Number / Student E-mail</label>
+						<div class="ep-input-wrap">
+							<i class="fa fa-id-card ep-input-icon"></i>
+							<input class="ep-input" type="text" id="identifier" name="identifier" placeholder="e.g. EITC/2026/0148" autocomplete="username" spellcheck="false" required>
+						</div>
+						<div class="ep-field-error"></div>
+					</div>
+
+					<div class="ep-field">
+						<label for="password">Password</label>
+						<div class="ep-input-wrap">
+							<i class="fa fa-lock ep-input-icon"></i>
+							<input class="ep-input" type="password" id="password" name="password" placeholder="Enter your portal password" autocomplete="current-password" required>
+							<button type="button" class="ep-input-action" data-toggle-password="password" aria-label="Show password"><i class="fa fa-eye"></i></button>
+						</div>
+						<div class="ep-field-error"></div>
+					</div>
+
+					<div class="login-row">
+						<label class="ep-checkbox" for="remember">
+							<input type="checkbox" id="remember">
+							<span class="box"></span>
+							Keep me signed in
+						</label>
+						<a href="#" class="login-link" id="forgot-password">Forgot password?</a>
+					</div>
+
+					<button type="submit" class="login-submit" id="login-submit">Sign in to portal</button>
+				</form>
+
+				<div class="login-alt"><span>New to Eastport?</span></div>
+				<a class="login-secondary" href="apply.html">Apply for the January 2027 intake</a>
+
+				<div class="login-demo">
+					<strong>Preview credentials</strong>
+					Admission <code>EITC/2026/0148</code> &nbsp;·&nbsp; Password <code>eastport2026</code><br>
+					<button type="button" class="fill-demo" data-fill-demo>Fill demo credentials</button>
+					&nbsp;— or sign in with any admission number and a 6+ character password.
+				</div>
+
+				<p class="login-footer-note">
+					Your portal password is personal. The ICT desk will never ask for it by phone or WhatsApp.<br>
+					<a href="contact.html">Contact the ICT desk</a> · <a href="tel:0757478077">0757 478 077</a>
+				</p>
+			</div>
+		</main>
+	</div>
+
+	<script src="js/data.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>`;
+};

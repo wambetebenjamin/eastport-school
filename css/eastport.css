@@ -1,0 +1,2361 @@
+/* =================================
+------------------------------------
+  Eastport International Training College
+  Theme extensions for the WebUni design system
+  Crimson #d82a4e · Charcoal #1f1f1f · Mist #edf4f6
+ ------------------------------------
+ ====================================*/
+
+:root {
+	--ep-crimson: #d82a4e;
+	--ep-crimson-dark: #b71f3f;
+	--ep-ink: #1f1f1f;
+	--ep-heading: #474747;
+	--ep-body: #878787;
+	--ep-mist: #edf4f6;
+	--ep-border: #d4dee1;
+	--ep-gold: #fbb710;
+}
+
+/* ---------------- Header ---------------- */
+
+.site-logo img,
+.site-logo svg {
+	height: 46px;
+	width: auto;
+	display: block;
+}
+
+.header-section .container {
+	max-width: 1559px;
+}
+
+.main-menu ul li a.active,
+.main-menu ul li a:hover {
+	color: var(--ep-crimson);
+}
+
+.header-phone {
+	float: right;
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	padding: 18px 0 5px;
+	margin-right: 30px;
+}
+
+.header-phone i {
+	color: var(--ep-crimson);
+	margin-right: 8px;
+}
+
+.header-phone:hover {
+	color: #fff;
+}
+
+/* ---------------- Hero ---------------- */
+
+.hero-section {
+	position: relative;
+}
+
+.hero-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+.hero-text h2 {
+	font-size: 56px;
+	line-height: 1.16;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hero-text p {
+	font-size: 16px;
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+.hero-kicker {
+	display: inline-block;
+	background: var(--ep-crimson);
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	padding: 9px 18px;
+	margin-bottom: 26px;
+}
+
+.hero-actions {
+	margin-top: 34px;
+}
+
+.hero-actions .site-btn + .site-btn {
+	margin-left: 14px;
+}
+
+.hero-actions .site-btn.ghost {
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, .55);
+	padding: 13px 10px;
+}
+
+.hero-actions .site-btn.ghost:hover {
+	border-color: #fff;
+	background: rgba(255, 255, 255, .08);
+}
+
+.hero-note {
+	margin-top: 26px;
+	font-size: 13.5px;
+	color: rgba(255, 255, 255, .72);
+	font-weight: 600;
+}
+
+.hero-note i {
+	margin-right: 6px;
+}
+
+/* ---------------- Stats strip ---------------- */
+
+.ep-stats {
+	background: var(--ep-ink);
+	padding: 42px 0;
+}
+
+.ep-stat {
+	text-align: center;
+	border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.ep-stat:last-child {
+	border-right: none;
+}
+
+.ep-stat h3 {
+	color: #fff;
+	font-size: 42px;
+	font-weight: 700;
+	margin-bottom: 2px;
+}
+
+.ep-stat h3 span {
+	color: var(--ep-crimson);
+}
+
+.ep-stat p {
+	color: rgba(255, 255, 255, .68);
+	font-size: 13px;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* ---------------- Shared helpers ---------------- */
+
+.ep-uppercase {
+	letter-spacing: 2.2px;
+	text-transform: uppercase;
+	font-size: 12.5px;
+	font-weight: 700;
+	color: var(--ep-crimson);
+	display: block;
+	margin-bottom: 14px;
+}
+
+.section-title.text-left {
+	text-align: left;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.section-title h2 em {
+	font-style: normal;
+	color: var(--ep-crimson);
+}
+
+.ep-lead {
+	font-size: 15px;
+	line-height: 2;
+}
+
+.ep-btn-outline {
+	background: transparent;
+	border: 2px solid var(--ep-crimson);
+	color: var(--ep-crimson);
+	padding: 13px 10px;
+}
+
+.ep-btn-outline:hover {
+	background: var(--ep-crimson);
+	color: #fff;
+}
+
+.site-btn.btn-white {
+	background: #fff;
+	color: var(--ep-ink);
+}
+
+.site-btn.btn-white:hover {
+	color: var(--ep-crimson);
+}
+
+/* ---------------- About / feature split ---------------- */
+
+.ep-feature-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.ep-feature-media {
+	position: relative;
+	padding-right: 40px;
+}
+
+.ep-feature-media img {
+	width: 100%;
+	display: block;
+}
+
+.ep-feature-media .ep-media-badge {
+	position: absolute;
+	right: 0;
+	bottom: 40px;
+	background: var(--ep-crimson);
+	color: #fff;
+	padding: 26px 30px;
+	text-align: center;
+	max-width: 210px;
+}
+
+.ep-feature-media .ep-media-badge h4 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	margin-bottom: 4px;
+}
+
+.ep-feature-media .ep-media-badge p {
+	color: rgba(255, 255, 255, .9);
+	margin-bottom: 0;
+	font-size: 12.5px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1.7;
+}
+
+.ep-feature-list {
+	list-style: none;
+	margin: 30px 0 36px;
+}
+
+.ep-feature-list li {
+	position: relative;
+	padding-left: 34px;
+	margin-bottom: 16px;
+	font-size: 14.5px;
+	font-weight: 600;
+	color: var(--ep-heading);
+	line-height: 1.8;
+}
+
+.ep-feature-list li:before {
+	content: "\f00c";
+	font-family: FontAwesome;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--ep-crimson);
+	font-size: 13px;
+}
+
+/* ---------------- Why choose cards ---------------- */
+
+.ep-why {
+	background: var(--ep-mist);
+}
+
+.ep-why-card {
+	background: #fff;
+	padding: 42px 35px;
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	transition: all .3s;
+	border-bottom: 3px solid transparent;
+}
+
+.ep-why-card i {
+	font-size: 34px;
+	color: var(--ep-crimson);
+	margin-bottom: 24px;
+	display: block;
+}
+
+.ep-why-card h5 {
+	margin-bottom: 12px;
+}
+
+.ep-why-card p {
+	font-size: 13.6px;
+	line-height: 2;
+	margin-bottom: 0;
+}
+
+.ep-why-card:hover {
+	transform: translateY(-6px);
+	border-bottom-color: var(--ep-crimson);
+	box-shadow: 0 18px 40px rgba(31, 31, 31, .09);
+}
+
+/* ---------------- Programme finder ---------------- */
+
+.ep-finder {
+	background: var(--ep-crimson);
+	padding: 62px 0;
+}
+
+.ep-finder .section-title {
+	margin-bottom: 34px;
+	padding: 0;
+}
+
+.ep-finder .section-title h2 {
+	margin-bottom: 8px;
+}
+
+.ep-finder-form {
+	background: #fff;
+	padding: 38px;
+}
+
+.ep-finder-form label {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--ep-body);
+	margin-bottom: 7px;
+}
+
+.ep-finder-form .form-control {
+	height: 56px;
+	border: none;
+	background: var(--ep-mist);
+	border-radius: 0;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 0 22px;
+	color: var(--ep-heading);
+}
+
+.ep-finder-form .form-control:focus {
+	box-shadow: none;
+	border-bottom: 2px solid var(--ep-crimson);
+}
+
+.ep-finder-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23878787' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 20px center;
+	background-size: 14px;
+	padding-right: 44px;
+}
+
+.ep-finder-form .site-btn {
+	width: 100%;
+	padding: 17px 10px;
+	margin-top: 27px;
+}
+
+.ep-finder-note {
+	margin-top: 22px;
+	color: rgba(255, 255, 255, .8);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.ep-finder-note a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* ---------------- Testimonials ---------------- */
+
+.ep-quote-card {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	padding: 40px 35px;
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	position: relative;
+}
+
+.ep-quote-card .ep-stars {
+	color: var(--ep-gold);
+	font-size: 12px;
+	margin-bottom: 18px;
+}
+
+.ep-quote-card p {
+	font-size: 14px;
+	line-height: 2.1;
+	color: #5f6368;
+	font-style: italic;
+	margin-bottom: 26px;
+}
+
+.ep-quote-card .ep-person {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid var(--ep-border);
+	padding-top: 22px;
+}
+
+.ep-quote-card .ep-person .ca-pic {
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	margin-right: 16px;
+	flex: 0 0 54px;
+}
+
+.ep-quote-card .ep-person h6 {
+	margin-bottom: 2px;
+}
+
+.ep-quote-card .ep-person span {
+	font-size: 12.5px;
+	color: var(--ep-crimson);
+	font-weight: 600;
+}
+
+.ep-section-mist {
+	background: var(--ep-mist);
+}
+
+/* ---------------- Leadership ---------------- */
+
+.ep-leader-card {
+	background: #fff;
+	box-shadow: 0 12px 35px rgba(31, 31, 31, .06);
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	overflow: hidden;
+}
+
+.ep-leader-card .ep-leader-head {
+	position: relative;
+	height: 260px;
+	background-size: cover;
+	background-position: center;
+}
+
+.ep-leader-card .ep-leader-head span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--ep-crimson);
+	color: #fff;
+	font-size: 11.5px;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	padding: 9px 16px;
+}
+
+.ep-leader-card .ep-leader-body {
+	padding: 32px 32px 36px;
+}
+
+.ep-leader-card h5 {
+	margin-bottom: 4px;
+}
+
+.ep-leader-card .ep-role {
+	color: var(--ep-crimson);
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.ep-leader-card blockquote {
+	font-size: 13.8px;
+	line-height: 2;
+	color: #6d7275;
+	font-style: italic;
+	margin: 0;
+	border-left: 3px solid var(--ep-crimson);
+	padding-left: 18px;
+}
+
+/* ---------------- CTA / contact block ---------------- */
+
+.ep-contact-block {
+	background: var(--ep-ink);
+	padding: 80px 0;
+}
+
+.ep-contact-block h2 {
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 18px;
+}
+
+.ep-contact-block p {
+	color: rgba(255, 255, 255, .72);
+	max-width: 640px;
+	margin: 0 auto 12px;
+}
+
+.ep-contact-meta {
+	list-style: none;
+	margin: 34px 0 36px;
+}
+
+.ep-contact-meta li {
+	display: inline-block;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	margin: 0 22px 12px;
+}
+
+.ep-contact-meta li i {
+	color: var(--ep-crimson);
+	margin-right: 9px;
+}
+
+.ep-contact-block .site-btn + .site-btn {
+	margin-left: 14px;
+}
+
+/* ---------------- Empty state ---------------- */
+
+.ep-empty {
+	text-align: center;
+	padding: 60px 20px;
+	background: #fff;
+	border: 1px dashed var(--ep-border);
+}
+
+.ep-empty i {
+	font-size: 34px;
+	color: var(--ep-crimson);
+	margin-bottom: 18px;
+	display: block;
+}
+
+.ep-empty p {
+	margin-bottom: 0;
+}
+
+/* ---------------- Courses page extras ---------------- */
+
+.ep-filter-wrap {
+	text-align: center;
+	padding: 50px 0 10px;
+}
+
+.ep-filter-wrap .course-filter {
+	padding-top: 0;
+	margin-bottom: 40px;
+}
+
+.course-filter li.ep-hidden,
+.ep-programme.ep-hidden {
+	display: none !important;
+}
+
+.ep-programme .course-thumb {
+	position: relative;
+}
+
+.ep-programme .course-thumb .price {
+	background: var(--ep-crimson);
+}
+
+.ep-programme .course-info .course-text h5 {
+	font-size: 18px;
+	line-height: 1.5;
+	min-height: 54px;
+}
+
+.ep-programme .course-info .course-text p {
+	font-size: 13px;
+	margin-bottom: 14px;
+}
+
+.ep-programme .course-info .course-author p span {
+	color: var(--ep-crimson);
+}
+
+.ep-level-tag {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: rgba(31, 31, 31, .86);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 10px 15px;
+}
+
+.ep-count {
+	text-align: center;
+	color: var(--ep-body);
+	font-size: 13.5px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.ep-sidebar-card {
+	background: var(--ep-mist);
+	padding: 34px 30px;
+	margin-bottom: 30px;
+}
+
+.ep-sidebar-card h4 {
+	font-size: 19px;
+	margin-bottom: 22px;
+}
+
+.ep-sidebar-card ul {
+	list-style: none;
+}
+
+.ep-sidebar-card ul li {
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.ep-sidebar-card ul li a {
+	color: var(--ep-heading);
+}
+
+.ep-sidebar-card ul li a:hover {
+	color: var(--ep-crimson);
+}
+
+.ep-help-card {
+	background: var(--ep-crimson);
+	color: #fff;
+	padding: 34px 30px;
+}
+
+.ep-help-card h4 {
+	color: #fff;
+	margin-bottom: 16px;
+}
+
+.ep-help-card p {
+	color: rgba(255, 255, 255, .88);
+	font-size: 14px;
+	line-height: 1.9;
+}
+
+.ep-help-card .site-btn {
+	background: #fff;
+	color: var(--ep-ink);
+	min-width: auto;
+	padding: 13px 24px;
+	font-size: 14px;
+	width: 100%;
+}
+
+/* ---------------- Single programme ---------------- */
+
+.ep-detail-facts {
+	margin: 30px 0 0;
+}
+
+.ep-detail-facts li {
+	display: block;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--ep-border);
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--ep-heading);
+}
+
+.ep-detail-facts li span {
+	float: right;
+	color: var(--ep-body);
+	font-weight: 600;
+}
+
+.ep-check-list {
+	list-style: none;
+}
+
+.ep-check-list li {
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 14px;
+	font-size: 14.5px;
+	line-height: 1.9;
+	color: #6d7275;
+	font-weight: 500;
+}
+
+.ep-check-list li:before {
+	content: "\f058";
+	font-family: FontAwesome;
+	position: absolute;
+	left: 0;
+	top: 2px;
+	color: var(--ep-crimson);
+	font-size: 13px;
+}
+
+.ep-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 10px 0 0;
+}
+
+.ep-table th {
+	background: var(--ep-mist);
+	font-size: 12.5px;
+	text-transform: uppercase;
+	letter-spacing: .8px;
+	color: var(--ep-heading);
+	padding: 15px 18px;
+	font-weight: 700;
+	text-align: left;
+}
+
+.ep-table td {
+	padding: 16px 18px;
+	border-bottom: 1px solid var(--ep-border);
+	font-size: 14px;
+	font-weight: 500;
+	color: #6d7275;
+}
+
+.ep-table td strong {
+	color: var(--ep-heading);
+}
+
+.ep-accordion-item {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	margin-bottom: 14px;
+}
+
+.ep-accordion-item button {
+	width: 100%;
+	text-align: left;
+	background: #fff;
+	border: none;
+	padding: 20px 26px;
+	font-size: 15.5px;
+	font-weight: 700;
+	color: var(--ep-heading);
+	position: relative;
+	cursor: pointer;
+}
+
+.ep-accordion-item button:after {
+	content: "\f067";
+	font-family: FontAwesome;
+	position: absolute;
+	right: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 12px;
+	color: var(--ep-crimson);
+}
+
+.ep-accordion-item.is-open button:after {
+	content: "\f068";
+}
+
+.ep-accordion-item .ep-accordion-body {
+	display: none;
+	padding: 0 26px 26px;
+}
+
+.ep-accordion-item.is-open .ep-accordion-body {
+	display: block;
+}
+
+.ep-accordion-body p {
+	margin-bottom: 0;
+	font-size: 14px;
+	line-height: 2;
+}
+
+/* ---------------- Apply page ---------------- */
+
+.ep-apply-aside {
+	background: var(--ep-ink);
+	padding: 45px 40px;
+	color: #fff;
+	height: 100%;
+}
+
+.ep-apply-aside h3 {
+	color: #fff;
+	font-size: 28px;
+	margin-bottom: 18px;
+}
+
+.ep-apply-aside p {
+	color: rgba(255, 255, 255, .72);
+	font-size: 14px;
+	line-height: 2;
+}
+
+.ep-apply-aside ol {
+	padding-left: 18px;
+	margin-top: 26px;
+}
+
+.ep-apply-aside ol li {
+	color: rgba(255, 255, 255, .84);
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 16px;
+	line-height: 1.8;
+}
+
+.ep-apply-form {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	padding: 45px;
+}
+
+.ep-apply-form label {
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-body);
+	margin-bottom: 7px;
+}
+
+.ep-apply-form .form-control {
+	border: none;
+	background: var(--ep-mist);
+	border-radius: 0;
+	height: 56px;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 0 22px;
+	color: var(--ep-heading);
+}
+
+.ep-apply-form select.form-control {
+	height: 56px;
+}
+
+.ep-apply-form .form-control:focus {
+	box-shadow: none;
+	border-bottom: 2px solid var(--ep-crimson);
+}
+
+.ep-apply-form textarea.form-control {
+	height: auto;
+	padding: 18px 22px;
+}
+
+.ep-apply-form .ep-field {
+	margin-bottom: 24px;
+}
+
+.ep-form-note {
+	font-size: 12.5px;
+	color: var(--ep-body);
+	margin-top: 18px;
+	margin-bottom: 0;
+}
+
+/* ---------------- Shared form alert ---------------- */
+
+.ep-alert {
+	display: none;
+	padding: 14px 18px;
+	font-size: 13.5px;
+	font-weight: 600;
+	margin-bottom: 22px;
+	line-height: 1.7;
+}
+
+.ep-alert.is-visible {
+	display: block;
+}
+
+.ep-alert.is-success {
+	background: #e8f7ee;
+	color: #1c7a44;
+	border-left: 3px solid #1c7a44;
+}
+
+.ep-alert.is-error {
+	background: #fdecef;
+	color: #b71f3f;
+	border-left: 3px solid #d82a4e;
+}
+
+/* =================================
+   Student portal login
+ ====================================*/
+
+.login-page {
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	background: #fff;
+}
+
+.login-aside {
+	width: 44%;
+	min-height: 100vh;
+	position: relative;
+	background: var(--ep-ink) url("../img/bg.jpg") center/cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 48px 55px 42px;
+	overflow: hidden;
+}
+
+.login-aside:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(150deg, rgba(20, 20, 20, .93) 12%, rgba(31, 31, 31, .9) 42%, rgba(216, 42, 78, .82) 100%);
+}
+
+.login-aside > * {
+	position: relative;
+	z-index: 2;
+}
+
+.login-aside .login-brand img {
+	height: 48px;
+}
+
+.login-aside .login-aside-body {
+	margin: auto 0;
+	padding: 50px 0;
+	max-width: 430px;
+}
+
+.login-aside .login-aside-body .ep-uppercase {
+	color: #ffb3c1;
+}
+
+.login-aside .login-aside-body h2 {
+	color: #fff;
+	font-size: 42px;
+	line-height: 1.22;
+	font-weight: 700;
+	margin-bottom: 22px;
+}
+
+.login-aside .login-aside-body p {
+	color: rgba(255, 255, 255, .8);
+	font-size: 14.5px;
+	line-height: 2;
+}
+
+.login-benefits {
+	list-style: none;
+	margin-top: 32px;
+}
+
+.login-benefits li {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 16px;
+	padding-left: 32px;
+	position: relative;
+	line-height: 1.7;
+}
+
+.login-benefits li i {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	color: #ffb3c1;
+	font-size: 14px;
+}
+
+.login-aside-foot {
+	border-top: 1px solid rgba(255, 255, 255, .18);
+	padding-top: 22px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.login-aside-foot span,
+.login-aside-foot a {
+	color: rgba(255, 255, 255, .72);
+	font-size: 12.5px;
+	font-weight: 600;
+}
+
+.login-aside-foot a:hover {
+	color: #fff;
+}
+
+.login-main {
+	width: 56%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 48px 70px;
+	position: relative;
+	background: #fff;
+}
+
+.login-topbar {
+	position: absolute;
+	top: 34px;
+	right: 55px;
+	left: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.login-topbar .login-back {
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--ep-heading);
+	letter-spacing: .3px;
+}
+
+.login-topbar .login-back i {
+	margin-right: 8px;
+	color: var(--ep-crimson);
+}
+
+.login-topbar .login-help {
+	font-size: 12.5px;
+	font-weight: 700;
+	color: var(--ep-body);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.login-card {
+	width: 100%;
+	max-width: 470px;
+	margin: 40px auto 0;
+}
+
+.login-card .login-eyebrow {
+	font-size: 11.5px;
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-crimson);
+	margin-bottom: 14px;
+	display: block;
+}
+
+.login-card h1 {
+	font-size: 40px;
+	font-weight: 700;
+	color: var(--ep-ink);
+	line-height: 1.2;
+	margin-bottom: 12px;
+}
+
+.login-card .login-sub {
+	font-size: 14px;
+	color: var(--ep-body);
+	line-height: 1.9;
+	margin-bottom: 28px;
+	font-weight: 500;
+}
+
+.login-tabs {
+	display: flex;
+	border-bottom: 1px solid var(--ep-border);
+	margin-bottom: 28px;
+}
+
+.login-tabs button {
+	flex: 1;
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid transparent;
+	padding: 0 6px 14px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--ep-body);
+	cursor: pointer;
+	transition: all .25s;
+}
+
+.login-tabs button i {
+	margin-right: 7px;
+}
+
+.login-tabs button.active {
+	color: var(--ep-ink);
+	border-bottom-color: var(--ep-crimson);
+}
+
+.login-tabs button:hover {
+	color: var(--ep-crimson);
+}
+
+.ep-field {
+	margin-bottom: 20px;
+}
+
+.ep-field label {
+	display: block;
+	font-size: 11.5px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-heading);
+	margin-bottom: 8px;
+}
+
+.ep-input-wrap {
+	position: relative;
+}
+
+.ep-input-wrap > i.ep-input-icon {
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #b3bec2;
+	font-size: 14px;
+	pointer-events: none;
+}
+
+.ep-input {
+	width: 100%;
+	height: 56px;
+	background: var(--ep-mist);
+	border: none;
+	border-left: 3px solid transparent;
+	font-size: 14.5px;
+	font-weight: 600;
+	color: var(--ep-heading);
+	padding: 0 48px 0 44px;
+	transition: all .2s;
+}
+
+.ep-input::placeholder {
+	font-weight: 500;
+	color: #a9b4b8;
+	font-style: normal;
+}
+
+.ep-input:focus {
+	outline: none;
+	background: #e9f1f4;
+	border-left-color: var(--ep-crimson);
+}
+
+.ep-input.is-invalid {
+	border-left-color: var(--ep-crimson);
+	background: #fdecef;
+}
+
+.ep-input-wrap .ep-input-action {
+	position: absolute;
+	right: 6px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: none;
+	width: 40px;
+	height: 40px;
+	color: #9aa6aa;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.ep-input-wrap .ep-input-action:hover {
+	color: var(--ep-crimson);
+}
+
+.ep-field-error {
+	display: none;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--ep-crimson);
+	margin-top: 7px;
+}
+
+.ep-field-error.is-visible {
+	display: block;
+}
+
+.login-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 4px 0 26px;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.ep-checkbox {
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--ep-body);
+	margin-bottom: 0;
+	cursor: pointer;
+}
+
+.ep-checkbox input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.ep-checkbox .box {
+	width: 18px;
+	height: 18px;
+	border: 2px solid #c5ced0;
+	margin-right: 10px;
+	position: relative;
+	flex: 0 0 18px;
+	transition: all .2s;
+}
+
+.ep-checkbox input:checked + .box {
+	background: var(--ep-crimson);
+	border-color: var(--ep-crimson);
+}
+
+.ep-checkbox input:checked + .box:after {
+	content: "\f00c";
+	font-family: FontAwesome;
+	color: #fff;
+	font-size: 10px;
+	position: absolute;
+	left: 2px;
+	top: 0;
+}
+
+.login-link {
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--ep-crimson);
+}
+
+.login-link:hover {
+	color: var(--ep-crimson-dark);
+	text-decoration: underline;
+}
+
+.login-submit {
+	width: 100%;
+	background: var(--ep-crimson);
+	color: #fff;
+	border: none;
+	padding: 18px 20px;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: .4px;
+	cursor: pointer;
+	transition: all .25s;
+	position: relative;
+}
+
+.login-submit:hover {
+	background: var(--ep-crimson-dark);
+}
+
+.login-submit:disabled {
+	opacity: .7;
+	cursor: progress;
+}
+
+.login-submit .fa-spinner {
+	margin-left: 9px;
+}
+
+.login-alt {
+	display: flex;
+	align-items: center;
+	margin: 26px 0;
+	color: #b3bec2;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+}
+
+.login-alt:before,
+.login-alt:after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--ep-border);
+}
+
+.login-alt span {
+	padding: 0 16px;
+}
+
+.login-secondary {
+	display: block;
+	text-align: center;
+	background: #fff;
+	border: 2px solid var(--ep-ink);
+	color: var(--ep-ink);
+	padding: 16px 20px;
+	font-size: 14px;
+	font-weight: 700;
+	transition: all .25s;
+}
+
+.login-secondary:hover {
+	background: var(--ep-ink);
+	color: #fff;
+}
+
+.login-demo {
+	margin-top: 30px;
+	background: var(--ep-mist);
+	border-left: 3px solid var(--ep-crimson);
+	padding: 18px 22px;
+	font-size: 12.8px;
+	color: #5f6368;
+	line-height: 1.9;
+}
+
+.login-demo strong {
+	color: var(--ep-ink);
+	display: block;
+	font-size: 11.5px;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.login-demo code {
+	color: var(--ep-heading);
+	background: #fff;
+	padding: 2px 7px;
+	font-family: Consolas, Menlo, monospace;
+	font-size: 12px;
+}
+
+.login-demo .fill-demo {
+	background: transparent;
+	border: none;
+	color: var(--ep-crimson);
+	font-weight: 700;
+	font-size: 12.8px;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.login-footer-note {
+	margin-top: 26px;
+	font-size: 12px;
+	color: #a9b4b8;
+	font-weight: 600;
+	text-align: center;
+	line-height: 1.9;
+}
+
+.login-footer-note a {
+	color: var(--ep-heading);
+}
+
+/* ---------------- Portal dashboard ---------------- */
+
+.portal-header {
+	background: var(--ep-ink);
+	padding: 22px 0;
+}
+
+.portal-header .site-logo img {
+	height: 42px;
+}
+
+.portal-nav {
+	float: right;
+	list-style: none;
+	margin-top: 6px;
+}
+
+.portal-nav li {
+	display: inline-block;
+	margin-left: 26px;
+}
+
+.portal-nav li a {
+	color: rgba(255, 255, 255, .76);
+	font-size: 13.5px;
+	font-weight: 700;
+}
+
+.portal-nav li a:hover,
+.portal-nav li a.active {
+	color: #fff;
+}
+
+.portal-nav li a.logout {
+	color: #ff9db0;
+}
+
+.portal-hero {
+	background: var(--ep-crimson);
+	padding: 46px 0;
+	position: relative;
+}
+
+.portal-hero h1 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.portal-hero p {
+	color: rgba(255, 255, 255, .84);
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.portal-hero .portal-id {
+	text-align: right;
+	margin-top: 8px;
+}
+
+.portal-hero .portal-id span {
+	display: inline-block;
+	background: rgba(0, 0, 0, .22);
+	color: #fff;
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 11px 18px;
+	margin-left: 8px;
+}
+
+.portal-section {
+	padding: 60px 0;
+}
+
+.portal-card {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	margin-bottom: 30px;
+}
+
+.portal-card .portal-card-head {
+	border-bottom: 1px solid var(--ep-border);
+	padding: 20px 28px;
+	overflow: hidden;
+}
+
+.portal-card .portal-card-head h4 {
+	font-size: 17px;
+	margin-bottom: 0;
+}
+
+.portal-card .portal-card-head a {
+	float: right;
+	font-size: 12.5px;
+	font-weight: 700;
+	color: var(--ep-crimson);
+}
+
+.portal-card .portal-card-body {
+	padding: 28px;
+}
+
+.portal-metric {
+	background: var(--ep-mist);
+	padding: 26px 24px;
+	margin-bottom: 30px;
+}
+
+.portal-metric span {
+	font-size: 11.5px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-body);
+	display: block;
+	margin-bottom: 8px;
+}
+
+.portal-metric h3 {
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.portal-metric h3.ep-due {
+	color: var(--ep-crimson);
+}
+
+.portal-metric small {
+	font-size: 12px;
+	color: var(--ep-body);
+	font-weight: 600;
+}
+
+.portal-profile {
+	display: flex;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.portal-profile .ca-pic {
+	width: 84px;
+	height: 84px;
+	border-radius: 50%;
+	flex: 0 0 84px;
+	margin-right: 20px;
+}
+
+.portal-profile h4 {
+	font-size: 19px;
+	margin-bottom: 3px;
+}
+
+.portal-profile span {
+	font-size: 13px;
+	color: var(--ep-crimson);
+	font-weight: 700;
+}
+
+.portal-list {
+	list-style: none;
+}
+
+.portal-list li {
+	display: flex;
+	justify-content: space-between;
+	gap: 14px;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--ep-border);
+	font-size: 13.5px;
+	font-weight: 600;
+	color: #6d7275;
+}
+
+.portal-list li:last-child {
+	border-bottom: none;
+}
+
+.portal-list li strong {
+	color: var(--ep-heading);
+	text-align: right;
+}
+
+.portal-announcement {
+	padding: 18px 0;
+	border-bottom: 1px solid var(--ep-border);
+}
+
+.portal-announcement:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.portal-announcement span {
+	font-size: 11.5px;
+	font-weight: 700;
+	color: var(--ep-crimson);
+	letter-spacing: .8px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 6px;
+}
+
+.portal-announcement h6 {
+	font-size: 14.5px;
+	margin-bottom: 5px;
+}
+
+.portal-announcement p {
+	font-size: 13px;
+	line-height: 1.9;
+	margin-bottom: 0;
+}
+
+.portal-progress-bar {
+	height: 8px;
+	background: var(--ep-mist);
+	margin: 10px 0 6px;
+	overflow: hidden;
+}
+
+.portal-progress-bar span {
+	display: block;
+	height: 100%;
+	background: var(--ep-crimson);
+}
+
+.portal-footer {
+	background: var(--ep-ink);
+	padding: 24px 0;
+}
+
+.portal-footer p {
+	color: rgba(255, 255, 255, .6);
+	font-size: 12.5px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
+.portal-footer a {
+	color: #fff;
+}
+
+/* ---------------- Utilities ---------------- */
+
+.ep-mt-30 {
+	margin-top: 30px;
+}
+
+.ep-mb-0 {
+	margin-bottom: 0;
+}
+
+.ep-page-end {
+	padding-bottom: 90px;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1199px) {
+	.login-main {
+		padding: 48px 45px;
+	}
+
+	.login-aside {
+		padding: 42px 40px;
+	}
+
+	.ep-finder-form {
+		padding: 30px;
+	}
+}
+
+@media (max-width: 991px) {
+	.header-btn {
+		margin-top: 6px;
+		min-width: 130px;
+		padding: 12px 10px;
+		font-size: 14px;
+	}
+
+	.header-phone {
+		display: none;
+	}
+
+	.main-menu {
+		display: none;
+		float: none;
+		clear: both;
+		background: #fff;
+		padding: 10px 22px 18px;
+		margin-top: 14px;
+		box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+	}
+
+	.main-menu ul li {
+		display: block;
+	}
+
+	.main-menu ul li a {
+		color: var(--ep-ink);
+		margin-left: 0;
+		padding: 10px 0;
+		display: block;
+	}
+
+	.nav-switch {
+		display: block;
+		position: absolute;
+		right: 15px;
+		top: 8px;
+		color: #fff;
+		font-size: 22px;
+		cursor: pointer;
+		padding: 6px 8px;
+	}
+
+	.header-section {
+		padding-top: 34px;
+	}
+
+	.hero-text {
+		padding-top: 250px;
+		margin-bottom: 70px;
+	}
+
+	.hero-section {
+		height: 820px;
+	}
+
+	.hero-text h2 {
+		font-size: 40px;
+	}
+
+	.section-title {
+		padding: 0 15px;
+		margin-bottom: 60px;
+	}
+
+	.section-title h2 {
+		font-size: 32px;
+	}
+
+	.ep-stat {
+		border-right: none;
+		border-bottom: 1px solid rgba(255, 255, 255, .1);
+		padding: 20px 0;
+	}
+
+	.ep-stat:last-child {
+		border-bottom: none;
+	}
+
+	.ep-feature-media {
+		padding-right: 0;
+		margin-bottom: 45px;
+	}
+
+	.signup-warp {
+		padding: 0 15px;
+	}
+
+	.login-aside,
+	.login-main {
+		width: 100%;
+		min-height: auto;
+	}
+
+	.login-aside {
+		min-height: 420px;
+		padding: 36px 30px;
+	}
+
+	.login-aside .login-aside-body {
+		padding: 36px 0 10px;
+	}
+
+	.login-aside .login-aside-body h2 {
+		font-size: 32px;
+	}
+
+	.login-main {
+		padding: 90px 30px 60px;
+	}
+
+	.login-topbar {
+		left: 30px;
+		right: 30px;
+		top: 26px;
+	}
+
+	.login-card {
+		margin-top: 10px;
+	}
+
+	.portal-nav {
+		float: none;
+		margin-top: 16px;
+	}
+
+	.portal-nav li {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+
+	.portal-hero .portal-id {
+		text-align: left;
+		margin-top: 18px;
+	}
+
+	.portal-hero .portal-id span {
+		margin-left: 0;
+		margin-right: 8px;
+	}
+
+	.ep-apply-aside {
+		margin-bottom: 30px;
+	}
+
+	.ep-finder-form {
+		margin-top: 10px;
+	}
+
+	.course-meta {
+		display: block;
+		border-right: none;
+		padding: 0 0 15px;
+	}
+}
+
+@media (max-width: 767px) {
+	.hero-text {
+		padding-top: 200px;
+		margin-bottom: 40px;
+	}
+
+	.hero-section {
+		height: auto;
+		padding-bottom: 90px;
+	}
+
+	.hero-text h2 {
+		font-size: 30px;
+	}
+
+	.hero-actions .site-btn {
+		display: block;
+		width: 100%;
+		margin-bottom: 12px;
+	}
+
+	.hero-actions .site-btn + .site-btn {
+		margin-left: 0;
+	}
+
+	.intro-newslatter input[type=text],
+	.intro-newslatter input[type=email] {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.intro-newslatter .site-btn {
+		width: 100%;
+	}
+
+	.login-card h1 {
+		font-size: 30px;
+	}
+
+	.login-aside .login-aside-body h2 {
+		font-size: 27px;
+	}
+
+	.login-main {
+		padding: 84px 22px 50px;
+	}
+
+	.login-tabs button {
+		font-size: 12.5px;
+	}
+
+	.login-tabs button i {
+		display: none;
+	}
+
+	.ep-apply-form {
+		padding: 28px 22px;
+	}
+
+	.ep-stats {
+		padding: 26px 0;
+	}
+
+	.ep-stat h3 {
+		font-size: 32px;
+	}
+
+	.ep-contact-block h2 {
+		font-size: 28px;
+	}
+
+	.ep-contact-block .site-btn {
+		display: block;
+		width: 100%;
+		margin-bottom: 12px;
+	}
+
+	.ep-contact-block .site-btn + .site-btn {
+		margin-left: 0;
+	}
+
+	.footer-top {
+		padding-top: 60px;
+	}
+
+	.widget-item {
+		width: 100%;
+		margin-bottom: 40px;
+	}
+
+	.blog-post h3 {
+		padding-top: 30px;
+		font-size: 22px;
+	}
+
+	.ep-feature-media .ep-media-badge {
+		position: static;
+		max-width: none;
+		margin-top: 0;
+	}
+
+	.course-filter li {
+		font-size: 14px;
+		margin: 0 2px;
+		padding: 10px 6px 5px;
+	}
+}
+
+/* ---------------- Link colours inside cards ---------------- */
+
+.course-item .course-info .course-text h5 a {
+	color: #474747;
+}
+
+.course-item .course-info .course-text h5 a:hover {
+	color: var(--ep-crimson);
+}
+
+/* ---------------- Filter chip row (courses page) ---------------- */
+
+.ep-chip-row {
+	text-align: center;
+	margin-bottom: 34px;
+}
+
+.ep-chip {
+	display: inline-block;
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	color: var(--ep-heading);
+	font-size: 13px;
+	font-weight: 700;
+	padding: 10px 20px;
+	margin: 0 6px 10px;
+	cursor: pointer;
+	transition: all .25s;
+}
+
+.ep-chip:hover {
+	border-color: var(--ep-crimson);
+	color: var(--ep-crimson);
+}
+
+.ep-chip.active {
+	background: var(--ep-crimson);
+	border-color: var(--ep-crimson);
+	color: #fff;
+}
+
+.ep-results-note {
+	text-align: center;
+	font-size: 13.5px;
+	font-weight: 600;
+	color: var(--ep-body);
+	margin-bottom: 30px;
+}
+
+.ep-results-note strong {
+	color: var(--ep-heading);
+}
+
+/* ---------------- Small helper spacing ---------------- */
+
+.ep-sep {
+	height: 1px;
+	background: var(--ep-border);
+	margin: 55px 0;
+}
+
+/* ---------------- Interior page banner ---------------- */
+
+.page-info-section {
+	position: relative;
+}
+
+.page-info-section:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(120deg, rgba(20, 20, 20, .82) 20%, rgba(31, 31, 31, .6) 60%, rgba(216, 42, 78, .55) 100%);
+}
+
+.page-info-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+.page-info-section .site-breadcrumb {
+	padding-top: 250px;
+}
+
+.ep-page-title {
+	color: #fff;
+	font-size: 48px;
+	font-weight: 700;
+	margin-top: 14px;
+	line-height: 1.2;
+}
+
+@media (max-width: 991px) {
+	.page-info-section {
+		height: 340px;
+	}
+
+	.page-info-section .site-breadcrumb {
+		padding-top: 175px;
+	}
+
+	.ep-page-title {
+		font-size: 30px;
+	}
+}
+
+/* ---------------- Panels & accreditation badges ---------------- */
+
+.ep-panel {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	padding: 45px 42px;
+	height: 100%;
+}
+
+.ep-panel h3 {
+	font-size: 26px;
+	margin-bottom: 20px;
+	line-height: 1.4;
+}
+
+.ep-panel p {
+	margin-bottom: 0;
+	font-size: 14.5px;
+	line-height: 2;
+}
+
+.ep-panel-dark {
+	background: var(--ep-ink);
+	border-color: var(--ep-ink);
+}
+
+.ep-panel-dark h3 {
+	color: #fff;
+}
+
+.ep-panel-dark p {
+	color: rgba(255, 255, 255, .74);
+}
+
+.ep-badge-strip {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 12px;
+}
+
+.ep-badge {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	color: var(--ep-heading);
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: .5px;
+	padding: 14px 22px;
+}
+
+.ep-badge i {
+	color: var(--ep-crimson);
+	margin-right: 8px;
+}
+
+@media (max-width: 767px) {
+	.ep-panel {
+		padding: 30px 24px;
+		margin-bottom: 24px;
+	}
+}
+
+/* ---------------- Search form select ---------------- */
+
+.course-search-form select.ep-search-select {
+	height: 56px;
+	width: 36.6%;
+	padding: 0 30px;
+	margin-right: 18px;
+	float: left;
+	border: none;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--ep-heading);
+	background: var(--ep-mist) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23878787' d='M8 11L3 6h10z'/%3E%3C/svg%3E") no-repeat right 18px center;
+	background-size: 14px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding-right: 44px;
+}
+
+@media (max-width: 767px) {
+	.course-search-form select.ep-search-select {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.search-section.ss-other-page .course-search-form input[type=text] {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.search-section.ss-other-page .course-search-form .site-btn {
+		width: 100%;
+	}
+
+	.ep-level-tag {
+		font-size: 10px;
+		padding: 8px 11px;
+	}
+}
+
+/* ---------------- Header sizing (keeps nav + phone + button on one line) ---------------- */
+
+.header-section .main-menu ul li a {
+	margin-left: 26px;
+}
+
+.header-section .header-btn {
+	min-width: 158px;
+	padding: 14px 8px;
+	font-size: 14px;
+}
+
+.header-section .header-phone {
+	font-size: 14px;
+	margin-right: 22px;
+}
+
+.hero-text .hero-note {
+	color: rgba(255, 255, 255, .78);
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+	.header-section .main-menu ul li a {
+		margin-left: 16px;
+		font-size: 14.5px;
+	}
+
+	.header-section .header-phone {
+		display: none;
+	}
+}
+
+/* ---------------- Signup section on small screens ---------------- */
+
+@media (max-width: 991px) {
+	.signup-section .signup-bg {
+		display: none;
+	}
+
+	.signup-section .signup-form {
+		padding: 34px 26px;
+	}
+
+	.signup-section {
+		padding-bottom: 70px;
+	}
+}
+
+/* ---------------- Map / campus location ---------------- */
+
+.ep-map {
+	height: 484px;
+	margin-top: 58px;
+	background: #dfe6e8 url("../img/page-bg/2.jpg") center/cover no-repeat;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.ep-map:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, rgba(31, 31, 31, .9) 25%, rgba(31, 31, 31, .45) 70%, rgba(216, 42, 78, .5) 100%);
+}
+
+.ep-map-card {
+	position: relative;
+	z-index: 2;
+	background: #fff;
+	max-width: 390px;
+	margin-left: 8%;
+	padding: 38px 36px;
+}
+
+.ep-map-card h4 {
+	font-size: 24px;
+	margin-bottom: 12px;
+}
+
+.ep-map-card p {
+	font-size: 13.5px;
+	line-height: 1.9;
+	margin-bottom: 0;
+}
+
+.ep-map-card .ep-detail-facts li {
+	font-size: 13px;
+}
+
+.ep-map-card .ep-detail-facts li span {
+	font-size: 12.5px;
+}
+
+@media (max-width: 767px) {
+	.ep-map {
+		height: auto;
+		padding: 26px 18px;
+	}
+
+	.ep-map-card {
+		margin-left: 0;
+		padding: 28px 24px;
+	}
+}
+
+/* ---------------- Portal link colours / responsive nav ---------------- */
+
+.portal-list li a {
+	color: var(--ep-heading);
+	font-weight: 600;
+}
+
+.portal-list li a:hover {
+	color: var(--ep-crimson);
+}
+
+.course-meta-area .site-btn {
+	white-space: normal;
+}
+
+.ep-checkbox {
+	line-height: 1.6;
+	align-items: flex-start;
+}
+
+.ep-checkbox .box {
+	margin-top: 1px;
+}
+
+@media (max-width: 767px) {
+	.portal-nav li {
+		margin-right: 14px;
+		font-size: 12px;
+	}
+
+	.portal-nav li a {
+		font-size: 12.5px;
+	}
+
+	.portal-nav li:nth-child(2),
+	.portal-nav li:nth-child(3) {
+		display: none;
+	}
+
+	.portal-header {
+		padding: 18px 0;
+	}
+
+	.portal-hero h1 {
+		font-size: 26px;
+	}
+
+	.portal-hero {
+		padding: 34px 0;
+	}
+
+	.portal-section {
+		padding: 40px 0;
+	}
+
+	.portal-card .portal-card-body {
+		padding: 20px;
+	}
+
+	.portal-profile .ca-pic {
+		width: 64px;
+		height: 64px;
+		flex: 0 0 64px;
+	}
+}
+
+/* ---------------- Final layout safeguards ---------------- */
+
+.site-logo img {
+	max-width: 100%;
+}
+
+.course-meta {
+	padding: 5px 28px;
+}
+
+@media (max-width: 991px) {
+	.header-section .header-btn {
+		min-width: 116px;
+		padding: 11px 6px;
+		font-size: 12.5px;
+		margin-top: 4px;
+	}
+
+	.header-section .site-logo img {
+		height: 40px;
+	}
+
+	.nav-switch {
+		font-size: 20px;
+	}
+
+	.course-meta {
+		padding: 0 0 14px;
+	}
+}
+
+@media (max-width: 420px) {
+	.header-section .header-btn {
+		min-width: 104px;
+		font-size: 11.5px;
+		padding: 10px 4px;
+	}
+
+	.header-section .site-logo img {
+		height: 34px;
+	}
+}
