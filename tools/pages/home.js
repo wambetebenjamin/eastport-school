@@ -14,7 +14,8 @@ module.exports = function home() {
 					<a href="apply.html" class="site-btn">Apply for January 2027</a>
 					<a href="courses.html" class="site-btn ghost">Explore 253 Courses</a>
 				</div>
-				<p class="hero-note"><i class="fa fa-check-circle"></i>Flexible three-part fee instalments &nbsp;·&nbsp; <i class="fa fa-check-circle"></i>98% attachment placement &nbsp;·&nbsp; <i class="fa fa-check-circle"></i>${SITE.examCentres}</p>
+				<p class="hero-note"><span class="hero-note-item"><i class="fa fa-check-circle"></i>Flexible three-part fee instalments</span><span class="hero-note-item"><i class="fa fa-check-circle"></i>98% attachment placement</span></p>
+				<p class="hero-centres">${SITE.examCentres}</p>
 			</div>
 		</div>
 	</section>

@@ -40,7 +40,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(120deg, rgba(24, 24, 26, .94) 12%, rgba(31, 31, 31, .8) 48%, rgba(216, 42, 78, .82) 100%);
+	background: linear-gradient(120deg, rgba(18, 18, 61, .94) 12%, rgba(23, 23, 80, .8) 48%, rgba(36, 36, 106, .82) 100%);
 }
 
 .portal-hero .container {
@@ -84,7 +84,7 @@
 	border-radius: 10px;
 	padding: 24px 24px 22px;
 	margin-bottom: 26px;
-	box-shadow: 0 10px 26px rgba(31, 31, 31, .05);
+	box-shadow: 0 10px 26px rgba(23, 23, 80, .05);
 	overflow: hidden;
 	height: calc(100% - 26px);
 }
@@ -141,7 +141,7 @@
 	border: 1px solid #e5e9f2;
 	border-radius: 10px;
 	margin-bottom: 26px;
-	box-shadow: 0 10px 26px rgba(31, 31, 31, .05);
+	box-shadow: 0 10px 26px rgba(23, 23, 80, .05);
 	overflow: hidden;
 }
 
@@ -203,7 +203,7 @@
 /* Profile */
 .portal-profile .ca-pic {
 	border: 3px solid #fff;
-	box-shadow: 0 0 0 3px rgba(216, 42, 78, .16);
+	box-shadow: 0 0 0 3px rgba(36, 36, 106, .16);
 }
 
 .portal-profile h4 {
@@ -311,4 +311,18 @@
 	.portal-card .ep-table td {
 		padding: 12px 18px;
 	}
+}
+
+/* Long account values (e-mail addresses, programme names) must wrap inside
+   the profile card instead of spilling past its edge. */
+.portal-list li {
+	display: grid;
+	grid-template-columns: 80px minmax(0, 1fr);
+	gap: 12px;
+	align-items: start;
+}
+
+.portal-list li strong {
+	font-size: 12.5px;
+	overflow-wrap: anywhere;
 }

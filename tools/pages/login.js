@@ -67,7 +67,10 @@ ${socials}
 			<a href="index.html" class="lg-brand" aria-label="Eastport International Training College home">
 				<img src="img/logo-dark.svg" alt="Eastport International Training College">
 			</a>
-			<ul class="lg-nav-links">
+			<button class="lg-nav-toggle" type="button" aria-expanded="false" aria-controls="lg-nav-links" aria-label="Open menu" data-nav-toggle>
+				<i class="fa fa-bars"></i>
+			</button>
+			<ul class="lg-nav-links" id="lg-nav-links">
 ${navLinks}
 			</ul>
 			<div class="lg-nav-actions">

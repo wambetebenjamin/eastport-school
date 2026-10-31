@@ -36,8 +36,8 @@
 	position: absolute;
 	inset: 0;
 	background:
-		radial-gradient(115% 110% at 8% 4%, rgba(216, 42, 78, .38) 0%, rgba(24, 24, 26, .82) 46%, #0b0b24 100%),
-		linear-gradient(180deg, rgba(16, 16, 18, .55), rgba(16, 16, 18, .92));
+		radial-gradient(115% 110% at 8% 4%, rgba(36, 36, 106, .38) 0%, rgba(18, 18, 61, .82) 46%, #0b0b24 100%),
+		linear-gradient(180deg, rgba(14, 14, 44, .55), rgba(14, 14, 44, .92));
 }
 
 .lg-shell {
@@ -73,7 +73,7 @@
 	position: absolute;
 	inset: 0;
 	z-index: -1;
-	background: linear-gradient(155deg, rgba(22, 22, 24, .95) 0%, rgba(31, 31, 31, .86) 42%, rgba(216, 42, 78, .72) 100%);
+	background: linear-gradient(155deg, rgba(16, 16, 48, .95) 0%, rgba(23, 23, 80, .86) 42%, rgba(36, 36, 106, .72) 100%);
 }
 
 .lg-visual-top {
@@ -281,7 +281,7 @@
 .lg-tabs button.active {
 	background: var(--ep-navy);
 	color: #fff;
-	box-shadow: 0 6px 14px rgba(216, 42, 78, .28);
+	box-shadow: 0 6px 14px rgba(36, 36, 106, .28);
 }
 
 .lg-tabs button:hover {
@@ -334,12 +334,12 @@
 .lg-input:focus {
 	outline: none;
 	border-bottom-color: var(--ep-navy);
-	background: linear-gradient(180deg, transparent 72%, rgba(216, 42, 78, .06) 72%);
+	background: linear-gradient(180deg, transparent 72%, rgba(36, 36, 106, .06) 72%);
 }
 
 .lg-input.is-invalid {
 	border-bottom-color: var(--ep-navy);
-	background: linear-gradient(180deg, transparent 72%, rgba(216, 42, 78, .12) 72%);
+	background: linear-gradient(180deg, transparent 72%, rgba(36, 36, 106, .12) 72%);
 }
 
 .lg-input-wrap > i.lg-icon {
@@ -428,13 +428,13 @@
 	letter-spacing: .6px;
 	cursor: pointer;
 	transition: all .25s;
-	box-shadow: 0 12px 26px rgba(216, 42, 78, .3);
+	box-shadow: 0 12px 26px rgba(36, 36, 106, .3);
 }
 
 .lg-submit:hover {
 	background: var(--ep-navy-dark);
 	transform: translateY(-1px);
-	box-shadow: 0 16px 32px rgba(216, 42, 78, .34);
+	box-shadow: 0 16px 32px rgba(36, 36, 106, .34);
 }
 
 .lg-submit:disabled {
@@ -1198,5 +1198,140 @@
 
 	.lg-card {
 		padding: 26px 22px;
+	}
+}
+
+/* Bootstrap grid gutters inside the login cards would push the card past the
+   viewport on narrow screens, so the card grid is gutter-free. */
+.lg-split > * {
+	min-width: 0;
+}
+
+.lg-card {
+	min-width: 0;
+	overflow-wrap: break-word;
+}
+
+.lg-card .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.lg-card .row > [class*="col-"] {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.lg-card .row > [class*="col-"] + [class*="col-"] .lg-field {
+	margin-top: 6px;
+}
+
+/* Long mail addresses / URLs must wrap instead of widening the layout. */
+.lg-contact-list li,
+.lg-contact-list li a,
+.lg-card a {
+	overflow-wrap: anywhere;
+}
+
+/* Mobile navigation for the standalone login header */
+.lg-nav-toggle {
+	display: none;
+	width: 42px;
+	height: 42px;
+	border: 1px solid var(--ep-border);
+	border-radius: 10px;
+	background: #fff;
+	color: var(--ep-navy);
+	font-size: 16px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.lg-nav-toggle.is-active {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	color: #fff;
+}
+
+@media (max-width: 991px) {
+	.lg-nav .lg-wrap {
+		flex-wrap: nowrap;
+		gap: 12px;
+	}
+
+	.lg-nav-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		order: 3;
+	}
+
+	.lg-nav .lg-brand {
+		order: 1;
+	}
+
+	.lg-nav-actions {
+		order: 2;
+		margin-left: auto;
+		gap: 10px;
+	}
+
+	.lg-nav-links {
+		display: none;
+		order: 4;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		background: #fff;
+		border-bottom: 1px solid var(--ep-border);
+		box-shadow: 0 18px 30px rgba(16, 16, 48, .12);
+		padding: 8px 18px 16px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0;
+		z-index: 20;
+	}
+
+	.lg-nav-links.is-open {
+		display: flex;
+	}
+
+	.lg-nav-links li {
+		width: 100%;
+		border-bottom: 1px solid var(--ep-mist);
+	}
+
+	.lg-nav-links li:last-child {
+		border-bottom: 0;
+	}
+
+	.lg-nav-links li a {
+		display: block;
+		padding: 13px 0;
+	}
+
+	.lg-nav-links li a.active:after {
+		display: none;
+	}
+
+	.lg-nav-links li a.active {
+		color: var(--ep-gold);
+	}
+}
+
+@media (max-width: 575px) {
+	.lg-utility-links a[href^="mailto"] {
+		display: none;
+	}
+
+	/* the hero panel already carries a prominent "Apply" button at this
+	   width, so the header keeps brand + menu toggle only */
+	.lg-nav-apply {
+		display: none;
+	}
+
+	.lg-nav .lg-brand img {
+		height: 40px;
 	}
 }

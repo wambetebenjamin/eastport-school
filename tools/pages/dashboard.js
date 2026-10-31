@@ -1,6 +1,6 @@
 'use strict';
 
-const { head } = require('../layout');
+const { head, scriptTags } = require('../layout');
 
 module.exports = function dashboard() {
 	return `${head({
@@ -197,8 +197,7 @@ module.exports = function dashboard() {
 		</footer>
 	</div>
 
-	<script src="js/data.js"></script>
-	<script src="js/app.js"></script>
+${scriptTags()}
 </body>
 </html>`;
 };

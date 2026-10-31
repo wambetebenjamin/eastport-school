@@ -429,6 +429,27 @@
 	   Student portal login
 	---------------------------------------------------*/
 
+	/* Mobile menu for the standalone navigation used on the login page */
+	function initMobileNav() {
+		var toggles = $$('[data-nav-toggle]');
+		toggles.forEach(function (btn) {
+			var list = document.getElementById(btn.getAttribute('aria-controls'));
+			if (!list) return;
+			btn.addEventListener('click', function () {
+				var open = list.classList.toggle('is-open');
+				btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+				btn.classList.toggle('is-active', open);
+			});
+			list.addEventListener('click', function (e) {
+				if (e.target.tagName === 'A') {
+					list.classList.remove('is-open');
+					btn.setAttribute('aria-expanded', 'false');
+					btn.classList.remove('is-active');
+				}
+			});
+		});
+	}
+
 	function initLoginPage() {
 		var form = $('#login-form');
 		if (!form) return;
@@ -701,6 +722,7 @@
 		initSimpleForms();
 		initLoginPage();
 		initDashboard();
+		initMobileNav();
 
 		// Pre-fill programme on the application page
 		var programmeField = $('#apply-programme');

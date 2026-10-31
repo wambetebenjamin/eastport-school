@@ -37,7 +37,17 @@
 
 .main-menu ul li a.active,
 .main-menu ul li a:hover {
-	color: var(--ep-navy);
+	color: var(--ep-gold);
+}
+
+/* small line under the hero claim for the exam centre numbers */
+.hero-centres {
+	margin-top: 14px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .62);
 }
 
 .header-phone {
@@ -316,7 +326,7 @@
 .ep-why-card:hover {
 	transform: translateY(-6px);
 	border-bottom-color: var(--ep-navy);
-	box-shadow: 0 18px 40px rgba(31, 31, 31, .09);
+	box-shadow: 0 18px 40px rgba(23, 23, 80, .09);
 }
 
 /* ---------------- Programme finder ---------------- */
@@ -452,7 +462,7 @@
 
 .ep-leader-card {
 	background: #fff;
-	box-shadow: 0 12px 35px rgba(31, 31, 31, .06);
+	box-shadow: 0 12px 35px rgba(23, 23, 80, .06);
 	margin-bottom: 30px;
 	height: calc(100% - 30px);
 	overflow: hidden;
@@ -611,7 +621,7 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	background: rgba(31, 31, 31, .86);
+	background: rgba(23, 23, 80, .86);
 	color: #fff;
 	font-size: 11px;
 	font-weight: 700;
@@ -945,7 +955,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(150deg, rgba(20, 20, 20, .93) 12%, rgba(31, 31, 31, .9) 42%, rgba(216, 42, 78, .82) 100%);
+	background: linear-gradient(150deg, rgba(20, 20, 60, .93) 12%, rgba(23, 23, 80, .9) 42%, rgba(36, 36, 106, .82) 100%);
 }
 
 .login-aside > * {
@@ -2010,7 +2020,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(120deg, rgba(20, 20, 20, .82) 20%, rgba(31, 31, 31, .6) 60%, rgba(216, 42, 78, .55) 100%);
+	background: linear-gradient(120deg, rgba(20, 20, 60, .82) 20%, rgba(23, 23, 80, .6) 60%, rgba(36, 36, 106, .55) 100%);
 }
 
 .page-info-section .container {
@@ -2214,7 +2224,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(100deg, rgba(31, 31, 31, .9) 25%, rgba(31, 31, 31, .45) 70%, rgba(216, 42, 78, .5) 100%);
+	background: linear-gradient(100deg, rgba(23, 23, 80, .9) 25%, rgba(23, 23, 80, .45) 70%, rgba(36, 36, 106, .5) 100%);
 }
 
 .ep-map-card {
@@ -2634,4 +2644,340 @@ a:hover {
 .ep-lab-card:hover {
 	box-shadow: 0 18px 40px rgba(28, 28, 78, .1);
 	transform: translateY(-4px);
+}
+
+/* ------------------------------------------------------------------
+   Hero / header stacking + legibility fixes
+   The template places the header absolutely over the hero, but the hero
+   is painted later in the document, so the header needs an explicit
+   stacking order or it disappears behind the hero image.
+------------------------------------------------------------------ */
+.header-section {
+	position: absolute;
+	z-index: 50;
+}
+
+/* small line under the hero claim for the exam centre numbers */
+.hero-centres {
+	margin-top: 14px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .62);
+}
+
+/* Navy scrim so the hero copy and ghost buttons stay readable on the
+   photographic hero used across the template. */
+.hero-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-section::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(160deg, rgba(15, 15, 45, .9) 0%, rgba(23, 23, 80, .78) 48%, rgba(15, 15, 45, .92) 100%);
+	z-index: 1;
+}
+
+.hero-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+@media (max-width: 991px) {
+	.main-menu ul li a.active {
+		color: var(--ep-navy);
+	}
+}
+
+/* ------------------------------------------------------------------
+   Mobile header (WebUni markup: logo | login | hamburger)
+   The template hides the login button and paints the hamburger as a
+   white box sized for a dark icon, so the navy brand override made the
+   bars invisible and dropped the panel into a narrow column.
+------------------------------------------------------------------ */
+@media (max-width: 991px) {
+	.header-section {
+		padding-top: 26px;
+	}
+
+	.header-section .container {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.header-section .row {
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+
+	.header-section .col-8,
+	.header-section .col-4 {
+		position: static;
+	}
+
+	.header-section .site-logo img {
+		height: 42px;
+	}
+
+	/* keep the portal entry point reachable on phones */
+	.header-section .header-btn {
+		display: inline-block;
+		float: none;
+		margin: 0;
+		padding: 11px 14px;
+		min-width: 0;
+		font-size: 12.5px;
+		position: absolute;
+		right: 58px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.nav-switch {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: 18px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 42px;
+		height: 42px;
+		padding: 0;
+		background: #fff;
+		border-radius: 10px;
+		color: var(--ep-navy);
+		font-size: 18px;
+		box-shadow: 0 8px 18px rgba(10, 10, 40, .25);
+		z-index: 3;
+	}
+
+	.nav-switch i {
+		color: var(--ep-navy);
+	}
+
+	.main-menu {
+		position: absolute;
+		left: 18px;
+		right: 18px;
+		top: calc(100% + 12px);
+		width: auto;
+		margin: 0;
+		padding: 8px 20px 14px;
+		border-radius: 12px;
+		box-shadow: 0 24px 48px rgba(10, 10, 40, .28);
+		z-index: 60;
+	}
+
+	.main-menu ul li a {
+		font-size: 15px;
+		text-transform: none;
+		letter-spacing: 0;
+		padding: 13px 0;
+		border-bottom: 1px solid var(--ep-mist);
+	}
+
+	.main-menu ul li:last-child a {
+		border-bottom: 0;
+	}
+}
+
+@media (max-width: 575px) {
+	.header-section .site-logo img {
+		height: 36px;
+	}
+
+	.header-section .header-btn {
+		right: 54px;
+		padding: 10px 11px;
+		font-size: 11px;
+	}
+
+	.nav-switch {
+		right: 14px;
+		width: 38px;
+		height: 38px;
+		font-size: 16px;
+	}
+
+	.main-menu {
+		left: 14px;
+		right: 14px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Page banner: fluid height so breadcrumb + title never collide on
+   phones (the template's fixed 443px/340px height plus a 175px top pad
+   pushed the breadcrumb underneath the page title).
+------------------------------------------------------------------ */
+@media (max-width: 991px) {
+	.page-info-section {
+		height: auto;
+		padding: 120px 0 52px;
+		background-position: center;
+	}
+
+	.page-info-section .container {
+		position: relative;
+		z-index: 2;
+	}
+
+	.page-info-section .site-breadcrumb {
+		padding-top: 0;
+	}
+
+	.site-breadcrumb a,
+	.site-breadcrumb span {
+		font-size: 13px;
+	}
+
+	.ep-page-title {
+		font-size: 30px;
+		margin-top: 10px;
+		line-height: 1.25;
+	}
+}
+
+@media (max-width: 575px) {
+	.page-info-section {
+		padding: 104px 0 40px;
+	}
+
+	.ep-page-title {
+		font-size: 25px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Overlapping search band (courses / news / contact)
+   On phones the -85px overlap collides with the shorter page banner and
+   the absolutely-positioned band title, so the band simply stacks under
+   the banner and its heading returns to normal flow.
+------------------------------------------------------------------ */
+@media (max-width: 767px) {
+	.search-section.ss-other-page {
+		margin-top: 0;
+	}
+
+	.search-section.ss-other-page .search-warp {
+		padding: 30px 22px 32px;
+		border-radius: 0 0 14px 14px;
+	}
+
+	.search-section.ss-other-page .section-title h2 {
+		position: static;
+		width: auto;
+		font-size: 19px;
+		text-align: left;
+		margin-bottom: 16px;
+	}
+
+	.search-section.ss-other-page .section-title h2 span {
+		background: transparent;
+		padding: 0;
+	}
+
+	.search-section.ss-other-page .course-search-form .site-btn {
+		margin-top: 4px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Hero on phones: shorter viewport height, tighter kicker, readable
+   body copy and full-width buttons.
+------------------------------------------------------------------ */
+@media (max-width: 575px) {
+	.hero-text {
+		padding-top: 150px;
+		margin-bottom: 32px;
+		text-align: left;
+	}
+
+	.hero-text h2 {
+		font-size: 31px;
+		line-height: 1.2;
+	}
+
+	.hero-text p {
+		font-size: 14.5px;
+		line-height: 1.85;
+	}
+
+	.hero-kicker {
+		font-size: 10.5px;
+		letter-spacing: 1px;
+		padding: 8px 12px;
+		margin-bottom: 18px;
+	}
+
+	.hero-note {
+		font-size: 12px;
+		line-height: 1.9;
+	}
+
+	.hero-centres {
+		font-size: 10.5px;
+		letter-spacing: .8px;
+	}
+
+	.hero-section {
+		height: auto;
+		padding-bottom: 56px;
+	}
+}
+
+/* hero trust points: wrap as discrete items instead of one spaced line */
+.hero-note {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 6px 28px;
+}
+
+.hero-note-item {
+	white-space: nowrap;
+}
+
+.hero-note-item + .hero-note-item {
+	position: relative;
+}
+
+.hero-note-item + .hero-note-item::before {
+	content: '·';
+	position: absolute;
+	left: -17px;
+	color: rgba(255, 255, 255, .45);
+}
+
+/* primary action on the photographic hero reads as gold, not navy-on-navy */
+.hero-actions .site-btn:not(.ghost) {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+.hero-actions .site-btn:not(.ghost):hover {
+	background: var(--ep-gold-soft);
+	color: #21163c;
+}
+
+@media (max-width: 575px) {
+	.hero-note {
+		justify-content: flex-start;
+		gap: 4px 0;
+	}
+
+	.hero-note-item {
+		white-space: normal;
+		width: 100%;
+	}
+
+	.hero-note-item + .hero-note-item::before {
+		content: none;
+	}
 }

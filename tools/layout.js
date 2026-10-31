@@ -1,6 +1,12 @@
 /* Shared layout helpers for the Eastport static site build */
 'use strict';
 
+const VERSION = require('./version');
+
+/* Append the build hash so updated styles/scripts are never served from a
+   stale browser cache (see tools/version.js). */
+const v = (file) => `${file}?v=${VERSION}`;
+
 const SITE = {
 	name: 'Eastport International Training College',
 	short: 'Eastport College',
@@ -13,6 +19,21 @@ const SITE = {
 	examCentres: 'KNEC 518112 · CDACC 0350007 · TVETA Centre 401002'
 };
 
+const BASE_STYLES = [
+	'css/bootstrap.min.css',
+	'css/font-awesome.min.css',
+	'css/owl.carousel.css',
+	'css/style.css',
+	'css/eastport.css'
+];
+
+const SCRIPTS = [
+	'js/jquery-3.2.1.min.js',
+	'js/bootstrap.min.js',
+	'js/data.js',
+	'js/app.js'
+];
+
 const NAV = [
 	{ href: 'index.html', label: 'Home', key: 'home' },
 	{ href: 'about.html', label: 'About us', key: 'about' },
@@ -21,8 +42,14 @@ const NAV = [
 	{ href: 'contact.html', label: 'Contact', key: 'contact' }
 ];
 
+function scriptTags() {
+	return SCRIPTS.map((src) => `\t<script src="${v(src)}"></script>`).join('\n');
+}
+
 function head({ title, description, bodyClass = '', extraStyles = [] }) {
-	const styleTags = extraStyles.map((href) => `\t<link rel="stylesheet" href="${href}"/>`).join('\n');
+	const styleTags = [...BASE_STYLES, ...extraStyles]
+		.map((href) => `\t<link rel="stylesheet" href="${v(href)}"/>`)
+		.join('\n');
 	return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +64,6 @@ function head({ title, description, bodyClass = '', extraStyles = [] }) {
 	<meta name="theme-color" content="#24246a">
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/eastport.css"/>
 ${styleTags}
 </head>
 <body class="${bodyClass}">`;
@@ -152,10 +174,7 @@ function footer() {
 	<!-- footer section end -->
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/data.js"></script>
-	<script src="js/app.js"></script>
+${scriptTags()}
 </body>
 </html>`;
 }
@@ -253,4 +272,4 @@ function banner({ title = 'Join Our Community Now!', text = 'Applications for th
 	<!-- banner section end -->`;
 }
 
-module.exports = { SITE, NAV, layout, head, header, footer, pageInfo, stats, ctaBlock, banner };
+module.exports = { SITE, NAV, VERSION, layout, head, header, footer, scriptTags, pageInfo, stats, ctaBlock, banner };
