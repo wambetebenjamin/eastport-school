@@ -6,7 +6,8 @@ module.exports = function dashboard() {
 	return `${head({
 		title: 'Student Portal | Eastport International Training College',
 		description: 'Eastport International Training College student portal dashboard — results, fee statement, timetable and announcements.',
-		bodyClass: 'portal-body'
+		bodyClass: 'portal-body',
+		extraStyles: ['css/portal.css']
 	})}
 
 	<div id="portal-root">

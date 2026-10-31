@@ -21,7 +21,8 @@ const NAV = [
 	{ href: 'contact.html', label: 'Contact', key: 'contact' }
 ];
 
-function head({ title, description, bodyClass = '' }) {
+function head({ title, description, bodyClass = '', extraStyles = [] }) {
+	const styleTags = extraStyles.map((href) => `\t<link rel="stylesheet" href="${href}"/>`).join('\n');
 	return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +41,7 @@ function head({ title, description, bodyClass = '' }) {
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/eastport.css"/>
+${styleTags}
 </head>
 <body class="${bodyClass}">`;
 }

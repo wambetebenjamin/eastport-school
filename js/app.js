@@ -444,7 +444,7 @@
 		}
 
 		function setFieldError(field, message) {
-			var wrap = field.closest('.ep-field');
+			var wrap = field.closest('.ep-field, .lg-field');
 			var error = wrap ? wrap.querySelector('.ep-field-error') : null;
 			field.classList.toggle('is-invalid', !!message);
 			if (error) {
@@ -472,9 +472,9 @@
 		});
 
 		// Role tabs
-		$$('.login-tabs button').forEach(function (tab) {
+		$$('.login-tabs button, .lg-tabs button').forEach(function (tab) {
 			tab.addEventListener('click', function () {
-				$$('.login-tabs button').forEach(function (t) { t.classList.remove('active'); });
+				$$('.login-tabs button, .lg-tabs button').forEach(function (t) { t.classList.remove('active'); });
 				tab.classList.add('active');
 				activeRole = tab.getAttribute('data-role');
 				var label = activeRole === 'student' ? 'Admission Number / Student E-mail'

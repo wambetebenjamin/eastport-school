@@ -14,8 +14,8 @@ A complete redesign of [eastportinternationalcollege.ac.ke](https://eastportinte
 | `blog.html` | News, notices and academic gazette with sidebar |
 | `contact.html` | Contact form, admissions hotline, campus location card, social links |
 | `apply.html` | Online application form (`?programme=...` pre-selects a programme) and fee guidance |
-| `login.html` | **Student / staff / guardian portal login** with validation, password reveal, demo credentials, forgot-password flow |
-| `dashboard.html` | Student portal dashboard: results, fee statement, timetable, announcements, profile |
+| `login.html` | **Student / staff / guardian portal login** — split photo-and-form layout, validation, password reveal, demo credentials, forgot-password flow |
+| `dashboard.html` | Student portal dashboard: results, fee statement, timetable, announcements, profile (styled to match the login) |
 | `404.html` | Not-found page in the same design system |
 
 ## Student login demo
@@ -35,6 +35,12 @@ python3 -m http.server 8000      # then open http://localhost:8000
 ## Editing content
 
 All programmes, faculties, news items and portal demo data live in `js/data.js`.
+
+Portal screens use their own stylesheets layered on the shared theme:
+
+* `css/login.css` — split photo / form login card (template photos `img/page-bg/1.jpg` and `img/bg.jpg`,
+  palette-crimson `#d82a4e` on charcoal `#1f1f1f`)
+* `css/portal.css` — student dashboard, matched to the login's cards, radii and accents
 Page markup is generated from the partials in `tools/` so shared header/footer stay in sync:
 
 ```bash
