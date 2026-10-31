@@ -450,6 +450,26 @@
 		});
 	}
 
+	/* Home page "Featured Courses" filter tabs (template WebUni pattern) */
+	function initHomeFilters() {
+		var controls = $$('.course-filter .control');
+		var grid = $('#featured-grid');
+		if (!controls.length || !grid) return;
+
+		controls.forEach(function (control) {
+			control.addEventListener('click', function () {
+				var level = control.getAttribute('data-level') || 'all';
+				controls.forEach(function (c) { c.classList.remove('mixitup-control-active'); });
+				control.classList.add('mixitup-control-active');
+
+				$$('#featured-grid [data-level]').forEach(function (card) {
+					var match = level === 'all' || card.getAttribute('data-level') === level;
+					card.style.display = match ? '' : 'none';
+				});
+			});
+		});
+	}
+
 	function initLoginPage() {
 		var form = $('#login-form');
 		if (!form) return;
@@ -723,6 +743,7 @@
 		initLoginPage();
 		initDashboard();
 		initMobileNav();
+		initHomeFilters();
 
 		// Pre-fill programme on the application page
 		var programmeField = $('#apply-programme');

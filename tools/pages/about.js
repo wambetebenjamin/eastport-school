@@ -37,7 +37,7 @@ module.exports = function about() {
 			<div class="row ep-feature-row">
 				<div class="col-lg-6">
 					<div class="ep-feature-media">
-						<img src="img/page-bg/3.jpg" alt="Eastport International Training College campus in Kericho">
+						<img src="img/signup-bg.jpg" alt="Eastport student working in the campus computer suite">
 						<div class="ep-media-badge">
 							<h4>11</h4>
 							<p>Faculties under one roof</p>
@@ -82,6 +82,71 @@ ${whyCards}
 	</section>
 	<!-- why end -->
 
+	<!-- training labs -->
+	<section class="spad ep-section-mist">
+		<div class="container">
+			<div class="section-title">
+				<span class="ep-uppercase">World-class training environment</span>
+				<h2>Experience practical learning at Eastport</h2>
+				<p>70% of curriculum time is dedicated to clinical simulation, practical computer labs and engineering workshops.</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="ep-lab-card">
+						<div class="ep-lab-thumb set-bg" style="background-image:url(img/categories/1.jpg)">
+							<span>School of Health Sciences</span>
+						</div>
+						<div class="ep-lab-body">
+							<h5>Clinical Simulation &amp; Phlebotomy Labs</h5>
+							<p>Equipped with diagnostic centrifuges, sterile draw stations and simulation mannequins for hands-on nursing and phlebotomy practice.</p>
+							<a href="courses.html?faculty=health">View Health Courses</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="ep-lab-card">
+						<div class="ep-lab-thumb set-bg" style="background-image:url(img/courses/3.jpg)">
+							<span>School of ICT &amp; Computing</span>
+						</div>
+						<div class="ep-lab-body">
+							<h5>Advanced ICT &amp; Software Development Labs</h5>
+							<p>High-speed fibre connectivity, programming environments and cybersecurity testbeds for software engineering and networking students.</p>
+							<a href="courses.html?faculty=ict">View ICT Programmes</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="ep-lab-card">
+						<div class="ep-lab-thumb set-bg" style="background-image:url(img/courses/6.jpg)">
+							<span>Hospitality &amp; Tourism</span>
+						</div>
+						<div class="ep-lab-body">
+							<h5>Commercial Kitchen &amp; Food Production Hub</h5>
+							<p>Professional stainless-steel kitchens, pastry ovens and front-office simulation stations for hotel and catering professionals.</p>
+							<a href="courses.html?faculty=hospitality">View Hospitality Courses</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- training labs end -->
+
+	<!-- student & alumni voices -->
+	<section class="spad">
+		<div class="container">
+			<div class="section-title">
+				<span class="ep-uppercase">Student &amp; alumni journeys</span>
+				<h2>Real people. Real practical competencies.</h2>
+				<p>Meet students and graduates from Kericho and across the South Rift who turned practical training into thriving careers and independent enterprises.</p>
+			</div>
+			<div class="row" id="testimonial-grid">
+				<!-- testimonials are rendered by js/app.js -->
+			</div>
+		</div>
+	</section>
+	<!-- testimonial end -->
+
 	<!-- mission -->
 	<section class="spad">
 		<div class="container">
@@ -95,7 +160,7 @@ ${whyCards}
 				</div>
 				<div class="col-lg-6">
 					<div class="ep-panel ep-panel-dark">
-						<span class="ep-uppercase" style="color:#ffb3c1">Our mission</span>
+						<span class="ep-uppercase" style="color:#f2cb86">Our mission</span>
 						<h3>Teach with patience. Assess with rigour.</h3>
 						<p>To deliver TVETA-approved, industry-driven training in a safe and affordable environment, walking with each learner from admission through national examination to attachment and employment.</p>
 					</div>

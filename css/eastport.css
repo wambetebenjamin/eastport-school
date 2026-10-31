@@ -235,7 +235,22 @@
 
 .ep-feature-media img {
 	width: 100%;
+	height: 460px;
+	object-fit: cover;
+	object-position: center;
 	display: block;
+}
+
+@media (max-width: 991px) {
+	.ep-feature-media img {
+		height: 320px;
+	}
+}
+
+@media (max-width: 575px) {
+	.ep-feature-media img {
+		height: 240px;
+	}
 }
 
 .ep-feature-media .ep-media-badge {
@@ -2979,5 +2994,94 @@ a:hover {
 
 	.hero-note-item + .hero-note-item::before {
 		content: none;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Template-fidelity pass on the home page
+------------------------------------------------------------------ */
+
+/* hero sign-up bar: the accent button must sit on the photo, not blend
+   into the navy scrim */
+.intro-newslatter .site-btn {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+}
+
+.intro-newslatter .site-btn:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+.intro-newslatter {
+	position: relative;
+}
+
+.intro-newslatter .ep-alert {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin-top: 14px;
+	font-size: 12.5px;
+}
+
+.hero-section .hero-centres {
+	text-align: center;
+	margin-top: 22px;
+}
+
+/* footer widgets: long addresses must not run into the next column */
+.widget-item {
+	overflow-wrap: anywhere;
+}
+
+/* the signup split carries a full-bleed photo; the copy column gets a
+   navy scrim so white text stays readable over it */
+.signup-section .signup-warp {
+	position: relative;
+	z-index: 2;
+}
+
+@media (max-width: 991px) {
+	.signup-section {
+		background: var(--ep-navy);
+	}
+}
+
+.widget-item ul.contact-list li {
+	padding-right: 6px;
+}
+
+/* ------------------------------------------------------------------
+   Pages whose search band overlaps the page banner
+   (courses, news, contact): the template lets the band's title sit on top
+   of the banner, but our banners also carry a page title, so the banner
+   needs room below the title for the overhanging band heading.
+------------------------------------------------------------------ */
+@media (min-width: 768px) {
+	.page-info-section + .search-section.ss-other-page {
+		margin-top: -85px;
+	}
+}
+
+.page-info-section + .search-section.ss-other-page {
+	margin-bottom: 0;
+}
+
+.page-info-section:has(+ .search-section.ss-other-page) {
+	height: 545px;
+}
+
+@media (max-width: 991px) {
+	.page-info-section:has(+ .search-section.ss-other-page) {
+		height: auto;
+		padding-bottom: 110px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-info-section:has(+ .search-section.ss-other-page) {
+		padding-bottom: 40px;
 	}
 }

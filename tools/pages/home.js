@@ -1,289 +1,149 @@
 'use strict';
 
-const { layout, stats, banner, ctaBlock, SITE } = require('../layout');
+const { layout, stats, banner, SITE } = require('../layout');
+
+/* Home page follows the template's own section order one-for-one:
+   hero (+ inline sign-up bar) · faculties · search band · featured
+   programmes · trainer sign-up split · join banner · footer. */
 
 module.exports = function home() {
-	const body = `	<!-- Hero section -->
-	<section class="hero-section set-bg" style="background-image:url(img/bg.jpg)">
-		<div class="container">
-			<div class="hero-text text-white">
-				<span class="hero-kicker">TVETA &amp; KNEC Accredited · Kericho CBD</span>
-				<h2>Real practical skills.<br>A career you can count on.</h2>
-				<p>Karibu Eastport International Training College at Chai Plaza 2nd Floor, Kericho CBD. Here learning is personal and hands-on — caring tutors, modern clinical and computer labs, and guaranteed three-month industry attachments.</p>
-				<div class="hero-actions">
-					<a href="apply.html" class="site-btn">Apply for January 2027</a>
-					<a href="courses.html" class="site-btn ghost">Explore 253 Courses</a>
-				</div>
-				<p class="hero-note"><span class="hero-note-item"><i class="fa fa-check-circle"></i>Flexible three-part fee instalments</span><span class="hero-note-item"><i class="fa fa-check-circle"></i>98% attachment placement</span></p>
-				<p class="hero-centres">${SITE.examCentres}</p>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end -->
+	const body = `\t<!-- Hero section -->
+\t<section class="hero-section set-bg" style="background-image:url(img/bg.jpg)">
+\t\t<div class="container">
+\t\t\t<div class="hero-text text-white">
+\t\t\t\t<span class="hero-kicker">TVETA &amp; KNEC Accredited · Kericho CBD</span>
+\t\t\t\t<h2>Real practical skills. A career you can count on.</h2>
+\t\t\t\t<p>Karibu Eastport International Training College at Chai Plaza 2nd Floor, Kericho CBD. Here learning is personal and hands-on — caring tutors, modern clinical and computer labs, and guaranteed three-month industry attachments.</p>
+\t\t\t</div>
+\t\t\t<div class="row">
+\t\t\t\t<div class="col-lg-10 offset-lg-1">
+\t\t\t\t\t<form class="intro-newslatter" data-demo-form data-success="Asante! Your prospectus request has been received — admissions will call you before the next intake deadline.">
+\t\t\t\t\t\t<input type="text" name="name" placeholder="Your name" required>
+\t\t\t\t\t\t<input type="email" name="email" class="last-s" placeholder="Your e-mail" required>
+\t\t\t\t\t\t<button class="site-btn" type="submit">Apply now</button>
+\t\t\t\t\t\t<div class="ep-alert" role="status"></div>
+\t\t\t\t\t</form>
+\t\t\t\t\t<p class="hero-centres">${SITE.examCentres} &nbsp;·&nbsp; January · May · September intakes</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- Hero section end -->
 
 ${stats()}
 
-	<!-- categories section -->
-	<section class="categories-section spad">
-		<div class="container">
-			<div class="section-title">
-				<span class="ep-uppercase">Eleven specialised faculties</span>
-				<h2>Our Course Categories</h2>
-				<p>From clinical simulation and software engineering to commercial kitchens and solar workshops — every Eastport programme is delivered with 70% practical, industry-standard training.</p>
-			</div>
-			<div class="row" id="faculty-grid">
-				<!-- faculty cards are rendered by js/app.js -->
-			</div>
-			<div class="text-center" style="margin-top:40px">
-				<a href="courses.html" class="site-btn ep-btn-outline">View all 253 programmes</a>
-			</div>
-		</div>
-	</section>
-	<!-- categories section end -->
+\t<!-- categories section -->
+\t<section class="categories-section spad">
+\t\t<div class="container">
+\t\t\t<div class="section-title">
+\t\t\t\t<h2>Our Course Categories</h2>
+\t\t\t\t<p>Eleven specialised faculties under one roof at Chai Plaza — from clinical simulation and software engineering to commercial kitchens and solar workshops.</p>
+\t\t\t</div>
+\t\t\t<div class="row" id="faculty-grid">
+\t\t\t\t<!-- faculty cards are rendered by js/app.js -->
+\t\t\t</div>
+\t\t\t<div class="text-center" style="margin-top:40px">
+\t\t\t\t<a href="courses.html" class="site-btn ep-btn-outline">View all 253 programmes</a>
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- categories section end -->
 
-	<!-- programme finder -->
-	<section class="ep-finder">
-		<div class="container">
-			<div class="section-title text-white">
-				<span class="ep-uppercase" style="color:#f2cb86">Quick programme finder · January 2027 cohort</span>
-				<h2>Find your ideal career qualification</h2>
-				<p>Search by career specialisation, faculty, or minimum KCSE grade.</p>
-			</div>
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					<form class="ep-finder-form" id="finder-form">
-						<div class="row">
-							<div class="col-lg-4 col-md-6">
-								<label for="finder-q">Career keyword / specialisation</label>
-								<input type="text" class="form-control" id="finder-q" name="q" placeholder="e.g. nursing, solar, accounting">
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<label for="finder-faculty">Faculty / school of study</label>
-								<select class="form-control" id="finder-faculty" name="faculty">
-									<option value="">All 11 faculties (full catalogue)</option>
-									<option value="health">1. School of Health and Social Sciences</option>
-									<option value="ict">2. School of Information Communication Technology</option>
-									<option value="business">3. School of Business Studies</option>
-									<option value="professional">4. School of Professional Studies (KASNEB / CHRP)</option>
-									<option value="media">5. School of Journalism and Mass Media</option>
-									<option value="languages">6. School of Languages</option>
-									<option value="technical">7. School of Technical Studies</option>
-									<option value="hospitality">8. School of Hospitality and Institutional Management</option>
-									<option value="beauty">9. School of Beauty, Hairdressing and Personal Care</option>
-									<option value="office">10. School of Office Administration</option>
-									<option value="international">11. International Courses (ABMA / ABE / ICM / ICDL)</option>
-								</select>
-							</div>
-							<div class="col-lg-4 col-md-12">
-								<label for="finder-grade">Minimum KCSE grade</label>
-								<select class="form-control" id="finder-grade" name="grade">
-									<option value="">Any entry grade (including KCPE / open entry)</option>
-									<option value="C+">C+ and above</option>
-									<option value="C">C (plain)</option>
-									<option value="C-">C- (minus)</option>
-									<option value="D+">D+ (plus)</option>
-									<option value="D">D (plain)</option>
-									<option value="open">Open entry / artisan</option>
-								</select>
-							</div>
-						</div>
-						<div class="row align-items-center">
-							<div class="col-lg-5">
-								<button class="site-btn" type="submit">Search Matching Programmes</button>
-							</div>
-							<div class="col-lg-7">
-								<p class="ep-finder-note">Intakes: January, May and September · <a href="contact.html">View termly fees</a></p>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- programme finder end -->
+\t<!-- search section -->
+\t<section class="search-section">
+\t\t<div class="container">
+\t\t\t<div class="search-warp">
+\t\t\t\t<div class="section-title text-white">
+\t\t\t\t\t<h2><span>Search your course</span></h2>
+\t\t\t\t</div>
+\t\t\t\t<div class="row">
+\t\t\t\t\t<div class="col-lg-10 offset-lg-1">
+\t\t\t\t\t\t<form class="course-search-form" id="home-search-form" action="courses.html">
+\t\t\t\t\t\t\t<input type="text" name="q" placeholder="Course or career keyword">
+\t\t\t\t\t\t\t<select name="faculty" class="ep-search-select">
+\t\t\t\t\t\t\t\t<option value="">All faculties</option>
+\t\t\t\t\t\t\t\t<option value="health">Health Sciences</option>
+\t\t\t\t\t\t\t\t<option value="ict">ICT &amp; Computing</option>
+\t\t\t\t\t\t\t\t<option value="business">Business Studies</option>
+\t\t\t\t\t\t\t\t<option value="professional">Professional Studies</option>
+\t\t\t\t\t\t\t\t<option value="media">Journalism &amp; Media</option>
+\t\t\t\t\t\t\t\t<option value="languages">Languages</option>
+\t\t\t\t\t\t\t\t<option value="technical">Technical Studies</option>
+\t\t\t\t\t\t\t\t<option value="hospitality">Hospitality &amp; Tourism</option>
+\t\t\t\t\t\t\t\t<option value="beauty">Beauty &amp; Personal Care</option>
+\t\t\t\t\t\t\t\t<option value="office">Office Administration</option>
+\t\t\t\t\t\t\t\t<option value="international">International Courses</option>
+\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t<button class="site-btn btn-dark" type="submit">Search Course</button>
+\t\t\t\t\t\t</form>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- search section end -->
 
-	<!-- about / practical learning -->
-	<section class="spad">
-		<div class="container">
-			<div class="row ep-feature-row">
-				<div class="col-lg-6">
-					<div class="ep-feature-media">
-						<img src="img/signup-bg.jpg" alt="Eastport student learning in the campus computer suite">
-						<div class="ep-media-badge">
-							<h4>70%</h4>
-							<p>Practical curriculum time</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="section-title text-left">
-						<span class="ep-uppercase">World-class training environment</span>
-						<h2>Experience practical learning at Eastport</h2>
-						<p class="ep-lead">70% of curriculum time is dedicated to clinical simulation, practical computer labs and engineering workshops. You will not just sit through slides — you will practise the exact tasks employers in Kericho and the South Rift pay for.</p>
-					</div>
-					<ul class="ep-feature-list">
-						<li>Clinical simulation and phlebotomy labs with diagnostic centrifuges and draw stations</li>
-						<li>High-speed fibre ICT suites, programming environments and cyber-security testbeds</li>
-						<li>Commercial stainless-steel kitchens, pastry ovens and front-office simulation stations</li>
-						<li>Guaranteed three-month industry attachment with 98% placement</li>
-					</ul>
-					<a href="about.html" class="site-btn">Inside the campus</a>
-					<a href="courses.html" class="site-btn ep-btn-outline" style="margin-left:14px">Browse faculties</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- about end -->
+\t<!-- course section -->
+\t<section class="course-section spad">
+\t\t<div class="container">
+\t\t\t<div class="section-title mb-0">
+\t\t\t\t<h2>Featured Courses</h2>
+\t\t\t\t<p>Hand-picked qualifications with the strongest attachment partnerships and employer demand in Kericho County. Fees are per term, payable in three instalments.</p>
+\t\t\t</div>
+\t\t</div>
+\t\t<div class="course-warp">
+\t\t\t<div class="text-center">
+\t\t\t\t<ul class="course-filter">
+\t\t\t\t\t<li class="control mixitup-control-active" data-level="all">All</li>
+\t\t\t\t\t<li class="control" data-level="diploma">Diploma</li>
+\t\t\t\t\t<li class="control" data-level="certificate">Certificate</li>
+\t\t\t\t\t<li class="control" data-level="artisan">Artisan</li>
+\t\t\t\t\t<li class="control" data-level="professional">Professional</li>
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t\t<div class="row course-items-area" id="featured-grid">
+\t\t\t\t<!-- programme cards are rendered by js/app.js -->
+\t\t\t</div>
+\t\t\t<div class="text-center" style="margin-top:30px">
+\t\t\t\t<a href="courses.html" class="site-btn">See all programmes</a>
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- course section end -->
 
-	<!-- labs -->
-	<section class="spad ep-section-mist" style="padding-top:0">
-		<div class="container" style="padding-top:70px">
-			<div class="section-title">
-				<span class="ep-uppercase">World-class training environment</span>
-				<h2>Experience practical learning at Eastport</h2>
-				<p>70% of curriculum time is dedicated to clinical simulation, practical computer labs and engineering workshops.</p>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="ep-lab-card">
-						<div class="ep-lab-thumb set-bg" style="background-image:url(img/categories/1.jpg)">
-							<span>School of Health Sciences</span>
-						</div>
-						<div class="ep-lab-body">
-							<h5>Clinical Simulation &amp; Phlebotomy Labs</h5>
-							<p>Equipped with diagnostic centrifuges, sterile draw stations and simulation mannequins for hands-on nursing and phlebotomy practice.</p>
-							<a href="courses.html?faculty=health">View Health Courses</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="ep-lab-card">
-						<div class="ep-lab-thumb set-bg" style="background-image:url(img/courses/3.jpg)">
-							<span>School of ICT &amp; Computing</span>
-						</div>
-						<div class="ep-lab-body">
-							<h5>Advanced ICT &amp; Software Development Labs</h5>
-							<p>High-speed fibre connectivity, programming environments and cybersecurity testbeds for software engineering and networking students.</p>
-							<a href="courses.html?faculty=ict">View ICT Programmes</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="ep-lab-card">
-						<div class="ep-lab-thumb set-bg" style="background-image:url(img/courses/6.jpg)">
-							<span>Hospitality &amp; Tourism</span>
-						</div>
-						<div class="ep-lab-body">
-							<h5>Commercial Kitchen &amp; Food Production Hub</h5>
-							<p>Professional stainless-steel kitchens, pastry ovens and front-office simulation stations for hotel and catering professionals.</p>
-							<a href="courses.html?faculty=hospitality">View Hospitality Courses</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- labs end -->
+\t<!-- signup section -->
+\t<section class="signup-section spad">
+\t\t<div class="signup-bg set-bg" style="background-image:url(img/signup-bg.jpg)"></div>
+\t\t<div class="container-fluid">
+\t\t\t<div class="row">
+\t\t\t\t<div class="col-lg-6">
+\t\t\t\t\t<div class="signup-warp">
+\t\t\t\t\t\t<div class="section-title text-white text-left">
+\t\t\t\t\t\t\t<h2>Sign up to become a trainer</h2>
+\t\t\t\t\t\t\t<p>We are always looking for TVET trainers and technicians with real industry experience. Register your interest and our academic office will invite you for a demonstration lesson.</p>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<form class="signup-form" data-demo-form data-success="Thank you. Your trainer application has been received — the academic office will contact you within five working days.">
+\t\t\t\t\t\t\t<input type="text" placeholder="Your Name" required>
+\t\t\t\t\t\t\t<input type="email" placeholder="Your E-mail" required>
+\t\t\t\t\t\t\t<input type="text" placeholder="Your Phone" required>
+\t\t\t\t\t\t\t<label for="v-upload" class="file-up-btn">Upload CV</label>
+\t\t\t\t\t\t\t<input type="file" id="v-upload">
+\t\t\t\t\t\t\t<button class="site-btn" type="submit">Submit application</button>
+\t\t\t\t\t\t\t<div class="ep-alert" role="status"></div>
+\t\t\t\t\t\t</form>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- signup section end -->
 
-	<!-- featured programmes -->
-	<section class="course-section spad ep-section-mist">
-		<div class="container">
-			<div class="section-title mb-0">
-				<span class="ep-uppercase">January 2027 intake</span>
-				<h2>Featured programmes</h2>
-				<p>Hand-picked qualifications with the strongest attachment partnerships and employer demand in Kericho County.</p>
-			</div>
-		</div>
-		<div class="course-warp">
-			<div class="row" id="featured-grid">
-				<!-- programme cards are rendered by js/app.js -->
-			</div>
-			<div class="text-center" style="margin-top:30px">
-				<a href="courses.html" class="site-btn">See all programmes</a>
-			</div>
-		</div>
-	</section>
-	<!-- featured programmes end -->
-
-	<!-- signup section -->
-	<section class="signup-section spad">
-		<div class="signup-bg set-bg" style="background-image:url(img/signup-bg.jpg)"></div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="signup-warp">
-						<div class="section-title text-white text-left">
-							<span class="ep-uppercase" style="color:#f2cb86">Careers at Eastport</span>
-							<h2>Sign up to become a trainer</h2>
-							<p>We are always looking for TVET trainers and technicians with real industry experience. Register your interest and our academic office will invite you for a demonstration lesson.</p>
-						</div>
-						<form class="signup-form" data-demo-form data-success="Thank you. Your trainer application has been received — the academic office will contact you within five working days.">
-							<input type="text" placeholder="Your Name" required>
-							<input type="email" placeholder="Your E-mail" required>
-							<input type="text" placeholder="Your Phone" required>
-							<label for="v-upload" class="file-up-btn">Upload CV</label>
-							<input type="file" id="v-upload">
-							<button class="site-btn" type="submit">Submit application</button>
-							<div class="ep-alert" role="status"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- signup section end -->
-
-	<!-- testimonials -->
-	<section class="spad">
-		<div class="container">
-			<div class="section-title">
-				<span class="ep-uppercase">Student &amp; alumni journeys</span>
-				<h2>Real people. Real practical competencies.</h2>
-				<p>Meet students and graduates from Kericho and across the South Rift who turned practical training into thriving careers and independent enterprises.</p>
-			</div>
-			<div class="row" id="testimonial-grid">
-				<!-- testimonials are rendered by js/app.js -->
-			</div>
-		</div>
-	</section>
-	<!-- testimonials end -->
-
-	<!-- leadership -->
-	<section class="spad ep-section-mist">
-		<div class="container">
-			<div class="section-title">
-				<span class="ep-uppercase">Institutional leadership</span>
-				<h2>A personal welcome to Eastport College</h2>
-				<p>Behind our accreditation and modern labs are leaders dedicated to mentorship, student dignity and lifelong career growth.</p>
-			</div>
-			<div class="row" id="team-grid">
-				<!-- leadership cards are rendered by js/app.js -->
-			</div>
-		</div>
-	</section>
-	<!-- leadership end -->
-
-	<!-- news -->
-	<section class="spad">
-		<div class="container">
-			<div class="section-title">
-				<span class="ep-uppercase">Admissions &amp; academic gazette</span>
-				<h2>Campus news &amp; notices</h2>
-				<p>Intake deadlines, KNEC exam timetables, county bursary notices and campus innovations — straight from the registrar.</p>
-			</div>
-			<div class="row" id="news-grid">
-				<!-- news cards are rendered by js/app.js -->
-			</div>
-			<div class="text-center" style="margin-top:20px">
-				<a href="blog.html" class="site-btn ep-btn-outline">Read all news</a>
-			</div>
-		</div>
-	</section>
-	<!-- news end -->
-
-${banner({})}
-
-${ctaBlock()}`;
+${banner({
+		title: 'Join Our Community Now!',
+		text: 'Applications for the January 2027 intake are open across all eleven faculties. Secure your place with a 40% deposit and pay the balance in three flexible instalments.',
+		cta: 'Register Now',
+		href: 'apply.html'
+	})}`;
 
 	return layout({
 		title: 'Eastport International Training College | TVETA & KNEC Centre 401002 - Kericho',
