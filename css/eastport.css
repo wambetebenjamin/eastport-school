@@ -2148,7 +2148,8 @@
 /* ---------------- Header sizing (keeps nav + phone + button on one line) ---------------- */
 
 .header-section .main-menu ul li a {
-	margin-left: 26px;
+	margin-left: 20px;
+	font-size: 15.5px;
 }
 
 .header-section .header-btn {
