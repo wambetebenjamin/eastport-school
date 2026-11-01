@@ -1,6 +1,6 @@
 'use strict';
 
-const { layout, pageInfo, banner, ctaBlock, SITE } = require('../layout');
+const { layout, pageInfo, banner, ctaBlock, gallery, SITE } = require('../layout');
 
 module.exports = function contact() {
 	const body = `${pageInfo({ image: 'img/page-bg/5.jpg', crumb: 'Contact', title: 'Talk to real people' })}
@@ -96,6 +96,17 @@ module.exports = function contact() {
 		</div>
 	</section>
 	<!-- Page end -->
+
+${gallery({
+		title: 'Come and see the campus',
+		text: 'Chai Plaza 2nd Floor on Kenyatta Street — two minutes from the matatu stage. Walk in any weekday between 8:00 AM and 5:00 PM and the admissions desk will show you the labs, the restaurant and the computer suites.',
+		items: [
+			{ image: 'img/courses/5.jpg' },
+			{ image: 'img/courses/3.jpg' },
+			{ image: 'img/courses/6.jpg' },
+			{ image: 'img/categories/6.jpg' }
+		]
+	})}
 
 ${banner({ title: 'Rather speak on WhatsApp?', text: 'Send “Hello Eastport Admissions” to 0757 478 077 and a real person from our admissions desk will reply during working hours — no bots, no queues.', cta: 'Chat with admissions', href: SITE.whatsapp })}
 

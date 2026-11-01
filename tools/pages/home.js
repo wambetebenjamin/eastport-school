@@ -139,17 +139,17 @@ ${stats()}
 \t<!-- signup section end -->
 
 ${gallery({
-		title: 'Inside Eastport at Chai Plaza',
-		text: 'Eight floors of practice space on Kenyatta Street — clinical simulation, the cyber range, a working restaurant and pastry hub, solar and welding workshops, the salon and the media studio.',
+		title: 'Campus in pictures',
+		text: 'Nine floors of training space at Chai Plaza on Kenyatta Street — classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons.',
 		items: [
-			{ image: 'img/courses/1.jpg', caption: 'Clinical simulation lab' },
-			{ image: 'img/courses/3.jpg', caption: 'ICT cyber range' },
-			{ image: 'img/courses/2.jpg', caption: 'Restaurant & pastry hub' },
-			{ image: 'img/courses/4.jpg', caption: 'Solar and electrical workshop' },
-			{ image: 'img/categories/3.jpg', caption: 'Business enterprise room' },
-			{ image: 'img/page-bg/1.jpg', caption: 'Library and study hub' },
-			{ image: 'img/courses/5.jpg', caption: 'Beauty therapy salon' },
-			{ image: 'img/categories/5.jpg', caption: 'Media and journalism studio' }
+			{ image: 'img/courses/5.jpg' },
+			{ image: 'img/courses/f-1.jpg' },
+			{ image: 'img/categories/4.jpg' },
+			{ image: 'img/courses/3.jpg' },
+			{ image: 'img/courses/f-2.jpg' },
+			{ image: 'img/categories/6.jpg' },
+			{ image: 'img/blog/3.jpg' },
+			{ image: 'img/courses/7.jpg' }
 		]
 	})}
 

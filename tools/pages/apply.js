@@ -14,6 +14,7 @@ module.exports = function apply() {
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="ep-apply-aside">
+						<div class="ep-aside-photo set-bg" style="background-image:url(img/courses/2.jpg)"></div>
 						<span class="ep-uppercase" style="color:#f2cb86">Three simple steps</span>
 						<h3>Join the January 2027 cohort</h3>
 						<p>Apply online, then visit Chai Plaza 2nd Floor with your documents to confirm your place. Applications are reviewed within one working day.</p>

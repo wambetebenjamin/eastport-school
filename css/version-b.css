@@ -1,9 +1,7 @@
 /* =================================
 ------------------------------------
   Eastport International Training College
-  VERSION B — UTAMU-style replica
-  1. Marketing site (utamu.ac.ug structure)
-  2. eLearning portal (Moodle login + dashboard structure)
+  VERSION B — university-style website + eLearning portal
   Eastport navy #24246a · Gold #e2a33c
  ------------------------------------
  ====================================*/
@@ -509,9 +507,32 @@ a.u-portal-link {
 
 .u-level {
 	border: 1px solid var(--u-line);
-	padding: 26px 24px;
 	background: #fff;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 	transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.u-level-media {
+	height: 156px;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.u-level-media:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(23, 23, 80, 0) 40%, rgba(23, 23, 80, .55) 100%);
+}
+
+.u-level-body {
+	padding: 22px 24px 24px;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
 }
 
 .u-level:hover {
@@ -892,6 +913,76 @@ a.u-portal-link {
 	color: var(--u-gold-dark);
 }
 
+
+/* ---------------- Campus gallery ---------------- */
+
+.u-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.u-shot {
+	position: relative;
+	margin: 0;
+	height: 240px;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	transition: background-size .5s ease;
+}
+
+.u-shot:hover {
+	background-size: 108%;
+}
+
+.u-shot:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(17, 17, 56, 0) 55%, rgba(17, 17, 56, .42) 100%);
+	transition: opacity .25s ease;
+}
+
+.u-shot figcaption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	padding: 16px 18px;
+	color: #fff;
+	font-size: 12.5px;
+	font-weight: 600;
+	letter-spacing: .7px;
+	text-transform: uppercase;
+}
+
+.u-shot:hover:after {
+	opacity: .85;
+}
+
+@media (max-width: 991px) {
+	.u-gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.u-shot {
+		height: 210px;
+	}
+}
+
+@media (max-width: 575px) {
+	.u-gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 8px;
+	}
+
+	.u-shot {
+		height: 132px;
+	}
+}
+
 /* ---------------- Stats band ---------------- */
 
 .u-stats {
@@ -1108,7 +1199,7 @@ a.u-switch:hover {
 }
 
 /* ================================================================
-   2. eLEARNING PORTAL (Moodle structure, Eastport skin)
+   2. eLEARNING PORTAL
    ================================================================ */
 
 .el-body {
@@ -1314,7 +1405,7 @@ a.el-logo:hover {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(23, 23, 80, .90) 0%, rgba(17, 17, 56, .86) 100%);
+	background: linear-gradient(180deg, rgba(23, 23, 80, .74) 0%, rgba(17, 17, 56, .68) 100%);
 }
 
 .el-login-box {
@@ -1806,6 +1897,19 @@ a.el-oauth-btn:hover {
 	color: var(--u-navy);
 	margin-top: 4px;
 	font-size: 12px;
+}
+
+.el-campus {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 6px;
+}
+
+.el-campus figure {
+	margin: 0;
+	height: 66px;
+	background-size: cover;
+	background-position: center;
 }
 
 .el-list span {

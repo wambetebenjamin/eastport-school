@@ -1,4 +1,4 @@
-/* Eastport — VERSION B (UTAMU-style) interactions
+/* Eastport — VERSION B interactions
    Vanilla JS, no dependencies. */
 (function () {
 	'use strict';
@@ -177,7 +177,7 @@
 		});
 	}
 
-	/* ---------------- Moodle-style login ---------------- */
+	/* ---------------- Portal login ---------------- */
 	function initLogin() {
 		var form = document.querySelector('[data-el-login]');
 		if (!form) return;

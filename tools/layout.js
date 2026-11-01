@@ -278,10 +278,12 @@ function banner({ title = 'Join Our Community Now!', text = 'Applications for th
 
 /* Photo grid used on the home and about pages — template photographs only. */
 function gallery({ title, text, items }) {
-	const tiles = items.map((item) => `\t\t\t\t<figure class="ep-gallery-item">
-\t\t\t\t\t<img src="${item.image}" alt="${item.caption}" loading="lazy">
-\t\t\t\t\t<figcaption>${item.caption}</figcaption>
-\t\t\t\t</figure>`).join('\n');
+	const tiles = items.map((item) => {
+		const caption = item.caption ? `\n\t\t\t\t\t<figcaption>${item.caption}</figcaption>` : '';
+		return `\t\t\t\t<figure class="ep-gallery-item">
+\t\t\t\t\t<img src="${item.image}" alt="${item.caption || 'Eastport International Training College campus'}">${caption}
+\t\t\t\t</figure>`;
+	}).join('\n');
 
 	return `\t<!-- gallery section -->
 \t<section class="ep-gallery-section spad">

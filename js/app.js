@@ -450,7 +450,7 @@
 		});
 	}
 
-	/* Home page "Featured Courses" filter tabs (template WebUni pattern) */
+	/* Home page "Featured Courses" filter tabs */
 	function initHomeFilters() {
 		var controls = $$('.course-filter .control');
 		var grid = $('#featured-grid');
@@ -754,7 +754,7 @@
 	});
 })();
 
-/* Mobile navigation toggle (WebUni pattern, vanilla) */
+/* Mobile navigation toggle (vanilla) */
 (function () {
 	var trigger = document.querySelector('.nav-switch');
 	var menu = document.querySelector('.main-menu');

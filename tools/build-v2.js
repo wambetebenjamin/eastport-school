@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Builds VERSION B (the UTAMU-style replica) into /v2/.
+/* Builds VERSION B (university-style website + eLearning) into /v2/.
    Usage: node tools/build-v2.js  (also called by tools/build.js) */
 'use strict';
 
@@ -101,12 +101,15 @@ function quickStrip() {
 
 function levels() {
 	const cards = LEVELS.map((level) => `<div class="u-level">
+					<div class="u-level-media" style="background-image:url('${level.image}')"></div>
+					<div class="u-level-body">
 					<div class="u-level-top">
 						<h3><i class="fa ${level.icon}" style="color:var(--u-gold-dark);margin-right:8px"></i> ${level.title}</h3>
 						<span class="u-level-count">${levelCount(level.key)} online</span>
 					</div>
 					<p>${level.blurb}</p>
 					<a class="u-level-link" href="courses.html?level=${level.key.toLowerCase()}">View programmes <i class="fa fa-angle-right"></i></a>
+					</div>
 				</div>`).join('\n\t\t\t\t');
 
 	return `<section class="u-section" id="programmes">
@@ -119,16 +122,49 @@ function levels() {
 			<div class="u-levels">
 				${cards}
 				<div class="u-level" style="background:var(--u-gold-tint);border-color:var(--u-gold)">
+					<div class="u-level-media" style="background-image:url('../img/signup-bg.jpg')"></div>
+					<div class="u-level-body">
 					<div class="u-level-top">
 						<h3>Not sure where to start?</h3>
 					</div>
 					<p>Send us your KCSE grade and interests — the admissions desk will shortlist three programmes and their fee plans for you.</p>
 					<a class="u-level-link" href="#admissions">Request free advice <i class="fa fa-angle-right"></i></a>
+					</div>
 				</div>
 			</div>
 			<div class="u-programme-actions">
 				<a class="u-btn u-btn-navy" href="../apply.html">Apply online</a>
 				<a class="u-btn u-btn-ghost" href="../courses.html">Download application form</a>
+			</div>
+		</div>
+	</section>`;
+}
+
+
+const GALLERY = [
+	'../img/courses/5.jpg',
+	'../img/courses/f-1.jpg',
+	'../img/categories/4.jpg',
+	'../img/courses/3.jpg',
+	'../img/courses/f-2.jpg',
+	'../img/categories/6.jpg',
+	'../img/blog/3.jpg',
+	'../img/courses/7.jpg',
+	'../img/courses/6.jpg'
+];
+
+function campusGallery() {
+	const tiles = GALLERY.map((image) => `<figure class="u-shot" style="background-image:url('${image}')"></figure>`).join('\n\t\t\t\t');
+
+	return `<section class="u-section u-section-mist" id="campus">
+		<div class="u-wrap">
+			<div class="u-head u-center">
+				<span class="u-eyebrow">Campus life</span>
+				<h2>Campus in pictures</h2>
+				<p>Nine floors of training space at Chai Plaza on Kenyatta Street — classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons.</p>
+			</div>
+			<div class="u-gallery">
+				${tiles}
 			</div>
 		</div>
 	</section>`;
@@ -301,6 +337,7 @@ function marketingHome() {
 ${quickStrip()}
 ${levels()}
 ${statsBand()}
+${campusGallery()}
 ${enquiry()}
 ${talkBand()}
 ${testimonials()}
@@ -316,7 +353,7 @@ ${news()}`;
 }
 
 /* ---------------------------------------------------------------
-   eLearning — login (Moodle login structure)
+   eLearning — login
    --------------------------------------------------------------- */
 
 function loginPage() {
@@ -389,7 +426,7 @@ function loginPage() {
 }
 
 /* ---------------------------------------------------------------
-   eLearning — dashboard (Moodle site home)
+   eLearning — dashboard
    --------------------------------------------------------------- */
 
 function courseCard(programme, index) {
@@ -506,6 +543,19 @@ function dashboardPage() {
 						</div>
 					</section>
 					<section class="el-card">
+						<div class="el-card-head"><h2>Campus life</h2><a href="index.html#campus">Gallery</a></div>
+						<div class="el-card-body">
+							<div class="el-campus">
+								<figure style="background-image:url('../img/courses/5.jpg')"></figure>
+								<figure style="background-image:url('../img/courses/3.jpg')"></figure>
+								<figure style="background-image:url('../img/categories/4.jpg')"></figure>
+								<figure style="background-image:url('../img/courses/f-2.jpg')"></figure>
+								<figure style="background-image:url('../img/courses/6.jpg')"></figure>
+								<figure style="background-image:url('../img/blog/3.jpg')"></figure>
+							</div>
+						</div>
+					</section>
+					<section class="el-card">
 						<div class="el-card-head"><h2>Online users</h2><span class="el-muted">18</span></div>
 						<div class="el-card-body">
 							<ul class="el-list">
@@ -529,7 +579,7 @@ function dashboardPage() {
 }
 
 /* ---------------------------------------------------------------
-   eLearning — course catalogue (Moodle "Search for Courses")
+   eLearning — course catalogue
    --------------------------------------------------------------- */
 
 function coursesPage() {

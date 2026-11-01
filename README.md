@@ -1,52 +1,36 @@
-# Eastport International Training College — website redesign
+# Eastport International Training College
 
-A complete redesign of [eastportinternationalcollege.ac.ke](https://eastportinternationalcollege.ac.ke/) built on the
-**WebUni** education template supplied in `webuni-gh-pages.zip`. Static HTML/CSS/JS — no build step at deploy time.
+Static website for Eastport International Training College, Chai Plaza 2nd Floor,
+Kenyatta Street, Kericho CBD (TVETA Centre 401002 · KNEC 518112 · CDACC 0350007).
 
-## Pages
+Two complete designs share the same content store (`js/data.js`):
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Home — hero, stats, faculties, programme finder, practical learning, featured programmes, trainer signup, testimonials, leadership, news, CTA |
-| `about.html` | About — who we are, why Eastport, vision/mission, accreditation, all 11 faculties, leadership |
-| `courses.html` | Full programme catalogue with live keyword search plus faculty and level filters |
-| `single-course.html` | Programme detail (`?p=programme-slug`), units, entry requirements, fees, FAQ, related programmes |
-| `blog.html` | News, notices and academic gazette with sidebar |
-| `contact.html` | Contact form, admissions hotline, campus location card, social links |
-| `apply.html` | Online application form (`?programme=...` pre-selects a programme) and fee guidance |
-| `login.html` | **Student / staff / guardian portal login** — split photo-and-form layout, validation, password reveal, demo credentials, forgot-password flow |
-| `dashboard.html` | Student portal dashboard: results, fee statement, timetable, announcements, profile (styled to match the login) |
-| `404.html` | Not-found page in the same design system |
+| Version | Lives at | Description |
+|---|---|---|
+| A | `/` | College website: home, about, courses, course detail, news, contact, apply, student login, portal dashboard, 404 |
+| B | `/v2/` | University-style website (slider, programme levels, enquiry form, testimonials, news) plus an eLearning portal (login, dashboard, course catalogue) |
 
-## Student login demo
+`versions.html` shows both side by side.
 
-* Admission number: `EITC/2026/0148`
-* Password: `eastport2026`
-
-Any admission number (5+ characters) or e-mail with a 6+ character password also signs in, for review purposes.
-The portal session is stored in `localStorage`; the dashboard redirects to `login.html` when no session exists.
-
-## Local preview
+## Building
 
 ```bash
-python3 -m http.server 8000      # then open http://localhost:8000
+node tools/build.js
 ```
 
-## Editing content
+Writes the ten pages in the repository root and the four pages in `v2/`.
+`tools/version.js` fingerprints `css/` + `js/` so browsers never serve stale assets.
 
-All programmes, faculties, news items and portal demo data live in `js/data.js`.
+## Layout
 
-Portal screens use their own stylesheets layered on the shared theme:
+- `tools/layout.js` — shared shell for version A (header, footer, stats, banner, gallery).
+- `tools/v2.js`, `tools/build-v2.js` — shell and pages for version B.
+- `css/eastport.css`, `css/login.css`, `css/portal.css` — version A styles.
+- `css/version-b.css` — version B styles (marketing site + eLearning portal).
+- `js/app.js` — version A rendering; `js/version-b.js` — version B interactions.
+- `img/` — brand marks, campus photography, faculty and programme images.
 
-* `css/login.css` — split photo / form login card (template photos `img/page-bg/1.jpg` and `img/bg.jpg`,
-  palette-crimson `#d82a4e` on charcoal `#1f1f1f`)
-* `css/portal.css` — student dashboard, matched to the login's cards, radii and accents
-Page markup is generated from the partials in `tools/` so shared header/footer stay in sync:
+## Deploying
 
-```bash
-node tools/build.js               # rebuilds the HTML pages in the repo root
-```
-
-## Deployment
-
-Deployed on Vercel as a static site (see `vercel.json` — clean URLs, long-lived asset caching).
+Vercel project `eastport-school`, production alias <https://eastport-school.vercel.app>.
+Build command: `mkdir -p .vercel-out && cp -r *.html css js img fonts icon-fonts v2 .vercel-out/`

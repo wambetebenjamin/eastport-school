@@ -1,6 +1,5 @@
-/* Shared layout for VERSION B — the UTAMU-style replica.
-   Two shells: the marketing site (utamu.ac.ug structure) and the
-   eLearning portal (Moodle structure). Content is Eastport's. */
+/* Shared layout for VERSION B — the university-style website with an
+   eLearning portal. Content is Eastport's. */
 'use strict';
 
 const EP = require('./content');
@@ -24,30 +23,35 @@ const SITE = {
 const LEVELS = [
 	{
 		key: 'Certificate',
+		image: '../img/categories/1.jpg',
 		title: 'Certificate Programmes',
 		blurb: 'One-year artisan-to-certificate pathways assessing you against KNEC and CDACC occupational standards.',
 		icon: 'fa-certificate'
 	},
 	{
 		key: 'Diploma',
+		image: '../img/courses/3.jpg',
 		title: 'Diploma Programmes',
 		blurb: 'Two-year professional diplomas with a guaranteed three-month industry attachment in Kericho and beyond.',
 		icon: 'fa-graduation-cap'
 	},
 	{
 		key: 'Artisan',
+		image: '../img/courses/4.jpg',
 		title: 'Artisan & Craft Programmes',
 		blurb: 'Hands-on workshop trades for school leavers — plumbing, welding, masonry, mechanics and tailoring.',
 		icon: 'fa-wrench'
 	},
 	{
 		key: 'Professional',
+		image: '../img/categories/3.jpg',
 		title: 'Professional &amp; KASNEB',
 		blurb: 'KASNEB CPA and CS, CHRP, CDACC assessor awards and short professional certificates for working adults.',
 		icon: 'fa-briefcase'
 	},
 	{
 		key: 'International',
+		image: '../img/courses/5.jpg',
 		title: 'International Courses',
 		blurb: 'Internationally benchmarked certificates and diplomas delivered with partner colleges and awarding bodies.',
 		icon: 'fa-globe'
@@ -59,7 +63,7 @@ function levelCount(key) {
 }
 
 function head({ title, description, styles = [], scripts = [] }) {
-	const styleTags = ['css/font-awesome.min.css', 'css/utamu.css', ...styles]
+	const styleTags = ['css/font-awesome.min.css', 'css/version-b.css', ...styles]
 		.map((href) => `\t<link rel="stylesheet" href="${v('../' + href)}"/>`)
 		.join('\n');
 	const scriptTags = [...scripts]
@@ -84,7 +88,7 @@ ${scriptTags}
 }
 
 /* ---------------------------------------------------------------
-   Marketing shell (utamu.ac.ug structure)
+   Marketing shell
    --------------------------------------------------------------- */
 
 const M_NAV = [
@@ -222,7 +226,7 @@ function switchPill() {
 }
 
 function mPage({ title, description, active, body, withModal = false }) {
-	return `${head({ title, description, scripts: ['js/utamu.js'] })}
+	return `${head({ title, description, scripts: ['js/version-b.js'] })}
 <body class="u-body">
 ${mHeader(active)}
 ${body}
@@ -234,7 +238,7 @@ ${withModal ? promoModal() : ''}
 }
 
 /* ---------------------------------------------------------------
-   eLearning shell (Moodle structure)
+   eLearning shell
    --------------------------------------------------------------- */
 
 function eTopbar() {
@@ -341,7 +345,7 @@ function eFooter() {
 }
 
 function ePage({ title, description, active, body, slimFooter = false, guest = false }) {
-	return `${head({ title, description, scripts: ['js/utamu.js'] })}
+	return `${head({ title, description, scripts: ['js/version-b.js'] })}
 <body class="el-body">
 	<a class="el-skip" href="#maincontent">Skip to main content</a>
 ${eHeader(active, guest)}

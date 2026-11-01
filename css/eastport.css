@@ -1,7 +1,7 @@
 /* =================================
 ------------------------------------
   Eastport International Training College
-  Theme extensions for the WebUni design system
+  Theme extensions for the design system
   Eastport navy #24246a · Gold #e2a33c · Ink #1c1c4e · Mist #eef1f9
  ------------------------------------
  ====================================*/
@@ -2711,7 +2711,7 @@ a:hover {
 }
 
 /* ------------------------------------------------------------------
-   Mobile header (WebUni markup: logo | login | hamburger)
+   Mobile header (logo | login | hamburger)
    The template hides the login button and paints the hamburger as a
    white box sized for a dark icon, so the navy brand override made the
    bars invisible and dropped the panel into a narrow column.
@@ -3267,7 +3267,7 @@ a[href^="mailto:"],
 }
 
 /* ------------------------------------------------------------------
-   Campus gallery (template photography, flat squares)
+   Campus gallery (flat squares)
 ------------------------------------------------------------------ */
 .ep-gallery {
 	display: grid;
@@ -3293,8 +3293,8 @@ a[href^="mailto:"],
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(20, 20, 60, 0) 45%, rgba(20, 20, 60, .78) 100%);
-	opacity: .85;
+	background: linear-gradient(180deg, rgba(20, 20, 60, 0) 55%, rgba(20, 20, 60, .45) 100%);
+	opacity: .9;
 	transition: opacity .25s ease;
 }
 
@@ -3332,10 +3332,25 @@ a[href^="mailto:"],
 
 @media (max-width: 575px) {
 	.ep-gallery {
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
 	.ep-gallery-item img {
-		height: 200px;
+		height: 140px;
+	}
+}
+
+/* Photo header inside the apply page aside */
+.ep-aside-photo {
+	height: 176px;
+	margin: -45px -40px 30px;
+	background-size: cover;
+	background-position: center;
+}
+
+@media (max-width: 991px) {
+	.ep-aside-photo {
+		margin: -30px -30px 22px;
+		height: 150px;
 	}
 }

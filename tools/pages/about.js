@@ -1,6 +1,6 @@
 'use strict';
 
-const { layout, pageInfo, stats, banner, ctaBlock, SITE } = require('../layout');
+const { layout, pageInfo, stats, banner, ctaBlock, gallery, SITE } = require('../layout');
 
 module.exports = function about() {
 	const why = [
@@ -131,6 +131,19 @@ ${whyCards}
 		</div>
 	</section>
 	<!-- training labs end -->
+
+${gallery({
+		title: 'Inside the training rooms',
+		text: 'Practical rooms instead of rows of desks: computer suites, a training kitchen, workshops, a salon and the study areas students use between lessons.',
+		items: [
+			{ image: 'img/courses/3.jpg' },
+			{ image: 'img/categories/4.jpg' },
+			{ image: 'img/courses/5.jpg' },
+			{ image: 'img/courses/f-1.jpg' },
+			{ image: 'img/categories/6.jpg' },
+			{ image: 'img/courses/7.jpg' }
+		]
+	})}
 
 	<!-- student & alumni voices -->
 	<section class="spad">
