@@ -161,7 +161,7 @@ function campusGallery() {
 			<div class="u-head u-center">
 				<span class="u-eyebrow">Campus life</span>
 				<h2>Campus in pictures</h2>
-				<p>Nine floors of training space at Chai Plaza on Kenyatta Street — classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons.</p>
+				<p>Classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons — all at Chai Plaza on Kenyatta Street.</p>
 			</div>
 			<div class="u-gallery">
 				${tiles}

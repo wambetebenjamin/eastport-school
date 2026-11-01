@@ -140,7 +140,7 @@ ${stats()}
 
 ${gallery({
 		title: 'Campus in pictures',
-		text: 'Nine floors of training space at Chai Plaza on Kenyatta Street — classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons.',
+		text: 'Classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons — all at Chai Plaza on Kenyatta Street.',
 		items: [
 			{ image: 'img/courses/5.jpg' },
 			{ image: 'img/courses/f-1.jpg' },
