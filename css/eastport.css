@@ -31,8 +31,10 @@
 	display: block;
 }
 
-.header-section .container {
-	max-width: 1559px;
+@media (min-width: 1200px) {
+	.header-section .container {
+		max-width: 1180px;
+	}
 }
 
 .main-menu ul li a.active,
@@ -2719,11 +2721,6 @@ a:hover {
 		padding-top: 26px;
 	}
 
-	.header-section .container {
-		padding-left: 18px;
-		padding-right: 18px;
-	}
-
 	.header-section .row {
 		align-items: center;
 		flex-wrap: nowrap;
@@ -3084,4 +3081,187 @@ a:hover {
 	.page-info-section:has(+ .search-section.ss-other-page) {
 		padding-bottom: 40px;
 	}
+}
+
+
+/* ------------------------------------------------------------------
+   Content grid & rhythm
+   One content column (1180px box + 15px gutters) is used by the header,
+   every page section and the footer, so all copy lines up on the same
+   left/right edges at every breakpoint. Vertical section padding scales
+   down with the viewport instead of staying at the desktop 115px.
+------------------------------------------------------------------ */
+
+/* footer joins the same content column as the sections above it */
+.footer-section .footer-warp {
+	max-width: 1180px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.footer-section .footer-bottom {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* match the bootstrap container widths below the desktop breakpoint so the
+   footer keeps the same edge as the sections above it */
+@media (max-width: 1199px) and (min-width: 992px) {
+	.footer-section .footer-warp {
+		max-width: 960px;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.footer-section .footer-warp {
+		max-width: 720px;
+	}
+}
+
+@media (max-width: 767px) {
+	.footer-section .footer-warp {
+		max-width: 540px;
+	}
+}
+
+@media (max-width: 991px) {
+	.spad {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+@media (max-width: 767px) {
+	.spad {
+		padding-top: 64px;
+		padding-bottom: 64px;
+	}
+
+	.section-title {
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 575px) {
+	.spad {
+		padding-top: 54px;
+		padding-bottom: 54px;
+	}
+
+	.section-title {
+		margin-bottom: 32px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Programme grids share the page content column
+   .course-warp was max-width 1559px, so on a 1440px screen the course
+   cards ran flush to both window edges while every other section sat on
+   the 1150px content column.
+------------------------------------------------------------------ */
+.course-warp {
+	max-width: 1180px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+	.course-warp {
+		max-width: 960px;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.course-warp {
+		max-width: 720px;
+	}
+}
+
+@media (max-width: 767px) {
+	.course-warp {
+		max-width: 540px;
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 575px) {
+	.course-warp {
+		max-width: none;
+	}
+}
+
+/* programme cards: equal heights, meta row pinned to the bottom */
+.ep-programme > .course-item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.ep-programme .course-item .course-thumb {
+	flex: 0 0 auto;
+}
+
+.ep-programme .course-item .course-info {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.ep-programme .course-item .course-text {
+	flex: 1 1 auto;
+}
+
+@media (max-width: 767px) {
+	.ep-programme .course-item .course-thumb {
+		height: 210px;
+	}
+
+	.ep-programme .course-item .course-text {
+		padding: 26px 22px 20px;
+	}
+
+	.ep-programme .course-item .course-author {
+		padding: 12px 22px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Hero rhythm on phones
+   The template reserves 100px of padding under the hero sign-up bar
+   (room for its floating form), which we do not have — it produced a
+   dead band between the Apply button and the exam-centre line.
+------------------------------------------------------------------ */
+@media (max-width: 576px) {
+	.intro-newslatter {
+		padding-bottom: 0;
+	}
+
+	.hero-section .hero-centres {
+		margin-top: 18px;
+		margin-bottom: 0;
+	}
+
+	.hero-section {
+		padding-bottom: 44px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Long unbreakable strings (e-mail addresses, admission numbers) must
+   wrap inside their column instead of pushing the page past the viewport.
+------------------------------------------------------------------ */
+a[href^="mailto:"],
+.contact-info-area .contact-list li,
+.contact-info-area .contact-list li span,
+.widget-item ul.contact-list li,
+.widget-item ul.contact-list li span {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.footer-warp a,
+.lg-wrap a,
+.container a {
+	min-width: 0;
 }

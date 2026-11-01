@@ -806,7 +806,20 @@
 	width: 100%;
 	max-width: 1180px;
 	margin: 0 auto;
-	padding: 0 24px;
+	padding: 0 15px;
+}
+
+/* keep the login chrome on the same content column as the rest of the site */
+@media (max-width: 1199px) and (min-width: 992px) {
+	.lg-wrap {
+		max-width: 960px;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.lg-wrap {
+		max-width: 720px;
+	}
 }
 
 /* Card sits between chrome and content */
@@ -1661,5 +1674,36 @@
 	.lg-field label {
 		font-size: 10.5px;
 		letter-spacing: 1px;
+	}
+}
+
+/* Content column parity — the split card sits on exactly the same
+   1180 / 960 / 720 / full-width column as the header, sections and footer. */
+.lg-page {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media (min-width: 1200px) {
+	.lg-shell {
+		max-width: 1150px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.lg-shell {
+		max-width: 930px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.lg-shell {
+		max-width: 690px;
+	}
+}
+
+@media (max-width: 767px) {
+	.lg-shell {
+		max-width: none;
 	}
 }
