@@ -161,6 +161,7 @@ function footer() {
 		<div class="footer-bottom">
 			<div class="footer-warp">
 				<ul class="footer-menu">
+					<li><a href="versions.html">Compare design versions</a></li>
 					<li><a href="contact.html">Terms &amp; Conditions</a></li>
 					<li><a href="apply.html">Register</a></li>
 					<li><a href="contact.html">Privacy</a></li>
@@ -275,4 +276,28 @@ function banner({ title = 'Join Our Community Now!', text = 'Applications for th
 	<!-- banner section end -->`;
 }
 
-module.exports = { SITE, NAV, VERSION, layout, head, header, footer, scriptTags, pageInfo, stats, ctaBlock, banner };
+/* Photo grid used on the home and about pages — template photographs only. */
+function gallery({ title, text, items }) {
+	const tiles = items.map((item) => `\t\t\t\t<figure class="ep-gallery-item">
+\t\t\t\t\t<img src="${item.image}" alt="${item.caption}" loading="lazy">
+\t\t\t\t\t<figcaption>${item.caption}</figcaption>
+\t\t\t\t</figure>`).join('\n');
+
+	return `\t<!-- gallery section -->
+\t<section class="ep-gallery-section spad">
+\t\t<div class="container">
+\t\t\t<div class="section-title">
+\t\t\t\t<h2>${title}</h2>
+\t\t\t\t<p>${text}</p>
+\t\t\t</div>
+\t\t</div>
+\t\t<div class="course-warp">
+\t\t\t<div class="ep-gallery">
+${tiles}
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- gallery section end -->`;
+}
+
+module.exports = { SITE, NAV, VERSION, layout, head, header, footer, scriptTags, pageInfo, stats, ctaBlock, banner, gallery };

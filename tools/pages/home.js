@@ -1,6 +1,6 @@
 'use strict';
 
-const { layout, stats, banner, SITE } = require('../layout');
+const { layout, stats, banner, gallery, SITE } = require('../layout');
 
 /* Home page follows the template's own section order one-for-one:
    hero (+ inline sign-up bar) · faculties · search band · featured
@@ -137,6 +137,21 @@ ${stats()}
 \t\t</div>
 \t</section>
 \t<!-- signup section end -->
+
+${gallery({
+		title: 'Inside Eastport at Chai Plaza',
+		text: 'Eight floors of practice space on Kenyatta Street — clinical simulation, the cyber range, a working restaurant and pastry hub, solar and welding workshops, the salon and the media studio.',
+		items: [
+			{ image: 'img/courses/1.jpg', caption: 'Clinical simulation lab' },
+			{ image: 'img/courses/3.jpg', caption: 'ICT cyber range' },
+			{ image: 'img/courses/2.jpg', caption: 'Restaurant & pastry hub' },
+			{ image: 'img/courses/4.jpg', caption: 'Solar and electrical workshop' },
+			{ image: 'img/categories/3.jpg', caption: 'Business enterprise room' },
+			{ image: 'img/page-bg/1.jpg', caption: 'Library and study hub' },
+			{ image: 'img/courses/5.jpg', caption: 'Beauty therapy salon' },
+			{ image: 'img/categories/5.jpg', caption: 'Media and journalism studio' }
+		]
+	})}
 
 ${banner({
 		title: 'Join Our Community Now!',

@@ -29,3 +29,5 @@ Object.keys(pages).forEach((file) => {
 });
 
 console.log('Done. ' + Object.keys(pages).length + ' pages written.');
+
+require('./build-v2');
