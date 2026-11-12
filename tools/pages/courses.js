@@ -1,31 +1,37 @@
 'use strict';
 
-const { layout, pageInfo, banner, ctaBlock } = require('../layout');
+const { layout, pageInfo, banner, ctaBlock, SITE } = require('../layout');
+
+const FACULTIES = [
+	['all', 'All faculties'],
+	['health', 'Health Sciences'],
+	['ict', 'ICT &amp; Computing'],
+	['business', 'Business'],
+	['professional', 'Professional (KASNEB/CHRP)'],
+	['media', 'Journalism'],
+	['languages', 'Languages'],
+	['technical', 'Technical'],
+	['hospitality', 'Hospitality'],
+	['beauty', 'Beauty'],
+	['office', 'Office Admin'],
+	['international', 'International']
+];
+
+const LEVELS = [
+	['all', 'All levels'],
+	['diploma', 'Diploma'],
+	['certificate', 'Certificate'],
+	['artisan', 'Artisan'],
+	['professional', 'Professional'],
+	['international', 'International']
+];
 
 module.exports = function courses() {
-	const facultyChips = [
-		'<button type="button" class="ep-chip active" data-faculty="all">All faculties</button>',
-		'<button type="button" class="ep-chip" data-faculty="health">Health Sciences</button>',
-		'<button type="button" class="ep-chip" data-faculty="ict">ICT &amp; Computing</button>',
-		'<button type="button" class="ep-chip" data-faculty="business">Business</button>',
-		'<button type="button" class="ep-chip" data-faculty="professional">Professional (KASNEB/CHRP)</button>',
-		'<button type="button" class="ep-chip" data-faculty="media">Journalism</button>',
-		'<button type="button" class="ep-chip" data-faculty="languages">Languages</button>',
-		'<button type="button" class="ep-chip" data-faculty="technical">Technical</button>',
-		'<button type="button" class="ep-chip" data-faculty="hospitality">Hospitality</button>',
-		'<button type="button" class="ep-chip" data-faculty="beauty">Beauty</button>',
-		'<button type="button" class="ep-chip" data-faculty="office">Office Admin</button>',
-		'<button type="button" class="ep-chip" data-faculty="international">International</button>'
-	].join('\n\t\t\t\t');
+	const facultyChips = FACULTIES.map(([value, label], i) =>
+		`					<button type="button" class="xg-chip${i === 0 ? ' is-active' : ''}" data-faculty="${value}">${label}</button>`).join('\n');
 
-	const levelChips = [
-		['all', 'All levels'],
-		['diploma', 'Diploma'],
-		['certificate', 'Certificate'],
-		['artisan', 'Artisan'],
-		['professional', 'Professional'],
-		['international', 'International']
-	].map(([val, label], i) => `<button type="button" class="ep-chip${i === 0 ? ' active' : ''}" data-level="${val}">${label}</button>`).join('\n\t\t\t\t');
+	const levelChips = LEVELS.map(([value, label], i) =>
+		`					<button type="button" class="xg-chip${i === 0 ? ' is-active' : ''}" data-level="${value}">${label}</button>`).join('\n');
 
 	const body = `${pageInfo({
 		image: 'img/page-bg/2.jpg',
@@ -44,88 +50,89 @@ module.exports = function courses() {
 		}
 	})}
 
-	<!-- search section -->
-	<section class="search-section ss-other-page">
+	<!-- search band -->
+	<section class="xg-search-band">
 		<div class="container">
-			<div class="search-warp">
-				<div class="section-title text-white">
-					<h2><span>Search your course</span></h2>
+			<div class="xg-search-card">
+				<div class="xg-head xg-head--center">
+					<h2>Search your course</h2>
+					<p>Type a career, a programme or a faculty — we will show you every qualification that matches.</p>
 				</div>
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1">
-						<form class="course-search-form" id="course-search-form">
-							<input type="text" name="q" placeholder="Course or career keyword">
-							<select name="faculty" class="ep-search-select">
-								<option value="">All faculties</option>
-								<option value="health">Health Sciences</option>
-								<option value="ict">ICT &amp; Computing</option>
-								<option value="business">Business Studies</option>
-								<option value="professional">Professional Studies</option>
-								<option value="media">Journalism &amp; Media</option>
-								<option value="languages">Languages</option>
-								<option value="technical">Technical Studies</option>
-								<option value="hospitality">Hospitality &amp; Tourism</option>
-								<option value="beauty">Beauty &amp; Personal Care</option>
-								<option value="office">Office Administration</option>
-								<option value="international">International Courses</option>
-							</select>
-							<button class="site-btn btn-dark" type="submit">Search Course</button>
-						</form>
-					</div>
-				</div>
+				<form class="xg-inline-form" id="course-search-form">
+					<input class="xg-input" type="text" name="q" placeholder="Course or career keyword">
+					<select class="xg-select" name="faculty">
+						<option value="">All faculties</option>
+						<option value="health">Health Sciences</option>
+						<option value="ict">ICT &amp; Computing</option>
+						<option value="business">Business Studies</option>
+						<option value="professional">Professional Studies</option>
+						<option value="media">Journalism &amp; Media</option>
+						<option value="languages">Languages</option>
+						<option value="technical">Technical Studies</option>
+						<option value="hospitality">Hospitality &amp; Tourism</option>
+						<option value="beauty">Beauty &amp; Personal Care</option>
+						<option value="office">Office Administration</option>
+						<option value="international">International Courses</option>
+					</select>
+					<button class="xg-btn" type="submit"><i class="fa fa-search"></i> Search course</button>
+				</form>
 			</div>
 		</div>
 	</section>
-	<!-- search section end -->
+	<!-- search band end -->
 
-	<!-- course section -->
-	<section class="course-section" id="programmes">
-		<div class="ep-filter-wrap">
-			<div class="container">
-				<div class="section-title" style="margin-bottom:0">
-					<span class="ep-uppercase">January · May · September intakes</span>
-					<h2>Browse by faculty</h2>
+	<!-- programme grid -->
+	<section class="xg-sec" id="programmes">
+		<div class="container">
+			<div class="xg-head xg-head--center">
+				<span class="xg-eyebrow">January · May · September intakes</span>
+				<h2>Browse by faculty</h2>
+				<p>Filter by faculty or by qualification level — every card shows the duration, level and termly fee.</p>
+			</div>
+
+			<div class="xg-filter-bar">
+				<div class="xg-chips">
+${facultyChips}
 				</div>
-				<div class="ep-chip-row">
-					${facultyChips}
-				</div>
-				<div class="ep-chip-row">
-					${levelChips}
+				<div class="xg-chips xg-chips--muted">
+${levelChips}
 				</div>
 			</div>
-		</div>
-		<div class="course-warp" style="padding-bottom:80px">
-			<p class="ep-results-note" id="results-note"></p>
-			<div class="row" id="programme-grid">
+
+			<p class="xg-results-note" id="results-note"></p>
+			<div class="xg-course-grid" id="programme-grid">
 				<!-- programme cards are rendered by js/app.js -->
 			</div>
 		</div>
 	</section>
-	<!-- course section end -->
+	<!-- programme grid end -->
 
 	<!-- fees note -->
-	<section class="ep-section-mist spad">
+	<section class="xg-sec xg-sec--mist">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="section-title text-left" style="margin-bottom:24px">
-						<span class="ep-uppercase">Fees &amp; funding</span>
-						<h2 style="font-size:32px">Termly fees, paid in three parts</h2>
-						<p class="ep-lead">All fees quoted are per term and include tuition, laboratory or workshop consumables and internal examinations. A 40% deposit secures your place, with the balance payable in two further instalments. National examination fees (KNEC, CDACC, KASNEB) are paid separately.</p>
-					</div>
-					<ul class="ep-check-list">
+			<div class="xg-detail-grid xg-detail-grid--fees">
+				<div>
+					<span class="xg-eyebrow">Fees &amp; funding</span>
+					<h2>Termly fees, paid in three parts</h2>
+					<p class="xg-lead">All fees quoted are per term and include tuition, laboratory or workshop consumables and internal examinations. A 40% deposit secures your place, with the balance payable in two further instalments. National examination fees (KNEC, CDACC, KASNEB) are paid separately.</p>
+					<ul class="xg-check-list">
 						<li>Kericho County bursary application support at our welfare desk</li>
 						<li>HELB TVET loan and scholarship guidance for eligible students</li>
 						<li>Pay by M-PESA paybill, bank transfer or at the finance office</li>
 					</ul>
-				</div>
-				<div class="col-lg-4">
-					<div class="ep-help-card">
-						<h4>Not sure which programme fits?</h4>
-						<p>Send us your KCSE grade and your career interest. Sharon from admissions will reply with three suitable options and their fee structure.</p>
-						<a href="contact.html" class="site-btn">Ask admissions</a>
+					<div class="xg-mt-24">
+						<a href="apply.html" class="xg-btn">Apply for January 2027 <span class="xg-arrow">&rsaquo;</span></a>
 					</div>
 				</div>
+				<aside class="xg-aside-card">
+					<h4>Not sure which programme fits?</h4>
+					<p>Send us your KCSE grade and your career interest. Sharon from admissions will reply with three suitable options and their fee structure.</p>
+					<div class="xg-fee-line"><span>Application fee</span><strong>Free</strong></div>
+					<div class="xg-fee-line"><span>Deposit on acceptance</span><strong>40%</strong></div>
+					<div class="xg-fee-line"><span>Balance</span><strong>2 instalments</strong></div>
+					<a href="contact.html" class="xg-btn xg-btn--block">Ask admissions</a>
+					<a href="${SITE.whatsapp}" class="xg-btn xg-btn--outline xg-btn--block xg-mt-12" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i> WhatsApp ${SITE.phone}</a>
+				</aside>
 			</div>
 		</div>
 	</section>

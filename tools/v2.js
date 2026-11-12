@@ -63,7 +63,7 @@ function levelCount(key) {
 }
 
 function head({ title, description, styles = [], scripts = [] }) {
-	const styleTags = ['css/font-awesome.min.css', 'css/version-b.css', ...styles]
+	const styleTags = ['css/font-awesome.min.css', 'css/version-b.css', 'css/theme.css', 'css/login.css', ...styles]
 		.map((href) => `\t<link rel="stylesheet" href="${v('../' + href)}"/>`)
 		.join('\n');
 	const scriptTags = [...scripts]
@@ -344,11 +344,11 @@ function eFooter() {
 	</footer>`;
 }
 
-function ePage({ title, description, active, body, slimFooter = false, guest = false }) {
-	return `${head({ title, description, scripts: ['js/version-b.js'] })}
+function ePage({ title, description, active, body, slimFooter = false, guest = false, scripts = ['js/version-b.js'], noHeader = false }) {
+	return `${head({ title, description, scripts })}
 <body class="el-body">
 	<a class="el-skip" href="#maincontent">Skip to main content</a>
-${eHeader(active, guest)}
+${noHeader ? '' : eHeader(active, guest)}
 ${body}
 ${slimFooter ? '' : eFooter()}
 </body>

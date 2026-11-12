@@ -65,87 +65,94 @@
 	}
 
 	/* -------------------------------------------------
-	   Card templates
+	   Card templates — "Edura" template cards
 	---------------------------------------------------*/
+
+	function stars(seed) {
+		var n = 4 + (seed % 2);          /* 4 or 5 stars, stable per card */
+		var out = '';
+		for (var i = 0; i < 5; i++) {
+			out += '<i class="fa ' + (i < n ? 'fa-star' : 'fa-star-o') + '"></i>';
+		}
+		return out;
+	}
 
 	function facultyCard(item) {
 		return '' +
-			'<div class="col-lg-4 col-md-6">' +
-				'<a class="categorie-item" href="courses.html?faculty=' + item.slug + '" style="display:block">' +
-					'<div class="ci-thumb set-bg" style="background-image:url(' + item.image + ')"></div>' +
-					'<div class="ci-text">' +
-						'<h5>' + esc(item.short) + '</h5>' +
-						'<p>' + esc(item.blurb) + '</p>' +
-						'<span>' + item.count + ' Programmes</span>' +
-					'</div>' +
-				'</a>' +
-			'</div>';
+			'<a class="xg-faculty" href="courses.html?faculty=' + item.slug + '">' +
+				'<span class="xg-faculty-thumb" style="background-image:url(' + item.image + ')"></span>' +
+				'<span class="xg-faculty-body">' +
+					'<h5>' + esc(item.short) + '</h5>' +
+					'<p>' + esc(item.blurb) + '</p>' +
+					'<span>' + item.count + ' programmes</span>' +
+				'</span>' +
+			'</a>';
 	}
 
 	function programmeCard(p) {
-		var fac = faculty(p.faculty);
+		var fee = esc(p.fee.split(' per ')[0]);
+		var duration = esc(p.duration.replace(' (3 terms per year)', '').replace(' per module', ''));
 		return '' +
-			'<div class="col-lg-3 col-md-4 col-sm-6 ep-programme" data-faculty="' + p.faculty + '" data-level="' + esc(p.level.toLowerCase()) + '">' +
-				'<div class="course-item">' +
-					'<div class="course-thumb set-bg" style="background-image:url(' + p.image + ')">' +
-						'<div class="price">' + esc(p.fee.split(' per ')[0]) + '</div>' +
-						'<div class="ep-level-tag">' + esc(p.level) + '</div>' +
+			'<article class="xg-course ep-programme" data-faculty="' + p.faculty + '" data-level="' + esc(p.level.toLowerCase()) + '">' +
+				'<a class="xg-course-thumb" href="single-course.html?p=' + p.slug + '" style="background-image:url(' + p.image + ')" aria-label="' + esc(p.title) + '">' +
+					'<span class="xg-tag-duration">' + duration + '</span>' +
+					'<span class="xg-tag-level">' + esc(p.level) + '</span>' +
+				'</a>' +
+				'<div class="xg-course-body">' +
+					'<div class="xg-rating">' + stars(p.students) + '<span>(' + p.students + ')</span></div>' +
+					'<h3><a href="single-course.html?p=' + p.slug + '">' + esc(p.title) + '</a></h3>' +
+					'<p>' + esc(truncate(p.summary, 86)) + '</p>' +
+					'<div class="xg-course-meta">' +
+						'<span><i class="fa fa-user-o"></i>' + p.students + ' enrolled</span>' +
+						'<span><i class="fa fa-certificate"></i>' + esc(String(p.body).split(' / ')[0]) + '</span>' +
 					'</div>' +
-					'<div class="course-info">' +
-						'<div class="course-text">' +
-							'<h5><a href="single-course.html?p=' + p.slug + '">' + esc(p.title) + '</a></h5>' +
-							'<p>' + esc(truncate(p.summary, 74)) + '</p>' +
-							'<div class="students">' + p.students + ' Enrolled</div>' +
-						'</div>' +
-						'<div class="course-author">' +
-							'<div class="ca-pic set-bg" style="background-image:url(img/authors/' + ((p.students % 8) + 1) + '.jpg)"></div>' +
-							'<p>' + esc(p.body) + ', <span>' + esc(p.duration.replace(' (3 terms per year)', '')) + '</span></p>' +
-						'</div>' +
+					'<div class="xg-course-foot">' +
+						'<span class="xg-price">' + fee + ' <em>/ term</em></span>' +
+						'<a class="xg-link-more" href="single-course.html?p=' + p.slug + '">Details <span class="xg-arrow">&rsaquo;</span></a>' +
 					'</div>' +
 				'</div>' +
-			'</div>';
+			'</article>';
 	}
 
-	function newsCard(n, wide) {
+	function newsCard(n) {
 		return '' +
-			'<div class="col-lg-' + (wide ? '4' : '4') + ' col-md-6">' +
-				'<div class="ep-quote-card" style="padding:0;border:none">' +
-					'<a href="blog.html"><img src="' + n.image + '" alt="' + esc(n.title) + '" style="width:100%;display:block"></a>' +
-					'<div style="padding:30px 30px 32px">' +
-						'<span class="ep-uppercase">' + esc(n.category) + ' · ' + esc(n.date) + '</span>' +
-						'<h5 style="margin-bottom:12px;line-height:1.5"><a href="blog.html" style="color:#474747">' + esc(n.title) + '</a></h5>' +
-						'<p style="margin-bottom:0;font-style:normal">' + esc(truncate(n.excerpt, 120)) + '</p>' +
+			'<article class="xg-post">' +
+				'<a class="xg-post-thumb" href="blog.html" style="background-image:url(' + n.image + ')" aria-label="' + esc(n.title) + '"></a>' +
+				'<div class="xg-post-body">' +
+					'<div class="xg-post-meta">' +
+						'<span class="xg-post-cat">' + esc(n.category) + '</span>' +
+						'<span><i class="fa fa-calendar-o"></i>' + esc(n.date) + '</span>' +
+					'</div>' +
+					'<h3><a href="blog.html">' + esc(n.title) + '</a></h3>' +
+					'<p>' + esc(truncate(n.excerpt, 128)) + '</p>' +
+					'<div class="xg-post-author">' +
+						'<span class="xg-person-pic" style="background-image:url(' + n.authorPic + ')"></span>' +
+						'<span class="xg-post-author-name"><strong>' + esc(n.author) + '</strong><span>' + esc(n.category) + '</span></span>' +
 					'</div>' +
 				'</div>' +
-			'</div>';
+			'</article>';
 	}
 
 	function testimonialCard(t) {
 		return '' +
-			'<div class="col-lg-3 col-md-6">' +
-				'<div class="ep-quote-card">' +
-					'<div class="ep-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>' +
-					'<p>“' + esc(t.quote) + '”</p>' +
-					'<div class="ep-person">' +
-						'<div class="ca-pic set-bg" style="background-image:url(' + t.image + ')"></div>' +
-						'<div><h6>' + esc(t.name) + '</h6><span>' + esc(t.course) + '</span></div>' +
-					'</div>' +
+			'<div class="xg-quote">' +
+				'<div class="xg-stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>' +
+				'<p>“' + esc(t.quote) + '”</p>' +
+				'<div class="xg-person">' +
+					'<span class="xg-person-pic" style="background-image:url(' + t.image + ')"></span>' +
+					'<span><h6>' + esc(t.name) + '</h6><span>' + esc(t.course) + '</span></span>' +
 				'</div>' +
 			'</div>';
 	}
 
 	function teamCard(m) {
 		return '' +
-			'<div class="col-lg-6">' +
-				'<div class="ep-leader-card">' +
-					'<div class="ep-leader-head" style="background-image:url(' + m.image + ')">' +
-						'<span>' + esc(m.role) + '</span>' +
-					'</div>' +
-					'<div class="ep-leader-body">' +
-						'<h5>' + esc(m.name) + '</h5>' +
-						'<span class="ep-role">' + esc(m.role) + '</span>' +
-						'<blockquote>“' + esc(m.quote) + '”</blockquote>' +
-					'</div>' +
+			'<div class="xg-leader">' +
+				'<div class="xg-leader-head" style="background-image:url(' + m.image + ')"></div>' +
+				'<div class="xg-leader-body">' +
+					'<h5>' + esc(m.name) + '</h5>' +
+					'<span class="xg-leader-role">' + esc(m.role) + '</span>' +
+					'<p>“' + esc(m.quote) + '”</p>' +
 				'</div>' +
 			'</div>';
 	}
@@ -162,13 +169,7 @@
 	}
 
 	function facultyTile(item) {
-		return '' +
-			'<a class="lg-faculty" href="courses.html?faculty=' + item.slug + '">' +
-				'<i class="fa ' + item.icon + '"></i>' +
-				'<h5>' + esc(item.short) + '</h5>' +
-				'<p>' + esc(item.blurb) + '</p>' +
-				'<span>' + item.count + ' programmes</span>' +
-			'</a>';
+		return facultyCard(item);
 	}
 
 	function renderFacultyTiles(selector) {
@@ -183,7 +184,7 @@
 		var items = list || EP.programmes;
 		box.innerHTML = items.length
 			? items.map(programmeCard).join('')
-			: '<div class="col-12"><div class="ep-empty"><i class="fa fa-search"></i><p>No programmes match that search yet. Try a different keyword or faculty, or call admissions on ' + EP.contact.phone + '.</p></div></div>';
+			: '<div class="xg-empty"><i class="fa fa-search"></i><p>No programmes match that search yet. Try a different keyword or faculty, or call admissions on ' + EP.contact.phone + '.</p></div>';
 	}
 
 	function renderNews(selector, limit) {
@@ -193,6 +194,8 @@
 		box.innerHTML = list.map(function (n) { return newsCard(n); }).join('');
 	}
 
+	/* Testimonials and leadership render into auto-fitting grids, so a short
+	   list stretches across the row instead of leaving an empty column. */
 	function renderTestimonials(selector) {
 		var box = $(selector);
 		if (!box) return;
@@ -221,8 +224,8 @@
 			var match = String(text).match(/(?:^|[^A-Za-z])(C\+|C-|D\+|D-|C|D)(?![A-Za-z])/);
 			return match ? (order[match[1]] || 0) : 0;
 		}
-		var chips = $$('.ep-chip[data-faculty]');
-		var levelChips = $$('.ep-chip[data-level]');
+		var chips = $$('.xg-chip[data-faculty]');
+		var levelChips = $$('.xg-chip[data-level]');
 		var note = $('#results-note');
 
 		var initial = params();
@@ -251,10 +254,10 @@
 			renderProgrammes('#programme-grid', list);
 
 			chips.forEach(function (chip) {
-				chip.classList.toggle('active', chip.getAttribute('data-faculty') === state.faculty);
+				chip.classList.toggle('is-active', chip.getAttribute('data-faculty') === state.faculty);
 			});
 			levelChips.forEach(function (chip) {
-				chip.classList.toggle('active', chip.getAttribute('data-level') === state.level);
+				chip.classList.toggle('is-active', chip.getAttribute('data-level') === state.level);
 			});
 
 			if (note) {
@@ -385,11 +388,11 @@
 	---------------------------------------------------*/
 
 	function initAccordions() {
-		$$('.ep-accordion-item button').forEach(function (btn) {
+		$$('.ep-accordion-item button, .xg-acc-item button').forEach(function (btn) {
 			btn.addEventListener('click', function () {
 				var item = btn.parentNode;
 				var wasOpen = item.classList.contains('is-open');
-				$$('.ep-accordion-item').forEach(function (el) { el.classList.remove('is-open'); });
+				$$('.ep-accordion-item, .xg-acc-item').forEach(function (el) { el.classList.remove('is-open'); });
 				if (!wasOpen) item.classList.add('is-open');
 			});
 		});
@@ -403,10 +406,10 @@
 		$$('form[data-demo-form]').forEach(function (form) {
 			form.addEventListener('submit', function (e) {
 				e.preventDefault();
-				var alertBox = form.querySelector('.ep-alert') || form.parentNode.querySelector('.ep-alert');
+				var alertBox = form.querySelector('.ep-alert, .xg-alert') || form.parentNode.querySelector('.ep-alert, .xg-alert');
 				if (!alertBox) {
 					alertBox = document.createElement('div');
-					alertBox.className = 'ep-alert';
+					alertBox.className = 'xg-alert';
 					alertBox.setAttribute('role', 'status');
 					form.appendChild(alertBox);
 				}
@@ -438,6 +441,7 @@
 			btn.addEventListener('click', function () {
 				var open = list.classList.toggle('is-open');
 				btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+				btn.classList.toggle('is-open', open);
 				btn.classList.toggle('is-active', open);
 			});
 			list.addEventListener('click', function (e) {
@@ -452,18 +456,19 @@
 
 	/* Home page "Featured Courses" filter tabs */
 	function initHomeFilters() {
-		var controls = $$('.course-filter .control');
+		/* Home page: faculty tab cards filter the popular-course grid. */
+		var tabs = $$('#home-faculty-tabs .xg-tab');
 		var grid = $('#featured-grid');
-		if (!controls.length || !grid) return;
+		if (!tabs.length || !grid) return;
 
-		controls.forEach(function (control) {
-			control.addEventListener('click', function () {
-				var level = control.getAttribute('data-level') || 'all';
-				controls.forEach(function (c) { c.classList.remove('mixitup-control-active'); });
-				control.classList.add('mixitup-control-active');
+		tabs.forEach(function (tab) {
+			tab.addEventListener('click', function () {
+				var slug = tab.getAttribute('data-faculty') || 'all';
+				tabs.forEach(function (t) { t.classList.remove('is-active'); });
+				tab.classList.add('is-active');
 
-				$$('#featured-grid [data-level]').forEach(function (card) {
-					var match = level === 'all' || card.getAttribute('data-level') === level;
+				$$('#featured-grid .ep-programme').forEach(function (card) {
+					var match = slug === 'all' || card.getAttribute('data-faculty') === slug;
 					card.style.display = match ? '' : 'none';
 				});
 			});
@@ -490,19 +495,21 @@
 			}
 		} catch (err) { /* storage disabled */ }
 
+		var alertBase = alertBox.className;
+
 		function showAlert(type, message) {
-			alertBox.className = 'ep-alert is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
+			alertBox.className = alertBase + ' is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
 			alertBox.innerHTML = message;
 		}
 
 		function clearAlert() {
-			alertBox.className = 'ep-alert';
+			alertBox.className = alertBase;
 			alertBox.textContent = '';
 		}
 
 		function setFieldError(field, message) {
-			var wrap = field.closest('.ep-field, .lg-field');
-			var error = wrap ? wrap.querySelector('.ep-field-error') : null;
+			var wrap = field.closest('.ep-field, .lg-field, .xl-field');
+			var error = wrap ? wrap.querySelector('.ep-field-error, .xl-error') : null;
 			field.classList.toggle('is-invalid', !!message);
 			if (error) {
 				error.textContent = message || '';
@@ -529,10 +536,10 @@
 		});
 
 		// Role tabs
-		$$('.login-tabs button, .lg-tabs button').forEach(function (tab) {
+		$$('.login-tabs button, .lg-tabs button, .xl-tabs button').forEach(function (tab) {
 			tab.addEventListener('click', function () {
-				$$('.login-tabs button, .lg-tabs button').forEach(function (t) { t.classList.remove('active'); });
-				tab.classList.add('active');
+				$$('.login-tabs button, .lg-tabs button, .xl-tabs button').forEach(function (t) { t.classList.remove('active', 'is-active'); });
+				tab.classList.add('active', 'is-active');
 				activeRole = tab.getAttribute('data-role');
 				var label = activeRole === 'student' ? 'Admission Number / Student E-mail'
 					: activeRole === 'staff' ? 'Staff E-mail / Payroll Number'

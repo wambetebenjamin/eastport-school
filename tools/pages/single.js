@@ -19,62 +19,44 @@ module.exports = function single() {
 		}
 	})}
 
-	<!-- single course section -->
-	<section class="single-course spad pb-0">
+	<!-- programme detail -->
+	<section class="xg-sec">
 		<div class="container">
-			<div class="course-meta-area">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1">
-						<div class="course-note" id="programme-note">School of Hospitality and Institutional Management</div>
-						<h3 id="programme-title">Diploma in Food &amp; Beverage Service and Sales</h3>
-						<div class="course-metas">
-							<div class="course-meta">
-								<div class="course-author">
-									<div class="ca-pic set-bg" id="programme-trainer-pic"></div>
-									<h6>Trainer</h6>
-									<p><span id="programme-trainer">Faith Cherotich</span>, <span id="programme-trainer-role">Head Pastry Chef</span></p>
-								</div>
+			<div class="xg-detail-grid">
+				<div>
+					<article class="xg-detail-head">
+						<span class="xg-eyebrow" id="programme-note">School of Hospitality and Institutional Management</span>
+						<h1 id="programme-title">Diploma in Food &amp; Beverage Service and Sales</h1>
+						<div class="xg-detail-meta">
+							<div class="xg-detail-author">
+								<span class="xg-person-pic" id="programme-trainer-pic"></span>
+								<span>
+									<span class="xg-detail-label">Trainer</span>
+									<strong><span id="programme-trainer">Faith Cherotich</span> · <span id="programme-trainer-role">Head Pastry Chef</span></strong>
+								</span>
 							</div>
-							<div class="course-meta">
-								<div class="cm-info">
-									<h6>Faculty</h6>
-									<p id="programme-faculty">Hospitality &amp; Tourism</p>
-								</div>
-							</div>
-							<div class="course-meta">
-								<div class="cm-info">
-									<h6>Level</h6>
-									<p id="programme-level">Diploma</p>
-								</div>
-							</div>
-							<div class="course-meta">
-								<div class="cm-info">
-									<h6>Enrolment</h6>
-									<p id="programme-students">148 enrolled</p>
-								</div>
-							</div>
+							<div class="xg-detail-stat"><span class="xg-detail-label">Faculty</span><strong id="programme-faculty">Hospitality &amp; Tourism</strong></div>
+							<div class="xg-detail-stat"><span class="xg-detail-label">Level</span><strong id="programme-level">Diploma</strong></div>
+							<div class="xg-detail-stat"><span class="xg-detail-label">Enrolment</span><strong id="programme-students">148 enrolled</strong></div>
 						</div>
-						<a href="#fees" class="site-btn price-btn" id="programme-fee-btn">Fees: <span id="programme-fee">KSh 24,500 per term</span></a>
-						<a href="apply.html" class="site-btn buy-btn" id="programme-apply">Apply for this programme</a>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					<img src="img/courses/2.jpg" alt="Programme preview" class="course-preview" id="programme-image">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1 course-list">
-					<div class="cl-item">
+						<div class="xg-detail-actions">
+							<a href="#fees" class="xg-btn xg-btn--dark" id="programme-fee-btn">Fees: <span id="programme-fee">KSh 24,500 per term</span></a>
+							<a href="apply.html" class="xg-btn" id="programme-apply">Apply for this programme <span class="xg-arrow">&rsaquo;</span></a>
+						</div>
+					</article>
+
+					<img src="img/courses/2.jpg" alt="Programme preview" class="xg-detail-image" id="programme-image">
+
+					<div class="xg-cl-item">
 						<h4>Programme overview</h4>
 						<p id="programme-summary">Master commercial kitchen production, front office service and beverage sales inside our working restaurant and pastry hub.</p>
-						<p style="margin-top:20px" id="programme-overview-2">This programme combines classroom theory with supervised practical sessions, so you graduate with a portfolio of real work. Assessment follows the national competency framework, with both internal practical evaluations and the final examining body assessment.</p>
+						<p id="programme-overview-2" style="margin-top:18px">This programme combines classroom theory with supervised practical sessions, so you graduate with a portfolio of real work. Assessment follows the national competency framework, with both internal practical evaluations and the final examining body assessment.</p>
 					</div>
-					<div class="cl-item">
+
+					<div class="xg-cl-item">
 						<h4>Units of study</h4>
-						<div class="table-responsive">
-							<table class="ep-table">
+						<div class="xg-table-wrap">
+							<table class="xg-table">
 								<thead>
 									<tr>
 										<th>Unit</th>
@@ -86,14 +68,16 @@ module.exports = function single() {
 							</table>
 						</div>
 					</div>
-					<div class="cl-item">
+
+					<div class="xg-cl-item">
 						<h4>Career pathways</h4>
-						<p style="margin-bottom:24px" id="programme-career-text">Graduates progress into employment, self-employment or further study. Eastport alumni from this faculty are working across Kericho County and the wider South Rift.</p>
-						<ul class="ep-check-list" id="programme-careers"></ul>
+						<p style="margin-bottom:20px" id="programme-career-text">Graduates progress into employment, self-employment or further study. Eastport alumni from this faculty are working across Kericho County and the wider South Rift.</p>
+						<ul class="xg-check-list" id="programme-careers"></ul>
 					</div>
-					<div class="cl-item" id="fees">
+
+					<div class="xg-cl-item" id="fees">
 						<h4>Entry requirements &amp; fees</h4>
-						<ul class="ep-detail-facts">
+						<ul class="xg-detail-facts">
 							<li>Minimum entry grade <span id="programme-grade">KCSE C- (minus)</span></li>
 							<li>Duration <span id="programme-duration">2 years (3 terms per year)</span></li>
 							<li>Termly fee <span id="programme-fee-2">KSh 24,500 per term</span></li>
@@ -102,9 +86,10 @@ module.exports = function single() {
 							<li>Intakes <span>January · May · September</span></li>
 							<li>Study modes <span>Morning · Afternoon · Evening</span></li>
 						</ul>
-						<h4 style="margin-top:50px;margin-bottom:20px">Fee structure (per term)</h4>
-						<div class="table-responsive">
-							<table class="ep-table">
+
+						<h4 style="margin-top:36px;margin-bottom:16px">Fee structure (per term)</h4>
+						<div class="xg-table-wrap">
+							<table class="xg-table">
 								<thead>
 									<tr><th>Item</th><th>Amount</th><th>Notes</th></tr>
 								</thead>
@@ -117,49 +102,81 @@ module.exports = function single() {
 							</table>
 						</div>
 					</div>
-					<div class="cl-item">
+
+					<div class="xg-cl-item">
 						<h4>Frequently asked questions</h4>
-						<div class="ep-accordion-item is-open">
+						<div class="xg-acc-item is-open">
 							<button type="button">Do I need to have studied this subject before?</button>
-							<div class="ep-accordion-body">
+							<div class="xg-acc-body">
 								<p>No. Every programme starts from the fundamentals, and remedial classes are available free of charge for learners who need extra support in mathematics, English or science subjects.</p>
 							</div>
 						</div>
-						<div class="ep-accordion-item">
+						<div class="xg-acc-item">
 							<button type="button">Can I pay fees in instalments?</button>
-							<div class="ep-accordion-body">
-								<p>Yes. A 40% deposit secures your place and the balance can be paid in two further instalments within the term. Speak to the finance office on 0757 478 077 to agree a plan before registration.</p>
+							<div class="xg-acc-body">
+								<p>Yes. A 40% deposit secures your place and the balance can be paid in two further instalments within the term. Speak to the finance office on ${SITE.phone} to agree a plan before registration.</p>
 							</div>
 						</div>
-						<div class="ep-accordion-item">
+						<div class="xg-acc-item">
 							<button type="button">Is attachment guaranteed?</button>
-							<div class="ep-accordion-body">
+							<div class="xg-acc-body">
 								<p>Yes. Our industry liaison office places learners for the mandatory three-month attachment, with 98% placement across hospitals, hotels, garages, county offices and private firms.</p>
 							</div>
 						</div>
-						<div class="ep-accordion-item">
+						<div class="xg-acc-item">
 							<button type="button">Do you offer evening classes for working students?</button>
-							<div class="ep-accordion-body">
+							<div class="xg-acc-body">
 								<p>Most faculties run an evening stream between 5:30 PM and 8:30 PM, plus Saturday morning practicals for technical and hospitality programmes.</p>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<aside class="xg-aside">
+					<div class="xg-aside-card">
+						<h4>Fees at a glance</h4>
+						<div class="xg-fee-line"><span>Termly fee</span><strong id="programme-fee-3">KSh 24,500</strong></div>
+						<div class="xg-fee-line"><span>Deposit</span><strong>40%</strong></div>
+						<div class="xg-fee-line"><span>Balance</span><strong>2 instalments</strong></div>
+						<div class="xg-fee-line"><span>Attachment</span><strong>Included</strong></div>
+						<a href="apply.html" class="xg-btn xg-btn--block">Apply for January 2027 <span class="xg-arrow">&rsaquo;</span></a>
+						<a href="${SITE.whatsapp}" class="xg-btn xg-btn--outline xg-btn--block xg-mt-12" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i> Ask on WhatsApp</a>
+					</div>
+
+					<div class="xg-aside-card">
+						<h4>Talk to admissions</h4>
+						<p>Sharon can confirm your entry grade and fee plan on the phone in a few minutes.</p>
+						<ul class="xg-banner-list">
+							<li><i class="fa fa-phone"></i><span><a href="${SITE.tel}">${SITE.phone}</a></span></li>
+							<li><i class="fa fa-envelope-o"></i><span><a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
+							<li><i class="fa fa-map-marker"></i><span>${SITE.campus}</span></li>
+						</ul>
+					</div>
+
+					<div class="xg-aside-card xg-aside-card--navy">
+						<h4>Student portal</h4>
+						<p>Already enrolled? Check your units, results and fee statement in the portal.</p>
+						<a href="login.html" class="xg-btn xg-btn--ghost xg-btn--block">Sign in</a>
+					</div>
+				</aside>
 			</div>
 		</div>
 	</section>
-	<!-- single course section end -->
+	<!-- programme detail end -->
 
-	<!-- related courses -->
-	<section class="realated-courses spad">
-		<div class="course-warp">
-			<h2 class="rc-title">Related programmes</h2>
-			<div class="row" id="related-grid">
+	<!-- related programmes -->
+	<section class="xg-sec xg-sec--mist">
+		<div class="container">
+			<div class="xg-head">
+				<span class="xg-eyebrow">Keep looking</span>
+				<h2>Related programmes</h2>
+			</div>
+			<div class="xg-course-grid" id="related-grid">
 				<!-- related programme cards are rendered by js/app.js -->
 			</div>
 		</div>
 	</section>
-	<!-- related courses end -->
+	<!-- related programmes end -->
 
 ${ctaBlock()}`;
 

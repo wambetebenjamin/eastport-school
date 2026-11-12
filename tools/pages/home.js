@@ -2,206 +2,252 @@
 
 const { layout, stats, banner, gallery, SITE } = require('../layout');
 
-/* Home page follows the template's own section order one-for-one:
-   hero (+ inline sign-up bar) · faculties · search band · featured
-   programmes · trainer sign-up split · join banner · footer. */
+/* Home page follows the approved template top to bottom:
+   royal-blue top strip · white navbar with search + CTA · split hero with
+   floating stat pills · 5-item trust strip · overlapping campus about block ·
+   category cards · search band · 4-column popular course cards · trainer
+   sign-up · campus gallery · CTA band · navy footer. */
+
+const PERKS = ['TVETA &amp; KNEC accredited', 'Guaranteed attachment', '3 fee instalments'];
+
+const TRUST = [
+	{ icon: 'fa-graduation-cap', label: '253+ approved programmes' },
+	{ icon: 'fa-certificate', label: 'KNEC &amp; CDACC examined' },
+	{ icon: 'fa-briefcase', label: 'Guaranteed attachment' },
+	{ icon: 'fa-clock-o', label: 'Morning, afternoon, evening' },
+	{ icon: 'fa-map-marker', label: 'Chai Plaza, Kericho CBD' }
+];
+
+const FACULTIES = [
+	{ slug: 'health', icon: 'fa-heartbeat', label: 'Health Sciences', count: '34 programmes' },
+	{ slug: 'ict', icon: 'fa-laptop', label: 'ICT & Computing', count: '26 programmes' },
+	{ slug: 'business', icon: 'fa-line-chart', label: 'Business Studies', count: '31 programmes' },
+	{ slug: 'technical', icon: 'fa-wrench', label: 'Technical Studies', count: '24 programmes' }
+];
 
 module.exports = function home() {
-	const body = `\t<!-- Hero section — new split / frosted-glass design -->
-\t<section class="ep-hero">
-\t\t<div class="ep-hero-media" style="background-image:url(img/bg.jpg)"></div>
-\t\t<div class="ep-hero-split">
-\t\t\t<div class="container">
-\t\t\t\t<div class="ep-hero-grid">
-\t\t\t\t\t<div class="ep-hero-copy">
-\t\t\t\t\t\t<span class="ep-hero-kicker">TVETA &amp; KNEC Accredited · Kericho CBD</span>
-\t\t\t\t\t\t<h1>Real practical skills.<br><span>A career you can count on.</span></h1>
-\t\t\t\t\t\t<p>Karibu Eastport International Training College at Chai Plaza 2nd Floor, Kericho CBD. Here learning is personal and hands-on — caring tutors, modern clinical and computer labs, and guaranteed three-month industry attachments.</p>
-\t\t\t\t\t\t<ul class="ep-hero-facts">
-\t\t\t\t\t\t\t<li>253+ approved programmes</li>
-\t\t\t\t\t\t\t<li>11 specialised faculties</li>
-\t\t\t\t\t\t\t<li>98% attachment placement</li>
-\t\t\t\t\t\t</ul>
-\t\t\t\t\t</div>
+	const perks = PERKS.map((perk) => `<span>${perk}</span>`).join('\n\t\t\t\t\t');
 
-\t\t\t\t\t<!-- frosted application card -->
-\t\t\t\t\t<div class="ep-hero-form">
-\t\t\t\t\t\t<h2>Request a place</h2>
-\t\t\t\t\t\t<p>Leave your details and admissions will call you about the January 2027 intake — or apply online in five minutes.</p>
-\t\t\t\t\t\t<form class="ep-line-form" data-demo-form data-success="Asante! Your prospectus request has been received — admissions will call you before the next intake deadline.">
-\t\t\t\t\t\t\t<div class="ep-line-field">
-\t\t\t\t\t\t\t\t<input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
-\t\t\t\t\t\t\t\t<i class="fa fa-user-o ep-line-icon"></i>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class="ep-line-field">
-\t\t\t\t\t\t\t\t<input type="email" name="email" placeholder="E-mail address" aria-label="E-mail address" required>
-\t\t\t\t\t\t\t\t<i class="fa fa-envelope-o ep-line-icon"></i>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class="ep-line-field">
-\t\t\t\t\t\t\t\t<select name="faculty" aria-label="Faculty of interest">
-\t\t\t\t\t\t\t\t\t<option value="">Faculty of interest</option>
-\t\t\t\t\t\t\t\t\t<option value="health">Health Sciences</option>
-\t\t\t\t\t\t\t\t\t<option value="ict">ICT &amp; Computing</option>
-\t\t\t\t\t\t\t\t\t<option value="business">Business Studies</option>
-\t\t\t\t\t\t\t\t\t<option value="professional">Professional Studies</option>
-\t\t\t\t\t\t\t\t\t<option value="media">Journalism &amp; Media</option>
-\t\t\t\t\t\t\t\t\t<option value="languages">Languages</option>
-\t\t\t\t\t\t\t\t\t<option value="technical">Technical Studies</option>
-\t\t\t\t\t\t\t\t\t<option value="hospitality">Hospitality &amp; Tourism</option>
-\t\t\t\t\t\t\t\t\t<option value="beauty">Beauty &amp; Personal Care</option>
-\t\t\t\t\t\t\t\t\t<option value="office">Office Administration</option>
-\t\t\t\t\t\t\t\t\t<option value="international">International Courses</option>
-\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<label class="ep-line-check" for="hero-agree">
-\t\t\t\t\t\t\t\t<input type="checkbox" id="hero-agree" required>
-\t\t\t\t\t\t\t\t<span>I agree to the <a href="contact.html">terms</a> and <a href="contact.html">privacy policy</a></span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t<div class="ep-line-actions">
-\t\t\t\t\t\t\t\t<button class="site-btn ep-pill-ghost" type="submit">Send request <span class="ep-btn-arrow">&rsaquo;</span></button>
-\t\t\t\t\t\t\t\t<a href="apply.html" class="ep-line-link">Apply online</a>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class="ep-alert" role="status"></div>
-\t\t\t\t\t\t</form>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t\t<div class="ep-hero-centres">
-\t\t\t<div class="container">
-\t\t\t\t<p>${SITE.examCentres} &nbsp;·&nbsp; January · May · September intakes</p>
-\t\t\t</div>
-\t\t</div>
-\t</section>
-\t<!-- Hero section end -->
+	const trust = TRUST.map((item) =>
+		`				<div class="xg-trust-item"><span class="xg-trust-dot"><i class="fa ${item.icon}"></i></span>${item.label}</div>`).join('\n');
+
+	const facultyOptions = [
+		['health', 'Health Sciences'], ['ict', 'ICT & Computing'], ['business', 'Business Studies'],
+		['professional', 'Professional Studies'], ['media', 'Journalism & Media'], ['languages', 'Languages'],
+		['technical', 'Technical Studies'], ['hospitality', 'Hospitality & Tourism'],
+		['beauty', 'Beauty & Personal Care'], ['office', 'Office Administration'], ['international', 'International Courses']
+	].map(([value, label]) => `							<option value="${value}">${label}</option>`).join('\n');
+
+	const chips = FACULTIES.map((item, index) =>
+		`				<button type="button" class="xg-tab${index === 0 ? ' is-active' : ''}" data-faculty="${item.slug}">
+					<span class="xg-tab-ico"><i class="fa ${item.icon}"></i></span>
+					<span>
+						<h4>${item.label}</h4>
+						<span>${item.count}</span>
+					</span>
+				</button>`).join('\n');
+
+	const body = `	<!-- hero -->
+	<section class="xg-hero">
+		<div class="container">
+			<div class="xg-hero-grid">
+				<div class="xg-hero-copy">
+					<span class="xg-eyebrow">Kericho's hands-on TVET college</span>
+					<h1>Real practical skills. <span>A career you can count on.</span></h1>
+					<p>Karibu Eastport International Training College at Chai Plaza 2nd Floor, Kericho CBD — caring tutors, modern clinical and computer labs, and a guaranteed three-month industry attachment in every programme.</p>
+					<div class="xg-perks">
+						${perks}
+					</div>
+					<div class="xg-hero-btns">
+						<a href="apply.html" class="xg-btn xg-btn--lg">Apply for January 2027 <i class="fa fa-angle-right"></i></a>
+						<a href="courses.html" class="xg-btn xg-btn--dark xg-btn--lg"><i class="fa fa-th-list"></i> Our courses</a>
+					</div>
+					<p class="xg-hero-note">${SITE.examCentres} &nbsp;·&nbsp; January · May · September intakes</p>
+				</div>
+				<div class="xg-hero-visual">
+					<img src="img/signup-bg.jpg" alt="An Eastport student studying on a laptop in the campus computer suite">
+					<div class="xg-stat-pill xg-stat-pill--bl">
+						<span class="xg-pill-badge"><i class="fa fa-users"></i></span>
+						<span><strong>2,400+</strong><span>Active students</span></span>
+					</div>
+					<div class="xg-stat-pill xg-stat-pill--tr xg-stat-pill--red">
+						<span class="xg-pill-badge xg-pill-badge--red"><i class="fa fa-video-camera"></i></span>
+						<span><strong>253</strong><span>Approved programmes</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- hero end -->
+
+	<!-- 5-item trust strip -->
+	<div class="xg-trust">
+		<div class="container">
+			<div class="xg-trust-grid">
+${trust}
+			</div>
+		</div>
+	</div>
+	<!-- trust strip end -->
 
 ${stats()}
 
-\t<!-- categories section -->
-\t<section class="categories-section spad">
-\t\t<div class="container">
-\t\t\t<div class="section-title">
-\t\t\t\t<h2>Our Course Categories</h2>
-\t\t\t\t<p>Eleven specialised faculties under one roof at Chai Plaza — from clinical simulation and software engineering to commercial kitchens and solar workshops.</p>
-\t\t\t</div>
-\t\t\t<div class="row" id="faculty-grid">
-\t\t\t\t<!-- faculty cards are rendered by js/app.js -->
-\t\t\t</div>
-\t\t\t<div class="text-center" style="margin-top:40px">
-\t\t\t\t<a href="courses.html" class="site-btn ep-btn-outline">View all 253 programmes</a>
-\t\t\t</div>
-\t\t</div>
-\t</section>
-\t<!-- categories section end -->
+	<!-- about -->
+	<section class="xg-sec">
+		<div class="container">
+			<div class="xg-about-grid">
+				<div class="xg-collage">
+					<img src="img/courses/5.jpg" alt="Eastport students at work in the training kitchen">
+					<img src="img/categories/2.jpg" alt="Eastport computer suite">
+					<div class="xg-round-badge"><strong>12</strong>years of<br>hands-on training</div>
+				</div>
+				<div>
+					<span class="xg-eyebrow">Who we are</span>
+					<h2>Kericho's hands-on TVET college</h2>
+					<p class="xg-lead">Eastport International Training College is a private TVET institution registered by TVETA as centre 401002 and an examination centre for KNEC 518112 and CDACC 0350007. Learning here happens in working labs, kitchens and workshops — not just classrooms.</p>
+					<ul class="xg-check-list">
+						<li><strong>Clinical simulation, phlebotomy and computer labs</strong> on the same floor as your classroom</li>
+						<li><strong>Guaranteed three-month attachment</strong> with our Kericho and county referral partners</li>
+						<li><strong>Fees payable in three instalments</strong> per term, with a 40% deposit on acceptance</li>
+					</ul>
+					<div class="xg-about-actions">
+						<a href="about.html" class="xg-btn">More about Eastport <span class="xg-arrow">&rsaquo;</span></a>
+						<div class="xg-signature">
+							<img src="img/authors/3.jpg" alt="">
+							<span>
+								<strong>Sharon Chepkemoi</strong>
+								<span>Registrar &amp; admissions</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- about end -->
 
-\t<!-- search section -->
-\t<section class="search-section">
-\t\t<div class="container">
-\t\t\t<div class="search-warp">
-\t\t\t\t<div class="section-title text-white">
-\t\t\t\t\t<h2><span>Search your course</span></h2>
-\t\t\t\t</div>
-\t\t\t\t<div class="row">
-\t\t\t\t\t<div class="col-lg-10 offset-lg-1">
-\t\t\t\t\t\t<form class="course-search-form" id="home-search-form" action="courses.html">
-\t\t\t\t\t\t\t<input type="text" name="q" placeholder="Course or career keyword">
-\t\t\t\t\t\t\t<select name="faculty" class="ep-search-select">
-\t\t\t\t\t\t\t\t<option value="">All faculties</option>
-\t\t\t\t\t\t\t\t<option value="health">Health Sciences</option>
-\t\t\t\t\t\t\t\t<option value="ict">ICT &amp; Computing</option>
-\t\t\t\t\t\t\t\t<option value="business">Business Studies</option>
-\t\t\t\t\t\t\t\t<option value="professional">Professional Studies</option>
-\t\t\t\t\t\t\t\t<option value="media">Journalism &amp; Media</option>
-\t\t\t\t\t\t\t\t<option value="languages">Languages</option>
-\t\t\t\t\t\t\t\t<option value="technical">Technical Studies</option>
-\t\t\t\t\t\t\t\t<option value="hospitality">Hospitality &amp; Tourism</option>
-\t\t\t\t\t\t\t\t<option value="beauty">Beauty &amp; Personal Care</option>
-\t\t\t\t\t\t\t\t<option value="office">Office Administration</option>
-\t\t\t\t\t\t\t\t<option value="international">International Courses</option>
-\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t<button class="site-btn btn-dark" type="submit">Search Course</button>
-\t\t\t\t\t\t</form>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t</section>
-\t<!-- search section end -->
+	<!-- categories + popular courses -->
+	<section class="xg-sec xg-sec--mist">
+		<div class="container">
+			<div class="xg-head xg-head--center">
+				<span class="xg-eyebrow">Our course categories</span>
+				<h2>Popular courses by faculty</h2>
+				<p>Eleven specialised faculties under one roof at Chai Plaza — from clinical simulation and software engineering to commercial kitchens and solar workshops.</p>
+			</div>
 
-\t<!-- course section -->
-\t<section class="course-section spad">
-\t\t<div class="container">
-\t\t\t<div class="section-title mb-0">
-\t\t\t\t<h2>Featured Courses</h2>
-\t\t\t\t<p>Hand-picked qualifications with the strongest attachment partnerships and employer demand in Kericho County. Fees are per term, payable in three instalments.</p>
-\t\t\t</div>
-\t\t</div>
-\t\t<div class="course-warp">
-\t\t\t<div class="text-center">
-\t\t\t\t<ul class="course-filter">
-\t\t\t\t\t<li class="control mixitup-control-active" data-level="all">All</li>
-\t\t\t\t\t<li class="control" data-level="diploma">Diploma</li>
-\t\t\t\t\t<li class="control" data-level="certificate">Certificate</li>
-\t\t\t\t\t<li class="control" data-level="artisan">Artisan</li>
-\t\t\t\t\t<li class="control" data-level="professional">Professional</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-\t\t\t<div class="row course-items-area" id="featured-grid">
-\t\t\t\t<!-- programme cards are rendered by js/app.js -->
-\t\t\t</div>
-\t\t\t<div class="text-center" style="margin-top:30px">
-\t\t\t\t<a href="courses.html" class="site-btn">See all programmes</a>
-\t\t\t</div>
-\t\t</div>
-\t</section>
-\t<!-- course section end -->
+			<div class="xg-tabs" id="home-faculty-tabs">
+${chips}
+			</div>
 
-\t<!-- signup section -->
-\t<section class="signup-section spad">
-\t\t<div class="signup-bg set-bg" style="background-image:url(img/signup-bg.jpg)"></div>
-\t\t<div class="container-fluid">
-\t\t\t<div class="row">
-\t\t\t\t<div class="col-lg-6">
-\t\t\t\t\t<div class="signup-warp">
-\t\t\t\t\t\t<div class="section-title text-white text-left">
-\t\t\t\t\t\t\t<h2>Sign up to become a trainer</h2>
-\t\t\t\t\t\t\t<p>We are always looking for TVET trainers and technicians with real industry experience. Register your interest and our academic office will invite you for a demonstration lesson.</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<form class="signup-form" data-demo-form data-success="Thank you. Your trainer application has been received — the academic office will contact you within five working days.">
-\t\t\t\t\t\t\t<input type="text" placeholder="Your Name" required>
-\t\t\t\t\t\t\t<input type="email" placeholder="Your E-mail" required>
-\t\t\t\t\t\t\t<input type="text" placeholder="Your Phone" required>
-\t\t\t\t\t\t\t<label for="v-upload" class="file-up-btn">Upload CV</label>
-\t\t\t\t\t\t\t<input type="file" id="v-upload">
-\t\t\t\t\t\t\t<button class="site-btn" type="submit">Submit application</button>
-\t\t\t\t\t\t\t<div class="ep-alert" role="status"></div>
-\t\t\t\t\t\t</form>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t</section>
-\t<!-- signup section end -->
+			<div class="xg-course-grid" id="featured-grid">
+				<!-- programme cards are rendered by js/app.js -->
+			</div>
+
+			<div class="xg-text-center xg-mt-32">
+				<a href="courses.html" class="xg-btn xg-btn--outline">View all 253 programmes <span class="xg-arrow">&rsaquo;</span></a>
+			</div>
+		</div>
+	</section>
+	<!-- categories end -->
+
+	<!-- search band -->
+	<section class="xg-search-band">
+		<div class="container">
+			<div class="xg-search-card">
+				<div class="xg-head xg-head--center">
+					<h2>Search your course</h2>
+					<p>Type a career, a programme or a faculty — we will show you every qualification that matches.</p>
+				</div>
+				<form class="xg-inline-form" id="home-search-form" action="courses.html">
+					<input class="xg-input" type="text" name="q" placeholder="Course or career keyword">
+					<select class="xg-select" name="faculty">
+						<option value="">All faculties</option>
+${facultyOptions}
+					</select>
+					<button class="xg-btn" type="submit"><i class="fa fa-search"></i> Search course</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- search band end -->
+
+	<!-- trainer sign-up -->
+	<section class="xg-sec">
+		<div class="container">
+			<div class="xg-about-grid">
+				<div>
+					<span class="xg-eyebrow">Join the faculty</span>
+					<h2>Sign up to become a trainer</h2>
+					<p class="xg-lead">We are always looking for TVET trainers and technicians with real industry experience. Register your interest and our academic office will invite you for a demonstration lesson.</p>
+					<ul class="xg-check-list">
+						<li>Flexible morning, afternoon or evening teaching streams</li>
+						<li>Clinical, ICT, hospitality, engineering and beauty workshops on site</li>
+						<li>Competitive part-time and full-time rates, paid monthly</li>
+					</ul>
+					<div class="xg-badges">
+						<span class="xg-badge"><i class="fa fa-check"></i> TVETA registered</span>
+						<span class="xg-badge"><i class="fa fa-check"></i> KCSE &amp; diploma holders</span>
+						<span class="xg-badge"><i class="fa fa-check"></i> Industry experience valued</span>
+					</div>
+				</div>
+				<form class="xg-search-card" data-demo-form data-success="Thank you. Your trainer application has been received — the academic office will contact you within five working days.">
+					<div class="xg-head" style="margin-bottom:18px">
+						<h2 style="font-size:22px">Trainer interest form</h2>
+					</div>
+					<div class="xg-field">
+						<label for="tr-name">Full name</label>
+						<input class="xg-input" id="tr-name" type="text" placeholder="As it appears on your ID" required>
+					</div>
+					<div class="xg-form-row">
+						<div class="xg-field">
+							<label for="tr-email">E-mail</label>
+							<input class="xg-input" id="tr-email" type="email" placeholder="you@example.com" required>
+						</div>
+						<div class="xg-field">
+							<label for="tr-phone">Phone</label>
+							<input class="xg-input" id="tr-phone" type="tel" placeholder="07xx xxx xxx" required>
+						</div>
+					</div>
+					<div class="xg-field">
+						<label for="tr-area">Area of expertise</label>
+						<select class="xg-select" id="tr-area">
+							<option>Health Sciences</option>
+							<option>ICT &amp; Computing</option>
+							<option>Business Studies</option>
+							<option>Technical Studies</option>
+							<option>Hospitality &amp; Tourism</option>
+							<option>Beauty &amp; Personal Care</option>
+						</select>
+					</div>
+					<label for="v-upload" class="xg-file-btn"><i class="fa fa-upload"></i> Upload CV</label>
+					<input type="file" id="v-upload" class="xg-sr">
+					<button class="xg-btn xg-btn--block" type="submit">Submit application <span class="xg-arrow">&rsaquo;</span></button>
+					<div class="xg-alert" role="status"></div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- trainer sign-up end -->
 
 ${gallery({
 		title: 'Campus in pictures',
 		text: 'Classrooms, computer suites, the training kitchen, workshops, the salon and the study areas students use between lessons — all at Chai Plaza on Kenyatta Street.',
 		items: [
-			{ image: 'img/courses/5.jpg' },
-			{ image: 'img/courses/f-1.jpg' },
-			{ image: 'img/categories/4.jpg' },
-			{ image: 'img/courses/3.jpg' },
-			{ image: 'img/courses/f-2.jpg' },
-			{ image: 'img/categories/6.jpg' },
-			{ image: 'img/blog/3.jpg' },
-			{ image: 'img/courses/7.jpg' }
+			{ image: 'img/courses/5.jpg', caption: 'Training kitchen' },
+			{ image: 'img/courses/f-1.jpg', caption: 'Computer suite' },
+			{ image: 'img/categories/4.jpg', caption: 'Classroom' },
+			{ image: 'img/courses/3.jpg', caption: 'Library corner' },
+			{ image: 'img/courses/f-2.jpg', caption: 'Study area' },
+			{ image: 'img/categories/6.jpg', caption: 'ICT lab' },
+			{ image: 'img/blog/3.jpg', caption: 'Group work' },
+			{ image: 'img/courses/7.jpg', caption: 'Workshop' }
 		]
 	})}
 
 ${banner({
 		title: 'Join Our Community Now!',
 		text: 'Applications for the January 2027 intake are open across all eleven faculties. Secure your place with a 40% deposit and pay the balance in three flexible instalments.',
-		cta: 'Register Now',
+		cta: 'Register now',
 		href: 'apply.html'
 	})}`;
 

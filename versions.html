@@ -11,9 +11,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<style>
 		:root {
-			--navy: #24246a;
+			--navy: #0b1220;
 			--deep: #171750;
 			--gold: #e2a33c;
+			--blue: #1463f3;
 			--ink: #1b1b36;
 			--body: #565d72;
 			--muted: #8a90a2;
@@ -79,13 +80,15 @@
 
 		.hero p { color: rgba(255, 255, 255, .82); max-width: 720px; margin: 0; }
 
-		.eyebrow {
+		.eyebrow,
+		.hero .eyebrow {
 			display: inline-block;
 			font-size: 11.5px;
 			font-weight: 700;
 			letter-spacing: 2.4px;
 			text-transform: uppercase;
 			color: var(--gold);
+			line-height: 1.6;
 			margin-bottom: 12px;
 		}
 
@@ -124,7 +127,7 @@
 			margin-bottom: 12px;
 		}
 
-		.tag.gold { background: rgba(226, 163, 60, .16); color: #a86b12; }
+		.tag.gold { background: rgba(20, 99, 243, .12); color: #0b3fa8; }
 
 		.card-head h2 { font-size: 23px; margin-bottom: 8px; }
 
@@ -167,8 +170,8 @@
 		.btn-primary { background: var(--navy); color: #fff; }
 		.btn-primary:hover { background: var(--deep); color: #fff; }
 
-		.btn-gold { background: var(--gold); color: #221a05; }
-		.btn-gold:hover { background: #c4852a; color: #fff; }
+		.btn-gold { background: var(--blue, #1463f3); color: #fff; }
+		.btn-gold:hover { background: #0d4ec7; color: #fff; }
 
 		.btn-ghost { border-color: var(--navy); color: var(--navy); }
 		.btn-ghost:hover { background: var(--navy); color: #fff; }
@@ -254,7 +257,7 @@
 		<div class="wrap">
 			<span class="eyebrow">Two complete builds</span>
 			<h1>Choose the design for eastportinternationalcollege.ac.ke</h1>
-			<p>Both versions carry the same Eastport content, the same logo and the navy-and-gold brand palette. They differ in structure, navigation and the shape of the student login. Open each one, use the portal, then tell us which letter to take forward.</p>
+			<p>Both versions now share one design language — royal blue, white cards and the same campus photography — and both portals use the same sign-in screen. They differ in structure: a brochure-style college website with a student portal, or a university-style site with an eLearning system. Open each one, use the portal, then tell us which letter to take forward.</p>
 		</div>
 	</div>
 
@@ -265,7 +268,7 @@
 					<div class="card-head">
 						<span class="tag">Version A</span>
 						<h2>College website</h2>
-						<p>A brochure-style college website in Eastport navy and gold, in the approved split / frosted-glass design: a photographic hero with a frosted enquiry card, course categories with photography, programme cards, a campus photo wall and a split student login.</p>
+						<p>The college website on the approved template: royal-blue top strip, white sticky navigation with course search and an apply CTA, a split hero with floating student statistics, a five-item trust strip, faculty category tabs, four-column course cards, a course search band and a campus photo wall — all leading into one shared student portal.</p>
 					</div>
 					<div class="shots two">
 						<img src="img/versions/a-home.jpg" alt="Version A home page">
@@ -273,8 +276,8 @@
 					</div>
 					<div class="card-body">
 						<ul class="list">
-							<li><i>●</i><span>Split / frosted-glass hero: the claim and intake facts on the left, a frosted “Request a place” card on the right, over a full-bleed photograph. Interior pages repeat the pattern as a title-and-facts banner.</span></li>
-							<li><i>●</i><span>Student login in the same language: clear copy panel with statistics and pill actions beside a frosted sign-in panel with underlined fields, pill submit and tabs for student, staff and guardian.</span></li>
+							<li><i>●</i><span>Split hero: the claim, accreditation facts and two calls to action on the left, a campus photograph with two floating statistic pills on the right. Interior pages repeat the pattern as a title-and-facts banner.</span></li>
+							<li><i>●</i><span>One login for every role: the student, staff and guardian tabs sit in the same sign-in card, on the same page shell, with demo credentials, password visibility and honest validation.</span></li>
 							<li><i>●</i><span>Ten pages: home, about, courses, course detail, news, contact, apply, login, dashboard, 404.</span></li>
 							<li><i>●</i><span>Campus photo wall, plus photography on the about, contact, courses and apply pages.</span></li>
 						</ul>
@@ -291,7 +294,7 @@
 					<div class="card-head">
 						<span class="tag gold">Version B</span>
 						<h2>University website + eLearning</h2>
-						<p>A university-style website with a full-width photo slider, programme levels and enquiry form, plus a separate eLearning portal with its own login, student dashboard and course catalogue.</p>
+						<p>A university-style website with a full-width photo slider, programme levels and enquiry form, plus an eLearning portal. The eLearning sign-in uses the same theme and the same account as the main portal — one login, two destinations.</p>
 					</div>
 					<div class="shots two">
 						<img src="img/versions/b-home.jpg" alt="Version B marketing home">
@@ -300,8 +303,8 @@
 					<div class="card-body">
 						<ul class="list">
 							<li><i>●</i><span>University-style home: contact strip, sticky navigation, full-width photo slider, quick-resource strip, illustrated programme levels, photo gallery, “Request free information” form on navy, studying band, review cards with star ratings, campus-news cards and an intake pop-up.</span></li>
-							<li><i>●</i><span>eLearning portal: centred login card over a campus photograph (“Log in”, username or email, remember username, forgotten password, “Log in using your account on: Sign in with Eastport Email”, cookies notice), a student dashboard with photo course cards, announcements, events and campus-life blocks, plus a “Search for courses” catalogue.</span></li>
-							<li><i>●</i><span>Same Eastport facts, crest, navy and gold throughout — photography on every screen, including the portal.</span></li>
+							<li><i>●</i><span>eLearning portal: the same split sign-in as Version A (“Log in to eLearning”, role tabs, admission number and password, demo credentials), then a student dashboard with photo course cards, progress bars, announcements, events and campus-life blocks, plus a “Search for courses” catalogue.</span></li>
+							<li><i>●</i><span>Same Eastport facts, crest and royal-blue palette throughout — photography on every screen, including the portal.</span></li>
 						</ul>
 						<div class="actions">
 							<a class="btn btn-gold" href="v2/index.html">Open Version B</a>

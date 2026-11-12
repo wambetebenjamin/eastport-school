@@ -19,14 +19,15 @@ module.exports = function notfound() {
 		}
 	})}
 
-	<section class="spad text-center">
-		<div class="container">
-			<div class="section-title" style="margin-bottom:40px">
-				<span class="ep-uppercase">Still stuck?</span>
+	<section class="xg-sec xg-sec--mist">
+		<div class="container xg-text-center">
+			<div class="xg-head xg-head--center">
+				<span class="xg-eyebrow">Still stuck?</span>
 				<h2>We will find it with you</h2>
 				<p>Call admissions on ${SITE.phone} or walk into Chai Plaza 2nd Floor — we can look up the programme or the notice you were after.</p>
 			</div>
-			<a href="courses.html" class="site-btn">Browse the catalogue <span class="ep-btn-arrow">&rsaquo;</span></a>
+			<a href="courses.html" class="xg-btn">Browse the catalogue <span class="xg-arrow">&rsaquo;</span></a>
+			<a href="index.html" class="xg-btn xg-btn--outline" style="margin-left:12px">Back to the homepage</a>
 		</div>
 	</section>`;
 

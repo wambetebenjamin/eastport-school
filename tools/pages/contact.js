@@ -21,71 +21,94 @@ module.exports = function contact() {
 		}
 	})}
 
-	<!-- search section -->
-	<section class="search-section ss-other-page">
+	<!-- search band -->
+	<section class="xg-search-band">
 		<div class="container">
-			<div class="search-warp">
-				<div class="section-title text-white">
-					<h2><span>Find a course first?</span></h2>
+			<div class="xg-search-card">
+				<div class="xg-head xg-head--center">
+					<h2>Find a course first?</h2>
+					<p>Search the catalogue, then call admissions about entry grades and fees.</p>
 				</div>
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1">
-						<form class="course-search-form" action="courses.html">
-							<input type="text" name="q" placeholder="Course or career keyword">
-							<select name="faculty" class="ep-search-select">
-								<option value="">All faculties</option>
-								<option value="health">Health Sciences</option>
-								<option value="ict">ICT &amp; Computing</option>
-								<option value="business">Business Studies</option>
-								<option value="technical">Technical Studies</option>
-								<option value="hospitality">Hospitality &amp; Tourism</option>
-								<option value="international">International Courses</option>
-							</select>
-							<button class="site-btn btn-dark" type="submit">Search Course</button>
-						</form>
-					</div>
-				</div>
+				<form class="xg-inline-form" action="courses.html">
+					<input class="xg-input" type="text" name="q" placeholder="Course or career keyword">
+					<select class="xg-select" name="faculty">
+						<option value="">All faculties</option>
+						<option value="health">Health Sciences</option>
+						<option value="ict">ICT &amp; Computing</option>
+						<option value="business">Business Studies</option>
+						<option value="technical">Technical Studies</option>
+						<option value="hospitality">Hospitality &amp; Tourism</option>
+						<option value="international">International Courses</option>
+					</select>
+					<button class="xg-btn" type="submit"><i class="fa fa-search"></i> Search course</button>
+				</form>
 			</div>
 		</div>
 	</section>
-	<!-- search section end -->
+	<!-- search band end -->
 
-	<!-- Page -->
-	<section class="contact-page spad pb-0">
+	<!-- contact -->
+	<section class="xg-sec">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="contact-form-warp">
-						<div class="section-title text-white text-left">
-							<h2>Get in touch</h2>
-							<p>Admissions, fees, bursary applications or attachment letters — send us a message and Sharon from the admissions desk will respond within one working day.</p>
-						</div>
-						<form class="contact-form" data-demo-form data-success="Thank you. Your message has reached the admissions desk — expect a reply on the phone or e-mail you provided within one working day.">
-							<input type="text" placeholder="Your Name" required>
-							<input type="email" placeholder="Your E-mail" required>
-							<input type="text" placeholder="Subject" required>
-							<textarea placeholder="Message" required></textarea>
-							<button class="site-btn" type="submit">Send Message</button>
-							<div class="ep-alert" role="status"></div>
-						</form>
+			<div class="xg-contact-grid">
+				<div class="xg-contact-form">
+					<div class="xg-head">
+						<span class="xg-eyebrow">Get in touch</span>
+						<h2>Send the admissions desk a message</h2>
+						<p>Admissions, fees, bursary applications or attachment letters — send us a message and Sharon will respond within one working day.</p>
 					</div>
+					<form data-demo-form data-success="Thank you. Your message has reached the admissions desk — expect a reply on the phone or e-mail you provided within one working day.">
+						<div class="xg-form-row">
+							<div class="xg-field">
+								<label for="c-name">Your name</label>
+								<input class="xg-input" id="c-name" type="text" placeholder="e.g. Brian Kiprotich" required>
+							</div>
+							<div class="xg-field">
+								<label for="c-email">E-mail</label>
+								<input class="xg-input" id="c-email" type="email" placeholder="you@example.com" required>
+							</div>
+						</div>
+						<div class="xg-form-row">
+							<div class="xg-field">
+								<label for="c-phone">Phone</label>
+								<input class="xg-input" id="c-phone" type="tel" placeholder="07xx xxx xxx" required>
+							</div>
+							<div class="xg-field">
+								<label for="c-subject">Subject</label>
+								<select class="xg-select" id="c-subject">
+									<option>Admissions &amp; entry grades</option>
+									<option>Fees &amp; payment plans</option>
+									<option>Bursary and HELB guidance</option>
+									<option>Attachment letters</option>
+									<option>Portal or ICT support</option>
+									<option>Something else</option>
+								</select>
+							</div>
+						</div>
+						<div class="xg-field">
+							<label for="c-message">Message</label>
+							<textarea class="xg-textarea" id="c-message" placeholder="Tell us your KCSE grade and the career you are aiming for..." required></textarea>
+						</div>
+						<label class="xg-check">
+							<input type="checkbox" required>
+							<span>I understand my details are used only to answer this enquiry.</span>
+						</label>
+						<button class="xg-btn" type="submit">Send message <span class="xg-arrow">&rsaquo;</span></button>
+						<div class="xg-alert" role="status"></div>
+					</form>
 				</div>
-				<div class="col-lg-4">
-					<div class="contact-info-area">
-						<div class="section-title text-left p-0">
-							<h2>Contact info</h2>
-							<p>Walk in, call or WhatsApp — our offices are on the second floor of Chai Plaza, a two-minute walk from the Kericho matatu stage.</p>
-						</div>
-						<div class="phone-number">
-							<span>Admissions hotline</span>
-							<h2>${SITE.phone}</h2>
-						</div>
-						<ul class="contact-list">
-							<li>${SITE.campus}</li>
-							<li>${SITE.hours}</li>
-							<li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
+
+				<aside class="xg-contact-list">
+					<div class="xg-contact-card">
+						<span class="xg-eyebrow">Admissions hotline</span>
+						<a class="xg-contact-phone" href="${SITE.tel}">${SITE.phone}</a>
+						<ul>
+							<li><i class="fa fa-whatsapp"></i><span><a href="${SITE.whatsapp}" target="_blank" rel="noopener">WhatsApp admissions</a></span></li>
+							<li><i class="fa fa-envelope-o"></i><span><a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
+							<li><i class="fa fa-map-marker"></i><span>${SITE.campus}</span></li>
+							<li><i class="fa fa-clock-o"></i><span>${SITE.hours}</span></li>
 						</ul>
-						<div class="social-links">
+						<div class="xg-contact-social">
 							<a href="https://facebook.com/EastportCollegeKericho" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
 							<a href="https://twitter.com/EastportCollege" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
 							<a href="https://instagram.com/eastportcollege" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
@@ -94,33 +117,32 @@ module.exports = function contact() {
 							<a href="https://tiktok.com/@eastportcollege" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa fa-music"></i></a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="ep-map" id="map-canvas">
-				<div class="ep-map-card">
-					<span class="ep-uppercase">Find the campus</span>
-					<h4>Chai Plaza, 2nd Floor</h4>
-					<p>Kenyatta Street, Kericho CBD<br>Opposite the county offices, above the ground-floor shops.</p>
-					<ul class="ep-detail-facts" style="margin-top:20px">
-						<li>Landmark <span>Kericho CBD, Kenyatta Street</span></li>
-						<li>Nearest stage <span>Kericho main matatu stage</span></li>
-						<li>Accessibility <span>Lift and stair access</span></li>
-					</ul>
-					<a class="site-btn" style="margin-top:24px;min-width:auto;padding:14px 26px" href="https://www.google.com/maps/search/?api=1&amp;query=Chai+Plaza+Kericho" target="_blank" rel="noopener">Get directions</a>
-				</div>
+
+					<div class="xg-map-card" id="map-canvas">
+						<span class="xg-eyebrow">Find the campus</span>
+						<h4>Chai Plaza, 2nd Floor</h4>
+						<p>Kenyatta Street, Kericho CBD — opposite the county offices, above the ground-floor shops.</p>
+						<ul class="xg-detail-facts">
+							<li>Landmark <span>Kericho CBD, Kenyatta Street</span></li>
+							<li>Nearest stage <span>Kericho main matatu stage</span></li>
+							<li>Accessibility <span>Lift and stair access</span></li>
+						</ul>
+						<a class="xg-btn xg-btn--block" href="https://www.google.com/maps/search/?api=1&amp;query=Chai+Plaza+Kericho" target="_blank" rel="noopener">Get directions <span class="xg-arrow">&rsaquo;</span></a>
+					</div>
+				</aside>
 			</div>
 		</div>
 	</section>
-	<!-- Page end -->
+	<!-- contact end -->
 
 ${gallery({
 		title: 'Come and see the campus',
 		text: 'Chai Plaza 2nd Floor on Kenyatta Street — two minutes from the matatu stage. Walk in any weekday between 8:00 AM and 5:00 PM and the admissions desk will show you the labs, the restaurant and the computer suites.',
 		items: [
-			{ image: 'img/courses/5.jpg' },
-			{ image: 'img/courses/3.jpg' },
-			{ image: 'img/courses/6.jpg' },
-			{ image: 'img/categories/6.jpg' }
+			{ image: 'img/courses/5.jpg', caption: 'Training kitchen' },
+			{ image: 'img/courses/3.jpg', caption: 'Computer suite' },
+			{ image: 'img/courses/6.jpg', caption: 'Workshop' },
+			{ image: 'img/categories/6.jpg', caption: 'ICT lab' }
 		]
 	})}
 

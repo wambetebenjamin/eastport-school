@@ -356,56 +356,170 @@ ${news()}`;
    eLearning — login
    --------------------------------------------------------------- */
 
+/* The eLearning login uses the same shell as the main site so both portals
+   read as one product: royal-blue top strip, white navbar, navy footer. */
+function v2Header() {
+	const links = [
+		['../index.html', 'Home'],
+		['../about.html', 'About us'],
+		['../courses.html', 'Courses'],
+		['../blog.html', 'News'],
+		['../contact.html', 'Contact']
+	].map(([href, label]) => `\t\t\t\t\t<li><a href="${href}">${label}</a></li>`).join('\n');
+
+	return `\t<div class="xg-topstrip">
+\t\t<div class="container">
+\t\t\t<div class="xg-topstrip-left">
+\t\t\t\t<a href="${SITE.tel}"><i class="fa fa-phone"></i>${SITE.phone}</a>
+\t\t\t\t<span class="xg-topstrip-sep">|</span>
+\t\t\t\t<span><i class="fa fa-graduation-cap"></i>Eastport eLearning System</span>
+\t\t\t</div>
+\t\t\t<div class="xg-topstrip-right">
+\t\t\t\t<a href="../login.html">Portal login</a>
+\t\t\t\t<span class="xg-topstrip-sep">|</span>
+\t\t\t\t<a href="../index.html">College website</a>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+\t<header class="xg-header">
+\t\t<div class="container">
+\t\t\t<div class="xg-nav">
+\t\t\t\t<a href="../index.html" class="xg-brand" aria-label="Eastport International Training College home">
+\t\t\t\t\t<img src="../img/logo-dark.svg" alt="Eastport International Training College">
+\t\t\t\t</a>
+\t\t\t\t<ul class="xg-nav-links">
+${links}
+\t\t\t\t\t<li><a href="login.html" class="is-active">eLearning</a></li>
+\t\t\t\t</ul>
+\t\t\t\t<div class="xg-nav-actions">
+\t\t\t\t\t<form class="xg-search xg-search--desktop" action="../courses.html" role="search">
+\t\t\t\t\t\t<input type="text" name="q" placeholder="Search for a course..." aria-label="Search for a course">
+\t\t\t\t\t\t<button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+\t\t\t\t\t</form>
+\t\t\t\t\t<a href="../apply.html" class="xg-btn xg-btn--sm">Apply now <span class="xg-arrow">&rsaquo;</span></a>
+\t\t\t\t\t<button type="button" class="xg-nav-toggle" aria-expanded="false" aria-controls="xg-mobile-nav" aria-label="Open menu" data-nav-toggle>
+\t\t\t\t\t\t<i class="fa fa-bars"></i>
+\t\t\t\t\t</button>
+\t\t\t\t</div>
+\t\t\t\t<div class="xg-mobile-nav" id="xg-mobile-nav">
+\t\t\t\t\t<a href="../index.html">Home<i class="fa fa-angle-right"></i></a>
+\t\t\t\t\t<a href="../about.html">About us<i class="fa fa-angle-right"></i></a>
+\t\t\t\t\t<a href="../courses.html">Courses<i class="fa fa-angle-right"></i></a>
+\t\t\t\t\t<a href="../blog.html">News<i class="fa fa-angle-right"></i></a>
+\t\t\t\t\t<a href="../contact.html">Contact<i class="fa fa-angle-right"></i></a>
+\t\t\t\t\t<a href="../login.html">Portal login<i class="fa fa-angle-right"></i></a>
+\t\t\t\t\t<div class="xg-mobile-cta">
+\t\t\t\t\t\t<a href="../login.html" class="xg-btn xg-btn--outline xg-btn--sm">Portal login</a>
+\t\t\t\t\t\t<a href="../apply.html" class="xg-btn xg-btn--sm">Apply now</a>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</header>`;
+}
+
 function loginPage() {
-	const body = `<main id="maincontent">
-		<div class="el-login-page">
-			<div class="el-login-box">
-				<div class="el-login-logo">
-					<img src="../img/logo-dark.svg" alt="Eastport International Training College">
-					<strong>Eastport eLearning System</strong>
-					<span>Kericho · Student &amp; staff portal</span>
-				</div>
-				<h1>Log in</h1>
-				<form data-el-login novalidate>
-					<div class="el-field">
-						<label for="el-user">Username or email <span class="el-req">*</span></label>
-						<div class="el-input-wrap">
-							<input id="el-user" name="username" type="text" autocomplete="username" placeholder="e.g. EITC/2026/0148" required>
-							<span class="el-input-icon" aria-hidden="true"><i class="fa fa-user-o"></i></span>
+	const body = `${v2Header()}
+	<main id="maincontent">
+		<section class="xl-wrap">
+			<div class="container">
+				<div class="xl-grid">
+					<div class="xl-left">
+						<div class="xl-copy">
+							<span class="xg-eyebrow">Eastport eLearning · Kericho</span>
+							<h1>One portal for <span>every Eastport learner.</span></h1>
+							<p>The eLearning system uses the same account as the college website portal. Sign in once to reach your notes, assignments, results and fee statement.</p>
+							<ul class="xl-flist">
+								<li><strong>Course notes and recorded lessons</strong></li>
+								<li><strong>Assignments with submission dates</strong></li>
+								<li><strong>Results, transcripts and fee statements</strong></li>
+								<li><strong>Attachment letters for your employer</strong></li>
+							</ul>
+							<div class="xg-hero-btns">
+								<a href="../apply.html" class="xg-btn">Apply for January 2027 <i class="fa fa-angle-right"></i></a>
+								<a href="../courses.html" class="xg-btn xg-btn--dark"><i class="fa fa-th-list"></i> Explore 253 courses</a>
+							</div>
+							<div class="xg-badges" style="margin-top:20px">
+								<span class="xg-badge"><i class="fa fa-shield"></i> ${SITE.examCentres}</span>
+							</div>
+						</div>
+
+						<div class="xl-visual" style="max-width:520px">
+							<img src="../img/signup-bg.jpg" alt="Eastport learner studying in the campus computer suite">
+							<div class="xg-stat-pill xg-stat-pill--bl">
+								<span class="xg-pill-badge"><i class="fa fa-users"></i></span>
+								<span><strong>2,400+</strong><span>Active students</span></span>
+							</div>
+							<div class="xg-stat-pill xg-stat-pill--tr xg-stat-pill--green">
+								<span class="xg-pill-badge xg-pill-badge--green"><i class="fa fa-check"></i></span>
+								<span><strong>98%</strong><span>Attachment placement</span></span>
+							</div>
 						</div>
 					</div>
-					<div class="el-field">
-						<label for="el-pass">Password <span class="el-req">*</span></label>
-						<div class="el-input-wrap">
-							<input id="el-pass" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
-							<button class="el-input-icon" type="button" data-toggle-pass="el-pass" aria-label="Show password"><i class="fa fa-eye"></i></button>
+
+					<div class="xl-card">
+						<div class="xl-card-head">
+							<span class="xg-eyebrow">eLearning access</span>
+							<h2>Log in to eLearning</h2>
+							<p>Students, staff and guardians use the same form — pick your role first.</p>
 						</div>
+
+						<div class="xl-tabs" role="tablist">
+							<button type="button" class="is-active" data-role="student" role="tab" aria-selected="true"><i class="fa fa-graduation-cap"></i>Student</button>
+							<button type="button" data-role="staff" role="tab" aria-selected="false"><i class="fa fa-briefcase"></i>Staff</button>
+							<button type="button" data-role="guardian" role="tab" aria-selected="false"><i class="fa fa-users"></i>Guardian</button>
+						</div>
+
+						<div class="xg-alert" id="login-alert" role="alert" aria-live="polite"></div>
+
+						<form id="login-form" novalidate>
+							<div class="xl-field">
+								<label for="identifier" id="identifier-label">Admission number / student e-mail</label>
+								<div class="xl-input-wrap">
+									<input class="xl-input" type="text" id="identifier" name="identifier" placeholder="e.g. EITC/2026/0148" autocomplete="username" spellcheck="false" required>
+									<i class="fa fa-user-o xl-icon"></i>
+								</div>
+								<div class="xl-error ep-field-error"></div>
+							</div>
+
+							<div class="xl-field">
+								<label for="password">Password</label>
+								<div class="xl-input-wrap">
+									<input class="xl-input" type="password" id="password" name="password" placeholder="Enter your portal password" autocomplete="current-password" required>
+									<button type="button" class="xl-input-action" data-toggle-password="password" aria-label="Show password"><i class="fa fa-eye"></i></button>
+								</div>
+								<div class="xl-error ep-field-error"></div>
+							</div>
+
+							<div class="xl-row">
+								<label class="xl-check" for="remember">
+									<input type="checkbox" id="remember">
+									Keep me signed in
+								</label>
+								<a href="#" class="xl-link" id="forgot-password">Forgot password?</a>
+							</div>
+
+							<button type="submit" class="xl-submit" id="login-submit">Log in <span class="xg-arrow">&rsaquo;</span></button>
+						</form>
+
+						<div class="xl-alt"><span>or</span></div>
+
+						<div class="xl-alt-grid">
+							<a class="xl-alt-btn" href="../apply.html"><i class="fa fa-user-plus"></i> Apply as a new student</a>
+							<a class="xl-alt-btn" href="../contact.html"><i class="fa fa-life-ring"></i> Help from the ICT desk</a>
+						</div>
+
+						<div class="xl-demo">
+							<strong>Preview credentials</strong>
+							Admission <code>EITC/2026/0148</code> · Password <code>eastport2026</code><br>
+							<button type="button" class="xl-demo-fill" data-fill-demo>Fill demo credentials</button>
+						</div>
+
+						<p class="xl-note">This site uses cookies to give you the best browsing experience. Your password is personal — the ICT desk will never ask for it by phone or WhatsApp.</p>
 					</div>
-					<div class="el-remember">
-						<label><input type="checkbox" name="remember" checked> Remember username</label>
-					</div>
-					<button class="el-submit" type="submit">Log in</button>
-					<div class="u-alert" role="status" data-el-alert></div>
-				</form>
-				<p class="el-login-alt"><a href="../contact.html">Forgotten your username or password?</a></p>
-				<div class="el-divider">Or</div>
-				<div class="el-oauth">
-					<h2>Log in using your account on:</h2>
-					<a class="el-oauth-btn" href="dashboard.html">
-						<i class="fa fa-google" style="color:#4285f4"></i>
-						Sign in with Eastport Email
-					</a>
-				</div>
-				<div class="el-cookies">
-					<strong>Cookies notice</strong>
-					This site uses cookies to give you the best browsing experience. By continuing you agree to our use of cookies.
-				</div>
-				<div class="el-demo">
-					<strong>Demo access:</strong> admission <code>EITC/2026/0148</code> · password <code>eastport2026</code><br>
-					<button type="button" data-fill-demo>Fill demo credentials</button>
 				</div>
 			</div>
-		</div>
+		</section>
 	</main>
 	<div class="el-login-foot">
 		<div class="el-wrap">
@@ -416,12 +530,14 @@ function loginPage() {
 	</div>`;
 
 	return ePage({
+		noHeader: true,
 		slimFooter: true,
 		guest: true,
 		title: 'Log in to the site | Eastport eLearning',
 		description: 'Log in to the Eastport International Training College eLearning system with your admission number to access results, notes, assignments and fee statements.',
 		active: 'home',
-		body
+		body,
+		scripts: ['js/data.js', 'js/app.js']
 	});
 }
 

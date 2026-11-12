@@ -2447,3 +2447,35 @@ a.el-oauth-btn:hover {
 		width: 100%;
 	}
 }
+
+/* =================================
+   One brand, one portal theme
+   Version B keeps its university layout but adopts the college's royal
+   blue so the eLearning dashboard, the main portal dashboard and every
+   login screen read as the same product.
+   ==================================== */
+
+:root {
+	--u-navy: #1463f3;
+	--u-deep: #0b3fa8;
+	--u-navy-mid: #0d4ec7;
+	--u-ink: #0f172a;
+	--u-body: #475569;
+	--u-muted: #64748b;
+	--u-line: #e2e8f0;
+	--u-mist: #f4f7fc;
+	--u-font: 'Outfit', 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* v2 eLearning shell keeps its layout but takes the new ink/blue */
+.el-header {
+	background: #0b1220;
+}
+
+.el-login-foot {
+	background: #0b1220;
+}
+
+.el-login-foot a {
+	color: var(--x-gold, #e2a33c);
+}
