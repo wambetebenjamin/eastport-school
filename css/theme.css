@@ -304,17 +304,6 @@ textarea:focus-visible {
 	margin-bottom: 10px;
 }
 
-.xg-eyebrow:before {
-	content: "";
-	display: inline-block;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: var(--x-gold);
-	margin-right: 8px;
-	vertical-align: 2px;
-}
-
 .xg-lead {
 	font-size: 15.5px;
 	color: var(--x-body);
@@ -887,24 +876,15 @@ textarea:focus-visible {
 }
 
 .xg-perks span {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	gap: 7px;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--x-body);
 }
 
-.xg-perks span:before {
-	content: "";
-	width: 7px;
-	height: 7px;
-	border-radius: 50%;
-	background: var(--x-blue);
-	-webkit-box-flex: 0;
-	-ms-flex: 0 0 7px;
-	flex: 0 0 7px;
+.xg-perks span + span {
+	padding-left: 22px;
+	border-left: 1px solid var(--x-line);
 }
 
 .xg-hero-btns {
@@ -926,6 +906,29 @@ textarea:focus-visible {
 	letter-spacing: .6px;
 	text-transform: uppercase;
 	color: var(--x-muted);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: 6px 18px;
+}
+
+/* a hairline separates the two facts, never a leading dot */
+.xg-hero-note span + span {
+	padding-left: 18px;
+	border-left: 1px solid var(--x-line);
+}
+
+@media (max-width: 767px) {
+	.xg-hero-note {
+		gap: 4px 0;
+	}
+
+	.xg-hero-note span + span {
+		padding-left: 0;
+		border-left: 0;
+	}
 }
 
 /* visual + floating pills */

@@ -62,7 +62,7 @@ module.exports = function home() {
 						<a href="apply.html" class="xg-btn xg-btn--lg">Apply for January 2027 <i class="fa fa-angle-right"></i></a>
 						<a href="courses.html" class="xg-btn xg-btn--dark xg-btn--lg"><i class="fa fa-th-list"></i> Our courses</a>
 					</div>
-					<p class="xg-hero-note">${SITE.examCentres} &nbsp;·&nbsp; January · May · September intakes</p>
+					<p class="xg-hero-note"><span>${SITE.examCentres}</span><span>January · May · September intakes</span></p>
 				</div>
 				<div class="xg-hero-visual">
 					<img src="img/signup-bg.jpg" alt="An Eastport student studying on a laptop in the campus computer suite">
