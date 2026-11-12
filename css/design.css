@@ -1,0 +1,1940 @@
+/* =================================
+------------------------------------
+  Eastport International Training College
+  NEW DESIGN — split / frosted-glass shell
+  (hero, interior banners, buttons, forms, footer)
+
+  Adopted from the approved "split glass" reference: a full-bleed
+  photograph, a clear left copy panel, and a frosted right panel with
+  underlined fields and pill actions.
+
+  Palette: Eastport navy #24246a · gold #e2a33c · ink #1c1c4e · mist #eef1f9
+ ------------------------------------
+ ====================================*/
+
+/* ------------------------------------------------------------------
+   Typography — the reference uses Inter; it replaces Raleway site-wide
+   so headings, forms and buttons share one neutral, modern face.
+------------------------------------------------------------------ */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+span,
+input,
+select,
+textarea,
+button,
+.site-btn {
+	font-family: 'Inter', 'Raleway', -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--ep-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--ep-heading);
+	letter-spacing: -.4px;
+}
+
+/* ------------------------------------------------------------------
+   Pill buttons — the reference action style.
+   .site-btn keeps working everywhere it is already used, so every CTA
+   on the site becomes a pill with the arrow affordance.
+------------------------------------------------------------------ */
+
+.site-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	border-radius: 100px;
+	padding: 15px 30px;
+	font-size: 14.5px;
+	font-weight: 600;
+	letter-spacing: .1px;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	-webkit-transition: background .22s ease, color .22s ease, border-color .22s ease;
+	transition: background .22s ease, color .22s ease, border-color .22s ease;
+}
+
+.site-btn i {
+	font-size: 14px;
+}
+
+.site-btn .ep-btn-arrow {
+	font-size: 18px;
+	line-height: 1;
+	font-weight: 400;
+	-webkit-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+.site-btn:focus-visible {
+	outline: 2px solid var(--ep-gold);
+	outline-offset: 3px;
+}
+
+/* Outline pill on photographs and coloured bands */
+.site-btn.ep-pill-ghost {
+	background: transparent;
+	border: 1.5px solid rgba(255, 255, 255, .82);
+	color: #fff;
+}
+
+.site-btn.ep-pill-ghost:hover {
+	background: #fff;
+	border-color: #fff;
+	color: #16162e;
+}
+
+/* Outline pill on white */
+.site-btn.ep-pill-line {
+	background: transparent;
+	border: 1.5px solid rgba(36, 36, 106, .3);
+	color: var(--ep-navy);
+}
+
+.site-btn.ep-pill-line:hover {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	color: #fff;
+}
+
+/* Gold pill — the primary admissions action */
+.site-btn.ep-pill-gold,
+.btn-pill-gold {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+}
+
+.site-btn.ep-pill-gold:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+.site-btn.ep-btn-outline {
+	background: transparent;
+	border: 1.5px solid var(--ep-navy);
+	color: var(--ep-navy);
+	padding: 13.5px 28px;
+}
+
+.site-btn.ep-btn-outline:hover {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	color: #fff;
+}
+
+.site-btn.btn-white {
+	background: #fff;
+	color: var(--ep-ink);
+}
+
+.site-btn.btn-white:hover {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+/* keep the small inline actions the template puts in cards */
+.site-btn.readmore,
+.site-btn.price-btn,
+.site-btn.buy-btn {
+	border-radius: 100px;
+}
+
+/* ------------------------------------------------------------------
+   Underlined field — the reference input language.
+   Used by the hero application form and shared on interior panels.
+------------------------------------------------------------------ */
+
+.ep-line-form .ep-line-field {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-bottom: 1.5px solid rgba(255, 255, 255, .55);
+	padding-bottom: 9px;
+	margin-bottom: 26px;
+	-webkit-transition: border-color .25s ease;
+	transition: border-color .25s ease;
+}
+
+.ep-line-form .ep-line-field:focus-within {
+	border-bottom-color: #fff;
+}
+
+.ep-line-form .ep-line-field input,
+.ep-line-form .ep-line-field select,
+.ep-line-form .ep-line-field textarea {
+	width: 100%;
+	background: transparent;
+	border: 0;
+	outline: none;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 0 30px 0 0;
+	height: 34px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.ep-line-form .ep-line-field input::-webkit-input-placeholder,
+.ep-line-form .ep-line-field textarea::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, .62);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.ep-line-form .ep-line-field input::-moz-placeholder,
+.ep-line-form .ep-line-field textarea::-moz-placeholder {
+	color: rgba(255, 255, 255, .62);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.ep-line-form .ep-line-field input::placeholder,
+.ep-line-form .ep-line-field textarea::placeholder {
+	color: rgba(255, 255, 255, .62);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.ep-line-form .ep-line-field select option {
+	color: #1d1d3f;
+}
+
+.ep-line-form .ep-line-field select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(255,255,255,0.75)' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 2px center;
+	background-size: 12px 8px;
+}
+
+.ep-line-form .ep-line-icon {
+	position: absolute;
+	right: 0;
+	top: 4px;
+	color: rgba(255, 255, 255, .7);
+	font-size: 15px;
+	pointer-events: none;
+}
+
+.ep-line-form .ep-line-check {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 10px;
+	font-size: 12.5px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .78);
+	margin-bottom: 28px;
+	cursor: pointer;
+}
+
+.ep-line-form .ep-line-check input {
+	width: 15px;
+	height: 15px;
+	margin: 0;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 15px;
+	flex: 0 0 15px;
+	accent-color: var(--ep-gold);
+	cursor: pointer;
+}
+
+.ep-line-form .ep-line-check a {
+	color: #fff;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.ep-line-form .ep-line-actions {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 26px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.ep-line-form .ep-line-link {
+	font-size: 13px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .88);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	text-decoration-color: rgba(255, 255, 255, .45);
+}
+
+.ep-line-form .ep-line-link:hover {
+	color: #fff;
+	text-decoration-color: #fff;
+}
+
+/* alerts and notes inside the frosted panels */
+.ep-line-form .ep-alert,
+.ep-glass .ep-alert {
+	border-radius: 0;
+	font-size: 12.5px;
+	margin-bottom: 20px;
+}
+
+.ep-line-form .ep-field-error,
+.ep-glass .ep-field-error {
+	display: none;
+	font-size: 11.5px;
+	font-weight: 600;
+	color: #ffd9d2;
+	margin-top: -18px;
+	margin-bottom: 14px;
+}
+
+.ep-line-form .ep-field-error.is-visible,
+.ep-glass .ep-field-error.is-visible {
+	display: block;
+}
+
+.ep-line-form .ep-line-field.is-invalid {
+	border-bottom-color: #ffab9a;
+}
+
+.ep-line-note {
+	margin: 18px 0 0;
+	font-size: 11.5px;
+	line-height: 1.8;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .55);
+}
+
+/* ------------------------------------------------------------------
+   Frosted glass surface
+------------------------------------------------------------------ */
+
+.ep-glass {
+	position: relative;
+	background: rgba(18, 24, 32, .55);
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, .14);
+	padding: 40px 38px;
+}
+
+.ep-glass-eyebrow {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 2.2px;
+	text-transform: uppercase;
+	color: var(--ep-gold-soft);
+	margin-bottom: 18px;
+}
+
+.ep-glass h2,
+.ep-glass h3,
+.ep-glass h4 {
+	color: #fff;
+	font-weight: 600;
+}
+
+.ep-glass p {
+	color: rgba(255, 255, 255, .76);
+	font-size: 13.5px;
+	line-height: 1.85;
+}
+
+/* ------------------------------------------------------------------
+   Header — flat, photographic, pill portal action
+------------------------------------------------------------------ */
+
+.header-section {
+	padding-top: 34px;
+	-webkit-transition: background .25s ease;
+	transition: background .25s ease;
+}
+
+.header-section .container {
+	position: relative;
+}
+
+.header-section:after {
+	margin-top: 22px;
+	opacity: .35;
+}
+
+.site-logo img,
+.site-logo svg {
+	height: 44px;
+}
+
+.main-menu ul li a {
+	font-size: 14.5px;
+	font-weight: 500;
+	letter-spacing: .2px;
+	margin-left: 34px;
+	padding: 10px 0 8px;
+	position: relative;
+	color: rgba(255, 255, 255, .92);
+}
+
+.main-menu ul li a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	background: var(--ep-gold);
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transform-origin: left center;
+	transform-origin: left center;
+	-webkit-transition: -webkit-transform .25s ease;
+	transition: transform .25s ease;
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+	color: #fff;
+}
+
+.main-menu ul li a:hover:after,
+.main-menu ul li a.active:after {
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+.header-phone {
+	float: right;
+	padding: 14px 0 6px;
+	margin-right: 22px;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .9);
+}
+
+.header-phone i {
+	color: var(--ep-gold);
+	margin-right: 8px;
+}
+
+.site-btn.header-btn {
+	padding: 12px 24px;
+	min-width: 0;
+	font-size: 13.5px;
+	background: transparent;
+	border: 1.5px solid rgba(255, 255, 255, .8);
+	color: #fff;
+}
+
+.site-btn.header-btn:hover {
+	background: #fff;
+	border-color: #fff;
+	color: #16162e;
+}
+
+/* ------------------------------------------------------------------
+   Home hero — the reference split
+------------------------------------------------------------------ */
+
+.ep-hero {
+	position: relative;
+	overflow: hidden;
+	background: #0c0c26;
+	padding: 0;
+}
+
+.ep-hero-media {
+	position: absolute;
+	inset: 0;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-filter: blur(2px) saturate(1.05);
+	filter: blur(2px) saturate(1.05);
+	-webkit-transform: scale(1.04);
+	transform: scale(1.04);
+	opacity: .62;
+}
+
+.ep-hero:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background:
+		linear-gradient(180deg, rgba(10, 12, 30, .55) 0%, rgba(12, 12, 40, .35) 45%, rgba(12, 12, 40, .8) 100%),
+		radial-gradient(120% 120% at 12% 10%, rgba(16, 16, 48, .1) 0%, rgba(9, 9, 30, .55) 70%);
+}
+
+.ep-hero-split {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	padding: 176px 0 68px;
+}
+
+.ep-hero-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+	gap: 54px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+}
+
+.ep-hero-copy {
+	max-width: 600px;
+}
+
+.ep-hero-kicker {
+	display: inline-block;
+	max-width: 100%;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+	color: var(--ep-gold-soft);
+	border-left: 3px solid var(--ep-gold);
+	padding: 3px 0 3px 14px;
+	margin-bottom: 26px;
+}
+
+.ep-hero-copy h1 {
+	color: #fff;
+	font-size: 56px;
+	line-height: 1.12;
+	font-weight: 600;
+	letter-spacing: -1.4px;
+	margin-bottom: 22px;
+	text-shadow: 0 2px 24px rgba(0, 0, 0, .35);
+}
+
+.ep-hero-copy h1 span {
+	color: var(--ep-gold-soft);
+}
+
+.ep-hero-copy > p {
+	color: rgba(255, 255, 255, .84);
+	font-size: 15.5px;
+	line-height: 1.95;
+	max-width: 520px;
+	margin-bottom: 0;
+	text-shadow: 0 1px 12px rgba(0, 0, 0, .4);
+}
+
+.ep-hero-facts {
+	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: 10px 26px;
+	margin: 26px 0 0;
+}
+
+.ep-hero-facts li {
+	position: relative;
+	padding-left: 22px;
+	font-size: 12.5px;
+	font-weight: 500;
+	letter-spacing: .3px;
+	color: rgba(255, 255, 255, .76);
+}
+
+.ep-hero-facts li:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 6px;
+	width: 9px;
+	height: 9px;
+	border: 1.5px solid var(--ep-gold);
+	border-radius: 50%;
+}
+
+.ep-hero-form {
+	background: rgba(18, 24, 32, .56);
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, .16);
+	padding: 38px 36px 34px;
+	width: 100%;
+	max-width: 430px;
+	margin-left: auto;
+}
+
+.ep-hero-form h2 {
+	color: #fff;
+	font-size: 26px;
+	font-weight: 600;
+	letter-spacing: -.5px;
+	margin-bottom: 8px;
+}
+
+.ep-hero-form > p {
+	color: rgba(255, 255, 255, .7);
+	font-size: 12.5px;
+	line-height: 1.75;
+	margin-bottom: 26px;
+}
+
+.ep-hero-form .site-btn {
+	width: 100%;
+	padding: 14px 24px;
+}
+
+/* the exam-centre line under the hero card */
+.ep-hero-centres {
+	position: relative;
+	z-index: 2;
+	border-top: 1px solid rgba(255, 255, 255, .12);
+	text-align: center;
+	margin-top: 54px;
+	padding: 16px 0 18px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .55);
+}
+
+.ep-hero-centres p {
+	margin: 0;
+	font-size: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+}
+
+/* ------------------------------------------------------------------
+   Interior page banner — split: title left, frosted card right
+------------------------------------------------------------------ */
+
+.page-info-section {
+	position: relative;
+	height: auto;
+	min-height: 0;
+	padding: 150px 0 76px;
+	background-color: #10102f;
+	overflow: hidden;
+}
+
+.page-info-section:after {
+	background:
+		linear-gradient(160deg, rgba(11, 13, 34, .86) 0%, rgba(18, 18, 56, .7) 55%, rgba(11, 13, 34, .9) 100%);
+}
+
+.page-info-section .container {
+	position: relative;
+	z-index: 3;
+}
+
+/* the template reserves a fixed 545px / extra bottom padding for a banner
+   that hands over to an overhanging search band; in the new design the band
+   stacks underneath, so the banner keeps its own natural height */
+.page-info-section:has(+ .search-section.ss-other-page),
+.page-info-section:has(+ .search-section.ss-other-page) + .search-section.ss-other-page,
+.page-info-section + .search-section.ss-other-page {
+	height: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+	.page-info-section:has(+ .search-section.ss-other-page) {
+		padding-bottom: 68px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-info-section:has(+ .search-section.ss-other-page) {
+		padding-bottom: 52px;
+	}
+}
+
+.ep-banner-grid {
+	display: grid;
+	grid-template-columns: 1.1fr .9fr;
+	gap: 48px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.ep-banner-copy .site-breadcrumb {
+	padding-top: 0;
+	margin-bottom: 20px;
+}
+
+.ep-banner-copy .site-breadcrumb a {
+	color: rgba(255, 255, 255, .72);
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: .4px;
+	padding-right: 12px;
+	margin-right: 12px;
+}
+
+.ep-banner-copy .site-breadcrumb a:hover {
+	color: var(--ep-gold);
+}
+
+.ep-banner-copy .site-breadcrumb span {
+	color: var(--ep-gold);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+}
+
+.ep-banner-copy .ep-breadcrumb-kicker {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 2.2px;
+	text-transform: uppercase;
+	color: var(--ep-gold-soft);
+	margin-bottom: 14px;
+}
+
+.ep-page-title {
+	color: #fff;
+	font-size: 46px;
+	font-weight: 600;
+	letter-spacing: -1.2px;
+	line-height: 1.14;
+	margin: 0 0 16px;
+	text-shadow: 0 2px 20px rgba(0, 0, 0, .35);
+}
+
+.ep-banner-lead {
+	color: rgba(255, 255, 255, .8);
+	font-size: 14.5px;
+	line-height: 1.9;
+	max-width: 560px;
+	margin-bottom: 0;
+}
+
+.ep-banner-card {
+	background: rgba(18, 24, 32, .55);
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, .14);
+	padding: 32px 30px 30px;
+}
+
+.ep-banner-card h3 {
+	color: #fff;
+	font-size: 19px;
+	font-weight: 600;
+	letter-spacing: -.2px;
+	margin-bottom: 6px;
+}
+
+.ep-banner-card > p {
+	color: rgba(255, 255, 255, .72);
+	font-size: 12.5px;
+	line-height: 1.8;
+	margin-bottom: 18px;
+}
+
+.ep-banner-card ul {
+	list-style: none;
+	margin: 0 0 22px;
+}
+
+.ep-banner-card ul li {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	gap: 12px;
+	font-size: 12.5px;
+	font-weight: 500;
+	line-height: 1.65;
+	color: rgba(255, 255, 255, .82);
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+	overflow-wrap: anywhere;
+}
+
+.ep-banner-card ul li:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+.ep-banner-card ul li i {
+	color: var(--ep-gold);
+	width: 15px;
+	margin-top: 4px;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 15px;
+	flex: 0 0 15px;
+}
+
+.ep-banner-card ul li a {
+	color: rgba(255, 255, 255, .82);
+}
+
+.ep-banner-card ul li a:hover {
+	color: var(--ep-gold);
+}
+
+.ep-banner-card .site-btn {
+	width: 100%;
+	padding: 13px 20px;
+	font-size: 13px;
+}
+
+/* ------------------------------------------------------------------
+   Stats strip
+------------------------------------------------------------------ */
+
+.ep-stats {
+	background: var(--ep-ink);
+	padding: 46px 0;
+	border-bottom: 3px solid var(--ep-gold);
+}
+
+.ep-stat h3 {
+	font-size: 40px;
+	font-weight: 600;
+	letter-spacing: -1px;
+}
+
+.ep-stat h3 span {
+	color: var(--ep-gold);
+}
+
+.ep-stat p {
+	font-size: 11px;
+	letter-spacing: 1.4px;
+	color: rgba(255, 255, 255, .62);
+}
+
+/* ------------------------------------------------------------------
+   Section rhythm & titles
+------------------------------------------------------------------ */
+
+.section-title h2 {
+	font-size: 40px;
+	font-weight: 600;
+	letter-spacing: -1.1px;
+	color: var(--ep-heading);
+}
+
+.section-title p {
+	font-size: 14.5px;
+	line-height: 1.95;
+	color: var(--ep-body);
+}
+
+.section-title .ep-uppercase,
+.ep-uppercase {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+	color: var(--ep-gold);
+	margin-bottom: 14px;
+}
+
+/* ------------------------------------------------------------------
+   Cards — flat, square, gold hairline on hover
+------------------------------------------------------------------ */
+
+.categorie-item,
+.course-item {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	-webkit-transition: border-color .25s ease, -webkit-transform .25s ease, -webkit-box-shadow .25s ease;
+	transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.categorie-item .ci-text {
+	padding: 30px 30px 32px;
+}
+
+.categorie-item .ci-text h5 {
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: -.2px;
+	margin-bottom: 8px;
+}
+
+.categorie-item .ci-text p {
+	font-size: 13px;
+	line-height: 1.8;
+	margin-bottom: 14px;
+}
+
+.categorie-item .ci-text span {
+	font-size: 12.5px;
+	font-weight: 600;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	color: var(--ep-navy);
+}
+
+.categorie-item {
+	background: #fff;
+}
+
+.categorie-item:hover {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	-webkit-transform: translateY(-3px);
+	transform: translateY(-3px);
+}
+
+.categorie-item:hover .ci-thumb {
+	opacity: .82;
+}
+
+/* outline actions inside white cards keep the pill shape */
+.ep-panel,
+.ep-help-card,
+.lg-card {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* ------------------------------------------------------------------
+   Inline bands (search + trainer sign-up) speak the same language
+------------------------------------------------------------------ */
+
+.search-warp {
+	background: var(--ep-navy);
+}
+
+.course-search-form {
+	border-radius: 0;
+	padding: 34px 34px;
+}
+
+.course-search-form input[type=text],
+.course-search-form input[type=email],
+.course-search-form select {
+	border-radius: 0;
+	background: var(--ep-mist);
+	height: 56px;
+	font-size: 14px;
+}
+
+.course-search-form .site-btn {
+	padding: 16px 26px;
+}
+
+.signup-form input[type=text],
+.signup-form input[type=email],
+.signup-form input[type=tel],
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form input[type=tel],
+.contact-form textarea {
+	border-radius: 0;
+	border: 1px solid var(--ep-border);
+	background: #fff;
+}
+
+.contact-form,
+.signup-form {
+	border-radius: 0;
+}
+
+/* ------------------------------------------------------------------
+   Footer — deep navy, gold rule, pill newsletter action
+------------------------------------------------------------------ */
+
+.footer-section {
+	background: #10102f;
+	border-top: 3px solid var(--ep-gold);
+	padding-top: 90px;
+}
+
+.footer-section .widget-item h4 {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: .4px;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	position: relative;
+	padding-bottom: 16px;
+}
+
+.footer-section .widget-item h4:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 28px;
+	height: 2px;
+	background: var(--ep-gold);
+}
+
+.footer-section .widget-item ul {
+	padding-top: 22px;
+}
+
+.footer-section .widget-item ul li,
+.footer-section .widget-item ul li span {
+	color: rgba(255, 255, 255, .66);
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.85;
+}
+
+.footer-section .widget-item ul a {
+	color: rgba(255, 255, 255, .66);
+}
+
+.footer-section .widget-item ul a:hover {
+	color: var(--ep-gold);
+}
+
+.footer-section .widget-item ul.contact-list li:after {
+	background: var(--ep-gold);
+	top: 9px;
+	width: 5px;
+	height: 5px;
+	left: 0;
+}
+
+.footer-section .widget-item ul.contact-list li {
+	padding-left: 16px;
+	margin-bottom: 20px;
+}
+
+.footer-newslatter {
+	padding-right: 0;
+}
+
+.footer-newslatter input[type=email] {
+	background: rgba(255, 255, 255, .07);
+	border: 1px solid rgba(255, 255, 255, .16);
+	border-radius: 0;
+	color: #fff;
+	height: 52px;
+	padding: 0 20px;
+	margin-bottom: 14px;
+	font-size: 13.5px;
+}
+
+.footer-newslatter input[type=email]::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, .45);
+	font-style: normal;
+}
+
+.footer-newslatter input[type=email]::-moz-placeholder {
+	color: rgba(255, 255, 255, .45);
+	font-style: normal;
+}
+
+.footer-newslatter input[type=email]::placeholder {
+	color: rgba(255, 255, 255, .45);
+	font-style: normal;
+}
+
+.footer-newslatter input[type=email]:focus {
+	border-color: var(--ep-gold);
+}
+
+.footer-newslatter .site-btn {
+	width: 100%;
+	min-width: 0;
+	padding: 14px 20px;
+	background: var(--ep-gold);
+	color: #1d1d3f;
+	margin-bottom: 14px;
+}
+
+.footer-newslatter .site-btn:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+.footer-newslatter p {
+	color: rgba(255, 255, 255, .42);
+	font-size: 11.5px;
+	font-style: normal;
+	letter-spacing: .3px;
+	clear: both;
+}
+
+.footer-newslatter .ep-alert {
+	font-size: 12px;
+	margin-top: 12px;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.footer-bottom {
+	background: transparent;
+	border-top: 1px solid rgba(255, 255, 255, .12);
+	margin-top: 64px;
+	padding: 22px 0 26px;
+}
+
+.footer-menu li a {
+	color: rgba(255, 255, 255, .7);
+	font-size: 12.5px;
+	font-weight: 500;
+}
+
+.footer-menu li a:after {
+	color: rgba(255, 255, 255, .24);
+}
+
+.footer-menu li a:hover {
+	color: var(--ep-gold);
+}
+
+.copyright {
+	color: rgba(255, 255, 255, .48);
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.9;
+}
+
+.copyright a {
+	color: rgba(255, 255, 255, .7);
+}
+
+/* ------------------------------------------------------------------
+   Contact block / CTA band
+------------------------------------------------------------------ */
+
+.ep-contact-block {
+	background: var(--ep-navy);
+	padding: 90px 0;
+}
+
+.ep-contact-block h2 {
+	color: #fff;
+	font-size: 36px;
+	font-weight: 600;
+	letter-spacing: -1px;
+}
+
+.ep-contact-meta li {
+	font-size: 12.5px;
+	color: rgba(255, 255, 255, .78);
+}
+
+/* ------------------------------------------------------------------
+   Responsive
+------------------------------------------------------------------ */
+
+@media (max-width: 1199px) {
+	.ep-hero-copy h1 {
+		font-size: 46px;
+	}
+
+	.ep-hero-grid {
+		gap: 36px;
+	}
+
+	.ep-page-title {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 991px) {
+	.header-section {
+		padding-top: 22px;
+	}
+
+	.header-section:after {
+		display: none;
+	}
+
+	.ep-hero-split {
+		padding: 124px 0 48px;
+	}
+
+	.ep-hero-grid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 34px;
+	}
+
+	.ep-hero-centres {
+		margin-top: 34px;
+	}
+
+	.ep-hero-copy h1 {
+		font-size: 38px;
+		letter-spacing: -.8px;
+	}
+
+	.ep-hero-copy > p {
+		font-size: 14.5px;
+	}
+
+	.ep-hero-form {
+		max-width: none;
+		margin-left: 0;
+		padding: 30px 26px 28px;
+	}
+
+	.page-info-section {
+		padding: 120px 0 56px;
+	}
+
+	.ep-banner-grid {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	.ep-page-title {
+		font-size: 34px;
+	}
+
+	.section-title h2 {
+		font-size: 30px;
+	}
+
+	.ep-stats {
+		padding: 36px 0;
+	}
+
+	.ep-stat h3 {
+		font-size: 30px;
+	}
+
+	.footer-section {
+		padding-top: 64px;
+	}
+
+	.footer-bottom {
+		margin-top: 24px;
+	}
+
+	.footer-menu {
+		float: none;
+		margin-bottom: 12px;
+	}
+
+	.copyright {
+		float: none;
+	}
+}
+
+@media (max-width: 575px) {
+	.ep-hero-split {
+		padding: 104px 0 36px;
+	}
+
+	.ep-hero-copy h1 {
+		font-size: 30px;
+	}
+
+	.ep-hero-kicker {
+		font-size: 10px;
+		letter-spacing: 1.8px;
+		margin-bottom: 18px;
+	}
+
+	.ep-hero-facts {
+		gap: 8px 18px;
+	}
+
+	.ep-hero-facts li {
+		font-size: 11.5px;
+	}
+
+	.ep-hero-form h2 {
+		font-size: 22px;
+	}
+
+	.ep-hero-form {
+		padding: 26px 20px 24px;
+	}
+
+	.ep-line-form .ep-line-actions {
+		gap: 16px;
+	}
+
+	.ep-line-form .ep-line-actions .site-btn {
+		width: 100%;
+	}
+
+	.page-info-section {
+		padding: 104px 0 46px;
+	}
+
+	.ep-page-title {
+		font-size: 27px;
+		letter-spacing: -.6px;
+	}
+
+	.ep-banner-lead {
+		font-size: 13.5px;
+	}
+
+	.ep-banner-card {
+		padding: 26px 22px 24px;
+	}
+
+	.section-title h2 {
+		font-size: 25px;
+	}
+
+	.section-title p {
+		font-size: 13.5px;
+	}
+
+	.ep-contact-block {
+		padding: 60px 0;
+	}
+
+	.ep-contact-block h2 {
+		font-size: 26px;
+	}
+
+	.categorie-item .ci-text {
+		padding: 26px 24px 28px;
+	}
+}
+
+/* Browsers without backdrop-filter get an opaque panel instead of a
+   washed-out one. */
+@supports not ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
+	.ep-glass,
+	.ep-hero-form,
+	.ep-banner-card {
+		background: rgba(14, 18, 30, .92);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ep-hero-media {
+		-webkit-filter: none;
+		filter: none;
+	}
+
+	.categorie-item,
+	.site-btn {
+		-webkit-transition: none;
+		transition: none;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Search band on interior pages (courses / news / contact)
+   The template hangs the band title above the band; in the new design it
+   simply becomes a heading inside the flat navy band.
+------------------------------------------------------------------ */
+
+	.search-section.ss-other-page {
+		margin-top: 0;
+	}
+
+.search-section.ss-other-page .search-warp {
+	position: relative;
+	background: var(--ep-navy);
+	padding: 46px 44px 44px;
+	border-radius: 0;
+}
+
+.search-section.ss-other-page .section-title {
+	margin-bottom: 24px;
+}
+
+.search-section.ss-other-page .section-title h2 {
+	position: static;
+	width: auto;
+	bottom: auto;
+	font-size: 26px;
+	font-weight: 600;
+	letter-spacing: -.5px;
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.search-section.ss-other-page .section-title h2 span {
+	display: inline;
+	background: transparent;
+	padding: 0;
+}
+
+.search-section.ss-other-page .course-search-form {
+	background: transparent;
+	padding: 0;
+}
+
+.search-section.ss-other-page .course-search-form input[type=text],
+.search-section.ss-other-page .course-search-form input[type=email] {
+	background: rgba(255, 255, 255, .1);
+	border: 1px solid rgba(255, 255, 255, .22);
+	color: #fff;
+}
+
+.search-section.ss-other-page .course-search-form input[type=text]::placeholder,
+.search-section.ss-other-page .course-search-form input[type=email]::placeholder {
+	color: rgba(255, 255, 255, .55);
+}
+
+.search-section.ss-other-page .course-search-form input[type=text]:focus,
+.search-section.ss-other-page .course-search-form input[type=email]:focus {
+	border: 1px solid var(--ep-gold);
+	border-bottom: 1px solid var(--ep-gold);
+	background: rgba(255, 255, 255, .16);
+}
+
+.search-section.ss-other-page .course-search-form select.ep-search-select {
+	background-color: rgba(255, 255, 255, .1);
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' fill-opacity='.8' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+	border: 1px solid rgba(255, 255, 255, .22);
+	color: #fff;
+}
+
+.search-section.ss-other-page .course-search-form select.ep-search-select option {
+	color: #1d1d3f;
+	background: #fff;
+}
+
+.search-section.ss-other-page .course-search-form select.ep-search-select:focus {
+	border-color: var(--ep-gold);
+}
+
+.search-section.ss-other-page .course-search-form .site-btn {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+}
+
+.search-section.ss-other-page .course-search-form .site-btn:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+@media (max-width: 991px) {
+	.search-section.ss-other-page .search-warp {
+		padding: 32px 26px 30px;
+	}
+
+	.search-section.ss-other-page .section-title h2 {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 575px) {
+	.search-section.ss-other-page .search-warp {
+		padding: 26px 20px 26px;
+	}
+
+	.search-section.ss-other-page .section-title h2 {
+		font-size: 19px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Join band ("Join Our Community Now!") — flat navy with gold rule
+------------------------------------------------------------------ */
+
+.banner-section {
+	background: var(--ep-ink);
+	padding: 84px 0;
+	text-align: center;
+	border-top: 3px solid var(--ep-gold);
+}
+
+.banner-section .section-title h2 {
+	color: #fff;
+	font-size: 38px;
+	font-weight: 600;
+	letter-spacing: -1px;
+}
+
+.banner-section .section-title p {
+	color: rgba(255, 255, 255, .72);
+	font-size: 14.5px;
+	line-height: 1.95;
+}
+
+.banner-section .site-btn {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+	padding: 15px 34px;
+}
+
+.banner-section .site-btn:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+@media (max-width: 991px) {
+	.banner-section {
+		padding: 60px 0;
+	}
+
+	.banner-section .section-title h2 {
+		font-size: 28px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Course filter tabs — pill controls in the reference's language
+------------------------------------------------------------------ */
+
+.course-filter li {
+	border-radius: 100px;
+	font-size: 12.5px;
+	font-weight: 600;
+	letter-spacing: .4px;
+	padding: 11px 22px;
+}
+
+.course-filter li.active {
+	background: var(--ep-navy);
+}
+
+.ep-chip {
+	border-radius: 100px;
+	font-weight: 600;
+	font-size: 12.5px;
+	padding: 10px 20px;
+}
+
+/* ------------------------------------------------------------------
+   Programme & news cards — flat with a thin gold accent on hover
+------------------------------------------------------------------ */
+
+.course-item:hover {
+	-webkit-box-shadow: 0 18px 38px rgba(17, 17, 56, .12);
+	box-shadow: 0 18px 38px rgba(17, 17, 56, .12);
+	border-color: rgba(36, 36, 106, .28);
+}
+
+.course-item .course-info {
+	background: #fff;
+}
+
+.course-item .course-info .course-text {
+	padding: 26px 26px 20px;
+}
+
+.course-item .course-info .course-author {
+	border-top: 1px solid var(--ep-border);
+	padding: 14px 26px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 12px;
+}
+
+.course-item .course-info .course-author .ca-pic {
+	float: none;
+	width: 36px;
+	height: 36px;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 36px;
+	flex: 0 0 36px;
+}
+
+.course-item .course-info .course-author p {
+	padding: 0;
+	margin: 0;
+	font-size: 12.5px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: var(--ep-body);
+}
+
+.course-item .course-info .course-author p span {
+	color: var(--ep-gold);
+	font-weight: 600;
+}
+
+.course-item .course-thumb .price {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .2px;
+	padding: 8px 14px;
+	border-radius: 100px;
+	margin: 14px;
+	font-size: 11.5px;
+	line-height: 1.2;
+}
+
+.course-item .course-info .course-text h5 {
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -.2px;
+}
+
+.course-item .course-info .course-text p {
+	font-size: 13px;
+	line-height: 1.8;
+}
+
+.course-item .course-info .course-text .students {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+	color: var(--ep-navy);
+}
+
+.course-item .course-thumb .price {
+	font-size: 11.5px;
+	font-weight: 600;
+	letter-spacing: .5px;
+	border-radius: 0;
+}
+
+/* ------------------------------------------------------------------
+   Interior panels & forms that still use the light template skin
+------------------------------------------------------------------ */
+
+.ep-panel,
+.ep-help-card,
+.contact-form,
+.signup-form,
+.ep-finder {
+	border-radius: 0;
+}
+
+.ep-panel h2,
+.ep-panel h3,
+.ep-help-card h3 {
+	letter-spacing: -.5px;
+}
+
+.blog-post h3 {
+	letter-spacing: -.4px;
+}
+
+.blog-post .post-metas,
+.blog-post p {
+	font-size: 13.5px;
+}
+
+/* the news / programme meta chips */
+.ep-level-tag,
+.ep-news-tag {
+	border-radius: 100px;
+	font-weight: 600;
+	letter-spacing: .4px;
+}
+
+/* accordions: flat with a gold open marker */
+.ep-accordion-item button {
+	font-weight: 600;
+}
+
+.ep-accordion-item.is-open button {
+	color: var(--ep-navy);
+}
+
+/* interior form fields: square, hairline, navy focus */
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form input[type=tel],
+.contact-form textarea,
+.signup-form input[type=text],
+.signup-form input[type=email],
+.signup-form input[type=tel],
+.ep-finder-form input,
+.ep-finder-form select {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.contact-form input[type=text]:focus,
+.contact-form input[type=email]:focus,
+.contact-form input[type=tel]:focus,
+.contact-form textarea:focus,
+.signup-form input[type=text]:focus,
+.signup-form input[type=email]:focus,
+.signup-form input[type=tel]:focus {
+	border: 1px solid var(--ep-navy);
+	border-bottom: 2px solid var(--ep-navy);
+	background: #fff;
+}
+
+/* ------------------------------------------------------------------
+   Gallery — flat squares with a caption on hover
+------------------------------------------------------------------ */
+
+.ep-gallery-item figcaption {
+	font-size: 11.5px;
+	font-weight: 500;
+	letter-spacing: .3px;
+}
+
+/* ------------------------------------------------------------------
+   Trust marks / accreditation row typography
+------------------------------------------------------------------ */
+
+.ep-badges span,
+.ep-accreditation span {
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+/* ------------------------------------------------------------------
+   Keyboard focus states shared by the new design
+------------------------------------------------------------------ */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+	outline: 2px solid var(--ep-gold);
+	outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------
+   Link defaults — the template relies on a:none, the new design keeps
+   links clean everywhere (components re-declare their own underline).
+------------------------------------------------------------------ */
+
+a,
+a:hover,
+a:focus,
+.widget-item ul a,
+.footer-menu li a {
+	text-decoration: none;
+}
+
+/* gold for links that sit on the deep navy footer / CTA surfaces */
+.footer-section .widget-item ul a:hover,
+.footer-menu li a:hover,
+.copyright a:hover {
+	color: var(--ep-gold);
+}
+
+/* ------------------------------------------------------------------
+   Dark-surface components that live inside the light page (CTA band)
+------------------------------------------------------------------ */
+
+.ep-contact-block a {
+	color: #fff;
+}
+
+.ep-contact-block a:hover {
+	color: var(--ep-gold);
+}
+
+/* ------------------------------------------------------------------
+   Home search band — same dark field language as interior pages
+------------------------------------------------------------------ */
+
+.search-warp .course-search-form {
+	background: transparent;
+	padding: 0;
+}
+
+.search-warp .course-search-form input[type=text],
+.search-warp .course-search-form input[type=email] {
+	background: rgba(255, 255, 255, .1);
+	border: 1px solid rgba(255, 255, 255, .22);
+	color: #fff;
+}
+
+.search-warp .course-search-form input[type=text]::-webkit-input-placeholder,
+.search-warp .course-search-form input[type=email]::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, .55);
+	font-style: normal;
+}
+
+.search-warp .course-search-form input[type=text]::-moz-placeholder,
+.search-warp .course-search-form input[type=email]::-moz-placeholder {
+	color: rgba(255, 255, 255, .55);
+	font-style: normal;
+}
+
+.search-warp .course-search-form input[type=text]::placeholder,
+.search-warp .course-search-form input[type=email]::placeholder {
+	color: rgba(255, 255, 255, .55);
+	font-style: normal;
+}
+
+.search-warp .course-search-form input[type=text]:focus,
+.search-warp .course-search-form input[type=email]:focus {
+	border: 1px solid var(--ep-gold);
+	border-bottom: 1px solid var(--ep-gold);
+	background: rgba(255, 255, 255, .16);
+}
+
+.search-warp .course-search-form select.ep-search-select {
+	background-color: rgba(255, 255, 255, .1);
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' fill-opacity='.8' d='M11 6L8 11 5 6z'/%3E%3C/svg%3E");
+	border: 1px solid rgba(255, 255, 255, .22);
+	color: #fff;
+}
+
+.search-warp .course-search-form select.ep-search-select option {
+	color: #1d1d3f;
+	background: #fff;
+}
+
+.search-warp .course-search-form .site-btn {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+	border-radius: 100px;
+	min-width: 0;
+	padding: 16px 30px;
+}
+
+.search-warp .course-search-form .site-btn:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+/* ------------------------------------------------------------------
+   Trainer sign-up band — navy copy side, clean form card
+------------------------------------------------------------------ */
+
+.signup-section {
+	background: var(--ep-navy);
+}
+
+.signup-section .section-title h2 {
+	color: #fff;
+	font-size: 38px;
+	font-weight: 600;
+	letter-spacing: -1px;
+}
+
+.signup-section .section-title p {
+	color: rgba(255, 255, 255, .74);
+	font-size: 14.5px;
+	line-height: 1.95;
+}
+
+.signup-form,
+.contact-form {
+	background: #fff;
+	padding: 44px 40px;
+	border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.signup-form input[type=text],
+.signup-form input[type=email],
+.signup-form input[type=tel],
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form input[type=tel],
+.contact-form textarea {
+	height: 54px;
+	margin-bottom: 18px;
+	padding: 0 20px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--ep-heading);
+	border: 1px solid var(--ep-border);
+	background: #fff;
+}
+
+.signup-form input::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+	color: #9aa2b5;
+	font-style: normal;
+}
+
+.signup-form textarea,
+.contact-form textarea {
+	height: 180px;
+	padding: 18px 20px;
+}
+
+.signup-form .file-up-btn,
+.contact-form .file-up-btn {
+	display: block;
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	max-width: none;
+	background: transparent;
+	border: 1.5px solid rgba(36, 36, 106, .35);
+	border-radius: 100px;
+	color: var(--ep-navy);
+	padding: 12px 26px;
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 22px;
+	cursor: pointer;
+	-webkit-transition: all .22s ease;
+	transition: all .22s ease;
+}
+
+.signup-form .file-up-btn:hover,
+.contact-form .file-up-btn:hover {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	color: #fff;
+}
+
+/* primary action inside a white card stays navy (gold is reserved for
+   actions that sit on a dark or photographic surface) */
+.signup-form .site-btn,
+.contact-form .site-btn {
+	background: var(--ep-navy);
+	color: #fff;
+	padding: 15px 28px;
+	min-width: 0;
+}
+
+.signup-form .site-btn:hover,
+.contact-form .site-btn:hover {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+}
+
+@media (max-width: 991px) {
+	.signup-form,
+	.contact-form {
+		padding: 32px 26px;
+	}
+
+	.signup-section .section-title h2 {
+		font-size: 28px;
+	}
+}

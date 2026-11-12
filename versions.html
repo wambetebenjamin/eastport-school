@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Choose the design | Eastport International Training College</title>
+	<meta name="description" content="Two complete designs for Eastport International Training College: a college website and a university website with an eLearning portal.">
+	<meta name="theme-color" content="#24246a">
+	<link rel="icon" href="img/favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--navy: #0b1220;
+			--deep: #171750;
+			--gold: #e2a33c;
+			--blue: #1463f3;
+			--ink: #1b1b36;
+			--body: #565d72;
+			--muted: #8a90a2;
+			--line: #e3e6ef;
+			--mist: #f4f6fb;
+			--font: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			font-family: var(--font);
+			color: var(--body);
+			background: var(--mist);
+			font-size: 15px;
+			line-height: 1.7;
+			overflow-wrap: break-word;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: var(--navy); text-decoration: none; }
+
+		h1, h2, h3, h4 { color: var(--ink); margin: 0 0 12px; line-height: 1.2; letter-spacing: -.2px; }
+
+		.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+		.top {
+			background: var(--deep);
+			color: rgba(255, 255, 255, .8);
+			font-size: 12.5px;
+		}
+
+		.top .wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 14px;
+			min-height: 42px;
+			flex-wrap: wrap;
+		}
+
+		.top a { color: rgba(255, 255, 255, .85); }
+		.top a:hover { color: var(--gold); }
+
+		.bar {
+			background: #fff;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.bar .wrap {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			min-height: 78px;
+		}
+
+		.bar img { height: 44px; }
+
+		.hero { background: var(--navy); color: #fff; padding: 54px 0 60px; }
+
+		.hero h1 { color: #fff; font-size: 34px; }
+
+		.hero p { color: rgba(255, 255, 255, .82); max-width: 720px; margin: 0; }
+
+		.eyebrow,
+		.hero .eyebrow {
+			display: inline-block;
+			font-size: 11.5px;
+			font-weight: 700;
+			letter-spacing: 2.4px;
+			text-transform: uppercase;
+			color: var(--gold);
+			line-height: 1.6;
+			margin-bottom: 12px;
+		}
+
+		main { padding: 54px 0 70px; }
+
+		.cards {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 26px;
+			align-items: start;
+		}
+
+		.card {
+			background: #fff;
+			border: 1px solid var(--line);
+			box-shadow: 0 18px 45px rgba(23, 23, 80, .08);
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.card-head {
+			padding: 24px 26px 18px;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.tag {
+			display: inline-block;
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 1.6px;
+			text-transform: uppercase;
+			padding: 5px 10px;
+			background: var(--mist);
+			color: var(--navy);
+			margin-bottom: 12px;
+		}
+
+		.tag.gold { background: rgba(20, 99, 243, .12); color: #0b3fa8; }
+
+		.card-head h2 { font-size: 23px; margin-bottom: 8px; }
+
+		.card-head p { margin: 0; font-size: 13.5px; }
+
+		.shots {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1px;
+			background: var(--line);
+			border-bottom: 1px solid var(--line);
+		}
+
+		.shots.two { grid-template-columns: 1.35fr 1fr; }
+
+		.shots img { width: 100%; display: block; }
+
+		.card-body { padding: 22px 26px 26px; display: flex; flex-direction: column; flex: 1 1 auto; }
+
+		.list { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 10px; font-size: 13.5px; }
+
+		.list li { display: flex; gap: 10px; align-items: flex-start; }
+
+		.list i { color: var(--gold); font-size: 13px; margin-top: 5px; }
+
+		.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			padding: 12px 20px;
+			font-size: 13.5px;
+			font-weight: 600;
+			border: 1px solid transparent;
+			transition: background .18s ease, color .18s ease, border-color .18s ease;
+		}
+
+		.btn-primary { background: var(--navy); color: #fff; }
+		.btn-primary:hover { background: var(--deep); color: #fff; }
+
+		.btn-gold { background: var(--blue, #1463f3); color: #fff; }
+		.btn-gold:hover { background: #0d4ec7; color: #fff; }
+
+		.btn-ghost { border-color: var(--navy); color: var(--navy); }
+		.btn-ghost:hover { background: var(--navy); color: #fff; }
+
+		.links {
+			margin-top: 12px;
+			font-size: 12.5px;
+			color: var(--muted);
+		}
+
+		.links a { color: var(--navy); text-decoration: underline; }
+
+		.compare {
+			margin-top: 46px;
+			background: #fff;
+			border: 1px solid var(--line);
+			padding: 30px 28px;
+		}
+
+		.compare h2 { font-size: 21px; }
+
+		.table-wrap { overflow-x: auto; }
+
+		table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+
+		th, td {
+			text-align: left;
+			padding: 12px 14px;
+			border-bottom: 1px solid var(--line);
+			vertical-align: top;
+		}
+
+		th { background: var(--mist); font-size: 12px; letter-spacing: .8px; text-transform: uppercase; color: var(--ink); }
+
+		td strong { color: var(--ink); }
+
+		footer {
+			background: var(--deep);
+			color: rgba(255, 255, 255, .62);
+			font-size: 12.5px;
+			padding: 22px 0;
+		}
+
+		footer .wrap { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+
+		footer a { color: rgba(255, 255, 255, .8); }
+
+		@media (max-width: 700px) {
+			table, thead, tbody, tr, th, td { display: block; width: auto; }
+			thead { display: none; }
+			tr { border: 1px solid var(--line); margin-bottom: 16px; }
+			td { border: 0; padding: 9px 14px; }
+			td:first-child {
+				background: var(--mist);
+				font-size: 11.5px;
+				letter-spacing: .9px;
+				text-transform: uppercase;
+			}
+			td:nth-child(2):before { content: "A · "; font-weight: 700; color: var(--ink); }
+			td:nth-child(3):before { content: "B · "; font-weight: 700; color: var(--ink); }
+		}
+
+		@media (max-width: 900px) {
+			.cards { grid-template-columns: 1fr; }
+			.hero h1 { font-size: 27px; }
+			.shots.two { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="wrap">
+			<span>0757 478 077 · admissions@eastportinternationalcollege.ac.ke</span>
+			<span><a href="index.html">Version A site</a> · <a href="v2/index.html">Version B site</a></span>
+		</div>
+	</div>
+	<div class="bar">
+		<div class="wrap">
+			<a href="index.html"><img src="img/logo-dark.svg" alt="Eastport International Training College"></a>
+		</div>
+	</div>
+	<div class="hero">
+		<div class="wrap">
+			<span class="eyebrow">Two complete builds</span>
+			<h1>Choose the design for eastportinternationalcollege.ac.ke</h1>
+			<p>Both versions now share one design language — royal blue, white cards and the same campus photography — and both portals use the same sign-in screen. They differ in structure: a brochure-style college website with a student portal, or a university-style site with an eLearning system. Open each one, use the portal, then tell us which letter to take forward.</p>
+		</div>
+	</div>
+
+	<main>
+		<div class="wrap">
+			<div class="cards">
+				<article class="card">
+					<div class="card-head">
+						<span class="tag">Version A</span>
+						<h2>College website</h2>
+						<p>The college website on the approved template: royal-blue top strip, white sticky navigation with course search and an apply CTA, a split hero with floating student statistics, a five-item trust strip, faculty category tabs, four-column course cards, a course search band and a campus photo wall — all leading into one shared student portal.</p>
+					</div>
+					<div class="shots two">
+						<img src="img/versions/a-home.jpg" alt="Version A home page">
+						<img src="img/versions/a-login.jpg" alt="Version A portal login page">
+					</div>
+					<div class="card-body">
+						<ul class="list">
+							<li><i>●</i><span>Split hero: the claim, accreditation facts and two calls to action on the left, a campus photograph with two floating statistic pills on the right. Interior pages repeat the pattern as a title-and-facts banner.</span></li>
+							<li><i>●</i><span>One login for every role: the student, staff and guardian tabs sit in the same sign-in card, on the same page shell, with demo credentials, password visibility and honest validation.</span></li>
+							<li><i>●</i><span>Ten pages: home, about, courses, course detail, news, contact, apply, login, dashboard, 404.</span></li>
+							<li><i>●</i><span>Campus photo wall, plus photography on the about, contact, courses and apply pages.</span></li>
+						</ul>
+						<div class="actions">
+							<a class="btn btn-primary" href="index.html">Open Version A</a>
+							<a class="btn btn-ghost" href="login.html">Login page</a>
+							<a class="btn btn-ghost" href="courses.html">Courses</a>
+						</div>
+						<p class="links">Home <a href="index.html">/</a> · Login <a href="login.html">/login</a> · Portal <a href="dashboard.html">/dashboard</a></p>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<span class="tag gold">Version B</span>
+						<h2>University website + eLearning</h2>
+						<p>A university-style website with a full-width photo slider, programme levels and enquiry form, plus an eLearning portal. The eLearning sign-in uses the same theme and the same account as the main portal — one login, two destinations.</p>
+					</div>
+					<div class="shots two">
+						<img src="img/versions/b-home.jpg" alt="Version B marketing home">
+						<img src="img/versions/b-login.jpg" alt="Version B eLearning login">
+					</div>
+					<div class="card-body">
+						<ul class="list">
+							<li><i>●</i><span>University-style home: contact strip, sticky navigation, full-width photo slider, quick-resource strip, illustrated programme levels, photo gallery, “Request free information” form on navy, studying band, review cards with star ratings, campus-news cards and an intake pop-up.</span></li>
+							<li><i>●</i><span>eLearning portal: the same split sign-in as Version A (“Log in to eLearning”, role tabs, admission number and password, demo credentials), then a student dashboard with photo course cards, progress bars, announcements, events and campus-life blocks, plus a “Search for courses” catalogue.</span></li>
+							<li><i>●</i><span>Same Eastport facts, crest and royal-blue palette throughout — photography on every screen, including the portal.</span></li>
+						</ul>
+						<div class="actions">
+							<a class="btn btn-gold" href="v2/index.html">Open Version B</a>
+							<a class="btn btn-primary" href="v2/login.html">eLearning login</a>
+							<a class="btn btn-ghost" href="v2/dashboard.html">Dashboard</a>
+							<a class="btn btn-ghost" href="v2/courses.html">Course catalogue</a>
+						</div>
+						<p class="links">Home <a href="v2/index.html">/v2</a> · Login <a href="v2/login.html">/v2/login</a> · Dashboard <a href="v2/dashboard.html">/v2/dashboard</a></p>
+					</div>
+				</article>
+			</div>
+
+			<section class="compare">
+				<h2>Side by side</h2>
+				<div class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th>Version A — College website</th>
+							<th>Version B — University + eLearning</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>Home page feel</strong></td>
+							<td>Dark photographic hero with an inline “apply now” bar, category tiles, featured-course cards</td>
+							<td>Full-width photo slider, quick-resource strip, illustrated programme cards, enquiries form on navy</td>
+						</tr>
+						<tr>
+							<td><strong>Student login</strong></td>
+							<td>Split card: navy brand panel with stats + white sign-in form, tabs for student / staff / guardian</td>
+							<td>Centred login card over a campus photo: logo, “Log in”, username or email, remember username, “Sign in with Eastport Email”, cookies notice</td>
+						</tr>
+						<tr>
+							<td><strong>After login</strong></td>
+							<td>Custom portal dashboard with results, fees, timetable cards</td>
+							<td>Student dashboard: photo course cards with progress bars, announcements, events, campus-life photos, course search</td>
+						</tr>
+						<tr>
+							<td><strong>Pages included</strong></td>
+							<td>10 pages (home, about, courses, course detail, news, contact, apply, login, dashboard, 404)</td>
+							<td>4 pages in this version (marketing home, eLearning login, dashboard, course catalogue); more pages can follow the same shell</td>
+						</tr>
+						<tr>
+							<td><strong>Best if…</strong></td>
+							<td>You want the brochure-style college site we have been refining</td>
+							<td>You want a university-style site with a full eLearning portal behind a login</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<div class="wrap">
+			<span>© 2026 Eastport International Training College. All rights reserved.</span>
+			<span>KNEC 518112 · CDACC 0350007 · TVETA Centre 401002</span>
+		</div>
+	</footer>
+</body>
+</html>

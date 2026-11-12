@@ -1,0 +1,203 @@
+'use strict';
+
+const { head, scriptTags } = require('../layout');
+
+module.exports = function dashboard() {
+	return `${head({
+		title: 'Student Portal | Eastport International Training College',
+		description: 'Eastport International Training College student portal dashboard — results, fee statement, timetable and announcements.',
+		bodyClass: 'portal-body',
+		extraStyles: ['css/portal.css']
+	})}
+
+	<div id="portal-root">
+
+		<!-- portal header -->
+		<header class="portal-header">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 col-7">
+						<a href="index.html" class="site-logo">
+							<img src="img/logo-white.svg" alt="Eastport International Training College">
+						</a>
+					</div>
+					<div class="col-lg-6 col-5">
+						<ul class="portal-nav">
+							<li><a href="dashboard.html" class="active">Dashboard</a></li>
+							<li><a href="courses.html">Programmes</a></li>
+							<li><a href="blog.html">Notices</a></li>
+							<li><a href="#" class="logout" data-logout>Log out</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- portal header end -->
+
+		<!-- portal hero -->
+		<section class="portal-hero">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-8">
+						<h1 id="portal-greeting">Karibu, Faith</h1>
+						<p id="portal-sub">Diploma in Food &amp; Beverage Service and Sales · Year 1 · Term 3</p>
+					</div>
+					<div class="col-lg-4">
+						<div class="portal-id">
+							<span id="portal-admission">EITC/2026/0148</span>
+							<span>Term 3 · 2026</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- portal hero end -->
+
+		<!-- portal content -->
+		<section class="portal-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="portal-metric">
+							<span>Fee balance</span>
+							<h3 class="ep-due" id="portal-balance">KSh 12,750</h3>
+							<small>Paid to date: <span id="portal-paid">KSh 73,500</span></small>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="portal-metric">
+							<span>Attendance</span>
+							<h3 id="portal-attendance">94%</h3>
+							<small>Term 3 to date</small>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="portal-metric">
+							<span>Programme</span>
+							<h3 style="font-size:16px;line-height:1.6" id="portal-programme">Diploma in Food &amp; Beverage Service and Sales</h3>
+							<small id="portal-year">Year 1 · Term 3</small>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="portal-metric">
+							<span>Syllabus coverage</span>
+							<div class="portal-progress-bar"><span id="portal-progress" style="width:68%"></span></div>
+							<small id="portal-progress-label">68% of Term 3 syllabus covered</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="portal-card">
+							<div class="portal-card-head">
+								<h4>Continuous assessment &amp; termly results</h4>
+								<a href="contact.html">Query a mark</a>
+							</div>
+							<div class="portal-card-body" style="padding:0">
+								<div class="table-responsive">
+									<table class="ep-table">
+										<thead>
+											<tr><th>Unit</th><th>Trainer</th><th>Grade</th><th>Remark</th></tr>
+										</thead>
+										<tbody id="portal-results"></tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div class="portal-card">
+							<div class="portal-card-head">
+								<h4>This week’s timetable</h4>
+								<a href="courses.html">Full timetable</a>
+							</div>
+							<div class="portal-card-body">
+								<ul class="portal-list" id="portal-timetable"></ul>
+							</div>
+						</div>
+
+						<div class="portal-card">
+							<div class="portal-card-head">
+								<h4>Announcements from the registrar</h4>
+								<a href="blog.html">All notices</a>
+							</div>
+							<div class="portal-card-body" id="portal-announcements"></div>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="portal-card">
+							<div class="portal-card-head">
+								<h4>My profile</h4>
+								<a href="#" data-logout>Log out</a>
+							</div>
+							<div class="portal-card-body">
+								<div class="portal-profile">
+									<div class="ca-pic set-bg" id="portal-profile-pic" style="background-image:url(img/authors/1.jpg)"></div>
+									<div>
+										<h4 id="portal-profile-name">Faith Cherotich</h4>
+										<span id="portal-profile-id">EITC/2026/0148</span>
+									</div>
+								</div>
+								<ul class="portal-list">
+									<li><span>Programme</span><strong id="portal-profile-programme">School of Hospitality and Institutional Management</strong></li>
+									<li><span>E-mail</span><strong id="portal-email">faith.cherotich@student.eastport.ac.ke</strong></li>
+									<li><span>Phone</span><strong id="portal-phone">+254 7•• ••• 148</strong></li>
+									<li><span>Class teacher</span><strong id="portal-teacher">Ms. Faith Cherotich</strong></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="portal-card">
+							<div class="portal-card-head">
+								<h4>Fee statement</h4>
+								<a href="contact.html">Pay now</a>
+							</div>
+							<div class="portal-card-body">
+								<ul class="portal-list">
+									<li><span>Term 3 invoice</span><strong>KSh 24,500</strong></li>
+									<li><span>Deposit paid (40%)</span><strong>KSh 9,800</strong></li>
+									<li><span>Instalment 1</span><strong>KSh 1,950</strong></li>
+									<li><span>Balance due 15 Nov</span><strong style="color:#24246a">KSh 12,750</strong></li>
+								</ul>
+								<p style="font-size:12.5px;line-height:1.9;margin:18px 0 0">Pay via M-PESA paybill and upload the slip to have your balance updated within 24 hours.</p>
+							</div>
+						</div>
+
+						<div class="portal-card">
+							<div class="portal-card-head">
+								<h4>Quick links</h4>
+							</div>
+							<div class="portal-card-body">
+								<ul class="portal-list">
+									<li><a href="courses.html">Programme catalogue</a><strong>&rarr;</strong></li>
+									<li><a href="blog.html">Notice board</a><strong>&rarr;</strong></li>
+									<li><a href="contact.html">Request attachment letter</a><strong>&rarr;</strong></li>
+									<li><a href="contact.html">Bursary guidance</a><strong>&rarr;</strong></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- portal content end -->
+
+		<footer class="portal-footer">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-7">
+						<p>Eastport International Training College · Chai Plaza 2nd Floor, Kericho CBD · KNEC 518112 · CDACC 0350007</p>
+					</div>
+					<div class="col-md-5 text-md-right">
+						<p><a href="index.html">Back to website</a> &nbsp;·&nbsp; <a href="#" data-logout>Sign out</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+${scriptTags()}
+</body>
+</html>`;
+};

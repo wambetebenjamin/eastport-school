@@ -1,0 +1,3356 @@
+/* =================================
+------------------------------------
+  Eastport International Training College
+  Theme extensions for the design system
+  Eastport navy #24246a · Gold #e2a33c · Ink #1c1c4e · Mist #eef1f9
+ ------------------------------------
+ ====================================*/
+
+:root {
+	/* Eastport International Training College brand palette */
+	--ep-navy: #24246a;
+	--ep-navy-dark: #171750;
+	--ep-navy-light: #3a3a94;
+	--ep-gold: #e2a33c;
+	--ep-gold-soft: #f2cb86;
+	--ep-gold-tint: #fdf5e6;
+	--ep-ink: #1c1c4e;
+	--ep-heading: #23233f;
+	--ep-body: #6c7284;
+	--ep-mist: #eef1f9;
+	--ep-border: #dde2ef;
+	--ep-error: #c0392b;
+}
+
+/* ---------------- Header ---------------- */
+
+.site-logo img,
+.site-logo svg {
+	height: 46px;
+	width: auto;
+	display: block;
+}
+
+@media (min-width: 1200px) {
+	.header-section .container {
+		max-width: 1180px;
+	}
+}
+
+.main-menu ul li a.active,
+.main-menu ul li a:hover {
+	color: var(--ep-gold);
+}
+
+/* small line under the hero claim for the exam centre numbers */
+.hero-centres {
+	margin-top: 14px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .62);
+}
+
+.header-phone {
+	float: right;
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	padding: 18px 0 5px;
+	margin-right: 30px;
+}
+
+.header-phone i {
+	color: var(--ep-navy);
+	margin-right: 8px;
+}
+
+.header-phone:hover {
+	color: #fff;
+}
+
+/* ---------------- Hero ---------------- */
+
+.hero-section {
+	position: relative;
+}
+
+.hero-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+.hero-text h2 {
+	font-size: 56px;
+	line-height: 1.16;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hero-text p {
+	font-size: 16px;
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+.hero-kicker {
+	display: inline-block;
+	background: var(--ep-navy);
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	padding: 9px 18px;
+	margin-bottom: 26px;
+}
+
+.hero-actions {
+	margin-top: 34px;
+}
+
+.hero-actions .site-btn + .site-btn {
+	margin-left: 14px;
+}
+
+.hero-actions .site-btn.ghost {
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, .55);
+	padding: 13px 10px;
+}
+
+.hero-actions .site-btn.ghost:hover {
+	border-color: #fff;
+	background: rgba(255, 255, 255, .08);
+}
+
+.hero-note {
+	margin-top: 26px;
+	font-size: 13.5px;
+	color: rgba(255, 255, 255, .72);
+	font-weight: 600;
+}
+
+.hero-note i {
+	margin-right: 6px;
+}
+
+/* ---------------- Stats strip ---------------- */
+
+.ep-stats {
+	background: var(--ep-ink);
+	padding: 42px 0;
+}
+
+.ep-stat {
+	text-align: center;
+	border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.ep-stat:last-child {
+	border-right: none;
+}
+
+.ep-stat h3 {
+	color: #fff;
+	font-size: 42px;
+	font-weight: 700;
+	margin-bottom: 2px;
+}
+
+.ep-stat h3 span {
+	color: var(--ep-navy);
+}
+
+.ep-stat p {
+	color: rgba(255, 255, 255, .68);
+	font-size: 13px;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* ---------------- Shared helpers ---------------- */
+
+.ep-uppercase {
+	letter-spacing: 2.2px;
+	text-transform: uppercase;
+	font-size: 12.5px;
+	font-weight: 700;
+	color: var(--ep-navy);
+	display: block;
+	margin-bottom: 14px;
+}
+
+.section-title.text-left {
+	text-align: left;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.section-title h2 em {
+	font-style: normal;
+	color: var(--ep-navy);
+}
+
+.ep-lead {
+	font-size: 15px;
+	line-height: 2;
+}
+
+.ep-btn-outline {
+	background: transparent;
+	border: 2px solid var(--ep-navy);
+	color: var(--ep-navy);
+	padding: 13px 10px;
+}
+
+.ep-btn-outline:hover {
+	background: var(--ep-navy);
+	color: #fff;
+}
+
+.site-btn.btn-white {
+	background: #fff;
+	color: var(--ep-ink);
+}
+
+.site-btn.btn-white:hover {
+	color: var(--ep-navy);
+}
+
+/* ---------------- About / feature split ---------------- */
+
+.ep-feature-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.ep-feature-media {
+	position: relative;
+	padding-right: 40px;
+}
+
+.ep-feature-media img {
+	width: 100%;
+	height: 460px;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+}
+
+@media (max-width: 991px) {
+	.ep-feature-media img {
+		height: 320px;
+	}
+}
+
+@media (max-width: 575px) {
+	.ep-feature-media img {
+		height: 240px;
+	}
+}
+
+.ep-feature-media .ep-media-badge {
+	position: absolute;
+	right: 0;
+	bottom: 40px;
+	background: var(--ep-navy);
+	color: #fff;
+	padding: 26px 30px;
+	text-align: center;
+	max-width: 210px;
+}
+
+.ep-feature-media .ep-media-badge h4 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	margin-bottom: 4px;
+}
+
+.ep-feature-media .ep-media-badge p {
+	color: rgba(255, 255, 255, .9);
+	margin-bottom: 0;
+	font-size: 12.5px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1.7;
+}
+
+.ep-feature-list {
+	list-style: none;
+	margin: 30px 0 36px;
+}
+
+.ep-feature-list li {
+	position: relative;
+	padding-left: 34px;
+	margin-bottom: 16px;
+	font-size: 14.5px;
+	font-weight: 600;
+	color: var(--ep-heading);
+	line-height: 1.8;
+}
+
+.ep-feature-list li:before {
+	content: "\f00c";
+	font-family: FontAwesome;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--ep-navy);
+	font-size: 13px;
+}
+
+/* ---------------- Why choose cards ---------------- */
+
+.ep-why {
+	background: var(--ep-mist);
+}
+
+.ep-why-card {
+	background: #fff;
+	padding: 42px 35px;
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	transition: all .3s;
+	border-bottom: 3px solid transparent;
+}
+
+.ep-why-card i {
+	font-size: 34px;
+	color: var(--ep-navy);
+	margin-bottom: 24px;
+	display: block;
+}
+
+.ep-why-card h5 {
+	margin-bottom: 12px;
+}
+
+.ep-why-card p {
+	font-size: 13.6px;
+	line-height: 2;
+	margin-bottom: 0;
+}
+
+.ep-why-card:hover {
+	transform: translateY(-6px);
+	border-bottom-color: var(--ep-navy);
+	box-shadow: 0 18px 40px rgba(23, 23, 80, .09);
+}
+
+/* ---------------- Programme finder ---------------- */
+
+.ep-finder {
+	background: var(--ep-navy);
+	padding: 62px 0;
+}
+
+.ep-finder .section-title {
+	margin-bottom: 34px;
+	padding: 0;
+}
+
+.ep-finder .section-title h2 {
+	margin-bottom: 8px;
+}
+
+.ep-finder-form {
+	background: #fff;
+	padding: 38px;
+}
+
+.ep-finder-form label {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--ep-body);
+	margin-bottom: 7px;
+}
+
+.ep-finder-form .form-control {
+	height: 56px;
+	border: none;
+	background: var(--ep-mist);
+	border-radius: 0;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 0 22px;
+	color: var(--ep-heading);
+}
+
+.ep-finder-form .form-control:focus {
+	box-shadow: none;
+	border-bottom: 2px solid var(--ep-navy);
+}
+
+.ep-finder-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23878787' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 20px center;
+	background-size: 14px;
+	padding-right: 44px;
+}
+
+.ep-finder-form .site-btn {
+	width: 100%;
+	padding: 17px 10px;
+	margin-top: 27px;
+}
+
+.ep-finder-note {
+	margin-top: 22px;
+	color: rgba(255, 255, 255, .8);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.ep-finder-note a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* ---------------- Testimonials ---------------- */
+
+.ep-quote-card {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	padding: 40px 35px;
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	position: relative;
+}
+
+.ep-quote-card .ep-stars {
+	color: var(--ep-gold);
+	font-size: 12px;
+	margin-bottom: 18px;
+}
+
+.ep-quote-card p {
+	font-size: 14px;
+	line-height: 2.1;
+	color: #575c6e;
+	font-style: italic;
+	margin-bottom: 26px;
+}
+
+.ep-quote-card .ep-person {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid var(--ep-border);
+	padding-top: 22px;
+}
+
+.ep-quote-card .ep-person .ca-pic {
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	margin-right: 16px;
+	flex: 0 0 54px;
+}
+
+.ep-quote-card .ep-person h6 {
+	margin-bottom: 2px;
+}
+
+.ep-quote-card .ep-person span {
+	font-size: 12.5px;
+	color: var(--ep-navy);
+	font-weight: 600;
+}
+
+.ep-section-mist {
+	background: var(--ep-mist);
+}
+
+/* ---------------- Leadership ---------------- */
+
+.ep-leader-card {
+	background: #fff;
+	box-shadow: 0 12px 35px rgba(23, 23, 80, .06);
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	overflow: hidden;
+}
+
+.ep-leader-card .ep-leader-head {
+	position: relative;
+	height: 260px;
+	background-size: cover;
+	background-position: center;
+}
+
+.ep-leader-card .ep-leader-head span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--ep-navy);
+	color: #fff;
+	font-size: 11.5px;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	padding: 9px 16px;
+}
+
+.ep-leader-card .ep-leader-body {
+	padding: 32px 32px 36px;
+}
+
+.ep-leader-card h5 {
+	margin-bottom: 4px;
+}
+
+.ep-leader-card .ep-role {
+	color: var(--ep-navy);
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.ep-leader-card blockquote {
+	font-size: 13.8px;
+	line-height: 2;
+	color: #5f6478;
+	font-style: italic;
+	margin: 0;
+	border-left: 3px solid var(--ep-navy);
+	padding-left: 18px;
+}
+
+/* ---------------- CTA / contact block ---------------- */
+
+.ep-contact-block {
+	background: var(--ep-ink);
+	padding: 80px 0;
+}
+
+.ep-contact-block h2 {
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 18px;
+}
+
+.ep-contact-block p {
+	color: rgba(255, 255, 255, .72);
+	max-width: 640px;
+	margin: 0 auto 12px;
+}
+
+.ep-contact-meta {
+	list-style: none;
+	margin: 34px 0 36px;
+}
+
+.ep-contact-meta li {
+	display: inline-block;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	margin: 0 22px 12px;
+}
+
+.ep-contact-meta li i {
+	color: var(--ep-navy);
+	margin-right: 9px;
+}
+
+.ep-contact-block .site-btn + .site-btn {
+	margin-left: 14px;
+}
+
+/* ---------------- Empty state ---------------- */
+
+.ep-empty {
+	text-align: center;
+	padding: 60px 20px;
+	background: #fff;
+	border: 1px dashed var(--ep-border);
+}
+
+.ep-empty i {
+	font-size: 34px;
+	color: var(--ep-navy);
+	margin-bottom: 18px;
+	display: block;
+}
+
+.ep-empty p {
+	margin-bottom: 0;
+}
+
+/* ---------------- Courses page extras ---------------- */
+
+.ep-filter-wrap {
+	text-align: center;
+	padding: 50px 0 10px;
+}
+
+.ep-filter-wrap .course-filter {
+	padding-top: 0;
+	margin-bottom: 40px;
+}
+
+.course-filter li.ep-hidden,
+.ep-programme.ep-hidden {
+	display: none !important;
+}
+
+.ep-programme .course-thumb {
+	position: relative;
+}
+
+.ep-programme .course-thumb .price {
+	background: var(--ep-navy);
+}
+
+.ep-programme .course-info .course-text h5 {
+	font-size: 18px;
+	line-height: 1.5;
+	min-height: 54px;
+}
+
+.ep-programme .course-info .course-text p {
+	font-size: 13px;
+	margin-bottom: 14px;
+}
+
+.ep-programme .course-info .course-author p span {
+	color: var(--ep-navy);
+}
+
+.ep-level-tag {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: rgba(23, 23, 80, .86);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 10px 15px;
+}
+
+.ep-count {
+	text-align: center;
+	color: var(--ep-body);
+	font-size: 13.5px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.ep-sidebar-card {
+	background: var(--ep-mist);
+	padding: 34px 30px;
+	margin-bottom: 30px;
+}
+
+.ep-sidebar-card h4 {
+	font-size: 19px;
+	margin-bottom: 22px;
+}
+
+.ep-sidebar-card ul {
+	list-style: none;
+}
+
+.ep-sidebar-card ul li {
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.ep-sidebar-card ul li a {
+	color: var(--ep-heading);
+}
+
+.ep-sidebar-card ul li a:hover {
+	color: var(--ep-navy);
+}
+
+.ep-help-card {
+	background: var(--ep-navy);
+	color: #fff;
+	padding: 34px 30px;
+}
+
+.ep-help-card h4 {
+	color: #fff;
+	margin-bottom: 16px;
+}
+
+.ep-help-card p {
+	color: rgba(255, 255, 255, .88);
+	font-size: 14px;
+	line-height: 1.9;
+}
+
+.ep-help-card .site-btn {
+	background: #fff;
+	color: var(--ep-ink);
+	min-width: auto;
+	padding: 13px 24px;
+	font-size: 14px;
+	width: 100%;
+}
+
+/* ---------------- Single programme ---------------- */
+
+.ep-detail-facts {
+	margin: 30px 0 0;
+}
+
+.ep-detail-facts li {
+	display: block;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--ep-border);
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--ep-heading);
+}
+
+.ep-detail-facts li span {
+	float: right;
+	color: var(--ep-body);
+	font-weight: 600;
+}
+
+.ep-check-list {
+	list-style: none;
+}
+
+.ep-check-list li {
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 14px;
+	font-size: 14.5px;
+	line-height: 1.9;
+	color: #5f6478;
+	font-weight: 500;
+}
+
+.ep-check-list li:before {
+	content: "\f058";
+	font-family: FontAwesome;
+	position: absolute;
+	left: 0;
+	top: 2px;
+	color: var(--ep-navy);
+	font-size: 13px;
+}
+
+.ep-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 10px 0 0;
+}
+
+.ep-table th {
+	background: var(--ep-mist);
+	font-size: 12.5px;
+	text-transform: uppercase;
+	letter-spacing: .8px;
+	color: var(--ep-heading);
+	padding: 15px 18px;
+	font-weight: 700;
+	text-align: left;
+}
+
+.ep-table td {
+	padding: 16px 18px;
+	border-bottom: 1px solid var(--ep-border);
+	font-size: 14px;
+	font-weight: 500;
+	color: #5f6478;
+}
+
+.ep-table td strong {
+	color: var(--ep-heading);
+}
+
+.ep-accordion-item {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	margin-bottom: 14px;
+}
+
+.ep-accordion-item button {
+	width: 100%;
+	text-align: left;
+	background: #fff;
+	border: none;
+	padding: 20px 26px;
+	font-size: 15.5px;
+	font-weight: 700;
+	color: var(--ep-heading);
+	position: relative;
+	cursor: pointer;
+}
+
+.ep-accordion-item button:after {
+	content: "\f067";
+	font-family: FontAwesome;
+	position: absolute;
+	right: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 12px;
+	color: var(--ep-navy);
+}
+
+.ep-accordion-item.is-open button:after {
+	content: "\f068";
+}
+
+.ep-accordion-item .ep-accordion-body {
+	display: none;
+	padding: 0 26px 26px;
+}
+
+.ep-accordion-item.is-open .ep-accordion-body {
+	display: block;
+}
+
+.ep-accordion-body p {
+	margin-bottom: 0;
+	font-size: 14px;
+	line-height: 2;
+}
+
+/* ---------------- Apply page ---------------- */
+
+.ep-apply-aside {
+	background: var(--ep-ink);
+	padding: 45px 40px;
+	color: #fff;
+	height: 100%;
+}
+
+.ep-apply-aside h3 {
+	color: #fff;
+	font-size: 28px;
+	margin-bottom: 18px;
+}
+
+.ep-apply-aside p {
+	color: rgba(255, 255, 255, .72);
+	font-size: 14px;
+	line-height: 2;
+}
+
+.ep-apply-aside ol {
+	padding-left: 18px;
+	margin-top: 26px;
+}
+
+.ep-apply-aside ol li {
+	color: rgba(255, 255, 255, .84);
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 16px;
+	line-height: 1.8;
+}
+
+.ep-apply-form {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	padding: 45px;
+}
+
+.ep-apply-form label {
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-body);
+	margin-bottom: 7px;
+}
+
+.ep-apply-form .form-control {
+	border: none;
+	background: var(--ep-mist);
+	border-radius: 0;
+	height: 56px;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 0 22px;
+	color: var(--ep-heading);
+}
+
+.ep-apply-form select.form-control {
+	height: 56px;
+}
+
+.ep-apply-form .form-control:focus {
+	box-shadow: none;
+	border-bottom: 2px solid var(--ep-navy);
+}
+
+.ep-apply-form textarea.form-control {
+	height: auto;
+	padding: 18px 22px;
+}
+
+.ep-apply-form .ep-field {
+	margin-bottom: 24px;
+}
+
+.ep-form-note {
+	font-size: 12.5px;
+	color: var(--ep-body);
+	margin-top: 18px;
+	margin-bottom: 0;
+}
+
+/* ---------------- Shared form alert ---------------- */
+
+.ep-alert {
+	display: none;
+	padding: 14px 18px;
+	font-size: 13.5px;
+	font-weight: 600;
+	margin-bottom: 22px;
+	line-height: 1.7;
+}
+
+.ep-alert.is-visible {
+	display: block;
+}
+
+.ep-alert.is-success {
+	background: #e8f7ee;
+	color: #1c7a44;
+	border-left: 3px solid #1c7a44;
+}
+
+.ep-alert.is-error {
+	background: #fdecea;
+	color: #171750;
+	border-left: 3px solid #24246a;
+}
+
+/* =================================
+   Student portal login
+ ====================================*/
+
+.login-page {
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	background: #fff;
+}
+
+.login-aside {
+	width: 44%;
+	min-height: 100vh;
+	position: relative;
+	background: var(--ep-ink) url("../img/bg.jpg") center/cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 48px 55px 42px;
+	overflow: hidden;
+}
+
+.login-aside:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(150deg, rgba(20, 20, 60, .93) 12%, rgba(23, 23, 80, .9) 42%, rgba(36, 36, 106, .82) 100%);
+}
+
+.login-aside > * {
+	position: relative;
+	z-index: 2;
+}
+
+.login-aside .login-brand img {
+	height: 48px;
+}
+
+.login-aside .login-aside-body {
+	margin: auto 0;
+	padding: 50px 0;
+	max-width: 430px;
+}
+
+.login-aside .login-aside-body .ep-uppercase {
+	color: #f2cb86;
+}
+
+.login-aside .login-aside-body h2 {
+	color: #fff;
+	font-size: 42px;
+	line-height: 1.22;
+	font-weight: 700;
+	margin-bottom: 22px;
+}
+
+.login-aside .login-aside-body p {
+	color: rgba(255, 255, 255, .8);
+	font-size: 14.5px;
+	line-height: 2;
+}
+
+.login-benefits {
+	list-style: none;
+	margin-top: 32px;
+}
+
+.login-benefits li {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 16px;
+	padding-left: 32px;
+	position: relative;
+	line-height: 1.7;
+}
+
+.login-benefits li i {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	color: #f2cb86;
+	font-size: 14px;
+}
+
+.login-aside-foot {
+	border-top: 1px solid rgba(255, 255, 255, .18);
+	padding-top: 22px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.login-aside-foot span,
+.login-aside-foot a {
+	color: rgba(255, 255, 255, .72);
+	font-size: 12.5px;
+	font-weight: 600;
+}
+
+.login-aside-foot a:hover {
+	color: #fff;
+}
+
+.login-main {
+	width: 56%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 48px 70px;
+	position: relative;
+	background: #fff;
+}
+
+.login-topbar {
+	position: absolute;
+	top: 34px;
+	right: 55px;
+	left: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.login-topbar .login-back {
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--ep-heading);
+	letter-spacing: .3px;
+}
+
+.login-topbar .login-back i {
+	margin-right: 8px;
+	color: var(--ep-navy);
+}
+
+.login-topbar .login-help {
+	font-size: 12.5px;
+	font-weight: 700;
+	color: var(--ep-body);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.login-card {
+	width: 100%;
+	max-width: 470px;
+	margin: 40px auto 0;
+}
+
+.login-card .login-eyebrow {
+	font-size: 11.5px;
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-navy);
+	margin-bottom: 14px;
+	display: block;
+}
+
+.login-card h1 {
+	font-size: 40px;
+	font-weight: 700;
+	color: var(--ep-ink);
+	line-height: 1.2;
+	margin-bottom: 12px;
+}
+
+.login-card .login-sub {
+	font-size: 14px;
+	color: var(--ep-body);
+	line-height: 1.9;
+	margin-bottom: 28px;
+	font-weight: 500;
+}
+
+.login-tabs {
+	display: flex;
+	border-bottom: 1px solid var(--ep-border);
+	margin-bottom: 28px;
+}
+
+.login-tabs button {
+	flex: 1;
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid transparent;
+	padding: 0 6px 14px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--ep-body);
+	cursor: pointer;
+	transition: all .25s;
+}
+
+.login-tabs button i {
+	margin-right: 7px;
+}
+
+.login-tabs button.active {
+	color: var(--ep-ink);
+	border-bottom-color: var(--ep-navy);
+}
+
+.login-tabs button:hover {
+	color: var(--ep-navy);
+}
+
+.ep-field {
+	margin-bottom: 20px;
+}
+
+.ep-field label {
+	display: block;
+	font-size: 11.5px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-heading);
+	margin-bottom: 8px;
+}
+
+.ep-input-wrap {
+	position: relative;
+}
+
+.ep-input-wrap > i.ep-input-icon {
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #b6bccb;
+	font-size: 14px;
+	pointer-events: none;
+}
+
+.ep-input {
+	width: 100%;
+	height: 56px;
+	background: var(--ep-mist);
+	border: none;
+	border-left: 3px solid transparent;
+	font-size: 14.5px;
+	font-weight: 600;
+	color: var(--ep-heading);
+	padding: 0 48px 0 44px;
+	transition: all .2s;
+}
+
+.ep-input::placeholder {
+	font-weight: 500;
+	color: #a5adc0;
+	font-style: normal;
+}
+
+.ep-input:focus {
+	outline: none;
+	background: #e9edf7;
+	border-left-color: var(--ep-navy);
+}
+
+.ep-input.is-invalid {
+	border-left-color: var(--ep-navy);
+	background: #fdecea;
+}
+
+.ep-input-wrap .ep-input-action {
+	position: absolute;
+	right: 6px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: none;
+	width: 40px;
+	height: 40px;
+	color: #98a0b3;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.ep-input-wrap .ep-input-action:hover {
+	color: var(--ep-navy);
+}
+
+.ep-field-error {
+	display: none;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--ep-navy);
+	margin-top: 7px;
+}
+
+.ep-field-error.is-visible {
+	display: block;
+}
+
+.login-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 4px 0 26px;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.ep-checkbox {
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--ep-body);
+	margin-bottom: 0;
+	cursor: pointer;
+}
+
+.ep-checkbox input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.ep-checkbox .box {
+	width: 18px;
+	height: 18px;
+	border: 2px solid #ccd3e3;
+	margin-right: 10px;
+	position: relative;
+	flex: 0 0 18px;
+	transition: all .2s;
+}
+
+.ep-checkbox input:checked + .box {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+}
+
+.ep-checkbox input:checked + .box:after {
+	content: "\f00c";
+	font-family: FontAwesome;
+	color: #fff;
+	font-size: 10px;
+	position: absolute;
+	left: 2px;
+	top: 0;
+}
+
+.login-link {
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--ep-navy);
+}
+
+.login-link:hover {
+	color: var(--ep-navy-dark);
+	text-decoration: underline;
+}
+
+.login-submit {
+	width: 100%;
+	background: var(--ep-navy);
+	color: #fff;
+	border: none;
+	padding: 18px 20px;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: .4px;
+	cursor: pointer;
+	transition: all .25s;
+	position: relative;
+}
+
+.login-submit:hover {
+	background: var(--ep-navy-dark);
+}
+
+.login-submit:disabled {
+	opacity: .7;
+	cursor: progress;
+}
+
+.login-submit .fa-spinner {
+	margin-left: 9px;
+}
+
+.login-alt {
+	display: flex;
+	align-items: center;
+	margin: 26px 0;
+	color: #b6bccb;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+}
+
+.login-alt:before,
+.login-alt:after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--ep-border);
+}
+
+.login-alt span {
+	padding: 0 16px;
+}
+
+.login-secondary {
+	display: block;
+	text-align: center;
+	background: #fff;
+	border: 2px solid var(--ep-ink);
+	color: var(--ep-ink);
+	padding: 16px 20px;
+	font-size: 14px;
+	font-weight: 700;
+	transition: all .25s;
+}
+
+.login-secondary:hover {
+	background: var(--ep-ink);
+	color: #fff;
+}
+
+.login-demo {
+	margin-top: 30px;
+	background: var(--ep-mist);
+	border-left: 3px solid var(--ep-navy);
+	padding: 18px 22px;
+	font-size: 12.8px;
+	color: #575c6e;
+	line-height: 1.9;
+}
+
+.login-demo strong {
+	color: var(--ep-ink);
+	display: block;
+	font-size: 11.5px;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.login-demo code {
+	color: var(--ep-heading);
+	background: #fff;
+	padding: 2px 7px;
+	font-family: Consolas, Menlo, monospace;
+	font-size: 12px;
+}
+
+.login-demo .fill-demo {
+	background: transparent;
+	border: none;
+	color: var(--ep-navy);
+	font-weight: 700;
+	font-size: 12.8px;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.login-footer-note {
+	margin-top: 26px;
+	font-size: 12px;
+	color: #a5adc0;
+	font-weight: 600;
+	text-align: center;
+	line-height: 1.9;
+}
+
+.login-footer-note a {
+	color: var(--ep-heading);
+}
+
+/* ---------------- Portal dashboard ---------------- */
+
+.portal-header {
+	background: var(--ep-ink);
+	padding: 22px 0;
+}
+
+.portal-header .site-logo img {
+	height: 42px;
+}
+
+.portal-nav {
+	float: right;
+	list-style: none;
+	margin-top: 6px;
+}
+
+.portal-nav li {
+	display: inline-block;
+	margin-left: 26px;
+}
+
+.portal-nav li a {
+	color: rgba(255, 255, 255, .76);
+	font-size: 13.5px;
+	font-weight: 700;
+}
+
+.portal-nav li a:hover,
+.portal-nav li a.active {
+	color: #fff;
+}
+
+.portal-nav li a.logout {
+	color: #f2cb86;
+}
+
+.portal-hero {
+	background: var(--ep-navy);
+	padding: 46px 0;
+	position: relative;
+}
+
+.portal-hero h1 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.portal-hero p {
+	color: rgba(255, 255, 255, .84);
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.portal-hero .portal-id {
+	text-align: right;
+	margin-top: 8px;
+}
+
+.portal-hero .portal-id span {
+	display: inline-block;
+	background: rgba(0, 0, 0, .22);
+	color: #fff;
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 11px 18px;
+	margin-left: 8px;
+}
+
+.portal-section {
+	padding: 60px 0;
+}
+
+.portal-card {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	margin-bottom: 30px;
+}
+
+.portal-card .portal-card-head {
+	border-bottom: 1px solid var(--ep-border);
+	padding: 20px 28px;
+	overflow: hidden;
+}
+
+.portal-card .portal-card-head h4 {
+	font-size: 17px;
+	margin-bottom: 0;
+}
+
+.portal-card .portal-card-head a {
+	float: right;
+	font-size: 12.5px;
+	font-weight: 700;
+	color: var(--ep-navy);
+}
+
+.portal-card .portal-card-body {
+	padding: 28px;
+}
+
+.portal-metric {
+	background: var(--ep-mist);
+	padding: 26px 24px;
+	margin-bottom: 30px;
+}
+
+.portal-metric span {
+	font-size: 11.5px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--ep-body);
+	display: block;
+	margin-bottom: 8px;
+}
+
+.portal-metric h3 {
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.portal-metric h3.ep-due {
+	color: var(--ep-navy);
+}
+
+.portal-metric small {
+	font-size: 12px;
+	color: var(--ep-body);
+	font-weight: 600;
+}
+
+.portal-profile {
+	display: flex;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.portal-profile .ca-pic {
+	width: 84px;
+	height: 84px;
+	border-radius: 50%;
+	flex: 0 0 84px;
+	margin-right: 20px;
+}
+
+.portal-profile h4 {
+	font-size: 19px;
+	margin-bottom: 3px;
+}
+
+.portal-profile span {
+	font-size: 13px;
+	color: var(--ep-navy);
+	font-weight: 700;
+}
+
+.portal-list {
+	list-style: none;
+}
+
+.portal-list li {
+	display: flex;
+	justify-content: space-between;
+	gap: 14px;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--ep-border);
+	font-size: 13.5px;
+	font-weight: 600;
+	color: #5f6478;
+}
+
+.portal-list li:last-child {
+	border-bottom: none;
+}
+
+.portal-list li strong {
+	color: var(--ep-heading);
+	text-align: right;
+}
+
+.portal-announcement {
+	padding: 18px 0;
+	border-bottom: 1px solid var(--ep-border);
+}
+
+.portal-announcement:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.portal-announcement span {
+	font-size: 11.5px;
+	font-weight: 700;
+	color: var(--ep-navy);
+	letter-spacing: .8px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 6px;
+}
+
+.portal-announcement h6 {
+	font-size: 14.5px;
+	margin-bottom: 5px;
+}
+
+.portal-announcement p {
+	font-size: 13px;
+	line-height: 1.9;
+	margin-bottom: 0;
+}
+
+.portal-progress-bar {
+	height: 8px;
+	background: var(--ep-mist);
+	margin: 10px 0 6px;
+	overflow: hidden;
+}
+
+.portal-progress-bar span {
+	display: block;
+	height: 100%;
+	background: var(--ep-navy);
+}
+
+.portal-footer {
+	background: var(--ep-ink);
+	padding: 24px 0;
+}
+
+.portal-footer p {
+	color: rgba(255, 255, 255, .6);
+	font-size: 12.5px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
+.portal-footer a {
+	color: #fff;
+}
+
+/* ---------------- Utilities ---------------- */
+
+.ep-mt-30 {
+	margin-top: 30px;
+}
+
+.ep-mb-0 {
+	margin-bottom: 0;
+}
+
+.ep-page-end {
+	padding-bottom: 90px;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1199px) {
+	.login-main {
+		padding: 48px 45px;
+	}
+
+	.login-aside {
+		padding: 42px 40px;
+	}
+
+	.ep-finder-form {
+		padding: 30px;
+	}
+}
+
+@media (max-width: 991px) {
+	.header-btn {
+		margin-top: 6px;
+		min-width: 130px;
+		padding: 12px 10px;
+		font-size: 14px;
+	}
+
+	.header-phone {
+		display: none;
+	}
+
+	.main-menu {
+		display: none;
+		float: none;
+		clear: both;
+		background: #fff;
+		padding: 10px 22px 18px;
+		margin-top: 14px;
+		box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+	}
+
+	.main-menu ul li {
+		display: block;
+	}
+
+	.main-menu ul li a {
+		color: var(--ep-ink);
+		margin-left: 0;
+		padding: 10px 0;
+		display: block;
+	}
+
+	.nav-switch {
+		display: block;
+		position: absolute;
+		right: 15px;
+		top: 8px;
+		color: #fff;
+		font-size: 22px;
+		cursor: pointer;
+		padding: 6px 8px;
+	}
+
+	.header-section {
+		padding-top: 34px;
+	}
+
+	.hero-text {
+		padding-top: 250px;
+		margin-bottom: 70px;
+	}
+
+	.hero-section {
+		height: 820px;
+	}
+
+	.hero-text h2 {
+		font-size: 40px;
+	}
+
+	.section-title {
+		padding: 0 15px;
+		margin-bottom: 60px;
+	}
+
+	.section-title h2 {
+		font-size: 32px;
+	}
+
+	.ep-stat {
+		border-right: none;
+		border-bottom: 1px solid rgba(255, 255, 255, .1);
+		padding: 20px 0;
+	}
+
+	.ep-stat:last-child {
+		border-bottom: none;
+	}
+
+	.ep-feature-media {
+		padding-right: 0;
+		margin-bottom: 45px;
+	}
+
+	.signup-warp {
+		padding: 0 15px;
+	}
+
+	.login-aside,
+	.login-main {
+		width: 100%;
+		min-height: auto;
+	}
+
+	.login-aside {
+		min-height: 420px;
+		padding: 36px 30px;
+	}
+
+	.login-aside .login-aside-body {
+		padding: 36px 0 10px;
+	}
+
+	.login-aside .login-aside-body h2 {
+		font-size: 32px;
+	}
+
+	.login-main {
+		padding: 90px 30px 60px;
+	}
+
+	.login-topbar {
+		left: 30px;
+		right: 30px;
+		top: 26px;
+	}
+
+	.login-card {
+		margin-top: 10px;
+	}
+
+	.portal-nav {
+		float: none;
+		margin-top: 16px;
+	}
+
+	.portal-nav li {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+
+	.portal-hero .portal-id {
+		text-align: left;
+		margin-top: 18px;
+	}
+
+	.portal-hero .portal-id span {
+		margin-left: 0;
+		margin-right: 8px;
+	}
+
+	.ep-apply-aside {
+		margin-bottom: 30px;
+	}
+
+	.ep-finder-form {
+		margin-top: 10px;
+	}
+
+	.course-meta {
+		display: block;
+		border-right: none;
+		padding: 0 0 15px;
+	}
+}
+
+@media (max-width: 767px) {
+	.hero-text {
+		padding-top: 200px;
+		margin-bottom: 40px;
+	}
+
+	.hero-section {
+		height: auto;
+		padding-bottom: 90px;
+	}
+
+	.hero-text h2 {
+		font-size: 30px;
+	}
+
+	.hero-actions .site-btn {
+		display: block;
+		width: 100%;
+		margin-bottom: 12px;
+	}
+
+	.hero-actions .site-btn + .site-btn {
+		margin-left: 0;
+	}
+
+	.intro-newslatter input[type=text],
+	.intro-newslatter input[type=email] {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.intro-newslatter .site-btn {
+		width: 100%;
+	}
+
+	.login-card h1 {
+		font-size: 30px;
+	}
+
+	.login-aside .login-aside-body h2 {
+		font-size: 27px;
+	}
+
+	.login-main {
+		padding: 84px 22px 50px;
+	}
+
+	.login-tabs button {
+		font-size: 12.5px;
+	}
+
+	.login-tabs button i {
+		display: none;
+	}
+
+	.ep-apply-form {
+		padding: 28px 22px;
+	}
+
+	.ep-stats {
+		padding: 26px 0;
+	}
+
+	.ep-stat h3 {
+		font-size: 32px;
+	}
+
+	.ep-contact-block h2 {
+		font-size: 28px;
+	}
+
+	.ep-contact-block .site-btn {
+		display: block;
+		width: 100%;
+		margin-bottom: 12px;
+	}
+
+	.ep-contact-block .site-btn + .site-btn {
+		margin-left: 0;
+	}
+
+	.footer-top {
+		padding-top: 60px;
+	}
+
+	.widget-item {
+		width: 100%;
+		margin-bottom: 40px;
+	}
+
+	.blog-post h3 {
+		padding-top: 30px;
+		font-size: 22px;
+	}
+
+	.ep-feature-media .ep-media-badge {
+		position: static;
+		max-width: none;
+		margin-top: 0;
+	}
+
+	.course-filter li {
+		font-size: 14px;
+		margin: 0 2px;
+		padding: 10px 6px 5px;
+	}
+}
+
+/* ---------------- Link colours inside cards ---------------- */
+
+.course-item .course-info .course-text h5 a {
+	color: #23233f;
+}
+
+.course-item .course-info .course-text h5 a:hover {
+	color: var(--ep-navy);
+}
+
+/* ---------------- Filter chip row (courses page) ---------------- */
+
+.ep-chip-row {
+	text-align: center;
+	margin-bottom: 34px;
+}
+
+.ep-chip {
+	display: inline-block;
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	color: var(--ep-heading);
+	font-size: 13px;
+	font-weight: 700;
+	padding: 10px 20px;
+	margin: 0 6px 10px;
+	cursor: pointer;
+	transition: all .25s;
+}
+
+.ep-chip:hover {
+	border-color: var(--ep-navy);
+	color: var(--ep-navy);
+}
+
+.ep-chip.active {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	color: #fff;
+}
+
+.ep-results-note {
+	text-align: center;
+	font-size: 13.5px;
+	font-weight: 600;
+	color: var(--ep-body);
+	margin-bottom: 30px;
+}
+
+.ep-results-note strong {
+	color: var(--ep-heading);
+}
+
+/* ---------------- Small helper spacing ---------------- */
+
+.ep-sep {
+	height: 1px;
+	background: var(--ep-border);
+	margin: 55px 0;
+}
+
+/* ---------------- Interior page banner ---------------- */
+
+.page-info-section {
+	position: relative;
+}
+
+.page-info-section:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(120deg, rgba(20, 20, 60, .82) 20%, rgba(23, 23, 80, .6) 60%, rgba(36, 36, 106, .55) 100%);
+}
+
+.page-info-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+.page-info-section .site-breadcrumb {
+	padding-top: 250px;
+}
+
+.ep-page-title {
+	color: #fff;
+	font-size: 48px;
+	font-weight: 700;
+	margin-top: 14px;
+	line-height: 1.2;
+}
+
+@media (max-width: 991px) {
+	.page-info-section {
+		height: 340px;
+	}
+
+	.page-info-section .site-breadcrumb {
+		padding-top: 175px;
+	}
+
+	.ep-page-title {
+		font-size: 30px;
+	}
+}
+
+/* ---------------- Panels & accreditation badges ---------------- */
+
+.ep-panel {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	padding: 45px 42px;
+	height: 100%;
+}
+
+.ep-panel h3 {
+	font-size: 26px;
+	margin-bottom: 20px;
+	line-height: 1.4;
+}
+
+.ep-panel p {
+	margin-bottom: 0;
+	font-size: 14.5px;
+	line-height: 2;
+}
+
+.ep-panel-dark {
+	background: var(--ep-ink);
+	border-color: var(--ep-ink);
+}
+
+.ep-panel-dark h3 {
+	color: #fff;
+}
+
+.ep-panel-dark p {
+	color: rgba(255, 255, 255, .74);
+}
+
+.ep-badge-strip {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 12px;
+}
+
+.ep-badge {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	color: var(--ep-heading);
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: .5px;
+	padding: 14px 22px;
+}
+
+.ep-badge i {
+	color: var(--ep-navy);
+	margin-right: 8px;
+}
+
+@media (max-width: 767px) {
+	.ep-panel {
+		padding: 30px 24px;
+		margin-bottom: 24px;
+	}
+}
+
+/* ---------------- Search form select ---------------- */
+
+.course-search-form select.ep-search-select {
+	height: 56px;
+	width: 36.6%;
+	padding: 0 30px;
+	margin-right: 18px;
+	float: left;
+	border: none;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--ep-heading);
+	background: var(--ep-mist) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23878787' d='M8 11L3 6h10z'/%3E%3C/svg%3E") no-repeat right 18px center;
+	background-size: 14px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding-right: 44px;
+}
+
+@media (max-width: 767px) {
+	.course-search-form select.ep-search-select {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.search-section.ss-other-page .course-search-form input[type=text] {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.search-section.ss-other-page .course-search-form .site-btn {
+		width: 100%;
+	}
+
+	.ep-level-tag {
+		font-size: 10px;
+		padding: 8px 11px;
+	}
+}
+
+/* ---------------- Header sizing (keeps nav + phone + button on one line) ---------------- */
+
+.header-section .main-menu ul li a {
+	margin-left: 20px;
+	font-size: 15.5px;
+}
+
+.header-section .header-btn {
+	min-width: 158px;
+	padding: 14px 8px;
+	font-size: 14px;
+}
+
+.header-section .header-phone {
+	font-size: 14px;
+	margin-right: 22px;
+}
+
+.hero-text .hero-note {
+	color: rgba(255, 255, 255, .78);
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+	.header-section .main-menu ul li a {
+		margin-left: 16px;
+		font-size: 14.5px;
+	}
+
+	.header-section .header-phone {
+		display: none;
+	}
+}
+
+/* ---------------- Signup section on small screens ---------------- */
+
+@media (max-width: 991px) {
+	.signup-section .signup-bg {
+		display: none;
+	}
+
+	.signup-section .signup-form {
+		padding: 34px 26px;
+	}
+
+	.signup-section {
+		padding-bottom: 70px;
+	}
+}
+
+/* ---------------- Map / campus location ---------------- */
+
+.ep-map {
+	height: 484px;
+	margin-top: 58px;
+	background: #dde3ee url("../img/page-bg/2.jpg") center/cover no-repeat;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.ep-map:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(100deg, rgba(23, 23, 80, .9) 25%, rgba(23, 23, 80, .45) 70%, rgba(36, 36, 106, .5) 100%);
+}
+
+.ep-map-card {
+	position: relative;
+	z-index: 2;
+	background: #fff;
+	max-width: 390px;
+	margin-left: 8%;
+	padding: 38px 36px;
+}
+
+.ep-map-card h4 {
+	font-size: 24px;
+	margin-bottom: 12px;
+}
+
+.ep-map-card p {
+	font-size: 13.5px;
+	line-height: 1.9;
+	margin-bottom: 0;
+}
+
+.ep-map-card .ep-detail-facts li {
+	font-size: 13px;
+}
+
+.ep-map-card .ep-detail-facts li span {
+	font-size: 12.5px;
+}
+
+@media (max-width: 767px) {
+	.ep-map {
+		height: auto;
+		padding: 26px 18px;
+	}
+
+	.ep-map-card {
+		margin-left: 0;
+		padding: 28px 24px;
+	}
+}
+
+/* ---------------- Portal link colours / responsive nav ---------------- */
+
+.portal-list li a {
+	color: var(--ep-heading);
+	font-weight: 600;
+}
+
+.portal-list li a:hover {
+	color: var(--ep-navy);
+}
+
+.course-meta-area .site-btn {
+	white-space: normal;
+}
+
+.ep-checkbox {
+	line-height: 1.6;
+	align-items: flex-start;
+}
+
+.ep-checkbox .box {
+	margin-top: 1px;
+}
+
+@media (max-width: 767px) {
+	.portal-nav li {
+		margin-right: 14px;
+		font-size: 12px;
+	}
+
+	.portal-nav li a {
+		font-size: 12.5px;
+	}
+
+	.portal-nav li:nth-child(2),
+	.portal-nav li:nth-child(3) {
+		display: none;
+	}
+
+	.portal-header {
+		padding: 18px 0;
+	}
+
+	.portal-hero h1 {
+		font-size: 26px;
+	}
+
+	.portal-hero {
+		padding: 34px 0;
+	}
+
+	.portal-section {
+		padding: 40px 0;
+	}
+
+	.portal-card .portal-card-body {
+		padding: 20px;
+	}
+
+	.portal-profile .ca-pic {
+		width: 64px;
+		height: 64px;
+		flex: 0 0 64px;
+	}
+}
+
+/* ---------------- Final layout safeguards ---------------- */
+
+.site-logo img {
+	max-width: 100%;
+}
+
+.course-meta {
+	padding: 5px 28px;
+}
+
+@media (max-width: 991px) {
+	.header-section .header-btn {
+		min-width: 116px;
+		padding: 11px 6px;
+		font-size: 12.5px;
+		margin-top: 4px;
+	}
+
+	.header-section .site-logo img {
+		height: 40px;
+	}
+
+	.nav-switch {
+		font-size: 20px;
+	}
+
+	.course-meta {
+		padding: 0 0 14px;
+	}
+}
+
+@media (max-width: 420px) {
+	.header-section .header-btn {
+		min-width: 104px;
+		font-size: 11.5px;
+		padding: 10px 4px;
+	}
+
+	.header-section .site-logo img {
+		height: 34px;
+	}
+}
+
+/* ---------------- Media polish ---------------- */
+
+.blog-post img,
+.course-preview {
+	width: 100%;
+}
+
+.ep-programme .course-info .course-text p {
+	line-height: 1.8;
+}
+
+a.categorie-item,
+a.categorie-item:hover {
+	color: inherit;
+}
+
+/* Larger touch targets on mobile */
+@media (max-width: 767px) {
+	.ep-filter-wrap {
+		padding-top: 36px;
+	}
+
+	.ep-chip {
+		padding: 9px 14px;
+		font-size: 12px;
+		margin: 0 3px 8px;
+	}
+
+	.section-title h2 {
+		font-size: 26px;
+	}
+
+	.ep-page-title {
+		font-size: 26px;
+	}
+}
+
+/* =================================
+   Eastport brand accents (navy + gold)
+ ====================================*/
+
+/* gold rule under the header and above the footer */
+.header-section:after {
+	content: "";
+	display: block;
+	height: 2px;
+	background: linear-gradient(90deg, rgba(226, 163, 60, 0) 0%, var(--ep-gold) 45%, rgba(226, 163, 60, 0) 100%);
+	opacity: .55;
+	margin-top: 26px;
+}
+
+.footer-section {
+	border-top: 3px solid var(--ep-gold);
+}
+
+/* buttons pick up the gold on hover */
+.site-btn:hover {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+.site-btn.btn-dark:hover {
+	background: var(--ep-navy);
+	color: #fff;
+}
+
+.site-btn.btn-white:hover {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+.ep-btn-outline {
+	border-color: var(--ep-navy);
+	color: var(--ep-navy);
+}
+
+.ep-btn-outline:hover {
+	background: var(--ep-navy);
+	color: #fff;
+}
+
+/* hero kicker + eyebrow accents */
+.hero-kicker,
+.ep-uppercase {
+	color: var(--ep-navy);
+	background: transparent;
+}
+
+.hero-kicker {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+/* stat numbers: gold highlight */
+.ep-stat h3 span {
+	color: var(--ep-gold);
+}
+
+/* programme price chip: gold with ink text for contrast */
+.course-item .course-thumb .price,
+.ep-programme .course-thumb .price,
+.course-item.featured-course .fet-note,
+.course-meta-area .course-note {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+/* gold tick / check marks */
+.ep-feature-list li:before,
+.ep-check-list li:before,
+.ep-why-card i,
+.ep-empty i,
+.ep-quote-card .ep-stars,
+.ep-leader-card .ep-role,
+.ep-quote-card .ep-person span,
+.lg-faculty i {
+	color: var(--ep-gold);
+}
+
+/* header phone + footer bullets */
+.header-phone i,
+.widget-item ul.contact-list li:after,
+.contact-info-area .contact-list li:after,
+.contact-info-area .phone-number span {
+	color: var(--ep-gold);
+}
+
+.widget-item ul.contact-list li:after,
+.contact-info-area .contact-list li:after {
+	background: var(--ep-gold);
+}
+
+.contact-info-area .phone-number h2:after {
+	background: var(--ep-gold);
+}
+
+/* page banner overlay picks up navy + gold */
+.page-info-section:after {
+	background: linear-gradient(120deg, rgba(20, 20, 60, .9) 16%, rgba(28, 28, 78, .74) 58%, rgba(36, 36, 106, .82) 100%);
+}
+
+.ep-page-title {
+	color: #fff;
+}
+
+.site-breadcrumb span {
+	color: var(--ep-gold);
+}
+
+/* search band + signup band in brand navy */
+.search-warp,
+.signup-section,
+.ep-finder {
+	background: var(--ep-navy);
+}
+
+.contact-form-warp,
+.ep-help-card {
+	background: var(--ep-navy);
+}
+
+.ep-help-card .site-btn {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+/* footer link hover */
+.widget-item ul a:hover,
+.footer-menu li a:hover {
+	color: var(--ep-navy);
+}
+
+a:hover {
+	color: var(--ep-navy);
+}
+
+/* EP programme level tag + students count */
+.ep-level-tag {
+	background: rgba(28, 28, 78, .9);
+}
+
+.course-item .course-info .course-text .students,
+.categorie-item .ci-text span {
+	color: var(--ep-navy);
+}
+
+.course-item .course-info .course-author p span {
+	color: var(--ep-gold);
+}
+
+.categorie-item:hover {
+	background: var(--ep-navy);
+}
+
+/* alerts in brand colours */
+.ep-error,
+.ep-alert.is-error {
+	color: #a3231b;
+}
+
+.ep-alert.is-error {
+	background: #fdecea;
+	border-left-color: #c0392b;
+}
+
+/* ---------------- Lab highlight cards ---------------- */
+
+.ep-lab-card {
+	background: #fff;
+	border: 1px solid var(--ep-border);
+	margin-bottom: 30px;
+	height: calc(100% - 30px);
+	overflow: hidden;
+	transition: all .3s;
+}
+
+.ep-lab-thumb {
+	position: relative;
+	height: 190px;
+}
+
+.ep-lab-thumb span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--ep-gold);
+	color: #21163c;
+	font-size: 10.5px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 8px 14px;
+}
+
+.ep-lab-body {
+	padding: 26px 26px 28px;
+}
+
+.ep-lab-body h5 {
+	font-size: 17px;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+.ep-lab-body p {
+	font-size: 13px;
+	line-height: 1.95;
+	margin-bottom: 16px;
+}
+
+.ep-lab-body a {
+	font-size: 12.5px;
+	font-weight: 800;
+	color: var(--ep-navy);
+	letter-spacing: .2px;
+}
+
+.ep-lab-body a:after {
+	content: " \f061";
+	font-family: FontAwesome;
+	font-size: 10px;
+	color: var(--ep-gold);
+	margin-left: 4px;
+}
+
+.ep-lab-card:hover {
+	box-shadow: 0 18px 40px rgba(28, 28, 78, .1);
+	transform: translateY(-4px);
+}
+
+/* ------------------------------------------------------------------
+   Hero / header stacking + legibility fixes
+   The template places the header absolutely over the hero, but the hero
+   is painted later in the document, so the header needs an explicit
+   stacking order or it disappears behind the hero image.
+------------------------------------------------------------------ */
+.header-section {
+	position: absolute;
+	z-index: 50;
+}
+
+/* small line under the hero claim for the exam centre numbers */
+.hero-centres {
+	margin-top: 14px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .62);
+}
+
+/* Navy scrim so the hero copy and ghost buttons stay readable on the
+   photographic hero used across the template. */
+.hero-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-section::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(160deg, rgba(15, 15, 45, .9) 0%, rgba(23, 23, 80, .78) 48%, rgba(15, 15, 45, .92) 100%);
+	z-index: 1;
+}
+
+.hero-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+@media (max-width: 991px) {
+	.main-menu ul li a.active {
+		color: var(--ep-navy);
+	}
+}
+
+/* ------------------------------------------------------------------
+   Mobile header (logo | login | hamburger)
+   The template hides the login button and paints the hamburger as a
+   white box sized for a dark icon, so the navy brand override made the
+   bars invisible and dropped the panel into a narrow column.
+------------------------------------------------------------------ */
+@media (max-width: 991px) {
+	.header-section {
+		padding-top: 26px;
+	}
+
+	.header-section .row {
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+
+	.header-section .col-8,
+	.header-section .col-4 {
+		position: static;
+	}
+
+	.header-section .site-logo img {
+		height: 42px;
+	}
+
+	/* keep the portal entry point reachable on phones */
+	.header-section .header-btn {
+		display: inline-block;
+		float: none;
+		margin: 0;
+		padding: 11px 14px;
+		min-width: 0;
+		font-size: 12.5px;
+		position: absolute;
+		right: 58px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.nav-switch {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: 18px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 42px;
+		height: 42px;
+		padding: 0;
+		background: #fff;
+		border-radius: 10px;
+		color: var(--ep-navy);
+		font-size: 18px;
+		box-shadow: 0 8px 18px rgba(10, 10, 40, .25);
+		z-index: 3;
+	}
+
+	.nav-switch i {
+		color: var(--ep-navy);
+	}
+
+	.main-menu {
+		position: absolute;
+		left: 18px;
+		right: 18px;
+		top: calc(100% + 12px);
+		width: auto;
+		margin: 0;
+		padding: 8px 20px 14px;
+		border-radius: 12px;
+		box-shadow: 0 24px 48px rgba(10, 10, 40, .28);
+		z-index: 60;
+	}
+
+	.main-menu ul li a {
+		font-size: 15px;
+		text-transform: none;
+		letter-spacing: 0;
+		padding: 13px 0;
+		border-bottom: 1px solid var(--ep-mist);
+	}
+
+	.main-menu ul li:last-child a {
+		border-bottom: 0;
+	}
+}
+
+@media (max-width: 575px) {
+	.header-section .site-logo img {
+		height: 36px;
+	}
+
+	.header-section .header-btn {
+		right: 54px;
+		padding: 10px 11px;
+		font-size: 11px;
+	}
+
+	.nav-switch {
+		right: 14px;
+		width: 38px;
+		height: 38px;
+		font-size: 16px;
+	}
+
+	.main-menu {
+		left: 14px;
+		right: 14px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Page banner: fluid height so breadcrumb + title never collide on
+   phones (the template's fixed 443px/340px height plus a 175px top pad
+   pushed the breadcrumb underneath the page title).
+------------------------------------------------------------------ */
+@media (max-width: 991px) {
+	.page-info-section {
+		height: auto;
+		padding: 120px 0 52px;
+		background-position: center;
+	}
+
+	.page-info-section .container {
+		position: relative;
+		z-index: 2;
+	}
+
+	.page-info-section .site-breadcrumb {
+		padding-top: 0;
+	}
+
+	.site-breadcrumb a,
+	.site-breadcrumb span {
+		font-size: 13px;
+	}
+
+	.ep-page-title {
+		font-size: 30px;
+		margin-top: 10px;
+		line-height: 1.25;
+	}
+}
+
+@media (max-width: 575px) {
+	.page-info-section {
+		padding: 104px 0 40px;
+	}
+
+	.ep-page-title {
+		font-size: 25px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Overlapping search band (courses / news / contact)
+   On phones the -85px overlap collides with the shorter page banner and
+   the absolutely-positioned band title, so the band simply stacks under
+   the banner and its heading returns to normal flow.
+------------------------------------------------------------------ */
+@media (max-width: 767px) {
+	.search-section.ss-other-page {
+		margin-top: 0;
+	}
+
+	.search-section.ss-other-page .search-warp {
+		padding: 30px 22px 32px;
+		border-radius: 0 0 14px 14px;
+	}
+
+	.search-section.ss-other-page .section-title h2 {
+		position: static;
+		width: auto;
+		font-size: 19px;
+		text-align: left;
+		margin-bottom: 16px;
+	}
+
+	.search-section.ss-other-page .section-title h2 span {
+		background: transparent;
+		padding: 0;
+	}
+
+	.search-section.ss-other-page .course-search-form .site-btn {
+		margin-top: 4px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Hero on phones: shorter viewport height, tighter kicker, readable
+   body copy and full-width buttons.
+------------------------------------------------------------------ */
+@media (max-width: 575px) {
+	.hero-text {
+		padding-top: 150px;
+		margin-bottom: 32px;
+		text-align: left;
+	}
+
+	.hero-text h2 {
+		font-size: 31px;
+		line-height: 1.2;
+	}
+
+	.hero-text p {
+		font-size: 14.5px;
+		line-height: 1.85;
+	}
+
+	.hero-kicker {
+		font-size: 10.5px;
+		letter-spacing: 1px;
+		padding: 8px 12px;
+		margin-bottom: 18px;
+	}
+
+	.hero-note {
+		font-size: 12px;
+		line-height: 1.9;
+	}
+
+	.hero-centres {
+		font-size: 10.5px;
+		letter-spacing: .8px;
+	}
+
+	.hero-section {
+		height: auto;
+		padding-bottom: 56px;
+	}
+}
+
+/* hero trust points: wrap as discrete items instead of one spaced line */
+.hero-note {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 6px 28px;
+}
+
+.hero-note-item {
+	white-space: nowrap;
+}
+
+.hero-note-item + .hero-note-item {
+	position: relative;
+}
+
+.hero-note-item + .hero-note-item::before {
+	content: '·';
+	position: absolute;
+	left: -17px;
+	color: rgba(255, 255, 255, .45);
+}
+
+/* primary action on the photographic hero reads as gold, not navy-on-navy */
+.hero-actions .site-btn:not(.ghost) {
+	background: var(--ep-gold);
+	color: #21163c;
+}
+
+.hero-actions .site-btn:not(.ghost):hover {
+	background: var(--ep-gold-soft);
+	color: #21163c;
+}
+
+@media (max-width: 575px) {
+	.hero-note {
+		justify-content: flex-start;
+		gap: 4px 0;
+	}
+
+	.hero-note-item {
+		white-space: normal;
+		width: 100%;
+	}
+
+	.hero-note-item + .hero-note-item::before {
+		content: none;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Template-fidelity pass on the home page
+------------------------------------------------------------------ */
+
+/* hero sign-up bar: the accent button must sit on the photo, not blend
+   into the navy scrim */
+.intro-newslatter .site-btn {
+	background: var(--ep-gold);
+	color: #1d1d3f;
+}
+
+.intro-newslatter .site-btn:hover {
+	background: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+.intro-newslatter {
+	position: relative;
+}
+
+.intro-newslatter .ep-alert {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin-top: 14px;
+	font-size: 12.5px;
+}
+
+.hero-section .hero-centres {
+	text-align: center;
+	margin-top: 22px;
+}
+
+/* footer widgets: long addresses must not run into the next column */
+.widget-item {
+	overflow-wrap: anywhere;
+}
+
+/* the signup split carries a full-bleed photo; the copy column gets a
+   navy scrim so white text stays readable over it */
+.signup-section .signup-warp {
+	position: relative;
+	z-index: 2;
+}
+
+@media (max-width: 991px) {
+	.signup-section {
+		background: var(--ep-navy);
+	}
+}
+
+.widget-item ul.contact-list li {
+	padding-right: 6px;
+}
+
+/* ------------------------------------------------------------------
+   Pages whose search band overlaps the page banner
+   (courses, news, contact): the template lets the band's title sit on top
+   of the banner, but our banners also carry a page title, so the banner
+   needs room below the title for the overhanging band heading.
+------------------------------------------------------------------ */
+@media (min-width: 768px) {
+	.page-info-section + .search-section.ss-other-page {
+		margin-top: -85px;
+	}
+}
+
+.page-info-section + .search-section.ss-other-page {
+	margin-bottom: 0;
+}
+
+.page-info-section:has(+ .search-section.ss-other-page) {
+	height: 545px;
+}
+
+@media (max-width: 991px) {
+	.page-info-section:has(+ .search-section.ss-other-page) {
+		height: auto;
+		padding-bottom: 110px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-info-section:has(+ .search-section.ss-other-page) {
+		padding-bottom: 40px;
+	}
+}
+
+
+/* ------------------------------------------------------------------
+   Content grid & rhythm
+   One content column (1180px box + 15px gutters) is used by the header,
+   every page section and the footer, so all copy lines up on the same
+   left/right edges at every breakpoint. Vertical section padding scales
+   down with the viewport instead of staying at the desktop 115px.
+------------------------------------------------------------------ */
+
+/* footer joins the same content column as the sections above it */
+.footer-section .footer-warp {
+	max-width: 1180px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.footer-section .footer-bottom {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* match the bootstrap container widths below the desktop breakpoint so the
+   footer keeps the same edge as the sections above it */
+@media (max-width: 1199px) and (min-width: 992px) {
+	.footer-section .footer-warp {
+		max-width: 960px;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.footer-section .footer-warp {
+		max-width: 720px;
+	}
+}
+
+@media (max-width: 767px) {
+	.footer-section .footer-warp {
+		max-width: 540px;
+	}
+}
+
+@media (max-width: 991px) {
+	.spad {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+@media (max-width: 767px) {
+	.spad {
+		padding-top: 64px;
+		padding-bottom: 64px;
+	}
+
+	.section-title {
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 575px) {
+	.spad {
+		padding-top: 54px;
+		padding-bottom: 54px;
+	}
+
+	.section-title {
+		margin-bottom: 32px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Programme grids share the page content column
+   .course-warp was max-width 1559px, so on a 1440px screen the course
+   cards ran flush to both window edges while every other section sat on
+   the 1150px content column.
+------------------------------------------------------------------ */
+.course-warp {
+	max-width: 1180px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+	.course-warp {
+		max-width: 960px;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.course-warp {
+		max-width: 720px;
+	}
+}
+
+@media (max-width: 767px) {
+	.course-warp {
+		max-width: 540px;
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 575px) {
+	.course-warp {
+		max-width: none;
+	}
+}
+
+/* programme cards: equal heights, meta row pinned to the bottom */
+.ep-programme > .course-item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.ep-programme .course-item .course-thumb {
+	flex: 0 0 auto;
+}
+
+.ep-programme .course-item .course-info {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.ep-programme .course-item .course-text {
+	flex: 1 1 auto;
+}
+
+@media (max-width: 767px) {
+	.ep-programme .course-item .course-thumb {
+		height: 210px;
+	}
+
+	.ep-programme .course-item .course-text {
+		padding: 26px 22px 20px;
+	}
+
+	.ep-programme .course-item .course-author {
+		padding: 12px 22px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Hero rhythm on phones
+   The template reserves 100px of padding under the hero sign-up bar
+   (room for its floating form), which we do not have — it produced a
+   dead band between the Apply button and the exam-centre line.
+------------------------------------------------------------------ */
+@media (max-width: 576px) {
+	.intro-newslatter {
+		padding-bottom: 0;
+	}
+
+	.hero-section .hero-centres {
+		margin-top: 18px;
+		margin-bottom: 0;
+	}
+
+	.hero-section {
+		padding-bottom: 44px;
+	}
+}
+
+/* ------------------------------------------------------------------
+   Long unbreakable strings (e-mail addresses, admission numbers) must
+   wrap inside their column instead of pushing the page past the viewport.
+------------------------------------------------------------------ */
+a[href^="mailto:"],
+.contact-info-area .contact-list li,
+.contact-info-area .contact-list li span,
+.widget-item ul.contact-list li,
+.widget-item ul.contact-list li span {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.footer-warp a,
+.lg-wrap a,
+.container a {
+	min-width: 0;
+}
+
+/* ------------------------------------------------------------------
+   Campus gallery (flat squares)
+------------------------------------------------------------------ */
+.ep-gallery {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0;
+}
+
+.ep-gallery-item {
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+
+.ep-gallery-item img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	display: block;
+	transition: transform .4s ease;
+}
+
+.ep-gallery-item:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(20, 20, 60, 0) 55%, rgba(20, 20, 60, .45) 100%);
+	opacity: .9;
+	transition: opacity .25s ease;
+}
+
+.ep-gallery-item:hover img {
+	transform: scale(1.04);
+}
+
+.ep-gallery-item:hover:after {
+	opacity: 1;
+}
+
+.ep-gallery-item figcaption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	padding: 18px 20px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+	.ep-gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.ep-gallery-item img {
+		height: 220px;
+	}
+}
+
+@media (max-width: 575px) {
+	.ep-gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.ep-gallery-item img {
+		height: 140px;
+	}
+}
+
+/* Photo header inside the apply page aside */
+.ep-aside-photo {
+	height: 176px;
+	margin: -45px -40px 30px;
+	background-size: cover;
+	background-position: center;
+}
+
+@media (max-width: 991px) {
+	.ep-aside-photo {
+		margin: -30px -30px 22px;
+		height: 150px;
+	}
+}
