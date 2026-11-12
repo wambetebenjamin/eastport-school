@@ -19,8 +19,8 @@
 .xl-wrap {
 	padding: 56px 0 70px;
 	background:
-		linear-gradient(135deg, #f0f6ff 0%, #ffffff 62%, #f7fbff 100%);
-	border-bottom: 1px solid var(--x-line, #e2e8f0);
+		linear-gradient(135deg, #f3f3fb 0%, #ffffff 62%, #f7fbff 100%);
+	border-bottom: 1px solid var(--x-line, #e3e6ef);
 }
 
 .xl-grid {
@@ -47,14 +47,14 @@
 
 .xl-copy h1 span {
 	display: block;
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 	font-weight: 600;
 }
 
 .xl-copy > p {
 	font-size: 15px;
 	max-width: 500px;
-	color: var(--x-body, #475569);
+	color: var(--x-body, #5b6070);
 	margin-bottom: 22px;
 }
 
@@ -69,7 +69,7 @@
 	margin-bottom: 10px;
 	font-size: 13.5px;
 	font-weight: 500;
-	color: var(--x-body, #475569);
+	color: var(--x-body, #5b6070);
 	line-height: 1.6;
 }
 
@@ -83,13 +83,13 @@
 	position: absolute;
 	left: 0;
 	top: 2px;
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 	font-size: 12px;
 	font-weight: 400;
 }
 
 .xl-flist li strong {
-	color: var(--x-ink, #0f172a);
+	color: var(--x-ink, #1b1b36);
 }
 
 /* floating stat pills pinned to the campus photograph */
@@ -109,19 +109,19 @@
 	border-radius: 20px;
 	-o-object-fit: cover;
 	object-fit: cover;
-	-webkit-box-shadow: 0 18px 40px rgba(20, 99, 243, .16);
-	box-shadow: 0 18px 40px rgba(20, 99, 243, .16);
+	-webkit-box-shadow: 0 18px 40px rgba(36, 36, 106, .16);
+	box-shadow: 0 18px 40px rgba(36, 36, 106, .16);
 }
 
 /* ---------------- Right: the card ---------------- */
 
 .xl-card {
 	background: #fff;
-	border: 1px solid var(--x-line, #e2e8f0);
+	border: 1px solid var(--x-line, #e3e6ef);
 	border-radius: 16px;
 	padding: 30px 30px 28px;
-	-webkit-box-shadow: 0 22px 50px rgba(15, 23, 42, .1);
-	box-shadow: 0 22px 50px rgba(15, 23, 42, .1);
+	-webkit-box-shadow: 0 22px 50px rgba(27, 27, 54, .1);
+	box-shadow: 0 22px 50px rgba(27, 27, 54, .1);
 	width: 100%;
 	max-width: 440px;
 	margin-left: auto;
@@ -143,7 +143,7 @@
 
 .xl-card-head p {
 	font-size: 12.5px;
-	color: var(--x-muted, #64748b);
+	color: var(--x-muted, #7d8598);
 	margin: 0;
 	line-height: 1.65;
 }
@@ -153,7 +153,7 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	background: #f1f5f9;
+	background: #f4f6fb;
 	border-radius: 9px;
 	padding: 4px;
 	margin-bottom: 20px;
@@ -170,7 +170,7 @@
 	font-size: 12px;
 	font-weight: 600;
 	letter-spacing: .2px;
-	color: var(--x-muted, #64748b);
+	color: var(--x-muted, #7d8598);
 	cursor: pointer;
 	white-space: nowrap;
 	-webkit-transition: all .2s ease;
@@ -183,14 +183,14 @@
 }
 
 .xl-tabs button:hover {
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 }
 
 .xl-tabs button.is-active {
-	background: var(--x-blue, #1463f3);
+	background: var(--x-blue, #24246a);
 	color: #fff;
-	-webkit-box-shadow: 0 6px 14px rgba(20, 99, 243, .28);
-	box-shadow: 0 6px 14px rgba(20, 99, 243, .28);
+	-webkit-box-shadow: 0 6px 14px rgba(36, 36, 106, .28);
+	box-shadow: 0 6px 14px rgba(36, 36, 106, .28);
 }
 
 /* fields */
@@ -205,7 +205,7 @@
 	font-weight: 700;
 	letter-spacing: .7px;
 	text-transform: uppercase;
-	color: var(--x-ink-soft, #1c2740);
+	color: var(--x-ink-soft, #2a2a52);
 	margin-bottom: 6px;
 }
 
@@ -222,36 +222,36 @@
 .xl-input {
 	width: 100%;
 	background: #fff;
-	border: 1px solid var(--x-line, #e2e8f0);
+	border: 1px solid var(--x-line, #e3e6ef);
 	border-radius: 8px;
 	padding: 12px 42px 12px 14px;
 	font-size: 14px;
 	font-weight: 500;
-	color: var(--x-ink, #0f172a);
+	color: var(--x-ink, #1b1b36);
 	min-height: 48px;
 	-webkit-transition: all .2s ease;
 	transition: all .2s ease;
 }
 
 .xl-input::-webkit-input-placeholder {
-	color: #94a3b8;
+	color: #9aa0ae;
 	font-weight: 400;
 }
 
 .xl-input::-moz-placeholder {
-	color: #94a3b8;
+	color: #9aa0ae;
 	font-weight: 400;
 }
 
 .xl-input::placeholder {
-	color: #94a3b8;
+	color: #9aa0ae;
 	font-weight: 400;
 }
 
 .xl-input:focus {
-	border-color: var(--x-blue, #1463f3);
-	-webkit-box-shadow: 0 0 0 3px rgba(20, 99, 243, .12);
-	box-shadow: 0 0 0 3px rgba(20, 99, 243, .12);
+	border-color: var(--x-blue, #24246a);
+	-webkit-box-shadow: 0 0 0 3px rgba(36, 36, 106, .12);
+	box-shadow: 0 0 0 3px rgba(36, 36, 106, .12);
 	outline: none;
 }
 
@@ -266,7 +266,7 @@
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
-	color: #94a3b8;
+	color: #9aa0ae;
 	font-size: 13px;
 	pointer-events: none;
 }
@@ -281,7 +281,7 @@
 	height: 34px;
 	border: 0;
 	background: transparent;
-	color: #94a3b8;
+	color: #9aa0ae;
 	font-size: 13px;
 	cursor: pointer;
 	border-radius: 6px;
@@ -295,8 +295,8 @@
 }
 
 .xl-input-action:hover {
-	color: var(--x-blue, #1463f3);
-	background: var(--x-blue-tint, #f0f6ff);
+	color: var(--x-blue, #24246a);
+	background: var(--x-blue-tint, #f3f3fb);
 }
 
 .xl-error {
@@ -338,7 +338,7 @@
 	gap: 8px;
 	font-size: 12.5px;
 	font-weight: 500;
-	color: var(--x-body, #475569);
+	color: var(--x-body, #5b6070);
 	cursor: pointer;
 }
 
@@ -346,18 +346,18 @@
 	width: 16px;
 	height: 16px;
 	margin: 0;
-	accent-color: var(--x-blue, #1463f3);
+	accent-color: var(--x-blue, #24246a);
 	cursor: pointer;
 }
 
 .xl-link {
 	font-size: 12.5px;
 	font-weight: 600;
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 }
 
 .xl-link:hover {
-	color: var(--x-blue-dark, #0d4ec7);
+	color: var(--x-blue-dark, #1c1c4e);
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
@@ -373,8 +373,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: 9px;
-	background: var(--x-blue, #1463f3);
-	border: 1px solid var(--x-blue, #1463f3);
+	background: var(--x-blue, #24246a);
+	border: 1px solid var(--x-blue, #24246a);
 	border-radius: 8px;
 	color: #fff;
 	padding: 13px 20px;
@@ -388,8 +388,8 @@
 }
 
 .xl-submit:hover {
-	background: var(--x-blue-dark, #0d4ec7);
-	border-color: var(--x-blue-dark, #0d4ec7);
+	background: var(--x-blue-dark, #1c1c4e);
+	border-color: var(--x-blue-dark, #1c1c4e);
 	color: #fff;
 }
 
@@ -411,7 +411,7 @@
 	font-weight: 700;
 	letter-spacing: 1.4px;
 	text-transform: uppercase;
-	color: #94a3b8;
+	color: #9aa0ae;
 }
 
 .xl-alt:before,
@@ -421,7 +421,7 @@
 	-ms-flex: 1;
 	flex: 1;
 	height: 1px;
-	background: var(--x-line, #e2e8f0);
+	background: var(--x-line, #e3e6ef);
 }
 
 .xl-alt-grid {
@@ -440,12 +440,12 @@
 	justify-content: center;
 	gap: 8px;
 	background: #fff;
-	border: 1px solid var(--x-line, #e2e8f0);
+	border: 1px solid var(--x-line, #e3e6ef);
 	border-radius: 8px;
 	padding: 10px 12px;
 	font-size: 11.5px;
 	font-weight: 600;
-	color: var(--x-ink-soft, #1c2740);
+	color: var(--x-ink-soft, #2a2a52);
 	text-align: center;
 	-webkit-transition: all .2s ease;
 	transition: all .2s ease;
@@ -453,26 +453,26 @@
 }
 
 .xl-alt-btn i {
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 	font-size: 12px;
 }
 
 .xl-alt-btn:hover {
-	border-color: var(--x-blue, #1463f3);
-	color: var(--x-blue, #1463f3);
-	background: var(--x-blue-tint, #f0f6ff);
+	border-color: var(--x-blue, #24246a);
+	color: var(--x-blue, #24246a);
+	background: var(--x-blue-tint, #f3f3fb);
 }
 
 /* demo credentials */
 .xl-demo {
 	margin-top: 18px;
-	background: var(--x-blue-tint, #f0f6ff);
-	border: 1px dashed rgba(20, 99, 243, .35);
+	background: var(--x-blue-tint, #f3f3fb);
+	border: 1px dashed rgba(36, 36, 106, .35);
 	border-radius: 9px;
 	padding: 12px 14px;
 	font-size: 11.5px;
 	line-height: 1.8;
-	color: var(--x-body, #475569);
+	color: var(--x-body, #5b6070);
 }
 
 .xl-demo strong {
@@ -481,25 +481,25 @@
 	font-weight: 700;
 	letter-spacing: 1.1px;
 	text-transform: uppercase;
-	color: var(--x-blue-deep, #0b3fa8);
+	color: var(--x-blue-deep, #171750);
 	margin-bottom: 3px;
 }
 
 .xl-demo code {
 	background: #fff;
-	border: 1px solid rgba(20, 99, 243, .2);
+	border: 1px solid rgba(36, 36, 106, .2);
 	border-radius: 4px;
 	padding: 1px 6px;
 	font-family: Consolas, Menlo, monospace;
 	font-size: 11px;
-	color: var(--x-ink, #0f172a);
+	color: var(--x-ink, #1b1b36);
 }
 
 .xl-demo .xl-demo-fill {
 	background: transparent;
 	border: 0;
 	padding: 0;
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 	font-size: 11.5px;
 	font-weight: 700;
 	text-decoration: underline;
@@ -508,7 +508,7 @@
 }
 
 .xl-demo .xl-demo-fill:hover {
-	color: var(--x-blue-dark, #0d4ec7);
+	color: var(--x-blue-dark, #1c1c4e);
 }
 
 .xl-note {
@@ -516,11 +516,11 @@
 	text-align: center;
 	font-size: 11px;
 	line-height: 1.7;
-	color: #94a3b8;
+	color: #9aa0ae;
 }
 
 .xl-note a {
-	color: var(--x-muted, #64748b);
+	color: var(--x-muted, #7d8598);
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
@@ -559,23 +559,23 @@
 	align-items: center;
 	gap: 10px;
 	background: #fff;
-	border: 1px solid var(--x-line, #e2e8f0);
+	border: 1px solid var(--x-line, #e3e6ef);
 	border-radius: 10px;
 	padding: 11px 13px;
 	font-size: 11.5px;
 	font-weight: 600;
-	color: var(--x-ink-soft, #1c2740);
+	color: var(--x-ink-soft, #2a2a52);
 	overflow-wrap: anywhere;
 }
 
 .xl-support a i {
-	color: var(--x-blue, #1463f3);
+	color: var(--x-blue, #24246a);
 	font-size: 13px;
 }
 
 .xl-support a:hover {
-	border-color: var(--x-blue, #1463f3);
-	color: var(--x-blue, #1463f3);
+	border-color: var(--x-blue, #24246a);
+	color: var(--x-blue, #24246a);
 }
 
 /* ---------------- responsive ---------------- */

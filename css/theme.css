@@ -1,44 +1,53 @@
 /* =================================
 ------------------------------------
   Eastport International Training College
-  "Edura" design system — royal blue + white
+  "Edura" design system in the college crest's own colours
 
-  One template for every page: royal-blue top strip, white sticky navbar
-  with search + CTA, split hero with floating stat pills, 5-item trust
-  strip, overlapping campus photo about block, category filter tabs,
-  4-column course cards, navy CTA band, navy footer — and a single login
-  theme (white navbar, split hero, floating stat pills, form card).
+  One template for every page: navy top strip, white sticky navbar with
+  search + CTA, split hero with floating stat pills, 5-item trust strip,
+  overlapping campus photo about block, category filter tabs, 4-column
+  course cards, navy CTA band, navy footer — and a single login theme
+  (white navbar, split hero, floating stat pills, form card).
 
-  Palette  blue #1463f3 · deep #0d4ec7 · ink #0f172a · body #475569
-           line #e2e8f0 · mist #f4f7fc · red #ef4444 · gold #e2a33c
+  Palette taken from img/logo-dark.svg:
+           crest navy #24246a · deep #171750 · mid #1c1c4e
+           crest gold #e2a33c · gold dark #c4852a · gold light #f2cb86
+           ink #1b1b36 · body #5b6070 · line #e3e6ef · mist #f4f6fb
  ------------------------------------
  ====================================*/
 
 :root {
-	--x-blue: #1463f3;
-	--x-blue-dark: #0d4ec7;
-	--x-blue-deep: #0b3fa8;
-	--x-blue-soft: #e0ecff;
-	--x-blue-tint: #f0f6ff;
-	--x-ink: #0f172a;
-	--x-ink-soft: #1c2740;
-	--x-heading: #0f172a;
-	--x-body: #475569;
-	--x-muted: #64748b;
-	--x-line: #e2e8f0;
-	--x-mist: #f4f7fc;
-	--x-white: #ffffff;
-	--x-red: #ef4444;
-	--x-red-soft: #fee2e2;
-	--x-amber: #f59e0b;
-	--x-green: #0f9d58;
-	--x-green-soft: #e6f6ee;
+	/* crest navy — the disc, the book and the mortarboard */
+	--x-blue: #24246a;
+	--x-blue-dark: #1c1c4e;
+	--x-blue-deep: #171750;
+	--x-blue-mid: #2f2f80;
+	--x-blue-soft: #e5e5f4;
+	--x-blue-tint: #f3f3fb;
+	/* crest gold — the ring, "port" and the tassel */
 	--x-gold: #e2a33c;
+	--x-gold-dark: #c4852a;
+	--x-gold-light: #f2cb86;
+	--x-gold-tint: #fdf5e6;
+	/* neutrals */
+	--x-ink: #1b1b36;
+	--x-ink-soft: #2a2a52;
+	--x-heading: #1b1b36;
+	--x-body: #5b6070;
+	--x-muted: #7d8598;
+	--x-line: #e3e6ef;
+	--x-mist: #f4f6fb;
+	--x-white: #ffffff;
+	--x-red: #c0392b;
+	--x-red-soft: #fbe9e7;
+	--x-amber: #e2a33c;
+	--x-green: #1f9d55;
+	--x-green-soft: #e6f6ee;
 
 	/* legacy alias names still referenced by a few inline snippets */
 	--ep-navy: var(--x-blue);
 	--ep-navy-dark: var(--x-blue-dark);
-	--ep-navy-light: #3b82f6;
+	--ep-navy-light: #2f2f80;
 	--ep-ink: var(--x-ink);
 	--ep-heading: var(--x-heading);
 	--ep-body: var(--x-body);
@@ -233,7 +242,7 @@ textarea:focus-visible {
 
 .xg-sec--navy {
 	background:
-		radial-gradient(90% 120% at 12% 0%, rgba(20, 99, 243, .35) 0%, rgba(11, 15, 32, 0) 60%),
+		radial-gradient(90% 120% at 12% 0%, rgba(36, 36, 106, .35) 0%, rgba(11, 15, 32, 0) 60%),
 		var(--x-ink);
 	color: rgba(255, 255, 255, .78);
 }
@@ -287,7 +296,7 @@ textarea:focus-visible {
 
 .xg-eyebrow {
 	display: inline-block;
-	color: var(--x-blue);
+	color: var(--x-gold-dark);
 	font-size: 12px;
 	font-weight: 700;
 	letter-spacing: .9px;
@@ -301,7 +310,7 @@ textarea:focus-visible {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: var(--x-blue);
+	background: var(--x-gold);
 	margin-right: 8px;
 	vertical-align: 2px;
 }
@@ -410,7 +419,7 @@ textarea:focus-visible {
 
 .xg-btn--outline {
 	background: transparent;
-	border-color: rgba(20, 99, 243, .35);
+	border-color: rgba(36, 36, 106, .35);
 	color: var(--x-blue);
 }
 
@@ -596,8 +605,8 @@ textarea:focus-visible {
 	z-index: 40;
 	background: #fff;
 	border-bottom: 1px solid var(--x-line);
-	-webkit-box-shadow: 0 6px 18px rgba(15, 23, 42, .04);
-	box-shadow: 0 6px 18px rgba(15, 23, 42, .04);
+	-webkit-box-shadow: 0 6px 18px rgba(27, 27, 54, .04);
+	box-shadow: 0 6px 18px rgba(27, 27, 54, .04);
 }
 
 .xg-nav {
@@ -752,9 +761,9 @@ textarea:focus-visible {
 
 .xg-search:focus-within {
 	background: #fff;
-	border-color: rgba(20, 99, 243, .4);
-	-webkit-box-shadow: 0 0 0 3px rgba(20, 99, 243, .1);
-	box-shadow: 0 0 0 3px rgba(20, 99, 243, .1);
+	border-color: rgba(36, 36, 106, .4);
+	-webkit-box-shadow: 0 0 0 3px rgba(36, 36, 106, .1);
+	box-shadow: 0 0 0 3px rgba(36, 36, 106, .1);
 }
 
 .xg-search input {
@@ -817,7 +826,7 @@ textarea:focus-visible {
 .xg-hero {
 	position: relative;
 	overflow: hidden;
-	background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 62%, #f7fbff 100%);
+	background: linear-gradient(135deg, #f3f3fb 0%, #ffffff 62%, #f7fbff 100%);
 	padding: 64px 0 74px;
 }
 
@@ -829,7 +838,7 @@ textarea:focus-visible {
 	width: 460px;
 	height: 460px;
 	border-radius: 50%;
-	background: radial-gradient(circle, rgba(20, 99, 243, .1) 0%, rgba(20, 99, 243, 0) 68%);
+	background: radial-gradient(circle, rgba(36, 36, 106, .1) 0%, rgba(36, 36, 106, 0) 68%);
 	pointer-events: none;
 }
 
@@ -935,8 +944,8 @@ textarea:focus-visible {
 	border-radius: 24px;
 	-o-object-fit: cover;
 	object-fit: cover;
-	-webkit-box-shadow: 0 20px 44px rgba(20, 99, 243, .16);
-	box-shadow: 0 20px 44px rgba(20, 99, 243, .16);
+	-webkit-box-shadow: 0 20px 44px rgba(36, 36, 106, .16);
+	box-shadow: 0 20px 44px rgba(36, 36, 106, .16);
 }
 
 .xg-stat-pill {
@@ -951,8 +960,8 @@ textarea:focus-visible {
 	background: #fff;
 	border-radius: 12px;
 	padding: 12px 18px;
-	-webkit-box-shadow: 0 12px 26px rgba(15, 23, 42, .11);
-	box-shadow: 0 12px 26px rgba(15, 23, 42, .11);
+	-webkit-box-shadow: 0 12px 26px rgba(27, 27, 54, .11);
+	box-shadow: 0 12px 26px rgba(27, 27, 54, .11);
 }
 
 .xg-stat-pill > span:last-child {
@@ -1067,6 +1076,11 @@ textarea:focus-visible {
 	color: var(--x-ink);
 }
 
+.xg-trust-item:nth-child(even) .xg-trust-dot {
+	background: var(--x-gold);
+	color: #241a04;
+}
+
 .xg-trust-dot {
 	width: 32px;
 	height: 32px;
@@ -1110,8 +1124,8 @@ textarea:focus-visible {
 	border-radius: 14px;
 	-o-object-fit: cover;
 	object-fit: cover;
-	-webkit-box-shadow: 0 14px 28px rgba(15, 23, 42, .1);
-	box-shadow: 0 14px 28px rgba(15, 23, 42, .1);
+	-webkit-box-shadow: 0 14px 28px rgba(27, 27, 54, .1);
+	box-shadow: 0 14px 28px rgba(27, 27, 54, .1);
 }
 
 .xg-collage img:first-child {
@@ -1162,8 +1176,8 @@ textarea:focus-visible {
 	line-height: 1.25;
 	color: var(--x-ink);
 	padding: 0 8px;
-	-webkit-box-shadow: 0 10px 22px rgba(15, 23, 42, .12);
-	box-shadow: 0 10px 22px rgba(15, 23, 42, .12);
+	-webkit-box-shadow: 0 10px 22px rgba(27, 27, 54, .12);
+	box-shadow: 0 10px 22px rgba(27, 27, 54, .12);
 	z-index: 2;
 }
 
@@ -1283,8 +1297,8 @@ textarea:focus-visible {
 .xg-tab:hover {
 	-webkit-transform: translateY(-2px);
 	transform: translateY(-2px);
-	-webkit-box-shadow: 0 10px 22px rgba(20, 99, 243, .12);
-	box-shadow: 0 10px 22px rgba(20, 99, 243, .12);
+	-webkit-box-shadow: 0 10px 22px rgba(36, 36, 106, .12);
+	box-shadow: 0 10px 22px rgba(36, 36, 106, .12);
 }
 
 .xg-tab-ico {
@@ -1321,8 +1335,8 @@ textarea:focus-visible {
 .xg-tab.is-active {
 	background: var(--x-blue);
 	border-color: var(--x-blue);
-	-webkit-box-shadow: 0 10px 22px rgba(20, 99, 243, .25);
-	box-shadow: 0 10px 22px rgba(20, 99, 243, .25);
+	-webkit-box-shadow: 0 10px 22px rgba(36, 36, 106, .25);
+	box-shadow: 0 10px 22px rgba(36, 36, 106, .25);
 }
 
 .xg-tab.is-active h4,
@@ -1408,9 +1422,9 @@ textarea:focus-visible {
 .xg-course:hover {
 	-webkit-transform: translateY(-4px);
 	transform: translateY(-4px);
-	border-color: rgba(20, 99, 243, .3);
-	-webkit-box-shadow: 0 16px 34px rgba(20, 99, 243, .14);
-	box-shadow: 0 16px 34px rgba(20, 99, 243, .14);
+	border-color: rgba(36, 36, 106, .3);
+	-webkit-box-shadow: 0 16px 34px rgba(36, 36, 106, .14);
+	box-shadow: 0 16px 34px rgba(36, 36, 106, .14);
 }
 
 .xg-course-thumb {
@@ -1452,7 +1466,7 @@ textarea:focus-visible {
 
 .xg-tag-level {
 	right: 12px;
-	background: rgba(15, 23, 42, .82);
+	background: rgba(27, 27, 54, .82);
 	color: #fff;
 	letter-spacing: .3px;
 	text-transform: uppercase;
@@ -1606,9 +1620,9 @@ textarea:focus-visible {
 .xg-faculty:hover {
 	-webkit-transform: translateY(-4px);
 	transform: translateY(-4px);
-	border-color: rgba(20, 99, 243, .32);
-	-webkit-box-shadow: 0 16px 32px rgba(20, 99, 243, .13);
-	box-shadow: 0 16px 32px rgba(20, 99, 243, .13);
+	border-color: rgba(36, 36, 106, .32);
+	-webkit-box-shadow: 0 16px 32px rgba(36, 36, 106, .13);
+	box-shadow: 0 16px 32px rgba(36, 36, 106, .13);
 }
 
 .xg-faculty-thumb {
@@ -1623,7 +1637,7 @@ textarea:focus-visible {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, .55) 100%);
+	background: linear-gradient(180deg, rgba(27, 27, 54, 0) 40%, rgba(27, 27, 54, .55) 100%);
 }
 
 .xg-faculty-body {
@@ -1670,7 +1684,7 @@ textarea:focus-visible {
 .xg-search-band {
 	padding: 60px 0;
 	background:
-		linear-gradient(120deg, rgba(20, 99, 243, .06) 0%, rgba(255, 255, 255, 0) 55%),
+		linear-gradient(120deg, rgba(36, 36, 106, .06) 0%, rgba(255, 255, 255, 0) 55%),
 		var(--x-mist);
 	border-top: 1px solid var(--x-line);
 	border-bottom: 1px solid var(--x-line);
@@ -1681,8 +1695,8 @@ textarea:focus-visible {
 	border: 1px solid var(--x-line);
 	border-radius: 14px;
 	padding: 26px;
-	-webkit-box-shadow: 0 14px 34px rgba(15, 23, 42, .06);
-	box-shadow: 0 14px 34px rgba(15, 23, 42, .06);
+	-webkit-box-shadow: 0 14px 34px rgba(27, 27, 54, .06);
+	box-shadow: 0 14px 34px rgba(27, 27, 54, .06);
 }
 
 .xg-search-card .xg-head {
@@ -1767,8 +1781,8 @@ textarea:focus-visible {
 .xg-textarea:focus,
 .form-control:focus {
 	border-color: var(--x-blue);
-	-webkit-box-shadow: 0 0 0 3px rgba(20, 99, 243, .12);
-	box-shadow: 0 0 0 3px rgba(20, 99, 243, .12);
+	-webkit-box-shadow: 0 0 0 3px rgba(36, 36, 106, .12);
+	box-shadow: 0 0 0 3px rgba(36, 36, 106, .12);
 	outline: none;
 }
 
@@ -1888,7 +1902,7 @@ textarea:focus-visible {
 /* file upload button used by the trainer form */
 .xg-file-btn {
 	display: inline-block;
-	border: 1px solid rgba(20, 99, 243, .35);
+	border: 1px solid rgba(36, 36, 106, .35);
 	border-radius: 8px;
 	padding: 11px 22px;
 	font-size: 12.5px;
@@ -1912,7 +1926,7 @@ textarea:focus-visible {
 .xg-banner {
 	position: relative;
 	overflow: hidden;
-	background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 70%);
+	background: linear-gradient(135deg, #f3f3fb 0%, #ffffff 70%);
 	border-bottom: 1px solid var(--x-line);
 	padding: 48px 0 54px;
 }
@@ -1925,7 +1939,7 @@ textarea:focus-visible {
 	width: 420px;
 	height: 420px;
 	border-radius: 50%;
-	background: radial-gradient(circle, rgba(20, 99, 243, .1) 0%, rgba(20, 99, 243, 0) 70%);
+	background: radial-gradient(circle, rgba(36, 36, 106, .1) 0%, rgba(36, 36, 106, 0) 70%);
 	pointer-events: none;
 }
 
@@ -1988,8 +2002,8 @@ textarea:focus-visible {
 	border: 1px solid var(--x-line);
 	border-radius: 14px;
 	padding: 24px 26px;
-	-webkit-box-shadow: 0 16px 34px rgba(15, 23, 42, .07);
-	box-shadow: 0 16px 34px rgba(15, 23, 42, .07);
+	-webkit-box-shadow: 0 16px 34px rgba(27, 27, 54, .07);
+	box-shadow: 0 16px 34px rgba(27, 27, 54, .07);
 }
 
 .xg-banner-card h3,
@@ -2100,9 +2114,9 @@ textarea:focus-visible {
 }
 
 .xg-card:hover {
-	-webkit-box-shadow: 0 14px 30px rgba(20, 99, 243, .1);
-	box-shadow: 0 14px 30px rgba(20, 99, 243, .1);
-	border-color: rgba(20, 99, 243, .25);
+	-webkit-box-shadow: 0 14px 30px rgba(36, 36, 106, .1);
+	box-shadow: 0 14px 30px rgba(36, 36, 106, .1);
+	border-color: rgba(36, 36, 106, .25);
 }
 
 .xg-card-ico {
@@ -2338,9 +2352,9 @@ textarea:focus-visible {
 }
 
 .xg-post:hover {
-	-webkit-box-shadow: 0 16px 32px rgba(20, 99, 243, .12);
-	box-shadow: 0 16px 32px rgba(20, 99, 243, .12);
-	border-color: rgba(20, 99, 243, .28);
+	-webkit-box-shadow: 0 16px 32px rgba(36, 36, 106, .12);
+	box-shadow: 0 16px 32px rgba(36, 36, 106, .12);
+	border-color: rgba(36, 36, 106, .28);
 }
 
 .xg-post-thumb {
@@ -2752,7 +2766,7 @@ textarea:focus-visible {
 }
 
 .xg-acc-item.is-open {
-	border-color: rgba(20, 99, 243, .3);
+	border-color: rgba(36, 36, 106, .3);
 }
 
 .xg-acc-item.is-open .xg-acc-body {
@@ -2944,7 +2958,7 @@ textarea:focus-visible {
 	right: 0;
 	bottom: 0;
 	padding: 22px 14px 12px;
-	background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, .78) 100%);
+	background: linear-gradient(180deg, rgba(27, 27, 54, 0) 0%, rgba(27, 27, 54, .78) 100%);
 	color: #fff;
 	font-size: 11.5px;
 	font-weight: 500;
@@ -2958,8 +2972,8 @@ textarea:focus-visible {
 	position: relative;
 	overflow: hidden;
 	background:
-		radial-gradient(80% 140% at 15% 0%, rgba(20, 99, 243, .55) 0%, rgba(15, 23, 42, 0) 62%),
-		var(--x-ink);
+		radial-gradient(80% 140% at 15% 0%, rgba(226, 163, 60, .22) 0%, rgba(23, 23, 80, 0) 62%),
+		var(--x-blue-deep);
 	padding: 66px 0;
 	color: rgba(255, 255, 255, .8);
 }
@@ -3086,8 +3100,8 @@ textarea:focus-visible {
 	position: absolute;
 	inset: 0;
 	background-image:
-		linear-gradient(rgba(20, 99, 243, .06) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(20, 99, 243, .06) 1px, transparent 1px);
+		linear-gradient(rgba(36, 36, 106, .06) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(36, 36, 106, .06) 1px, transparent 1px);
 	background-size: 26px 26px;
 	pointer-events: none;
 }
@@ -3125,7 +3139,7 @@ textarea:focus-visible {
 ------------------------------------------------------------------ */
 
 .xg-footer {
-	background: #0b1220;
+	background: #171750;
 	color: rgba(255, 255, 255, .66);
 	padding: 60px 0 0;
 	font-size: 13px;
@@ -3974,9 +3988,9 @@ textarea:focus-visible {
 .xg-card:hover {
 	-webkit-transform: translateY(-4px);
 	transform: translateY(-4px);
-	border-color: rgba(20, 99, 243, .3);
-	-webkit-box-shadow: 0 18px 34px rgba(15, 23, 42, .07);
-	box-shadow: 0 18px 34px rgba(15, 23, 42, .07);
+	border-color: rgba(36, 36, 106, .3);
+	-webkit-box-shadow: 0 18px 34px rgba(27, 27, 54, .07);
+	box-shadow: 0 18px 34px rgba(27, 27, 54, .07);
 }
 
 .xg-card-ico {
@@ -4731,4 +4745,58 @@ html body .xl-submit {
 
 .xg-stars i {
 	color: var(--x-gold);
+}
+
+
+/* =====================================================
+   Crest gold accent — the second half of the logo
+   ===================================================== */
+
+/* navbar CTA: gold on navy, the same pairing as "east|port" */
+.xg-nav-actions > .xg-btn:not(.xg-btn--outline):not(.xg-btn--ghost),
+.xg-nav-actions > a.xg-btn:not(.xg-btn--outline) {
+	background: var(--x-gold);
+	border-color: var(--x-gold);
+	color: #241a04;
+}
+
+.xg-nav-actions > .xg-btn:not(.xg-btn--outline):not(.xg-btn--ghost):hover,
+.xg-nav-actions > a.xg-btn:not(.xg-btn--outline):hover {
+	background: var(--x-gold-light);
+	border-color: var(--x-gold-light);
+	color: #241a04;
+}
+
+/* hero eyebrow + about badge pick up the ring colour */
+.xg-round-badge {
+	border-color: var(--x-gold);
+}
+
+.xg-round-badge strong {
+	color: var(--x-gold-dark);
+}
+
+/* gold hairline separating the trust strip from the hero */
+.xg-trust {
+	border-top: 3px solid var(--x-gold);
+}
+
+/* footer headings echo the crest gold rule */
+.xg-footer h4:after {
+	background: var(--x-gold);
+}
+
+/* price + rating keep the gold of the crest's tassel */
+.xg-price {
+	color: var(--x-blue);
+}
+
+.xg-rating i,
+.xg-stars i {
+	color: var(--x-gold);
+}
+
+/* section dividers on mist backgrounds */
+.xg-sec--mist .xg-eyebrow {
+	color: var(--x-gold-dark);
 }
