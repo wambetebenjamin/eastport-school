@@ -47,7 +47,7 @@ function scriptTags() {
 	return SCRIPTS.map((src) => `\t<script src="${v(src)}"></script>`).join('\n');
 }
 
-function head({ title, description, bodyClass = '', extraStyles = [] }) {
+function head({ title, description, bodyClass = '', extraStyles = [], ogImage = '' }) {
 	const styleTags = [...BASE_STYLES, ...extraStyles]
 		.map((href) => `\t<link rel="stylesheet" href="${v(href)}"/>`)
 		.join('\n');
@@ -62,6 +62,7 @@ function head({ title, description, bodyClass = '', extraStyles = [] }) {
 	<meta property="og:title" content="${title}">
 	<meta property="og:description" content="${description}">
 	<meta property="og:type" content="website">
+${ogImage ? `\t<meta property="og:image" content="${ogImage}">\n` : ''}\t<meta name="twitter:card" content="summary_large_image">
 	<meta name="theme-color" content="#24246a">
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,9 +188,9 @@ ${scriptTags()}
 </html>`;
 }
 
-function layout({ title, description, active, body, bodyClass = '', noHeader = false, noFooter = false, extraStyles = [] }) {
+function layout({ title, description, active, body, bodyClass = '', noHeader = false, noFooter = false, extraStyles = [], ogImage = '' }) {
 	return [
-		head({ title, description, bodyClass, extraStyles }),
+		head({ title, description, bodyClass, extraStyles, ogImage }),
 		noHeader ? '' : header(active),
 		body,
 		noFooter ? '' : footer(),

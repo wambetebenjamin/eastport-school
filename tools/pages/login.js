@@ -178,6 +178,7 @@ ${socials}
 
 	return layout({
 		title: 'Student Portal Login | Eastport International Training College, Kericho',
+		ogImage: 'img/versions/a-login.jpg',
 		description: 'Sign in to the Eastport International Training College student portal for results, fee statements, timetables and attachment letters. TVETA, KNEC 518112 and CDACC 0350007 centre at Chai Plaza 2nd Floor, Kericho CBD.',
 		active: 'login',
 		noHeader: true,
