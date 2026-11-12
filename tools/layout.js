@@ -76,7 +76,7 @@ function head({ title, description, bodyClass = '', extraStyles = [], ogImage = 
 	<meta property="og:description" content="${description}">
 	<meta property="og:type" content="website">
 ${ogImage ? `\t<meta property="og:image" content="${ogImage}">\n` : ''}	<meta name="twitter:card" content="summary_large_image">
-	<meta name="theme-color" content="#1463f3">
+	<meta name="theme-color" content="#24246a">
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -2456,24 +2456,24 @@ a.el-oauth-btn:hover {
    ==================================== */
 
 :root {
-	--u-navy: #1463f3;
-	--u-deep: #0b3fa8;
-	--u-navy-mid: #0d4ec7;
-	--u-ink: #0f172a;
-	--u-body: #475569;
-	--u-muted: #64748b;
-	--u-line: #e2e8f0;
-	--u-mist: #f4f7fc;
+	--u-navy: #24246a;
+	--u-deep: #171750;
+	--u-navy-mid: #1c1c4e;
+	--u-ink: #1b1b36;
+	--u-body: #5b6070;
+	--u-muted: #7d8598;
+	--u-line: #e3e6ef;
+	--u-mist: #f4f6fb;
 	--u-font: 'Outfit', 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 /* v2 eLearning shell keeps its layout but takes the new ink/blue */
 .el-header {
-	background: #0b1220;
+	background: #171750;
 }
 
 .el-login-foot {
-	background: #0b1220;
+	background: #171750;
 }
 
 .el-login-foot a {
