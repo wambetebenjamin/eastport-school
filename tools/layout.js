@@ -1,0 +1,341 @@
+/* Shared layout helpers for the Eastport static site build */
+'use strict';
+
+const VERSION = require('./version');
+
+/* Append the build hash so updated styles/scripts are never served from a
+   stale browser cache (see tools/version.js). */
+const v = (file) => `${file}?v=${VERSION}`;
+
+const SITE = {
+	name: 'Eastport International Training College',
+	short: 'Eastport College',
+	campus: 'Chai Plaza, 2nd Floor, Kenyatta Street, Kericho CBD',
+	phone: '0757 478 077',
+	tel: 'tel:0757478077',
+	whatsapp: 'https://wa.me/254757478077',
+	email: 'admissions@eastportinternationalcollege.ac.ke',
+	hours: 'Mon–Fri: 8:00 AM – 5:00 PM · Sat: 8:30 AM – 1:00 PM',
+	examCentres: 'KNEC 518112 · CDACC 0350007 · TVETA Centre 401002'
+};
+
+const BASE_STYLES = [
+	'css/bootstrap.min.css',
+	'css/font-awesome.min.css',
+	'css/owl.carousel.css',
+	'css/style.css',
+	'css/eastport.css',
+	'css/design.css'
+];
+
+const SCRIPTS = [
+	'js/jquery-3.2.1.min.js',
+	'js/bootstrap.min.js',
+	'js/data.js',
+	'js/app.js'
+];
+
+const NAV = [
+	{ href: 'index.html', label: 'Home', key: 'home' },
+	{ href: 'about.html', label: 'About us', key: 'about' },
+	{ href: 'courses.html', label: 'Courses', key: 'courses' },
+	{ href: 'blog.html', label: 'News', key: 'news' },
+	{ href: 'contact.html', label: 'Contact', key: 'contact' }
+];
+
+function scriptTags() {
+	return SCRIPTS.map((src) => `\t<script src="${v(src)}"></script>`).join('\n');
+}
+
+function head({ title, description, bodyClass = '', extraStyles = [] }) {
+	const styleTags = [...BASE_STYLES, ...extraStyles]
+		.map((href) => `\t<link rel="stylesheet" href="${v(href)}"/>`)
+		.join('\n');
+	return `<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>${title}</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="${description}">
+	<meta name="keywords" content="Eastport International Training College, Kericho, TVET, KNEC, CDACC, diploma, certificate, artisan, student portal">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="${title}">
+	<meta property="og:description" content="${description}">
+	<meta property="og:type" content="website">
+	<meta name="theme-color" content="#24246a">
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+${styleTags}
+</head>
+<body class="${bodyClass}">`;
+}
+
+function header(active) {
+	const items = NAV.map((item) => {
+		const cls = item.key === active ? ' class="active"' : '';
+		return `\t\t\t\t\t\t\t<li><a href="${item.href}"${cls}>${item.label}</a></li>`;
+	}).join('\n');
+
+	/* Flat, photographic header in the new design: wordmark left, quiet nav in
+	   the middle, a pill portal action and the phone number on the right. */
+	return `\t<!-- Header section -->
+\t<header class="header-section">
+\t\t<div class="container">
+\t\t\t<div class="row">
+\t\t\t\t<div class="col-lg-3 col-md-4 col-8">
+\t\t\t\t\t<a href="index.html" class="site-logo" aria-label="Eastport International Training College home">
+\t\t\t\t\t\t<img src="img/logo-white.svg" alt="Eastport International Training College">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class="nav-switch">
+\t\t\t\t\t\t<i class="fa fa-bars"></i>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class="col-lg-9 col-md-8 col-4">
+\t\t\t\t\t<a href="login.html" class="site-btn header-btn">Portal Login</a>
+\t\t\t\t\t<a href="${SITE.tel}" class="header-phone"><i class="fa fa-phone"></i>${SITE.phone}</a>
+\t\t\t\t\t<nav class="main-menu">
+\t\t\t\t\t\t<ul>
+${items}
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t</nav>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</header>
+\t<!-- Header section end -->`;
+}
+
+function footer() {
+	return `	<!-- footer section -->
+	<footer class="footer-section spad pb-0">
+		<div class="footer-top">
+			<div class="footer-warp">
+				<div class="row">
+					<div class="widget-item">
+						<h4>Contact Info</h4>
+						<ul class="contact-list">
+							<li>${SITE.campus}</li>
+							<li><a href="${SITE.tel}">${SITE.phone}</a></li>
+							<li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
+						</ul>
+					</div>
+					<div class="widget-item">
+						<h4>Faculties</h4>
+						<ul>
+							<li><a href="courses.html?faculty=health">Health Sciences</a></li>
+							<li><a href="courses.html?faculty=ict">ICT &amp; Computing</a></li>
+							<li><a href="courses.html?faculty=business">Business Studies</a></li>
+							<li><a href="courses.html?faculty=technical">Technical Studies</a></li>
+							<li><a href="courses.html?faculty=hospitality">Hospitality &amp; Tourism</a></li>
+						</ul>
+					</div>
+					<div class="widget-item">
+						<h4>Programmes</h4>
+						<ul>
+							<li><a href="single-course.html?p=diploma-food-beverage">Food &amp; Beverage</a></li>
+							<li><a href="single-course.html?p=diploma-ict-networking">ICT &amp; Networking</a></li>
+							<li><a href="single-course.html?p=diploma-nursing-assistant">Community Health</a></li>
+							<li><a href="single-course.html?p=kasneb-cpa">KASNEB CPA</a></li>
+							<li><a href="single-course.html?p=icdl">ICDL Digital Skills</a></li>
+						</ul>
+					</div>
+					<div class="widget-item">
+						<h4>Quick Links</h4>
+						<ul>
+							<li><a href="apply.html">Apply online</a></li>
+							<li><a href="login.html">Student portal</a></li>
+							<li><a href="about.html">About Eastport</a></li>
+							<li><a href="blog.html">News &amp; notices</a></li>
+							<li><a href="contact.html">Talk to admissions</a></li>
+						</ul>
+					</div>
+					<div class="widget-item">
+						<h4>Newsletter</h4>
+						<form class="footer-newslatter" data-demo-form data-success="Thank you. You are subscribed to the Eastport admissions and academic gazette.">
+							<input type="email" placeholder="E-mail" required>
+							<button class="site-btn" type="submit">Subscribe</button>
+							<p>*We don’t spam</p>
+							<div class="ep-alert" role="status"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-warp">
+				<ul class="footer-menu">
+					<li><a href="versions.html">Compare design versions</a></li>
+					<li><a href="contact.html">Terms &amp; Conditions</a></li>
+					<li><a href="apply.html">Register</a></li>
+					<li><a href="contact.html">Privacy</a></li>
+				</ul>
+				<div class="copyright">
+					Copyright &copy; <span data-year>2026</span> ${SITE.name}. All rights reserved. | ${SITE.examCentres}
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer section end -->`;
+}
+
+function scripts() {
+	return `	<!--====== Javascripts & Jquery ======-->
+${scriptTags()}
+</body>
+</html>`;
+}
+
+function layout({ title, description, active, body, bodyClass = '', noHeader = false, noFooter = false, extraStyles = [] }) {
+	return [
+		head({ title, description, bodyClass, extraStyles }),
+		noHeader ? '' : header(active),
+		body,
+		noFooter ? '' : footer(),
+		scripts()
+	].join('\n');
+}
+
+function pageInfo({ image, crumb, title, lead, card }) {
+	/* Interior banner in the new split design: title and breadcrumb on the
+	   clear left, a frosted glass facts card on the right. Pages that pass no
+	   card get a compact admissions contact card, so every interior page has
+	   the same action to hand. */
+	const panel = card || {
+		title: 'Talk to admissions',
+		text: 'Chai Plaza 2nd Floor, Kenyatta Street, Kericho CBD — walk in any weekday.',
+		items: [
+			{ icon: 'fa-phone', html: `<a href="${SITE.tel}">${SITE.phone}</a>` },
+			{ icon: 'fa-whatsapp', html: `<a href="${SITE.whatsapp}" target="_blank" rel="noopener">WhatsApp admissions</a>` },
+			{ icon: 'fa-envelope-o', html: `<a href="mailto:${SITE.email}">${SITE.email}</a>` }
+		],
+		cta: { href: 'apply.html', label: 'Start your application' }
+	};
+
+	const items = (panel.items || []).map((item) =>
+		`\t\t\t\t\t\t<li><i class="fa ${item.icon}"></i><span>${item.html}</span></li>`).join('\n');
+	const cta = panel.cta
+		? `\n\t\t\t\t\t<a href="${panel.cta.href}" class="site-btn ep-pill-gold">${panel.cta.label} <span class="ep-btn-arrow">&rsaquo;</span></a>`
+		: '';
+
+	return `\t<!-- Page info -->
+\t<div class="page-info-section set-bg" data-setbg="${image}" style="background-image:url(${image})">
+\t\t<div class="container">
+\t\t\t<div class="ep-banner-grid">
+\t\t\t\t<div class="ep-banner-copy">
+\t\t\t\t\t<div class="site-breadcrumb">
+\t\t\t\t\t\t<a href="index.html">Home</a>
+\t\t\t\t\t\t<span>${crumb}</span>
+\t\t\t\t\t</div>
+\t\t\t\t\t<h1 class="ep-page-title">${title}</h1>
+${lead ? `\t\t\t\t\t<p class="ep-banner-lead">${lead}</p>\n` : ''}\t\t\t\t</div>
+\t\t\t\t<div class="ep-banner-card">
+\t\t\t\t\t<h3>${panel.title}</h3>
+${panel.text ? `\t\t\t\t\t<p>${panel.text}</p>\n` : ''}\t\t\t\t\t<ul>
+${items}
+\t\t\t\t\t</ul>${cta}
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+\t<!-- Page info end -->`;
+}
+
+function stats() {
+	return `	<!-- stats -->
+	<section class="ep-stats">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 col-lg-3">
+					<div class="ep-stat">
+						<h3>253<span>+</span></h3>
+						<p>Approved Courses</p>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="ep-stat">
+						<h3>100<span>%</span></h3>
+						<p>TVETA &amp; KNEC Certified</p>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="ep-stat">
+						<h3>11</h3>
+						<p>Specialised Faculties</p>
+					</div>
+				</div>
+				<div class="col-6 col-lg-3">
+					<div class="ep-stat">
+						<h3>98<span>%</span></h3>
+						<p>Attachment Placement</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- stats end -->`;
+}
+
+function ctaBlock() {
+	return `	<!-- contact block -->
+	<section class="ep-contact-block">
+		<div class="container text-center text-white">
+			<span class="ep-uppercase">Talk with real humans — not an automated bot</span>
+			<h2>Need guidance on courses, grades or fees?</h2>
+			<p>Whether you are asking about minimum KCSE entry grades, applying for the Kericho County bursary fund, or setting up a flexible three-part fee instalment, Sharon and our admissions team are ready to sit with you or chat directly.</p>
+			<ul class="ep-contact-meta">
+				<li><i class="fa fa-map-marker"></i>Chai Plaza 2nd Floor, Kericho</li>
+				<li><i class="fa fa-clock-o"></i>${SITE.hours}</li>
+				<li><i class="fa fa-phone"></i>${SITE.phone}</li>
+			</ul>
+			<a href="${SITE.whatsapp}" class="site-btn" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i>&nbsp; WhatsApp Admissions</a>
+			<a href="apply.html" class="site-btn btn-white">Start your application</a>
+		</div>
+	</section>
+	<!-- contact block end -->`;
+}
+
+function banner({ title = 'Join Our Community Now!', text = 'Applications for the January 2027 intake are open across all eleven faculties. Secure your place with a 40% deposit and pay the balance in three flexible instalments.', cta = 'Register Now', href = 'apply.html' }) {
+	return `	<!-- banner section -->
+	<section class="banner-section spad">
+		<div class="container">
+			<div class="section-title mb-0 pb-2">
+				<h2>${title}</h2>
+				<p>${text}</p>
+			</div>
+			<div class="text-center pt-5">
+				<a href="${href}" class="site-btn">${cta}</a>
+			</div>
+		</div>
+	</section>
+	<!-- banner section end -->`;
+}
+
+/* Photo grid used on the home and about pages — template photographs only. */
+function gallery({ title, text, items }) {
+	const tiles = items.map((item) => {
+		const caption = item.caption ? `\n\t\t\t\t\t<figcaption>${item.caption}</figcaption>` : '';
+		return `\t\t\t\t<figure class="ep-gallery-item">
+\t\t\t\t\t<img src="${item.image}" alt="${item.caption || 'Eastport International Training College campus'}">${caption}
+\t\t\t\t</figure>`;
+	}).join('\n');
+
+	return `\t<!-- gallery section -->
+\t<section class="ep-gallery-section spad">
+\t\t<div class="container">
+\t\t\t<div class="section-title">
+\t\t\t\t<h2>${title}</h2>
+\t\t\t\t<p>${text}</p>
+\t\t\t</div>
+\t\t</div>
+\t\t<div class="course-warp">
+\t\t\t<div class="ep-gallery">
+${tiles}
+\t\t\t</div>
+\t\t</div>
+\t</section>
+\t<!-- gallery section end -->`;
+}
+
+module.exports = { SITE, NAV, VERSION, layout, head, header, footer, scriptTags, pageInfo, stats, ctaBlock, banner, gallery };

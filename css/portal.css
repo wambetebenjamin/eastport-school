@@ -1,0 +1,328 @@
+/* =================================
+------------------------------------
+  Eastport International Training College
+  Student portal dashboard — matched to the new login screen
+  Palette: crimson #24246a · charcoal #1c1c4e · mist #eef1f9
+ ------------------------------------
+ ====================================*/
+
+.portal-body {
+	background: #f5f7fc;
+}
+
+/* Header */
+.portal-header {
+	background: var(--ep-ink);
+	padding: 18px 0;
+}
+
+.portal-header .site-logo img {
+	height: 40px;
+}
+
+.portal-nav li a {
+	font-size: 13px;
+}
+
+.portal-nav li a.logout {
+	color: #f2cb86;
+}
+
+/* Hero with the template photograph */
+.portal-hero {
+	position: relative;
+	background: var(--ep-ink) url("../img/page-bg/1.jpg") center/cover no-repeat;
+	padding: 54px 0;
+	overflow: hidden;
+}
+
+.portal-hero:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(120deg, rgba(18, 18, 61, .94) 12%, rgba(23, 23, 80, .8) 48%, rgba(36, 36, 106, .82) 100%);
+}
+
+.portal-hero .container {
+	position: relative;
+	z-index: 2;
+}
+
+.portal-hero h1 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 800;
+	letter-spacing: -.4px;
+	margin-bottom: 8px;
+}
+
+.portal-hero p {
+	color: rgba(255, 255, 255, .84);
+	font-size: 13.5px;
+	margin-bottom: 0;
+}
+
+.portal-hero .portal-id span {
+	background: rgba(0, 0, 0, .26);
+	border: 1px solid rgba(255, 255, 255, .18);
+	border-radius: 100px;
+	padding: 9px 16px;
+	font-size: 11.5px;
+	letter-spacing: .8px;
+}
+
+/* Section background */
+.portal-section {
+	padding: 52px 0 64px;
+}
+
+/* Metric cards */
+.portal-metric {
+	position: relative;
+	background: #fff;
+	border: 1px solid #e5e9f2;
+	border-radius: 10px;
+	padding: 24px 24px 22px;
+	margin-bottom: 26px;
+	box-shadow: 0 10px 26px rgba(23, 23, 80, .05);
+	overflow: hidden;
+	height: calc(100% - 26px);
+}
+
+.portal-metric:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background: var(--ep-navy);
+}
+
+.portal-metric span {
+	font-size: 10.5px;
+	letter-spacing: 1.4px;
+	color: #7d8598;
+	margin-bottom: 10px;
+}
+
+.portal-metric h3 {
+	font-size: 28px;
+	font-weight: 800;
+	color: var(--ep-ink);
+	letter-spacing: -.4px;
+}
+
+.portal-metric h3.ep-due {
+	color: var(--ep-navy);
+}
+
+.portal-metric small {
+	font-size: 11.5px;
+	color: #7d8598;
+}
+
+.portal-progress-bar {
+	height: 7px;
+	border-radius: 100px;
+	background: var(--ep-mist);
+	overflow: hidden;
+	margin: 14px 0 8px;
+}
+
+.portal-progress-bar span {
+	border-radius: 100px;
+	background: linear-gradient(90deg, var(--ep-navy), #e2a33c);
+}
+
+/* Cards */
+.portal-card {
+	background: #fff;
+	border: 1px solid #e5e9f2;
+	border-radius: 10px;
+	margin-bottom: 26px;
+	box-shadow: 0 10px 26px rgba(23, 23, 80, .05);
+	overflow: hidden;
+}
+
+.portal-card .portal-card-head {
+	border-bottom: 1px solid #eef1f7;
+	padding: 20px 26px;
+}
+
+.portal-card .portal-card-head h4 {
+	font-size: 15.5px;
+	font-weight: 800;
+	color: var(--ep-ink);
+	letter-spacing: -.1px;
+}
+
+.portal-card .portal-card-head a {
+	font-size: 11.5px;
+	letter-spacing: .3px;
+	padding: 5px 12px;
+	border: 1px solid #f0d9ab;
+	border-radius: 100px;
+	background: #fdf7ea;
+}
+
+.portal-card .portal-card-head a:hover {
+	background: var(--ep-navy);
+	border-color: var(--ep-navy);
+	color: #fff;
+}
+
+.portal-card .portal-card-body {
+	padding: 24px 26px;
+}
+
+/* Tables */
+.portal-card .ep-table th {
+	background: #f7f8fc;
+	font-size: 10.5px;
+	letter-spacing: 1.2px;
+	padding: 14px 26px;
+	color: #7d8598;
+}
+
+.portal-card .ep-table td {
+	padding: 15px 26px;
+	font-size: 13.5px;
+	border-bottom: 1px solid #eef1f7;
+	color: #5f6478;
+}
+
+.portal-card .ep-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.portal-card .ep-table td strong {
+	color: var(--ep-ink);
+}
+
+/* Profile */
+.portal-profile .ca-pic {
+	border: 3px solid #fff;
+	box-shadow: 0 0 0 3px rgba(36, 36, 106, .16);
+}
+
+.portal-profile h4 {
+	font-size: 18px;
+	font-weight: 800;
+	color: var(--ep-ink);
+}
+
+.portal-profile span {
+	font-size: 11.5px;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+}
+
+.portal-list li {
+	font-size: 13px;
+	color: #7d8598;
+	border-bottom: 1px solid #eef1f7;
+}
+
+.portal-list li strong {
+	color: var(--ep-ink);
+	font-weight: 700;
+}
+
+.portal-list li a {
+	color: var(--ep-ink);
+	font-weight: 700;
+}
+
+.portal-list li a:hover {
+	color: var(--ep-navy);
+}
+
+/* Announcements */
+.portal-announcement {
+	padding: 16px 0;
+	border-bottom: 1px solid #eef1f7;
+}
+
+.portal-announcement span {
+	display: inline-block;
+	font-size: 10px;
+	letter-spacing: 1.1px;
+	background: #fdf4e3;
+	color: var(--ep-navy);
+	padding: 4px 10px;
+	border-radius: 100px;
+	margin-bottom: 9px;
+}
+
+.portal-announcement h6 {
+	font-size: 14px;
+	font-weight: 800;
+	color: var(--ep-ink);
+	margin-bottom: 5px;
+}
+
+.portal-announcement p {
+	font-size: 12.5px;
+	line-height: 1.9;
+	color: #7d8598;
+}
+
+/* Footer */
+.portal-footer {
+	background: var(--ep-ink);
+	padding: 22px 0;
+}
+
+.portal-footer p {
+	font-size: 12px;
+	color: rgba(255, 255, 255, .6);
+}
+
+.portal-footer a {
+	font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+	.portal-hero {
+		padding: 40px 0;
+	}
+
+	.portal-hero h1 {
+		font-size: 27px;
+	}
+}
+
+@media (max-width: 767px) {
+	.portal-section {
+		padding: 34px 0 46px;
+	}
+
+	.portal-card .portal-card-body {
+		padding: 20px;
+	}
+
+	.portal-card .portal-card-head {
+		padding: 16px 20px;
+	}
+
+	.portal-card .ep-table th,
+	.portal-card .ep-table td {
+		padding: 12px 18px;
+	}
+}
+
+/* Long account values (e-mail addresses, programme names) must wrap inside
+   the profile card instead of spilling past its edge. */
+.portal-list li {
+	display: grid;
+	grid-template-columns: 80px minmax(0, 1fr);
+	gap: 12px;
+	align-items: start;
+}
+
+.portal-list li strong {
+	font-size: 12.5px;
+	overflow-wrap: anywhere;
+}

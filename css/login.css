@@ -1,0 +1,1247 @@
+/* =================================
+------------------------------------
+  Eastport International Training College
+  Portal login — NEW "split glass" design
+
+  Full-bleed photograph · clear left copy panel · frosted right panel
+  with underlined fields and pill actions (approved reference).
+
+  Palette: Eastport navy #24246a · gold #e2a33c · ink #1c1c4e · mist #eef1f9
+ ------------------------------------
+ ====================================*/
+
+.login-body {
+	background: #0b0b24;
+	color: #fff;
+	font-family: 'Inter', 'Raleway', sans-serif;
+}
+
+.login-body h1,
+.login-body h2,
+.login-body h3,
+.login-body h4,
+.login-body p,
+.login-body a,
+.login-body li,
+.login-body span {
+	font-family: 'Inter', 'Raleway', sans-serif;
+}
+
+/* ---------------- Slim top bar ---------------- */
+
+.lg-topbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 30;
+	padding: 26px 0;
+}
+
+.lg-topbar .lg-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.lg-brand img {
+	height: 44px;
+	width: auto;
+	display: block;
+}
+
+.lg-topnav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.lg-topnav a {
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .82);
+	position: relative;
+	padding: 4px 0;
+}
+
+.lg-topnav a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	background: var(--ep-gold);
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: -webkit-transform .25s ease;
+	transition: transform .25s ease;
+}
+
+.lg-topnav a:hover {
+	color: #fff;
+}
+
+.lg-topnav a:hover:after,
+.lg-topnav a.active:after {
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+.lg-topnav a.active {
+	color: #fff;
+}
+
+.lg-topbar-side {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 18px;
+}
+
+.lg-topbar-phone {
+	font-size: 13.5px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .82);
+	white-space: nowrap;
+}
+
+.lg-topbar-phone i {
+	color: var(--ep-gold);
+	margin-right: 7px;
+}
+
+.lg-topbar-phone:hover {
+	color: #fff;
+}
+
+.lg-topnav-toggle {
+	display: none;
+	width: 42px;
+	height: 42px;
+	border: 1px solid rgba(255, 255, 255, .3);
+	border-radius: 100px;
+	background: transparent;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+/* ---------------- Stage ---------------- */
+
+.lg-page {
+	position: relative;
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	background: #0b0b24;
+}
+
+/* the reference photograph, dimmed so type stays readable */
+.lg-bg {
+	position: absolute;
+	inset: 0;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-transform: scale(1.03);
+	transform: scale(1.03);
+	opacity: .6;
+}
+
+.lg-page:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background:
+		linear-gradient(105deg, rgba(9, 11, 28, .82) 0%, rgba(13, 13, 44, .6) 46%, rgba(9, 11, 28, .5) 100%),
+		linear-gradient(180deg, rgba(9, 11, 28, .6) 0%, rgba(9, 11, 28, .25) 40%, rgba(9, 11, 28, .8) 100%);
+}
+
+.lg-split {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	min-height: 100vh;
+}
+
+/* ---------------- Left: clear copy panel ---------------- */
+
+.lg-intro {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	padding: 150px 6% 64px 8%;
+}
+
+.lg-eyebrow {
+	display: inline-block;
+	max-width: 100%;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+	color: var(--ep-gold-soft);
+	border-left: 3px solid var(--ep-gold);
+	padding: 3px 0 3px 14px;
+	margin-bottom: 26px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.lg-intro h1 {
+	color: #fff;
+	font-size: 46px;
+	line-height: 1.14;
+	font-weight: 600;
+	letter-spacing: -1.2px;
+	margin-bottom: 20px;
+	max-width: 520px;
+	text-shadow: 0 2px 24px rgba(0, 0, 0, .35);
+}
+
+.lg-intro h1 span {
+	color: var(--ep-gold-soft);
+}
+
+.lg-intro > p {
+	color: rgba(255, 255, 255, .82);
+	font-size: 14.5px;
+	line-height: 1.95;
+	max-width: 470px;
+	margin-bottom: 0;
+}
+
+/* four facts, separated by hairlines — the reference's quiet stat row */
+.lg-facts {
+	list-style: none;
+	margin: 34px 0 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	max-width: 520px;
+	border-top: 1px solid rgba(255, 255, 255, .16);
+	padding-top: 22px;
+}
+
+.lg-facts li {
+	-ms-flex: 1 1 50%;
+	flex: 1 1 50%;
+	padding: 8px 18px 8px 0;
+}
+
+.lg-facts strong {
+	display: block;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -.6px;
+	line-height: 1.2;
+}
+
+.lg-facts span {
+	display: block;
+	font-size: 10.5px;
+	font-weight: 500;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .58);
+	margin-top: 4px;
+}
+
+.lg-intro-actions {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 34px;
+}
+
+/* pill actions (reference) */
+.lg-pill {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 100px;
+	padding: 12px 26px;
+	font-size: 13.5px;
+	font-weight: 600;
+	line-height: 1.2;
+	cursor: pointer;
+	-webkit-transition: all .22s ease;
+	transition: all .22s ease;
+	white-space: nowrap;
+}
+
+.lg-pill-ghost {
+	background: transparent;
+	border: 1.5px solid rgba(255, 255, 255, .82);
+	color: #fff;
+}
+
+.lg-pill-ghost:hover {
+	background: #fff;
+	border-color: #fff;
+	color: #16162e;
+}
+
+.lg-pill-gold {
+	background: var(--ep-gold);
+	border: 1.5px solid var(--ep-gold);
+	color: #1d1d3f;
+}
+
+.lg-pill-gold:hover {
+	background: var(--ep-gold-soft);
+	border-color: var(--ep-gold-soft);
+	color: #1d1d3f;
+}
+
+.lg-pill .lg-pill-arrow {
+	font-size: 17px;
+	line-height: 1;
+	-webkit-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+.lg-intro-foot {
+	margin-top: 40px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, .14);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 16px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	max-width: 520px;
+}
+
+.lg-social {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 18px;
+}
+
+.lg-social a {
+	color: rgba(255, 255, 255, .68);
+	font-size: 15px;
+}
+
+.lg-social a:hover {
+	color: var(--ep-gold);
+}
+
+.lg-legal {
+	font-size: 10.5px;
+	font-weight: 500;
+	letter-spacing: .6px;
+	color: rgba(255, 255, 255, .5);
+}
+
+/* ---------------- Right: frosted form panel ---------------- */
+
+.lg-panel {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 150px 6% 64px;
+	background: rgba(18, 24, 32, .55);
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	border-left: 1px solid rgba(255, 255, 255, .12);
+}
+
+.lg-form-inner {
+	width: 100%;
+	max-width: 400px;
+}
+
+.lg-form-head h2 {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 600;
+	letter-spacing: -.8px;
+	margin-bottom: 8px;
+}
+
+.lg-form-head p {
+	color: rgba(255, 255, 255, .68);
+	font-size: 13px;
+	line-height: 1.8;
+	margin-bottom: 0;
+}
+
+.lg-form-head {
+	margin-bottom: 28px;
+}
+
+/* role tabs — underline style, quiet */
+.lg-tabs {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 26px;
+	border-bottom: 1px solid rgba(255, 255, 255, .16);
+	margin-bottom: 26px;
+}
+
+.lg-tabs button {
+	background: transparent;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	padding: 0 0 12px;
+	font-size: 12.5px;
+	font-weight: 600;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .55);
+	cursor: pointer;
+	-webkit-transition: all .22s ease;
+	transition: all .22s ease;
+}
+
+.lg-tabs button i {
+	margin-right: 7px;
+	font-size: 12px;
+}
+
+.lg-tabs button:hover {
+	color: #fff;
+}
+
+.lg-tabs button.active {
+	color: #fff;
+	border-bottom-color: var(--ep-gold);
+}
+
+/* reference fields: icon right, underline */
+.lg-field {
+	position: relative;
+	margin-bottom: 26px;
+	border-bottom: 1.5px solid rgba(255, 255, 255, .55);
+	padding-bottom: 9px;
+	-webkit-transition: border-color .25s ease;
+	transition: border-color .25s ease;
+}
+
+.lg-field:focus-within {
+	border-bottom-color: #fff;
+}
+
+.lg-field.has-error {
+	border-bottom-color: #ffab9a;
+}
+
+.lg-field label {
+	display: block;
+	font-size: 10.5px;
+	font-weight: 600;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .6);
+	margin-bottom: 4px;
+}
+
+.lg-input-wrap {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.lg-input {
+	width: 100%;
+	height: 36px;
+	background: transparent;
+	border: 0;
+	outline: none;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 0 32px 0 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.lg-input::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, .58);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.lg-input::-moz-placeholder {
+	color: rgba(255, 255, 255, .58);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.lg-input::placeholder {
+	color: rgba(255, 255, 255, .58);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.lg-input-wrap > i.lg-icon {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: rgba(255, 255, 255, .62);
+	font-size: 15px;
+	pointer-events: none;
+}
+
+.lg-input-action {
+	position: absolute;
+	right: -4px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 32px;
+	height: 32px;
+	background: transparent;
+	border: 0;
+	color: rgba(255, 255, 255, .6);
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.lg-input-action:hover {
+	color: #fff;
+}
+
+.lg-error {
+	display: none;
+	font-size: 11.5px;
+	font-weight: 500;
+	color: #ffd9d2;
+	margin-top: 6px;
+}
+
+.lg-error.is-visible {
+	display: block;
+}
+
+/* remember / forgot row */
+.lg-row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 12px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0 0 26px;
+}
+
+.lg-row .ep-checkbox {
+	font-size: 12.5px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .78);
+}
+
+.lg-row .ep-checkbox .box {
+	width: 15px;
+	height: 15px;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 15px;
+	flex: 0 0 15px;
+	border: 1.5px solid rgba(255, 255, 255, .6);
+	border-radius: 3px;
+	margin-right: 9px;
+}
+
+.lg-row .ep-checkbox input:checked + .box {
+	background: var(--ep-gold);
+	border-color: var(--ep-gold);
+}
+
+.lg-link {
+	font-size: 12.5px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .9);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	text-decoration-color: rgba(255, 255, 255, .4);
+}
+
+.lg-link:hover {
+	color: #fff;
+	text-decoration-color: #fff;
+}
+
+/* the main action — matches the reference's outlined pill */
+.lg-actions {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 26px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.lg-submit {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	gap: 12px;
+	background: transparent;
+	border: 1.5px solid rgba(255, 255, 255, .85);
+	border-radius: 100px;
+	color: #fff;
+	padding: 12px 30px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: .2px;
+	cursor: pointer;
+	-webkit-transition: all .25s ease;
+	transition: all .25s ease;
+}
+
+.lg-submit:hover {
+	background: #fff;
+	border-color: #fff;
+	color: #16162e;
+}
+
+.lg-submit:disabled {
+	opacity: .7;
+	cursor: progress;
+}
+
+.lg-submit .lg-pill-arrow {
+	font-size: 17px;
+	line-height: 1;
+	-webkit-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+.lg-actions .lg-link {
+	font-size: 13px;
+}
+
+/* secondary paths */
+.lg-alt {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 14px;
+	margin: 28px 0 20px;
+	font-size: 10.5px;
+	font-weight: 600;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .45);
+}
+
+.lg-alt:before,
+.lg-alt:after {
+	content: "";
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	height: 1px;
+	background: rgba(255, 255, 255, .14);
+}
+
+.lg-alt-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+.lg-alt-btn {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	gap: 9px;
+	border: 1px solid rgba(255, 255, 255, .18);
+	background: rgba(255, 255, 255, .04);
+	border-radius: 100px;
+	padding: 11px 14px;
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, .86);
+	text-align: center;
+	-webkit-transition: all .22s ease;
+	transition: all .22s ease;
+	overflow-wrap: anywhere;
+}
+
+.lg-alt-btn i {
+	color: var(--ep-gold);
+	font-size: 13px;
+}
+
+.lg-alt-btn:hover {
+	border-color: rgba(255, 255, 255, .5);
+	background: rgba(255, 255, 255, .1);
+	color: #fff;
+}
+
+/* preview credentials note */
+.lg-demo {
+	margin-top: 24px;
+	padding: 14px 16px;
+	border-left: 2px solid var(--ep-gold);
+	background: rgba(255, 255, 255, .05);
+	font-size: 11.5px;
+	line-height: 1.95;
+	color: rgba(255, 255, 255, .68);
+}
+
+.lg-demo strong {
+	display: block;
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	color: var(--ep-gold-soft);
+	margin-bottom: 3px;
+}
+
+.lg-demo code {
+	background: rgba(255, 255, 255, .1);
+	border-radius: 0;
+	padding: 1px 6px;
+	font-family: Consolas, Menlo, monospace;
+	font-size: 11px;
+	color: #fff;
+}
+
+.lg-demo .fill-demo {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	color: rgba(255, 255, 255, .9);
+	font-size: 11.5px;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	cursor: pointer;
+}
+
+.lg-demo .fill-demo:hover {
+	color: var(--ep-gold);
+}
+
+.lg-note {
+	margin: 18px 0 0;
+	font-size: 11px;
+	line-height: 1.85;
+	font-weight: 400;
+	color: rgba(255, 255, 255, .45);
+}
+
+.lg-form-inner .ep-alert {
+	border-radius: 0;
+	font-size: 12.5px;
+	margin-bottom: 22px;
+	background: rgba(255, 255, 255, .1);
+	border-left: 2px solid var(--ep-gold);
+	color: #fff;
+}
+
+.lg-form-inner .ep-alert.is-success {
+	background: rgba(28, 122, 68, .28);
+	border-left-color: #6fdd9b;
+	color: #eafff2;
+}
+
+.lg-form-inner .ep-alert.is-error {
+	background: rgba(192, 57, 43, .28);
+	border-left-color: #ff8f7d;
+	color: #fff1ee;
+}
+
+.lg-form-inner .ep-alert a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* ---------------- Compact brand footer ---------------- */
+
+.lg-footer {
+	position: relative;
+	background: #0b0b24;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	padding: 26px 0;
+}
+
+.lg-footer .lg-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 18px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.lg-footer .lg-brand img {
+	height: 34px;
+}
+
+.lg-footer-facts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+}
+
+.lg-footer-facts li {
+	font-size: 11.5px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, .55);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.lg-footer-facts i {
+	color: var(--ep-gold);
+	font-size: 12px;
+}
+
+.lg-footer-facts a {
+	color: rgba(255, 255, 255, .55);
+}
+
+.lg-footer-facts a:hover {
+	color: var(--ep-gold);
+}
+
+.lg-footer-bar {
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, .08);
+	padding-top: 16px;
+	margin-top: 4px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	gap: 10px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	font-size: 10.5px;
+	font-weight: 400;
+	letter-spacing: .3px;
+	color: rgba(255, 255, 255, .38);
+}
+
+/* ---------------- Content column ---------------- */
+
+.lg-wrap {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.lg-page .lg-wrap {
+	width: 100%;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 1199px) {
+	.lg-intro {
+		padding: 140px 5% 56px 6%;
+	}
+
+	.lg-intro h1 {
+		font-size: 38px;
+	}
+
+	.lg-panel {
+		padding: 140px 5% 56px;
+	}
+}
+
+@media (max-width: 991px) {
+	.lg-topnav {
+		display: none;
+	}
+
+	.lg-topnav-toggle {
+		display: inline-block;
+	}
+
+	/* a slide-down mobile menu, same trick as the site header */
+	.lg-topnav.is-open {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		top: 100%;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+		align-items: flex-start;
+		gap: 0;
+		background: #10102f;
+		border: 1px solid rgba(255, 255, 255, .14);
+		padding: 8px 20px 14px;
+	}
+
+	.lg-topnav.is-open li {
+		width: 100%;
+		border-bottom: 1px solid rgba(255, 255, 255, .08);
+	}
+
+	.lg-topnav.is-open li:last-child {
+		border-bottom: 0;
+	}
+
+	.lg-topnav.is-open a {
+		display: block;
+		padding: 13px 0;
+	}
+
+	.lg-topnav.is-open a:after {
+		display: none;
+	}
+
+	.lg-split {
+		grid-template-columns: 1fr;
+		min-height: 0;
+	}
+
+	.lg-intro {
+		padding: 118px 22px 34px;
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	}
+
+	.lg-intro h1 {
+		font-size: 32px;
+		margin-bottom: 16px;
+	}
+
+	.lg-intro > p {
+		font-size: 13.5px;
+	}
+
+	.lg-facts {
+		margin-top: 26px;
+		padding-top: 18px;
+	}
+
+	.lg-facts strong {
+		font-size: 21px;
+	}
+
+	.lg-intro-actions {
+		margin-top: 24px;
+	}
+
+	.lg-intro-foot {
+		margin-top: 26px;
+		padding-top: 16px;
+	}
+
+	.lg-panel {
+		padding: 36px 22px 46px;
+		border-left: 0;
+		border-top: 1px solid rgba(255, 255, 255, .12);
+	}
+
+	.lg-form-inner {
+		max-width: none;
+	}
+}
+
+@media (max-width: 575px) {
+	.lg-topbar {
+		padding: 18px 0;
+	}
+
+	.lg-brand img {
+		height: 38px;
+	}
+
+	.lg-topbar-phone {
+		display: none;
+	}
+
+	.lg-intro {
+		padding: 96px 18px 28px;
+	}
+
+	.lg-eyebrow {
+		font-size: 9.5px;
+		letter-spacing: 1.8px;
+		margin-bottom: 18px;
+	}
+
+	.lg-intro h1 {
+		font-size: 27px;
+	}
+
+	.lg-intro-actions .lg-pill {
+		font-size: 12.5px;
+		padding: 11px 20px;
+	}
+
+	.lg-intro-foot {
+		gap: 12px;
+	}
+
+	.lg-panel {
+		padding: 30px 18px 40px;
+	}
+
+	.lg-form-head h2 {
+		font-size: 26px;
+	}
+
+	.lg-tabs {
+		gap: 18px;
+	}
+
+	.lg-tabs button {
+		font-size: 11px;
+		letter-spacing: .4px;
+	}
+
+	.lg-actions {
+		gap: 16px;
+	}
+
+	.lg-actions .lg-submit {
+		width: 100%;
+	}
+
+	.lg-alt-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.lg-footer {
+		padding: 22px 0;
+	}
+
+	.lg-footer-facts {
+		gap: 6px 16px;
+	}
+}
+
+/* Browsers without backdrop-filter get an opaque panel. */
+@supports not ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
+	.lg-panel {
+		background: rgba(15, 18, 34, .93);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lg-bg {
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+/* Short desktop windows (1024 x 768 and similar): trim the vertical rhythm
+   so the whole sign-in panel is visible without scrolling. */
+@media (min-width: 992px) and (max-height: 900px) {
+	.lg-intro {
+		padding-top: 92px;
+		padding-bottom: 26px;
+	}
+
+	.lg-panel {
+		padding-top: 92px;
+		padding-bottom: 26px;
+	}
+
+	.lg-intro h1 {
+		font-size: 34px;
+		margin-bottom: 14px;
+	}
+
+	.lg-eyebrow {
+		margin-bottom: 20px;
+	}
+
+	.lg-intro > p {
+		font-size: 13.5px;
+		line-height: 1.85;
+	}
+
+	.lg-facts {
+		margin-top: 20px;
+		padding-top: 14px;
+	}
+
+	.lg-facts li {
+		padding: 4px 16px 4px 0;
+	}
+
+	.lg-facts strong {
+		font-size: 20px;
+	}
+
+	.lg-intro-actions {
+		margin-top: 18px;
+	}
+
+	.lg-intro-foot {
+		margin-top: 20px;
+		padding-top: 14px;
+	}
+
+	.lg-form-head {
+		margin-bottom: 16px;
+	}
+
+	.lg-form-head h2 {
+		font-size: 28px;
+	}
+
+	.lg-tabs {
+		margin-bottom: 16px;
+	}
+
+	.lg-field {
+		margin-bottom: 14px;
+	}
+
+	.lg-row {
+		margin-bottom: 14px;
+	}
+
+	.lg-alt {
+		margin: 18px 0 12px;
+	}
+
+	.lg-alt-btn {
+		padding: 9px 12px;
+		font-size: 11.5px;
+	}
+
+	.lg-demo {
+		margin-top: 14px;
+		padding: 11px 13px;
+	}
+
+	.lg-note {
+		margin-top: 10px;
+	}
+}
